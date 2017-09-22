@@ -23,8 +23,8 @@
         @if (is_page())
           @if( $post->post_parent )
             <a class="breadcrumb-item" href="{{ get_permalink( $post->post_parent ) }}">{{ get_the_title( $post->post_parent ) }}</a>
-            <span class="breadcrumb-item">{{ get_the_title() }}</span>
           @endif
+          <span class="breadcrumb-item">{{ get_the_title() }}</span>
         @endif
       </nav>
     @endif
