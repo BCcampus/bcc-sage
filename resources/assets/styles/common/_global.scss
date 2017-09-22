@@ -1,0 +1,155 @@
+/***** BODY *****/
+body {
+  @include awesome-font;
+
+  color: $color-black;
+  line-height: 22px;
+  padding-top: 0;
+}
+
+figure {
+  display: table;
+  margin: 0 20px 1em;
+
+  &.recent {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    text-align: center;
+    color: $color-grey;
+  }
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+/* Legacy Bootstrap v2 */
+p.text-error {
+  color: #b94a48;
+}
+
+a {
+  color: $color-blue;
+
+  &:hover,
+  &:focus {
+    text-decoration-style: dotted;
+    color: $color-darker-blue;
+  }
+
+  &:hover img.grey-hover,
+  &:focus img.grey-hover {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+
+    /* Chrome 19+ & Safari 6+ */
+  }
+
+  &:hover img.dark-hover,
+  &:focus img.dark-hover {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+
+    /* Firefox 10+ */
+    filter: contrast(200%);
+    -webkit-filter: contrast(200%);
+  }
+}
+
+/****************************************
+	Global Classes
+*****************************************/
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-inverse {
+  color: $color-white;
+}
+
+p.tags {
+  line-height: 26px;
+
+  a {
+    padding: 2px 4px;
+    color: $color-white;
+    background-color: $color-blue;
+    vertical-align: baseline;
+  }
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+h4 small span.upper {
+  font-size: 11px;
+}
+
+body.single #main {
+  h4,
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+}
+
+.aqua {
+  color: $color-green-elm;
+}
+
+.post-date {
+  display: inline-block;
+  text-align: center;
+  background-color: $color-black;
+  color: $color-white;
+  height: 45px;
+  width: 35px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 2px 12px !important;
+  margin-left: 25px;
+
+  span {
+    font-size: 22px;
+  }
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $color-grey-darker;
+  }
+}
