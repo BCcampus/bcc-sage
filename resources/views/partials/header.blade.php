@@ -14,7 +14,6 @@
                 {!! BreadCrumbs::postCrumb() !!}
             @endif
             @if (is_page())
-                {!! BreadCrumbs::parentCrumb() !!}
                 {!! BreadCrumbs::pageCrumb() !!}
             @endif
         </nav>

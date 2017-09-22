@@ -34,27 +34,20 @@ class BreadCrumbs extends Controller {
 	}
 
 	/**
-	 * Generates breadcrumb for parent page
+	 * Generates breadcrumb for pages
 	 * @return string
 	 */
 
-	public function parentCrumb() {
+	public function pageCrumb() {
 		global $post;
 		if ( $post->post_parent ) {
-			$html = '<a class="breadcrumb-item" href=' . esc_url( home_url() ) . '>Home</a>' . '<a class="breadcrumb-item" href="' . esc_url( get_permalink( $post->post_parent ) ) . '">' . apply_filters( 'the_title', get_the_title( $post->post_parent ) ) . '</a>';
+			$html = '<a class="breadcrumb-item" href=' . esc_url( home_url() ) . '>Home</a>' . '<a class="breadcrumb-item" href="' . esc_url( get_permalink( $post->post_parent ) ) . '">' . apply_filters( 'the_title', get_the_title( $post->post_parent ) ) . '</a>' . '<span class="breadcrumb-item">' . get_the_title() . '</span>';
+		} else {
+			$html .= '<a class="breadcrumb-item" href=' . esc_url( home_url() ) . '>Home</a><span class="breadcrumb-item">' . get_the_title() . '</span>';
 		}
 
 		return $html;
 	}
 
-	/**
-	 * Generates breadcrumb for category archives
-	 * @return string
-	 */
-	public function pageCrumb() {
-		$html .= '<a class="breadcrumb-item" href=' . esc_url( home_url() ) . '>Home</a><span class="breadcrumb-item">' . get_the_title() . '</span>';
-
-		return $html;
-	}
 
 }
