@@ -6,7 +6,6 @@
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav mr-auto', 'container' => 'collapse navbar-collapse']) !!}
       @endif
     </nav>
-    @debug('controller')
     @if( ! is_front_page() )
       <nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
         @foreach ( \App\App::breadCrumbs() as $key => $item )
