@@ -35,12 +35,13 @@ mix.browserSync({
 // Sass
 mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`);
 
-//Javascript
+// Javascript required on every page
 mix.autoload({
   jquery: ['$', 'window.jQuery', 'jQuery'],
-  'bootstrap.js/dist/js/bootstrap.js': ['Bootstrap'],
+  'bootstrap/dist/js/bootstrap.js': ['Bootstrap'],
 });
 
+// compiled Javascript
 mix.js(`${assets}/scripts/main.js`, `${dist}/scripts`)
   .js(`${assets}/scripts/customizer.js`, `${dist}/scripts`);
 

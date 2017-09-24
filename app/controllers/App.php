@@ -30,4 +30,8 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function navWalker(){
+        return new \WP_Bootstrap_Navwalker();
+    }
 }

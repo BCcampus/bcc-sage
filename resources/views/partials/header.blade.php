@@ -3,7 +3,7 @@
     <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
     <nav class="nav-primary navbar navbar-toggleable-md navbar-light bg-faded">
       @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav mr-auto', 'container' => 'collapse navbar-collapse']) !!}
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'depth' => 2, 'menu_class' => 'navbar-nav mr-auto', 'container' => 'collapse navbar-collapse', 'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback','walker' => \App\App::navWalker() ]) !!}
       @endif
     </nav>
     @if( ! is_front_page() )
