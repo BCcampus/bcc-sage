@@ -15,6 +15,7 @@ const app = 'app';
 const resources = 'resources';
 const assets = `${resources}/assets`;
 const dist = 'dist';
+const node = 'node_modules';
 
 mix.setPublicPath(dist);
 mix.setResourceRoot('../');
@@ -48,6 +49,7 @@ mix.js(`${assets}/scripts/main.js`, `${dist}/scripts`)
 
 // Assets
 mix.copy(`${assets}/fonts`, `${dist}/fonts`, false)
+  .copy(`${node}/font-awesome/fonts`, `${dist}/fonts`, false)
   .copy(`${assets}/images`, `${dist}/images`, false);
 
 // Options
