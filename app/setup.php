@@ -71,22 +71,30 @@ add_action('after_setup_theme', function () {
 /**
  * Register sidebars
  */
-add_action('widgets_init', function () {
-    $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
-    ];
-    register_sidebar([
-        'name'          => __('Primary', 'sage'),
-        'id'            => 'sidebar-primary'
-    ] + $config);
-    register_sidebar([
-        'name'          => __('Footer', 'sage'),
-        'id'            => 'sidebar-footer'
-    ] + $config);
-});
+add_action( 'widgets_init', function () {
+	$config = [
+		'before_widget' => '<section class="widget %1$s %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	];
+	register_sidebar( [
+		                  'name' => __( 'Primary', 'sage' ),
+		                  'id'   => 'sidebar-primary'
+	                  ] + $config );
+	register_sidebar( [
+		                  'name' => __( 'BCC Footer 1', 'sage' ),
+		                  'id'   => 'bcc_footer1'
+	                  ] + $config );
+	register_sidebar( [
+		                  'name' => __( 'BCC Footer 2', 'sage' ),
+		                  'id'   => 'bcc_footer2'
+	                  ] + $config );
+	register_sidebar( [
+		                  'name' => __( 'BCC Footer Social', 'sage' ),
+		                  'id'   => 'bcc_footer_social'
+	                  ] + $config );
+} );
 
 /**
  * Updates the `$post` variable on each iteration of the loop.
