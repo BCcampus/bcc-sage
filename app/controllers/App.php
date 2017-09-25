@@ -3,6 +3,7 @@
 namespace App;
 
 use Sober\Controller\Controller;
+use Inc2734\WP_Breadcrumbs;
 
 class App extends Controller
 {
@@ -31,7 +32,24 @@ class App extends Controller
         return get_the_title();
     }
 
+    /**
+     * get wp menu to act like bootstrap menu
+     *
+     * @return \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu
+     */
     public static function navWalker(){
-        return new \WP_Bootstrap_Navwalker();
+        return new \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu();
+    }
+
+    /**
+     * robust breadcrumb functionality
+     *
+     * @return array
+     */
+    public static function breadCrumbs() {
+        $bc = new WP_Breadcrumbs\Breadcrumbs();
+
+        return $bc->get();
+
     }
 }

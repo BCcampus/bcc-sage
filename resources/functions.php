@@ -90,8 +90,3 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
         ]);
     }, true);
-
-/**
- * Until the plugin authors autoload the file
- */
-require_once __DIR__ . '/../vendor/wp-bootstrap/wp-bootstrap-navwalker.php';

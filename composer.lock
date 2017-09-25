@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5d9433452cb0936c8af838710af2238",
+    "content-hash": "13c4143358b6ad0ff44435974bdc0cd1",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -636,6 +636,91 @@
             "time": "2017-08-25T13:20:17+00:00"
         },
         {
+            "name": "inc2734/wp-breadcrumbs",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-breadcrumbs.git",
+                "reference": "5e207a9365aeb70f4a2e16163f31d44592a78feb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/5e207a9365aeb70f4a2e16163f31d44592a78feb",
+                "reference": "5e207a9365aeb70f4a2e16163f31d44592a78feb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Breadcrumbs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress breadcrumbs.",
+            "time": "2017-07-23T11:15:15+00:00"
+        },
+        {
+            "name": "indigotree/wp-bootstrap-nav-walker",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/indigotree/wp-bootstrap-nav-walker.git",
+                "reference": "6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/indigotree/wp-bootstrap-nav-walker/zipball/6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd",
+                "reference": "6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IndigoTree\\BootstrapNavWalker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Geary",
+                    "email": "dev@crgeary.com"
+                },
+                {
+                    "name": "Indigo Tree",
+                    "email": "helloworld@indigotree.co.uk"
+                }
+            ],
+            "description": "WordPress Nav Walkers to implement Bootstrap navbars.",
+            "homepage": "https://github.com/indigotree/wp-bootstrap-nav-walker",
+            "keywords": [
+                "bootstrap",
+                "nav walker",
+                "wordpress"
+            ],
+            "time": "2017-04-11T15:04:45+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.22.1",
             "source": {
@@ -1219,39 +1304,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2017-07-29T21:54:42+00:00"
-        },
-        {
-            "name": "wp-bootstrap/wp-bootstrap-navwalker",
-            "version": "2.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker.git",
-                "reference": "6a1fa1890edc308cbf06070ba2554b3f8f58db07"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-bootstrap/wp-bootstrap-navwalker/zipball/6a1fa1890edc308cbf06070ba2554b3f8f58db07",
-                "reference": "6a1fa1890edc308cbf06070ba2554b3f8f58db07",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "require-dev": {
-                "stevegrunwell/wp-enforcer": "^0.4.1"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Brandon Hubbard"
-                }
-            ],
-            "description": "A custom WordPress nav walker class to fully implement the Bootstrap 3.0+ navigation style in a custom theme using the WordPress built in menu manager.",
-            "time": "2017-03-14T19:36:23+00:00"
         }
     ],
     "packages-dev": [

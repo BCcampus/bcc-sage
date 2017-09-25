@@ -39,7 +39,8 @@
     "illuminate/support": "~5.4",
     "roots/sage-lib": "~9.0.0-beta.4",
     "soberwp/controller": "~9.0.0-beta.4",
-    "wp-bootstrap/wp-bootstrap-navwalker": "^2.0"
+    "inc2734/wp-breadcrumbs": "^0.3.1",
+    "indigotree/wp-bootstrap-nav-walker": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
