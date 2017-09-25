@@ -83,16 +83,20 @@ add_action( 'widgets_init', function () {
 		                  'id'   => 'sidebar-primary'
 	                  ] + $config );
 	register_sidebar( [
-		                  'name' => __( 'BCC Footer 1', 'sage' ),
-		                  'id'   => 'bcc_footer1'
+		                  'name' => __( 'Footer Column 1', 'sage' ),
+		                  'id'   => 'footer-1'
 	                  ] + $config );
 	register_sidebar( [
-		                  'name' => __( 'BCC Footer 2', 'sage' ),
-		                  'id'   => 'bcc_footer2'
+		                  'name' => __( 'Footer Column 2', 'sage' ),
+		                  'id'   => 'footer-2'
 	                  ] + $config );
 	register_sidebar( [
-		                  'name' => __( 'BCC Footer Social', 'sage' ),
-		                  'id'   => 'bcc_footer_social'
+		                  'name' => __( 'Footer Column 3', 'sage' ),
+		                  'id'   => 'footer-3'
+	                  ] + $config );
+	register_sidebar( [
+		                  'name' => __( 'Footer Links', 'sage' ),
+		                  'id'   => 'footer_links'
 	                  ] + $config );
 } );
 
