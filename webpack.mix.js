@@ -39,6 +39,7 @@ mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`);
 mix.autoload({
   jquery: ['$', 'window.jQuery', 'jQuery'],
   'bootstrap/dist/js/bootstrap.js': ['Bootstrap'],
+  'popper.js/dist/umd/popper.js': ['Popper'],
 });
 
 // compiled Javascript

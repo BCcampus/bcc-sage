@@ -1,10 +1,21 @@
 <header class="banner">
   <div class="container-fluid">
     <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
-    <nav class="nav-primary navbar navbar-toggleable-md navbar-light bg-faded">
-      @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'depth' => 2, 'menu_class' => 'navbar-nav mr-auto', 'container' => 'collapse navbar-collapse', 'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback','walker' => \App\App::navWalker() ]) !!}
-      @endif
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded primary_navigation">
+
+      <div class="navbar-collapse" id="navbarNav">
+        @if (has_nav_menu('primary_navigation'))
+          {!! wp_nav_menu([
+          'menu' => 'primary_navigation',
+          'theme_location' => 'primary_navigation',
+          'depth' => 3,
+          'container' => 'div',
+          'container_class' => 'navbar-collapse',
+          'menu_class' => 'navbar-nav',
+          'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+          'walker' => \App\App::navWalker() ]) !!}
+        @endif
+      </div>
     </nav>
     @if( ! is_front_page() )
       <nav class="breadcrumb">
@@ -22,7 +33,8 @@
 
         @if (is_page())
           @if( $post->post_parent )
-            <a class="breadcrumb-item" href="{{ get_permalink( $post->post_parent ) }}">{{ get_the_title( $post->post_parent ) }}</a>
+            <a class="breadcrumb-item"
+               href="{{ get_permalink( $post->post_parent ) }}">{{ get_the_title( $post->post_parent ) }}</a>
           @endif
           <span class="breadcrumb-item">{{ get_the_title() }}</span>
         @endif
