@@ -26,13 +26,6 @@
       "App\\": "app/"
     }
   },
-  "extra": {
-    "installer-paths": {
-      "vendor/wp-bootstrap": [
-        "wp-bootstrap/wp-bootstrap-navwalker"
-      ]
-    }
-  },
   "require": {
     "php": ">=7",
     "composer/installers": "~1.0",
