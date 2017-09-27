@@ -41,7 +41,7 @@ add_action( 'after_setup_theme', function () {
 	 */
     register_nav_menus( [
         'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
-        'footer_navigation_1' => __( 'Footer Services Navigation', 'bcc-sage' ),
+        'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
         'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
         'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
     ] );
@@ -93,7 +93,7 @@ add_action( 'widgets_init', function () {
 	];
 
 	register_sidebar( [
-		                  'name' => __( 'Primary', 'sage' ),
+		                  'name' => __( 'Primary', 'bcc-sage' ),
 		                  'id'   => 'sidebar-primary'
 	                  ] + $config );
 
