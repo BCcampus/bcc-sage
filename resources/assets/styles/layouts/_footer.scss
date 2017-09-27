@@ -1,84 +1,93 @@
-#footsies {
-  color: $color-grey-light;
-  background-color: $color-black;
-  font-size: 14px;
-}
+footer {
+  .container-fluid {
+    max-width: 1440px;
+  }
+  #footsies {
+    color: $color-grey-light;
+    background-color: $color-black;
+    font-size: 14px;
+  }
 
-#bottom-foot {
-  background-color: $color-black-midnight;
-  padding-top: 16px;
+  #bottom-foot {
+    background-color: $color-black-midnight;
+    padding-top: 16px;
+  }
 
-  a {
-    color: $color-white;
-    text-decoration: none;
+  #footsies, #bottom-foot {
+    a {
+      color: $color-white;
+      text-decoration: none;
 
-    &:hover {
-      color: $color-blue;
+      &:hover {
+        color: $color-blue;
+      }
     }
   }
-}
 
-.container-fluid {
-  max-width: 1440px;
-}
-
-h4.widget-title {
-  font-size: 18px;
-}
-
-footer section.widget.col-sm-3 {
-  float: left;
-  padding-top: 10px;
-}
-
-footer section.widget.col-sm-6 {
-  float: left;
-  text-align: right;
-  padding-top: 15px;
-}
-
-footer .footer-links {
-  float: none;
-  clear: both;
-}
-
-.footer-links .menu {
-  list-style-type: none;
-  margin-left: 0;
-
-  li {
-    float: left;
-    margin-left: 10px;
+  nav {
+    h4 {
+      font-size: 18px;
+    }
   }
-}
 
-footer .widget ul {
-  list-style-type: none;
+  .widget {
 
-  li a {
-    color: $color-grey-light;
+    &.col-sm-3 {
+      float: left;
+      padding-top: 10px;
+    }
+
+    &.col-sm-6 {
+      float: left;
+      text-align: right;
+      padding-top: 15px;
+    }
+    ul {
+      list-style-type: none;
+
+      li a {
+        color: $color-grey-light;
+      }
+
+      &:first-of-type {
+        margin-left: -40px;
+      }
+    }
   }
-  &:first-of-type {
-    margin-left: -40px;
+
+  .footer-links {
+    float: none;
+    clear: both;
+
+    &.menu {
+      list-style-type: none;
+      margin-left: 0;
+      ul{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+      }
+      li {
+        float: left;
+        margin-left: 10px;
+      }
+    }
   }
-}
 
-footer p.copyright {
-  line-height: 17px;
-  max-width: 450px;
-  text-align: left;
-  display: inline-block;
-}
+  p.copyright {
+    line-height: 17px;
+    max-width: 450px;
+    text-align: left;
+    display: inline-block;
+    img {
+      padding-right: 10px;
+    }
+  }
 
-footer p.copyright img {
-  padding-right: 10px;
-}
-
-footer p.attribution {
-  text-align: center;
-}
-
-footer p.attribution {
-  text-align: center;
-  padding: 0 0 16px;
+  p.attribution {
+    text-align: center;
+    padding: 0 0 16px;
+  }
 }

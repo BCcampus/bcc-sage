@@ -39,9 +39,12 @@ add_action( 'after_setup_theme', function () {
 	 * Register navigation menus
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
-	register_nav_menus( [
-		'primary_navigation' => __( 'Primary Navigation', 'sage' )
-	] );
+    register_nav_menus( [
+        'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
+        'footer_navigation_1' => __( 'Footer Services Navigation', 'bcc-sage' ),
+        'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
+        'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
+    ] );
 
 	/**
 	 * Enable post thumbnails
@@ -75,7 +78,6 @@ add_action( 'widgets_init', function () {
 	$widget_title = '<h4 class="widget-title">';
 	$three_col    = '<section class="widget col-sm-3 %1$s %2$s">';
 	$six_col      = '<section class="widget col-sm-6 %1$s %2$s">';
-	$twelve_col   = '<section class="widget col-sm-12 %1$s %2$s">';
 
 	$config        = [
 		'before_widget' => $three_col,
@@ -89,32 +91,17 @@ add_action( 'widgets_init', function () {
 		'before_title'  => $widget_title,
 		'after_title'   => '</h4>'
 	];
-	$links_config  = [
-		'before_widget' => $twelve_col,
-		'after_widget'  => '</section>',
-		'before_title'  => $widget_title,
-		'after_title'   => '</h4>'
-	];
+
 	register_sidebar( [
 		                  'name' => __( 'Primary', 'sage' ),
 		                  'id'   => 'sidebar-primary'
 	                  ] + $config );
+
 	register_sidebar( [
-		                  'name' => __( 'Footer Column 1', 'sage' ),
-		                  'id'   => 'footer-1'
-	                  ] + $config );
-	register_sidebar( [
-		                  'name' => __( 'Footer Column 2', 'sage' ),
-		                  'id'   => 'footer-2'
-	                  ] + $config );
-	register_sidebar( [
-		                  'name' => __( 'Footer Column 3', 'sage' ),
+		                  'name' => __( 'Footer Social', 'bcc-sage' ),
 		                  'id'   => 'footer-3'
 	                  ] + $social_config );
-	register_sidebar( [
-		                  'name' => __( 'Footer Links', 'sage' ),
-		                  'id'   => 'footer_links'
-	                  ] + $links_config );
+
 } );
 
 /**
