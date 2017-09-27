@@ -1,32 +1,33 @@
 footer {
+  color: $color-grey-light;
+  background-color: $color-black;
+  font-size: 14px;
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
   .container-fluid {
     max-width: 1440px;
   }
-  #footsies {
-    color: $color-grey-light;
-    background-color: $color-black;
-    font-size: 14px;
+
+  #top-foot{
+    padding: 1rem;
   }
 
   #bottom-foot {
     background-color: $color-black-midnight;
-    padding-top: 16px;
-  }
-
-  #footsies, #bottom-foot {
-    a {
-      color: $color-white;
-      text-decoration: none;
-
-      &:hover {
-        color: $color-blue;
-      }
-    }
+    padding: 1rem;
   }
 
   nav {
     h4 {
-      font-size: 18px;
+      font-size: 1.5rem;
     }
   }
 
@@ -34,24 +35,14 @@ footer {
 
     &.col-sm-3 {
       float: left;
-      padding-top: 10px;
     }
 
     &.col-sm-6 {
       float: left;
       text-align: right;
-      padding-top: 15px;
     }
     ul {
       list-style-type: none;
-
-      li a {
-        color: $color-grey-light;
-      }
-
-      &:first-of-type {
-        margin-left: -40px;
-      }
     }
   }
 
@@ -71,7 +62,6 @@ footer {
       }
       li {
         float: left;
-        margin-left: 10px;
       }
     }
   }
@@ -88,6 +78,5 @@ footer {
 
   p.attribution {
     text-align: center;
-    padding: 0 0 16px;
   }
 }
