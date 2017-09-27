@@ -11,12 +11,11 @@
       <div class="collapse navbar-collapse" id="containerNavbar">
         @if (has_nav_menu('primary_navigation'))
           {!! wp_nav_menu([
-          'menu' => 'primary_navigation',
-          'menu_class' => 'navbar-nav mr-auto',
           'theme_location' => 'primary_navigation',
+          'menu' => 'Primary Navigation',
+          'menu_class' => 'navbar-nav mr-auto',
           'depth' => 3,
-          'container' => 'div',
-          'container-class' => 'collapse navbar-collapse',
+          'echo' => true,
           'fallback_cb' => '__return_empty_string',
           'walker' => \App\App::navWalker() ]) !!}
         @endif

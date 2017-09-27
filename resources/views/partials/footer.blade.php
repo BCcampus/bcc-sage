@@ -6,10 +6,7 @@
             <h4>BCcampus Services</h4>
             {!! wp_nav_menu( [
             'theme_location' => 'footer_navigation_1',
-            'menu' => 'footer_navigation_1',
-            'container' => 'nav',
-            'container_class' => 'widget col-sm-3',
-            'container_id' => '',
+            'menu' => 'Footer Primary Navigation',
             'menu_class' => 'menu nav flex-column',
             'menu_id' => '',
             'echo' => true,
@@ -28,10 +25,7 @@
             <h4>BCcampus</h4>
             {!! wp_nav_menu([
             'theme_location' => 'footer_navigation_2',
-            'menu' => 'footer_navigation_2',
-            'container' => 'nav',
-            'container_class' => 'widget col-sm-3',
-            'container_id' => '',
+            'menu' => 'Footer Secondary Navigation',
             'menu_class' => 'menu nav flex-column',
             'menu_id' => '',
             'echo' => true,
@@ -65,10 +59,7 @@
           <nav class="footer-links menu widget col-sm-3" role="navigation">
             {!! wp_nav_menu( [
             'theme_location' => 'footer_navigation_3',
-            'menu' => 'footer_navigation_3',
-            'container' => 'nav',
-            'container_class' => 'footer-links menu widget col-sm-3',
-            'container_id' => '',
+            'menu' => 'Footer Horizontal Navigation',
             'menu_class' => 'menu',
             'menu_id' => '',
             'echo' => true,
