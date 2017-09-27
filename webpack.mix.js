@@ -34,7 +34,8 @@ mix.browserSync({
 });
 
 // Sass
-mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`);
+mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`)
+  .version();
 
 // Javascript required on every page
 mix.autoload({
@@ -45,7 +46,8 @@ mix.autoload({
 
 // compiled Javascript
 mix.js(`${assets}/scripts/main.js`, `${dist}/scripts`)
-  .js(`${assets}/scripts/customizer.js`, `${dist}/scripts`);
+  .js(`${assets}/scripts/customizer.js`, `${dist}/scripts`)
+  .version();
 
 // Assets
 mix.copy(`${assets}/fonts`, `${dist}/fonts`, false)

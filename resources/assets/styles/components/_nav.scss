@@ -1,129 +1,17 @@
-/****** NAVBAR *****/
-
-.navbar-inner {
-  background-color: $color-white;
-  background-image: none;
-  background-repeat: no-repeat;
-  filter: none;
-}
-
-.navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
-  @include no-shadows;
-  border-top: 1px solid $color-grey;
-}
-
-.navbar-search {
-  margin-top: 2%;
-
-  .search-query {
-    border-radius: 0;
-  }
-}
-
-.navbar .nav {
-  float: right;
-}
-
-.navbar-default {
-  margin-bottom: 0;
-}
-
-/** dropdown on hover **/
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  right: 0;
-  left: auto;
-  padding: 2px 0;
-
-  .sub-menu {
-    left: 100%;
-    position: absolute;
-    top: 0;
-    visibility: hidden;
-    margin-top: -1px;
-  }
-
-  li:hover .sub-menu {
-    visibility: visible;
-  }
-}
-
-.navbar {
-  .sub-menu {
-    &::before {
-      border-bottom: 7px solid transparent;
-      border-left: none;
-      border-right: 7px solid rgba(0, 0, 0, 0.2);
-      border-top: 7px solid transparent;
-      left: -7px;
-      top: 10px;
-    }
-
-    &::after {
-      border-top: 6px solid transparent;
-      border-left: none;
-      border-right: 6px solid $color-white;
-      border-bottom: 6px solid transparent;
-      left: 10px;
-      top: 11px;
-    }
-  }
-
-  .nav {
-    > li > .dropdown-menu {
-      &::before {
-        right: 9px;
-        left: auto;
-      }
-
-      &::after {
-        right: 10px;
-        left: auto;
-        border-bottom: 6px solid $color-grey-light;
-      }
-    }
-
-    .dropdown-menu {
-      margin-top: 0;
-      background-color: $color-grey-light;
-      li {
-
-        a {
-          text-transform: none;
-          color: $color-black;
-          border-bottom: 1px solid $color-white;
-          line-height: 36px;
-
-          &:hover {
-            background-image: none;
-            background-color: $color-grey-light;
-            color: $color-green-aqua;
-          }
-        }
-
-        &:last-child a {
-          border-bottom: none;
-        }
-      }
-    }
-
-    li a {
-      text-transform: uppercase;
-      color: $color-blue;
-
-      &:hover {
-        color: $color-darker-blue;
-      }
-    }
-  }
-}
-
-.nav-tabs .dropdown-menu,
-.nav-pills .dropdown-menu {
-  margin-top: 0;
-}
+//li {
+//  div.dropdown-menu {
+//    div.dropdown-menu {
+//      display: block;
+//      padding: 0;
+//      text-indent: 3rem;
+//      margin: 0;
+//      font-size: 0.8rem;
+//      background-color: $color-grey-light;
+//      list-style: disc;
+//      border: 0;
+//      a.nav-link {
+//        color: $color-grey-darker;
+//      }
+//    }
+//  }
+//}

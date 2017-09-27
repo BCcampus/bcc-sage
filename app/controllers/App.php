@@ -33,6 +33,16 @@ class App extends Controller
     }
 
     /**
+     * get wp menu to act like bootstrap menu
+     *
+     * @return \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu
+     */
+    public static function navWalker(){
+        return new \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu();
+    }
+
+    /**
+     * robust breadcrumb functionality
      *
      * @return array
      */
