@@ -39,12 +39,12 @@ add_action( 'after_setup_theme', function () {
 	 * Register navigation menus
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
-    register_nav_menus( [
-        'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
-        'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
-        'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
-        'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
-    ] );
+	register_nav_menus( [
+		'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
+		'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
+		'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
+		'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
+	] );
 
 	/**
 	 * Enable post thumbnails
@@ -76,11 +76,12 @@ add_action( 'after_setup_theme', function () {
  */
 add_action( 'widgets_init', function () {
 	$widget_title = '<h4 class="widget-title">';
+	$default      = '<section class="widget %1$s %2$s">';
 	$three_col    = '<section class="widget col-sm-3 %1$s %2$s">';
 	$six_col      = '<section class="widget col-sm-6 %1$s %2$s">';
 
 	$config        = [
-		'before_widget' => $three_col,
+		'before_widget' => $default,
 		'after_widget'  => '</section>',
 		'before_title'  => $widget_title,
 		'after_title'   => '</h4>'

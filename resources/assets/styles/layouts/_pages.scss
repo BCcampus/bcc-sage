@@ -4,7 +4,11 @@
   border-bottom: 1px solid $color-grey-medium;
 }
 
-.main p.meta {
+main p.meta {
   font-style: italic;
   color: $caption-color;
+}
+
+main.col-sm-8 {
+  float: left;
 }

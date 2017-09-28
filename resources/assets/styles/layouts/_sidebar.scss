@@ -1,0 +1,28 @@
+#sidebar.fluid-sidebar.sidebar.col-sm-4 {
+  float: left;
+  margin-top: 40px;
+}
+
+#sidebar.fluid-sidebar.sidebar {
+
+  ul {
+    list-style: none;
+    padding-left: 1em;
+    pading-right: 1em;
+  }
+  ul li {
+    line-height: 26px;
+    font-size: 14px;
+  }
+}
+
+#sidebar h4.widget-title {
+  background-color: $color-grey-light;
+  border: 1px solid $color-grey;
+  padding: 8px 1em;
+  font-size: 18px;
+}
+
+#sidebar .widget {
+  margin-bottom: 18px;
+}
