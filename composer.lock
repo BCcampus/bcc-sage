@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a071d83c8bb3b7c8f6c5188d010ce203",
+    "content-hash": "c7d9f969af5b870673fc7be0bbb66fc6",
     "packages": [
+        {
+            "name": "bccampus/wp-bootwalker",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BCcampus/wp-bootwalker.git",
+                "reference": "a1f8214f01b4cd6bcfb65b90c876433ce04b2646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BCcampus/wp-bootwalker/zipball/a1f8214f01b4cd6bcfb65b90c876433ce04b2646",
+                "reference": "a1f8214f01b4cd6bcfb65b90c876433ce04b2646",
+                "shasum": ""
+            },
+            "require-dev": {
+                "humanmade/coding-standards": "^0.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BCcampus\\": "inc"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@standards"
+                ],
+                "standards": [
+                    "vendor/bin/phpcs --standard=phpcs.ruleset.xml inc"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brad Payne",
+                    "email": "brad@bradpayne.ca"
+                }
+            ],
+            "description": "WordPress Nav Walkers to implement Bootstrap navbars.",
+            "homepage": "https://github.com/BCcampus/wp-bootstrap-nav-walker",
+            "keywords": [
+                "bootstrap",
+                "bootstrap 4",
+                "nav walker",
+                "submenu",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/BCcampus/wp-bootwalker/tree/1.0.0",
+                "issues": "https://github.com/BCcampus/wp-bootwalker/issues"
+            },
+            "time": "2017-09-28T18:05:17+00:00"
+        },
         {
             "name": "brain/hierarchy",
             "version": "2.3.0",
@@ -673,52 +728,6 @@
             ],
             "description": "A library for WordPress breadcrumbs.",
             "time": "2017-07-23T11:15:15+00:00"
-        },
-        {
-            "name": "indigotree/wp-bootstrap-nav-walker",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/indigotree/wp-bootstrap-nav-walker.git",
-                "reference": "6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/indigotree/wp-bootstrap-nav-walker/zipball/6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd",
-                "reference": "6e501e3c5770c27ccf95ec53b5bfd7aea3ba17bd",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "IndigoTree\\BootstrapNavWalker\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christopher Geary",
-                    "email": "dev@crgeary.com"
-                },
-                {
-                    "name": "Indigo Tree",
-                    "email": "helloworld@indigotree.co.uk"
-                }
-            ],
-            "description": "WordPress Nav Walkers to implement Bootstrap navbars.",
-            "homepage": "https://github.com/indigotree/wp-bootstrap-nav-walker",
-            "keywords": [
-                "bootstrap",
-                "nav walker",
-                "wordpress"
-            ],
-            "time": "2017-04-11T15:04:45+00:00"
         },
         {
             "name": "nesbot/carbon",

@@ -35,10 +35,10 @@ class App extends Controller
     /**
      * get wp menu to act like bootstrap menu
      *
-     * @return \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu
+     * @return \BCcampus\BootWalker
      */
     public static function navWalker(){
-        return new \IndigoTree\BootstrapNavWalker\Four\WalkerNavMenu();
+        return new \BCcampus\BootWalker();
     }
 
     /**

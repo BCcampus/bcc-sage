@@ -1,17 +1,9 @@
-//li {
-//  div.dropdown-menu {
-//    div.dropdown-menu {
-//      display: block;
-//      padding: 0;
-//      text-indent: 3rem;
-//      margin: 0;
-//      font-size: 0.8rem;
-//      background-color: $color-grey-light;
-//      list-style: disc;
-//      border: 0;
-//      a.nav-link {
-//        color: $color-grey-darker;
-//      }
-//    }
-//  }
-//}
+nav{
+  .submenu{
+    background-color: $color-grey-light;
+    padding-left: 1.70rem;
+    a{
+      font-size: smaller;
+    }
+  }
+}
