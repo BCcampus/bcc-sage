@@ -39,13 +39,13 @@ add_action( 'after_setup_theme', function () {
 	 * Register navigation menus
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
-	register_nav_menus( [
-		'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
-		'homepage_navigation' => __( 'Homepage Navigation', 'bcc-sage' ),
-		'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
-		'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
-		'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
-	] );
+    register_nav_menus( [
+        'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
+        'homepage_navigation' => __( 'Homepage Navigation', 'bcc-sage' ),
+        'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
+        'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
+        'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' )
+    ] );
 
 	/**
 	 * Enable post thumbnails

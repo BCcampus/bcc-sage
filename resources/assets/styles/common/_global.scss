@@ -92,6 +92,10 @@ a {
 
 .text-inverse {
   color: $color-white;
+
+  li a{
+    color: $color-white;
+  }
 }
 
 p.tags {
