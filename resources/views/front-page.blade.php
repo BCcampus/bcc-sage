@@ -1,11 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.front')
 
 @section('content')
-  {{--@debug('hierarchy')--}}
-  {{--@debug('controller')--}}
-  {{--@debug('dump')--}}
-  @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @include('partials.content-page')
-  @endwhile
+  @include('partials.brochure')
+  @include('partials.projects')
 @endsection
