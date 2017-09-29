@@ -3,7 +3,7 @@
     <div id="widget-footer" class="clearfix row-fluid">
       @if(has_nav_menu('footer_navigation_1'))
         <nav class="widget col-sm-3">
-          <h4>Services</h4>
+          <h4>Lines of Service</h4>
           {!! wp_nav_menu( ['theme_location' => 'footer_navigation_1', 'menu' => 'Footer Primary Navigation', 'menu_class' => 'menu nav flex-column', 'depth' => 0 ] ) !!}
         </nav>
       @endif
