@@ -4,16 +4,12 @@
     <div class="row clearfix">
       <div class="col-xs-12 col-sm-6 col-md-4 darker-grey text-inverse height-5">
         <div class="vertical-align barbs-special-sauce">
-          <h3>Services</h3>
-          <ul class="no-bullets">
-            <li><a href="https://edtech.bccampus.ca/" class="text-inverse">Educational Technology</a></li>
-            <li><a href="/about-us/collaborative-projects/" class="text-inverse">Collaborative Projects</a></li>
-            <li><a href="/student-and-data-exchange-services/" class="text-inverse">Student Data Services</a></li>
-            <li><a href="/professional-learning/" class="text-inverse">Professional Learning</a></li>
-            <li><a href="/about-us/curriculum-services-and-applied-research/" class="text-inverse">Open Education</a>
-            </li>
-            <li><a href="/open-textbook-project/" class="text-inverse">Open Textbook Project</a></li>
-          </ul>
+          @if(has_nav_menu('homepage_navigation'))
+            <nav>
+              <h4>Services</h4>
+              {!! wp_nav_menu( ['theme_location' => 'homepage_navigation', 'menu' => 'Homepage Navigation', 'menu_class' => 'text-inverse menu nav flex-column', 'depth' => 0 ] ) !!}
+            </nav>
+          @endif
           <p><a href="/services/">Learn more</a> <i class="fa fa-inverse fa-arrow-right fa-lg"></i></p>
         </div>
       </div>
