@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BCcampus/wp-bootwalker.git",
-                "reference": "a1f8214f01b4cd6bcfb65b90c876433ce04b2646"
+                "reference": "9d7d6348a211159c1d296430852b4c89d0e945f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BCcampus/wp-bootwalker/zipball/a1f8214f01b4cd6bcfb65b90c876433ce04b2646",
-                "reference": "a1f8214f01b4cd6bcfb65b90c876433ce04b2646",
+                "url": "https://api.github.com/repos/BCcampus/wp-bootwalker/zipball/9d7d6348a211159c1d296430852b4c89d0e945f3",
+                "reference": "9d7d6348a211159c1d296430852b4c89d0e945f3",
                 "shasum": ""
             },
             "require-dev": {
@@ -59,7 +59,7 @@
                 "source": "https://github.com/BCcampus/wp-bootwalker/tree/1.0.0",
                 "issues": "https://github.com/BCcampus/wp-bootwalker/issues"
             },
-            "time": "2017-09-28T18:05:17+00:00"
+            "time": "2017-09-28T18:14:46+00:00"
         },
         {
             "name": "brain/hierarchy",
