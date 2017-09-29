@@ -4,10 +4,10 @@
     <div class="row clearfix">
       <div class="col-xs-12 col-sm-6 col-md-4 darker-grey text-inverse height-5">
         <div class="vertical-align barbs-special-sauce">
-          @if(has_nav_menu('homepage_navigation'))
+          @if(has_nav_menu('footer_navigation_1'))
             <nav>
-              <h4>Services</h4>
-              {!! wp_nav_menu( ['theme_location' => 'homepage_navigation', 'menu' => 'Homepage Navigation', 'menu_class' => 'text-inverse menu nav flex-column', 'depth' => 0 ] ) !!}
+              <h4>Lines of Service</h4>
+              {!! wp_nav_menu( ['theme_location' => 'footer_navigation_1', 'menu' => 'Footer Primary Navigation', 'menu_class' => 'text-inverse menu nav flex-column', 'depth' => 0 ] ) !!}
             </nav>
           @endif
           <p><a href="/services/">Learn more</a> <i class="fa fa-inverse fa-arrow-right fa-lg"></i></p>
