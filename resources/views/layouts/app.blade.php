@@ -4,9 +4,9 @@
 <body @php(body_class())>
 @php(do_action('get_header'))
     @include('partials.header')
-    <div class="wrap container container-fluid " role="document">
-        <div class="content clearfix row-fluid">
-            <main class="col-sm-8 clearfix">
+    <div class="wrap container-fluid " role="document">
+        <div class="content row">
+            <main class="col-sm-8">
                 @yield('content')
             </main>
             @if (App\display_sidebar())
