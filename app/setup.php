@@ -44,6 +44,12 @@ add_action( 'wp_enqueue_scripts', function () {
         null
     );
     wp_enqueue_script('uio.js', get_theme_file_uri() . '/lib/infusion/infusion-uiOptions.js', ['jquery'], null, true);
+
+
+    /* convey PHP data into the JavaScript */
+    $php_data = array('pluginUrl' => get_theme_file_uri() );
+    wp_localize_script( 'uio.js', 'phpData', $php_data );
+
 }, 100 );
 
 /**

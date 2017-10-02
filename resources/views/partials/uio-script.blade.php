@@ -5,10 +5,10 @@
     $('main').prepend(tocPlaceholder);
 
     fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
-      tocTemplate: "/wp-content/themes/bcc-sage/lib/infusion/src/components/tableOfContents/html/TableOfContents.html",
+      tocTemplate: phpData.pluginUrl + "/lib/infusion/src/components/tableOfContents/html/TableOfContents.html",
       terms: {
-        templatePrefix: "/wp-content/themes/bcc-sage/lib/infusion/src/framework/preferences/html",
-        messagePrefix: "/wp-content/themes/bcc-sage/lib/infusion/src/framework/preferences/messages"
+        templatePrefix: phpData.pluginUrl + "/lib/infusion/src/framework/preferences/html",
+        messagePrefix: phpData.pluginUrl + "/lib/infusion/src/framework/preferences/messages"
       }
     });
   })
