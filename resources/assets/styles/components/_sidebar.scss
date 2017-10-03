@@ -1,0 +1,19 @@
+li.pagenav {
+
+  list-style: none;
+
+  li.page_item_has_children ~ li {
+    text-indent: 1rem;
+    border-bottom: 1px solid $color-grey-light;
+  }
+
+  li.page_item_has_children ~ li.page_item_has_children {
+    text-indent: 0;
+    border-bottom: none;
+  }
+
+  .current_page_item a {
+    color: $color-grey-darker;
+  }
+}
+
