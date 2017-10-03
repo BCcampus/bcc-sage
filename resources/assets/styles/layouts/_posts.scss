@@ -3,3 +3,14 @@ header.entry-header {
   margin: 40px 0 20px;
   border-bottom: 1px solid $color-grey-medium;
 }
+
+li.post-navigation {
+  list-style: none;
+  a {
+    color: $color-blue;
+  }
+}
+
+ul.post-navigation.clearfix{
+  background-color:#d1ecf1;
+}

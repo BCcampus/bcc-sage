@@ -70,6 +70,10 @@ a {
 /****************************************
 	Global Classes
 *****************************************/
+.entry-content {
+  padding-top: 1.2rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -93,7 +97,7 @@ a {
 .text-inverse {
   color: $color-white;
 
-  li a{
+  li a {
     color: $color-white;
   }
 }
@@ -106,11 +110,20 @@ p.tags {
     color: $color-white;
     background-color: $color-blue;
     vertical-align: baseline;
+    font-size: 75%;
+    font-weight: bold;
+    border-radius: .25em;
   }
 }
 
 .upper {
   text-transform: uppercase;
+}
+
+h1 {
+  &.entry-title {
+    margin-bottom: 0.625rem;
+  }
 }
 
 h4 small span.upper {
@@ -161,4 +174,8 @@ body.single #main {
 time.updated {
   font-style: italic;
   color: $caption-color;
+}
+
+.alert {
+  border-radius: 0;
 }
