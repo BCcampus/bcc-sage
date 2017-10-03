@@ -7,7 +7,9 @@
         @php(the_content())
     </div>
     <p class="byline author vcard">
-        {{ __('Posted by', 'sage') }} <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">{{ get_the_author() }}</a> &amp; filed under {{ the_category( ', ' ) }}.
+        {{ __('Posted by', 'sage') }} <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author"
+                                         class="fn">{{ get_the_author() }}</a> &amp; filed
+        under {{ the_category( ', ' ) }}.
     </p>
     <p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
     <footer class="alert alert-info">
@@ -20,6 +22,9 @@
         </nav>
         <hr>
         <p class="text-center">Related Articles</p>
+        @foreach($get_related_posts as $related_post)
+
+        @endforeach
     </footer>
     @php(comments_template('/partials/comments.blade.php'))
 </article>
