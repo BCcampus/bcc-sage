@@ -114,7 +114,6 @@ add_action( 'after_setup_theme', function () {
 add_action( 'widgets_init', function () {
 	$widget_title = '<h4 class="widget-title">';
 	$default      = '<section class="widget %1$s %2$s">';
-	$three_col    = '<section class="widget col-sm-3 %1$s %2$s">';
 	$six_col      = '<section class="widget col-sm-6 %1$s %2$s">';
 
 	$config        = [
