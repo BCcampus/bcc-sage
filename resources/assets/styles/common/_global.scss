@@ -157,3 +157,8 @@ body.single #main {
     background-color: $color-grey-darker;
   }
 }
+
+time.updated {
+  font-style: italic;
+  color: $caption-color;
+}
