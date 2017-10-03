@@ -1,0 +1,22 @@
+blockquote {
+  border: 5px solid $color-grey-light;
+  padding: 15px;
+
+  p {
+    margin-bottom: 0;
+    font-size: 17.5px;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+
+  small {
+    display: block;
+    line-height: 20px;
+    color: #999999;
+
+    &:before {
+      content: '\2014 \00A0';
+
+    }
+  }
+}

@@ -11,43 +11,17 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_style( 'sage/main.css', asset_path( 'styles/main.css' ), false, null );
-	wp_enqueue_script( 'sage/main.js', asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
-    wp_enqueue_style(
-        'uio/normalize.css',
-        get_theme_file_uri() . '/lib/infusion/src/lib/normalize/css/normalize.css',
-        false,
-        null
-    );
-    wp_enqueue_style(
-        'uio/fluid.css',
-        get_theme_file_uri() . '/lib/infusion/src/framework/core/css/fluid.css',
-        false,
-        null
-    );
-    wp_enqueue_style(
-        'uio/enactors.css',
-        get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/Enactors.css',
-        false,
-        null
-    );
-    wp_enqueue_style(
-        'uio/prefseditor.css',
-        get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/PrefsEditor.css',
-        false,
-        null
-    );
-    wp_enqueue_style(
-        'uio/separatedpanelprefseditor.css',
-        get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css',
-        false,
-        null
-    );
-    wp_enqueue_script('uio.js', get_theme_file_uri() . '/lib/infusion/infusion-uiOptions.js', ['jquery'], null, true);
-
+    wp_enqueue_style( 'sage/main.css', asset_path( 'styles/main.css' ), false, null );
+    wp_enqueue_script( 'sage/main.js', asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+    wp_enqueue_style( 'uio/normalize.css', get_theme_file_uri() . '/lib/infusion/src/lib/normalize/css/normalize.css', false, null );
+    wp_enqueue_style( 'uio/fluid.css', get_theme_file_uri() . '/lib/infusion/src/framework/core/css/fluid.css', false, null );
+    wp_enqueue_style( 'uio/enactors.css', get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/Enactors.css', false, null );
+    wp_enqueue_style( 'uio/prefseditor.css', get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/PrefsEditor.css', false, null );
+    wp_enqueue_style( 'uio/separatedpanelprefseditor.css', get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css', false, null );
+    wp_enqueue_script( 'uio.js', get_theme_file_uri() . '/lib/infusion/infusion-uiOptions.js', [ 'jquery' ], null, true );
 
     /* convey PHP data into the JavaScript */
-    $php_data = array('pluginUrl' => get_theme_file_uri() );
+    $php_data = array( 'pluginUrl' => get_theme_file_uri() );
     wp_localize_script( 'uio.js', 'phpData', $php_data );
 
 }, 100 );

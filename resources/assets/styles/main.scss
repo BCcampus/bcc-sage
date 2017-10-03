@@ -16,11 +16,11 @@
 @import "common/mixins";
 @import "common/global";
 @import "components/buttons";
+@import "components/blockquote";
 @import "components/comments";
 @import "components/forms";
 @import "components/lists";
 @import "components/nav";
-@import "components/sidebar";
 @import "components/uio";
 @import "components/wp-classes";
 @import "layouts/header";
@@ -28,5 +28,4 @@
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
-@import "layouts/tinymce";
 @import "layouts/front-page";
