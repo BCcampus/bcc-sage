@@ -35,7 +35,6 @@ mix.browserSync({
 
 // Sass
 mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`)
-  .sass(`${assets}/styles/editor.scss`, `${dist}/styles/editor-style.css`)
 
 // Javascript required on every page
 mix.autoload({

@@ -86,7 +86,7 @@ add_filter( 'mce_css', function ( $url ) {
     }
     // Retrieves the plugin directory URL
     // Change the path here if using different directories
-    $url .= get_theme_file_uri() . '/dist/styles/editor-style.css';
+    $url .= get_theme_file_uri() . '/dist/styles/main.css';
 
     return $url;
 } );

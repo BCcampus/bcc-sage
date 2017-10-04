@@ -6,9 +6,6 @@
     ],
     "customizer": [
       "./scripts/customizer.js"
-    ],
-    "editor":[
-      "./styles/editor.scss"
     ]
   },
   "publicPath": "/wp-content/themes/bcc-sage",
