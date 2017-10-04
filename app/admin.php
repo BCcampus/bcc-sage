@@ -22,3 +22,10 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
 add_action('customize_preview_init', function () {
     wp_enqueue_script('sage/customizer.js', asset_path('scripts/customizer.js'), ['customize-preview'], null, true);
 });
+
+/**
+ * Editor Stylesheet
+ */
+add_action( 'admin_init', function (){
+    add_editor_style( 'dist/styles/editor-style.css' );
+});
