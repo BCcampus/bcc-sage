@@ -4,11 +4,13 @@ namespace App;
 
 use Sober\Controller\Controller;
 
-class RelatedPosts extends Controller {
+class Single extends Controller {
 	/*
 	 * Lists 5 post titles related to first tag on current post
 	 */
 	public function getRelatedPosts() {
+		global $post;
+
 		$tags          = wp_get_post_tags( $post->ID );
 		$cats          = wp_get_post_categories( $post->ID );
 		$first_cat     = $cats[0];

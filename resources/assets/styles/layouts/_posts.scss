@@ -11,6 +11,6 @@ li.post-navigation {
   }
 }
 
-ul.post-navigation.clearfix{
-  background-color:#d1ecf1;
+[itemprop="relatedLink"] {
+  color: $color-blue;
 }
