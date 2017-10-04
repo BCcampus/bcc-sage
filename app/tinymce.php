@@ -29,7 +29,7 @@ add_filter( 'tiny_mce_before_init', function ( $settings ) {
         array(
             'title'   => '[div]Alert Error',
             'block'   => 'div',
-            'classes' => 'alert alert-error',
+            'classes' => 'alert alert-danger',
             'wrapper' => 'div',
         ),
         array(
@@ -86,7 +86,7 @@ add_filter( 'mce_css', function ( $url ) {
     }
     // Retrieves the plugin directory URL
     // Change the path here if using different directories
-    $url .= get_theme_file_uri() . '/dist/styles/editor-style.css';
+    $url .= get_theme_file_uri() . '/dist/styles/main.css';
 
     return $url;
 } );
