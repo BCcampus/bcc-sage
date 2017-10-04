@@ -75,4 +75,19 @@ class App extends Controller
 
         return false;
     }
+
+    /**
+     * Weak attempt to differentiate descriptions for different pages
+     *
+     * @return string|void
+     */
+    public function getMetaDescription() {
+        $meta = get_the_excerpt();
+
+        if ( is_front_page() ) {
+            $meta = get_bloginfo( 'description', 'display' );
+        }
+
+        return $meta;
+    }
 }
