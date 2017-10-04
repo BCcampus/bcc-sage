@@ -102,7 +102,7 @@ add_action( 'init', function () {
  * @param $id
  * @param $post
  */
-function postPublishedNotification( $id, $post ) {
+function post_published_notification( $id, $post ) {
 
     // prevent firing on development servers
     if ( App::isProduction() === false ) {
@@ -132,6 +132,6 @@ function postPublishedNotification( $id, $post ) {
     ] );
 }
 
-add_action( 'publish_post', 'App\postPublishedNotification', 10, 2 );
-add_action( 'publish_page', 'App\postPublishedNotification', 10, 2 );
+add_action( 'publish_post', 'App\post_published_notification', 10, 2 );
+add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
 
