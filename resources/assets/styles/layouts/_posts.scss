@@ -13,6 +13,9 @@ li.post-navigation {
 
 .post-footer {
   background-color: $color-blue-info;
+  ul.clearfix {
+    padding-left: 0;
+  }
 }
 
 [itemprop="relatedLink"] {
