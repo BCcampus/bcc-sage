@@ -2,6 +2,8 @@
 
 namespace App;
 
+use RocketChatPhp;
+
 /**
  * Add <body> classes
  */
@@ -84,3 +86,52 @@ add_filter( 'sage/display_sidebar', function ( $display ) {
 
 	return $display;
 } );
+
+/**
+ * allows oembed to occur from BCcampus' Kaltura instance
+ */
+add_action( 'init', function () {
+    wp_oembed_add_provider( 'https://video.bccampus.ca/id/*', 'https://video.bccampus.ca/oembed/', false );
+} );
+
+/**
+ * Hooked into the save/update event of posts and pages
+ * On that event, it sends notifications to an instance of Rocket Chat
+ * and send emails.
+ *
+ * @param $id
+ * @param $post
+ */
+function postPublishedNotification( $id, $post ) {
+
+    // prevent firing on development servers
+    if ( App::isProduction() === false ) {
+        return;
+    }
+
+    $env = include( get_theme_file_path() . '/.env.php' );
+
+    $author    = $post->post_author;
+    $name      = get_the_author_meta( 'display_name', $author );
+    $modified  = get_the_modified_author();
+    $title     = $post->post_title;
+    $permalink = get_permalink( $id );
+    $to[]      = $env['rocket_chat']['EMAIL'];
+    $subject   = sprintf( 'Published: %s', $title );
+    $message   = sprintf( 'New content by %s modified by %s and titled “%s” has been published. ', $name, $modified, $title );
+    $message   .= sprintf( ' View: %s', $permalink );
+    $headers[] = '';
+
+    // email notification
+    wp_mail( $to, $subject, $message, $headers );
+
+    // rocket chat notification
+    $client = new RocketchatPhp\Client( $env['rocket_chat']['URL'], $env['rocket_chat']['KEY'] );
+    $client->payload( [
+        'text' => $message,
+    ] );
+}
+
+add_action( 'publish_post', 'App\postPublishedNotification', 10, 2 );
+add_action( 'publish_page', 'App\postPublishedNotification', 10, 2 );
+

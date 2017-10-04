@@ -17,7 +17,7 @@
           'depth' => 3,
           'echo' => true,
           'fallback_cb' => '__return_empty_string',
-          'walker' => \App\App::navWalker() ]) !!}
+          'walker' => $nav_walker ]) !!}
         @endif
       </div>
       {{--<form class="form-inline my-2 my-md-0 input-group" role="search" method="get" action="{{ home_url( '/' ) }}">--}}
@@ -27,7 +27,7 @@
     </nav>
     @if( ! is_front_page() )
       <nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-        @foreach ( \App\App::breadCrumbs() as $key => $item )
+        @foreach ( $bread_crumbs as $key => $item )
           @if ( empty( $item['link'] ) )
             <span class="breadcrumb-item" itemscope itemtype="http://schema.org/Thing"
                   itemprop="item">{{ esc_html( $item['title'] ) }}</span>

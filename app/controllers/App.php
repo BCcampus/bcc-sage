@@ -4,6 +4,7 @@ namespace App;
 
 use Sober\Controller\Controller;
 use Inc2734\WP_Breadcrumbs;
+use BCcampus\BootWalker;
 
 class App extends Controller
 {
@@ -37,8 +38,8 @@ class App extends Controller
      *
      * @return \BCcampus\BootWalker
      */
-    public static function navWalker(){
-        return new \BCcampus\BootWalker();
+    public function navWalker(){
+        return new BootWalker();
     }
 
     /**
@@ -46,10 +47,32 @@ class App extends Controller
      *
      * @return array
      */
-    public static function breadCrumbs() {
+    public function breadCrumbs() {
         $bc = new WP_Breadcrumbs\Breadcrumbs();
 
         return $bc->get();
 
+    }
+
+    public static function isProduction() {
+        $url      = get_site_url( get_current_blog_id() );
+        $host     = parse_url( $url, PHP_URL_HOST );
+        $expected = array(
+            'bccampus.ca',
+            'etug.ca',
+            'bctlc.ca',
+        );
+
+        // target subdomains
+        $parts       = explode( '.', $host );
+        $tld         = array_pop( $parts );
+        $sld         = array_pop( $parts );
+        $base_domain = $sld . '.' . $tld;
+
+        if ( in_array( $base_domain, $expected ) ) {
+            return true;
+        }
+
+        return false;
     }
 }
