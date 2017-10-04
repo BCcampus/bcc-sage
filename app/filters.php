@@ -142,3 +142,16 @@ add_filter( 'excerpt_length', function ( $length ) {
     return 65;
 }, 999 );
 
+/**
+ * At one point the site wasn't served over ssl
+ */
+add_filter( 'the_content', function ( $content ) {
+    static $searches = array(
+        '#<(?:img) .*?src=[\'"]\Khttp://[^\'"]+#i',
+    );
+    $content = preg_replace_callback( $searches, function ( $matches ) {
+        return '' . substr( $matches[0], 5 );
+    }, $content );
+
+    return $content;
+} );
