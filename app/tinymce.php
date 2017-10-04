@@ -29,7 +29,7 @@ add_filter( 'tiny_mce_before_init', function ( $settings ) {
         array(
             'title'   => '[div]Alert Error',
             'block'   => 'div',
-            'classes' => 'alert alert-error',
+            'classes' => 'alert alert-danger',
             'wrapper' => 'div',
         ),
         array(
