@@ -44,7 +44,7 @@ a {
   &:hover,
   &:focus {
     text-decoration-style: dotted;
-    color: $color-darker-blue;
+    color: $color-blue-darker;
   }
 
   &:hover img.grey-hover,
@@ -173,7 +173,7 @@ body.single #main {
 
 time.updated {
   font-style: italic;
-  color: $caption-color;
+  color: $color-grey-caption;
 }
 
 .alert {
