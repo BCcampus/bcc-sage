@@ -1,6 +1,5 @@
 <article itemscope itemtype="http://schema.org/Article" @php(post_class()) itemref="dateModified">
   <meta itemprop="headline" content="{!! get_the_title() !!}">
-  <meta itemprop="publisher" content="BCcampus">
   <header class="entry-header">
         <h1 itemprop="name" class="entry-title">{!! get_the_title() !!}</h1>
     </header>
