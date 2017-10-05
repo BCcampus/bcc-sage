@@ -1,5 +1,12 @@
 <article itemscope itemtype="http://schema.org/Article" @php(post_class()) itemref="dateModified">
   <meta itemprop="headline" content="{!! get_the_title() !!}">
+  <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="BCCampus">
+    <span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <meta itemprop="url"
+            content="https://bccampus.ca/wp-content/themes/wordpress-bootstrap-child/images/bccampus-logo.png">
+    </span>
+  </span>
   <header class="entry-header">
         <h1 itemprop="name" class="entry-title">{!! get_the_title() !!}</h1>
     </header>
