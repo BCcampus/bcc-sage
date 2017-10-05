@@ -5,7 +5,7 @@
       @include('partials/entry-meta')
     @endif
   </header>
-  <div class="entry-summary">
+  <div class="entry-summary" itemscope itemtype="http://schema.org/SearchResultsPage">
     @php(the_excerpt())
   </div>
 </article>

@@ -1,4 +1,4 @@
-<section class="row-fluid">
+<section class="row">
   <div class="col-sm-12">
     <h4 class="text-center pad">BCcampus Supported Projects</h4>
     <ul class="text-center inline no-margin pad">
