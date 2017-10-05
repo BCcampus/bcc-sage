@@ -1,15 +1,17 @@
-<article @php(post_class())>
-    <header class="entry-header">
-        <h1 class="entry-title">{!! get_the_title() !!}</h1>
+<article itemscope itemtype="http://schema.org/Article" @php(post_class()) itemref="dateModified">
+  <meta itemprop="headline" content="{!! get_the_title() !!}">
+  <meta itemprop="publisher" content="BCcampus">
+  <header class="entry-header">
+        <h1 itemprop="name" class="entry-title">{!! get_the_title() !!}</h1>
     </header>
     @include('partials/entry-meta')
-    <div class="entry-content">
+    <div itemprop="articleBody" class="entry-content">
         @php(the_content())
     </div>
     <p class="byline author vcard">
         {{ __('Posted by', 'bcc-sage') }} <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author"
-                                             class="fn">{{ get_the_author() }}</a> &amp; filed
-        under {{ the_category( ', ' ) }}.
+                                             class="fn"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ get_the_author() }}</span></span></a> &amp; filed
+        under <span itemprop="articleSection">{{ the_category( ', ' ) }}</span>.
     </p>
     <p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
     <footer class="post-footer alert alert-info">
@@ -24,7 +26,7 @@
         <p class="text-center">Related Articles</p>
         @if($get_related_posts)
             @foreach($get_related_posts as $related_post )
-                <a itemprop="relatedLink" href="{{$related_post->guid}}" rel="bookmark"
+                <a href="{{$related_post->guid}}" rel="bookmark"
                    title="Permanent Link to {{$related_post->post_title}}">{{$related_post->post_title}}</a>
             @endforeach
         @endif
