@@ -26,4 +26,17 @@ class Single extends Controller {
 
 		return $related_posts;
 	}
+
+	public function getUpcomingEvents() {
+		$args = array(
+			'post_type'      => 'ai1ec_event',
+			'post_status'    => 'publish',
+			'posts_per_page' => 5,
+		);
+
+		$upcoming_events = get_posts( $args );
+
+		return $upcoming_events;
+	}
+
 }

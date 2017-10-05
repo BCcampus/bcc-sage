@@ -6,6 +6,16 @@
     <div class="entry-content">
         @php(the_content())
     </div>
+    @if($get_upcoming_events)
+        <hr>
+        <div class="upcoming-events">
+            <p>Join us at an upcoming event:</p>
+            @foreach($get_upcoming_events as $upcoming_event )
+                <li><a href="{{$upcoming_event->guid}}" title="Permanent Link to {{$upcoming_event->post_title}}">{{$upcoming_event->post_title}}</a></li>
+            @endforeach
+        </div>
+        <hr>
+    @endif
     <p class="byline author vcard">
         {{ __('Posted by', 'bcc-sage') }} <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author"
                                              class="fn">{{ get_the_author() }}</a> &amp; filed
@@ -25,7 +35,7 @@
                 @endif
             </ul>
         </nav>
-        @if( ! is_singular( 'ai1ec_event' ))
+        @if( !is_singular( 'ai1ec_event' ))
             <p class="text-center">Related Articles</p>
             <hr>
         @endif
