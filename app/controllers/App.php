@@ -77,17 +77,42 @@ class App extends Controller
     }
 
     /**
-     * Weak attempt to differentiate descriptions for different pages
      *
-     * @return string|void
      */
-    public function getMetaDescription() {
-        $meta = get_the_excerpt();
+    public function getMicroData() {
+        global $post;
+        $id          = $post->ID;
+        $meta        = get_post( $id, ARRAY_A );
+        $post_author = get_the_author_meta( 'display_name', $meta['post_author'] );
+        $keywords = ( ! is_array( $meta['tags_input'] ) ) ? 'connect,collaborate,innovate' : implode( ',', $meta['tags_input'] );
+        $excerpt     = ( is_front_page() ) ? get_bloginfo( 'description', 'display' ) : get_the_excerpt();
 
-        if ( is_front_page() ) {
-            $meta = get_bloginfo( 'description', 'display' );
+        // about
+        if ( is_array( $meta['post_category'] ) && ! empty( $meta['post_category'] ) ) {
+            foreach ( $meta['post_category'] as $cat ) {
+                $result = get_category( $cat, ARRAY_A );
+                if ( 'Uncategorized' != $result['cat_name'] ) {
+                    $subject[] = $result['cat_name'];
+                }
+            }
+            $categories = implode( ',', $subject );
         }
 
-        return $meta;
+        $about = "Author: {$post_author}, Publication Date: {$meta['post_date']}, Excerpt:{$excerpt}, Categories: {$categories}";
+
+        $micro_mapping = array(
+            'author'                 => $post_author,
+            'description'                  => $about,
+            'dateModified'           => $meta['post_modified'],
+            'datePublished'          => $meta['post_date'],
+            'keywords'               => $keywords,
+            'inLanguage'             => 'en',
+            'name'                   => $meta['post_title'],
+            'sourceOrganization' => 'BCcampus',
+            'url'                    => get_permalink(),
+        );
+
+        return $micro_mapping;
     }
+
 }
