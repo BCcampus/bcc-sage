@@ -16,12 +16,19 @@
         {!! wp_link_pages(['echo' => 1, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
         <nav>
             <ul class="clearfix">
-                <li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Article<br>%link') !!}</li>
-                <li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Article &raquo;<br>%link ') !!} </li>
+                @if( is_singular( 'ai1ec_event' ))
+                    <li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Event<br>%link') !!} </li>
+                    <li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Event &raquo;<br>%link ') !!} </li>
+                @else
+                    <li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Article<br>%link') !!} </li>
+                    <li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Article &raquo;<br>%link ') !!} </li>
+                @endif
             </ul>
         </nav>
-        <hr>
-        <p class="text-center">Related Articles</p>
+        @if( ! is_singular( 'ai1ec_event' ))
+            <p class="text-center">Related Articles</p>
+            <hr>
+        @endif
         @if($get_related_posts)
             @foreach($get_related_posts as $related_post )
                 <a itemprop="relatedLink" href="{{$related_post->guid}}" rel="bookmark"
