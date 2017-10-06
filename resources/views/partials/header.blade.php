@@ -29,11 +29,11 @@
       <nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
         @foreach ( $bread_crumbs as $key => $item )
           @if ( empty( $item['link'] ) )
-            <span class="breadcrumb-item" itemscope itemtype="http://schema.org/Thing"
-                  itemprop="item">{{ esc_html( $item['title'] ) }}</span>
+            <span class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem"
+                  itemprop="itemListElement">{{ esc_html( $item['title'] ) }}</span>
           @else
-            <a class="breadcrumb-item" itemscope itemtype="http://schema.org/Thing" itemprop="item"
-               href="{{ esc_url( $item['link'] ) }}">{{ esc_html( $item['title'] ) }}</a>
+            <a class="breadcrumb-item" itemprop="item"
+               href="{{ esc_url( $item['link'] ) }}"><span itemprop="name">{{ esc_html( $item['title'] ) }}</span></a>
           @endif
         @endforeach
       </nav>
