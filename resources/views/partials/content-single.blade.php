@@ -3,8 +3,7 @@
   <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="BCCampus">
     <span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <meta itemprop="url"
-            content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png">
+      <meta itemprop="url" content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png">
     </span>
   </span>
   <header class="entry-header">
