@@ -29,3 +29,19 @@ li.post-navigation {
     content: "";
   }
 }
+
+.upcoming-events {
+
+  p {
+    color: $color-grey-caption;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  li {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+  }
+}
