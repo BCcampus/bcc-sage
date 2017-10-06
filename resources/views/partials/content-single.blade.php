@@ -8,11 +8,13 @@
     </div>
     @if($get_upcoming_events)
         <hr>
-        <div class="upcoming-events">
+        <div class="upcoming-events" itemscope itemtype="http://schema.org/Event">
             <p>Join us at an upcoming event:</p>
+          <ul>
             @foreach($get_upcoming_events as $upcoming_event )
-                <li><a href="{{$upcoming_event->guid}}" title="Permanent Link to {{$upcoming_event->post_title}}">{{$upcoming_event->post_title}}</a></li>
-            @endforeach
+              <li><a itemprop="url" href="{{$upcoming_event['link']}}" title="Permanent Link to {{$upcoming_event['title']}}"><span itemprop="name">{{$upcoming_event['title']}}</span></a> — <span itemprop="startDate">{{$upcoming_event['start']}}</span></li>
+          @endforeach
+          </ul>
         </div>
         <hr>
     @endif
