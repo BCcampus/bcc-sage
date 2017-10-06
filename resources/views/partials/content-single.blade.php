@@ -20,7 +20,7 @@
     </p>
     <p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
     <footer class="post-footer alert alert-info">
-        {!! wp_link_pages(['echo' => 1, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+        {!! wp_link_pages(['echo' => 1, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'bcc-sage'), 'after' => '</p></nav>']) !!}
         <nav>
             <ul class="clearfix">
                 <li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Article<br>%link') !!}</li>
