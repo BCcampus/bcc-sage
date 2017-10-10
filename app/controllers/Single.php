@@ -26,6 +26,7 @@ class Single extends Controller {
 
 		return $related_posts;
 	}
+
     /**
      * Cloodge of a function for poorly documented plugin
      * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95

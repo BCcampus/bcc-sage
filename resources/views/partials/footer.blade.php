@@ -19,7 +19,7 @@
   <div id="bottom-foot">
     <div class="clearfix container-fluid">
       <p class="copyright pull-left">
-        <a class="pull-left" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+        <a itemprop="license" class="pull-left" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
         <small>
           Except where otherwise noted, content on this site is licensed under a <a rel="license"
