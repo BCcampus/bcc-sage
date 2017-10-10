@@ -32,14 +32,9 @@ class Single extends Controller {
      * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
      *
      * @return mixed
-     */
-	public static function getUpcomingEvents() {
+
+	public function getUpcomingEvents() {
         global $ai1ec_registry;
-
-        if ( ! is_object( $ai1ec_registry ) ) {
-            return '';
-        }
-
         $t = $ai1ec_registry->get( 'date.system' );
 
         // Get localized time
@@ -65,5 +60,5 @@ class Single extends Controller {
 
         return $results;
     }
-
+     */
 }
