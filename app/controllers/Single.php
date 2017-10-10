@@ -26,13 +26,12 @@ class Single extends Controller {
 
 		return $related_posts;
 	}
-
     /**
      * Cloodge of a function for poorly documented plugin
      * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
      *
      * @return mixed
-     */
+
 	public function getUpcomingEvents() {
         global $ai1ec_registry;
         $t = $ai1ec_registry->get( 'date.system' );
@@ -60,5 +59,5 @@ class Single extends Controller {
 
         return $results;
     }
-
+     */
 }
