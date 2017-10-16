@@ -69,7 +69,7 @@ class App extends Controller
         $sld         = array_pop( $parts );
         $base_domain = $sld . '.' . $tld;
 
-        if ( in_array( $base_domain, $expected ) ) {
+        if ( in_array( $base_domain, $expected ) && 'helga.bccampus.ca' !== $host ) {
             return true;
         }
 
