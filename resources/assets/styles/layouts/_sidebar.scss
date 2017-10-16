@@ -8,8 +8,12 @@
     li {
       font-size: 0.9rem;
       padding-bottom: 0.6rem;
-      line-height: 1.6rem;
+      line-height: 1.3rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
     }
+
   }
 
   h4.widget-title {
