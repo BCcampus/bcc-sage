@@ -4,8 +4,7 @@ namespace App;
 
 use Sober\Controller\Controller;
 
-class Singular extends Controller
-{
+class Singular extends Controller {
     /**
      * Get ID of the parent at the top of the tree
      *
@@ -15,9 +14,15 @@ class Singular extends Controller
      */
     public static function getParentId( $id ) {
 
-    $ancestors = get_post_ancestors( $id );
+        // see if the ID has a parent
+        $parent_id = wp_get_post_parent_id( $id );
 
-    return array_pop($ancestors);
+        if ( false == $parent_id ) {
+            $ancestors = get_post_ancestors( $id );
+            $parent_id = array_pop( $ancestors );
+        }
+
+        return $parent_id;
 
     }
 
