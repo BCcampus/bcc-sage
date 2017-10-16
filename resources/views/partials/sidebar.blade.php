@@ -3,7 +3,7 @@
   'depth'        => -1,
   'show_date'    => '',
   'date_format'  => get_option( 'date_format' ),
-  'child_of'     => \App\Singular::getParentId( $post->ID ),
+  'child_of'     => $post->post_parent,
   'exclude'      => '',
   'title_li'     => '<a href="' . get_the_permalink( \App\Singular::getParentId( $post->ID ) ) . '">' . get_the_title( \App\Singular::getParentId( $post->ID ) ) . '</a>',
   'echo'         => 0,
