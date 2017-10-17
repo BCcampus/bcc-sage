@@ -23,7 +23,7 @@ X
 ## Bug report
 
 <!-- (delete this section if not applicable) -->
-**Where did the bug happen? Provide the link if possible **
+**Where did the bug happen? Provide the link if possible**
 
 X
 
