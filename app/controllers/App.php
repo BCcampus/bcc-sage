@@ -115,4 +115,31 @@ class App extends Controller
         return $micro_mapping;
     }
 
+
+    /**
+     * Useful in `wp_list_pages` to return different title if the
+     * current post is tier2 in ancestor tree
+     *
+     * @param $id
+     *
+     * @return false|int|mixed|null|void
+     */
+    public static function getListHeading( $id ) {
+
+        // see if the ID has a parent
+        $parent_id = wp_get_post_parent_id( $id );
+
+        // safety
+        if ( false === $parent_id ) {
+            $parent_id = $id;
+        }
+
+        // top of the tree, return id of front page
+        if ( 0 == $parent_id ) {
+            $parent_id = get_option( 'page_on_front' );
+        }
+
+        return $parent_id;
+
+    }
 }

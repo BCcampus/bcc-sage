@@ -1,11 +1,11 @@
 @if(is_page())
   {!! wp_list_pages( [
-  'depth'        => -1,
+  'depth'        => 2,
   'show_date'    => '',
   'date_format'  => get_option( 'date_format' ),
   'child_of'     => $post->post_parent,
   'exclude'      => '',
-  'title_li'     => '<a href="' . get_the_permalink( \App\Singular::getParentId( $post->ID ) ) . '">' . get_the_title( \App\Singular::getParentId( $post->ID ) ) . '</a>',
+  'title_li'     => '<span class="fa fa-chevron-circle-left" aria-hidden="true"></span> <a href="' . get_the_permalink( \App\App::getListHeading( $post->ID ) ) . '">' . get_the_title( \App\App::getListHeading( $post->ID ) ) . '</a>',
   'echo'         => 0,
   'authors'      => '',
   'sort_column'  => 'post_parent',
