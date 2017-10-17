@@ -2,7 +2,7 @@
 
   ul {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 1.8rem;
     padding-right: 1rem;
 
     li {
@@ -13,8 +13,8 @@
         padding-bottom: 0;
       }
     }
-
   }
+
 
   h4.widget-title {
     background-color: $color-grey-light;
@@ -28,21 +28,24 @@
   }
 
   li.pagenav {
-
     list-style: none;
 
-    li.page_item_has_children ~ li {
-      text-indent: 1rem;
-      border-bottom: 1px solid $color-grey-light;
-    }
+    .page_item {
 
-    li.page_item_has_children ~ li.page_item_has_children {
-      text-indent: 0;
-      border-bottom: none;
+      &.current_page_item > a {
+        color: $color-grey-darker;
+      }
     }
+    ul {
 
-    .current_page_item a {
-      color: $color-grey-darker;
+      li {
+
+        &:first-of-type {
+          padding-bottom: 0;
+        }
+
+      }
     }
   }
+
 }
