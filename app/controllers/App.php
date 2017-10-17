@@ -156,7 +156,6 @@ class App extends Controller {
      * @return false|int|mixed|null|void
      */
     public static function getListHeading( $id ) {
-        $maybe_grandparent_title = $maybe_parent_title = '';
         // check for children
         $args = [
             'post_parent' => $id,
@@ -164,44 +163,26 @@ class App extends Controller {
             'post_status' => 'publish'
         ];
 
-        $children        = get_children( $args );
-        $parent_id       = wp_get_post_parent_id( $id );
-        $grand_parent_id = wp_get_post_parent_id( $parent_id );
+        $children  = get_children( $args );
+        $parent_id = wp_get_post_parent_id( $id );
 
-        // no subpages heading will be a parent, grandparents will be grandparents
+        // no sub-pages heading will be a parent
         if ( empty( $children ) ) {
 
             // top of the tree, return id of front page
             if ( 0 === $parent_id ) {
-                $parent_id               = get_option( 'page_on_front' );
-                $maybe_grandparent_title = '';
+                $parent_id = get_option( 'page_on_front' );
             }
 
             $maybe_parent_title = get_the_title( $parent_id );
 
-            // set grandparent
-            if ( false !== $grand_parent_id ) {
-                // top of the tree, return id of front page
-                if ( 0 === $grand_parent_id ) {
-                    // tier3
-                    $grand_parent_id = get_option( 'page_on_front' );
-                }
-                $maybe_grandparent_title = '<span class="fa fa-angle-double-left" aria-hidden="true"></span> <a href="' . get_the_permalink( $grand_parent_id ) . '">' . get_the_title( $grand_parent_id ) . '</a><br>';
-
-            }
-
-        } else { // heading will be current post, grandparents will be parents
+        } else {
+            // heading will be current post
             $maybe_parent_title = get_the_title( $id );
-
-            if ( 0 === $parent_id ) {
-                $parent_id = get_option( 'page_on_front' );
-            }
-
-            $maybe_grandparent_title = '<span class="fa fa-angle-double-left" aria-hidden="true"></span> <a href="' . get_the_permalink( $parent_id ) . '">' . get_the_title( $parent_id ) . '</a><br>';
 
         }
 
-        $html = $maybe_grandparent_title . $maybe_parent_title;
+        $html = $maybe_parent_title;
 
         return $html;
     }
