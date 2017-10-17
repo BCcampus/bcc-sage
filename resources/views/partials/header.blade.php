@@ -9,7 +9,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
             <div class="collapse navbar-collapse" id="containerNavbar">
                 @if (has_nav_menu('primary_navigation'))
                     {!! wp_nav_menu([
@@ -22,10 +21,6 @@
                     'walker' => $nav_walker ]) !!}
                 @endif
             </div>
-            {{--<form class="form-inline my-2 my-md-0 input-group" role="search" method="get" action="{{ home_url( '/' ) }}">--}}
-            {{--<input type="text" class="form-control mr-sm-2" placeholder="{{ __('Search', 'bcc-sage' ) }}" name="s">--}}
-            {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{ __( 'Go!', 'bcc-sage' ) }}</button>--}}
-            {{--</form>--}}
         </nav>
         @if( ! is_front_page() )
             <nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
