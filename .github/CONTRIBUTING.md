@@ -1,1 +1,1 @@
-Please read [Contributing to Roots Projects](https://github.com/bccampus/guidelines/blob/master/CONTRIBUTING.md)
+To contribute you must be a ninja master trained in the art of "code-foo" by sensei, and jedi master **bdolor**.  
