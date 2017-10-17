@@ -5,3 +5,7 @@
 .banner .nav a {
   @extend .nav-link;
 }
+
+.search-form .search-submit {
+  display: none;
+}
