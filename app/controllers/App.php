@@ -130,7 +130,7 @@ class App extends Controller
         $parent_id = wp_get_post_parent_id( $id );
 
         // safety
-        if( false === $parent_id ){
+        if ( false === $parent_id ) {
             $parent_id = $id;
         }
 
@@ -138,7 +138,6 @@ class App extends Controller
         if ( 0 == $parent_id ) {
             $parent_id = get_option( 'page_on_front' );
         }
-
 
         return $parent_id;
 
