@@ -8,7 +8,7 @@
   'title_li'     => \App\App::getListHeading( $post->ID ),
   'echo'         => 0,
   'authors'      => '',
-  'sort_column'  => 'post_parent',
+  'sort_column'  => 'menu_order,post_parent',
   'link_before'  => '',
   'link_after'   => '',
   'item_spacing' => 'preserve',
