@@ -33,12 +33,12 @@ class Single extends Controller {
      *
      * @return mixed
      */
-	public static function getUpcomingEvents() {
-        global $ai1ec_registry;
-
-        if ( ! is_object( $ai1ec_registry ) ) {
-            return '';
+	public function getUpcomingEvents() {
+	    if( ! class_exists( 'Ai1ec_Loader') ){
+	        return false;
         }
+
+        global $ai1ec_registry;
 
         $t = $ai1ec_registry->get( 'date.system' );
 

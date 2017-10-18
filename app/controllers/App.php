@@ -92,6 +92,7 @@ class App extends Controller {
         $post_author = get_the_author_meta( 'display_name', $meta['post_author'] );
         $keywords    = ( ! is_array( $meta['tags_input'] ) ) ? 'connect,collaborate,innovate' : implode( ',', $meta['tags_input'] );
         $excerpt     = ( is_front_page() ) ? get_bloginfo( 'description', 'display' ) : get_the_excerpt();
+        $categories  = '';
 
         // about
         if ( is_array( $meta['post_category'] ) && ! empty( $meta['post_category'] ) ) {
