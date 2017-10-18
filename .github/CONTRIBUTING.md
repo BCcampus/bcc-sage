@@ -33,7 +33,7 @@ Guidelines for bug reports:
    latest `master` or development branch in the repository.
 
 3. **Isolate the problem** &mdash; make sure that the code in the repository is
-_definitely_ responsible for the issue. Most importantly, check if you can reproduce the problem [in the latest version of bcc-sage](https://github.com/BCcampus/bcc-sage/releases) running on the [latest version of WordPress](http://codex.wordpress.org/Upgrading_WordPress,) and verify if the problem happens with all other plugins deactived.
+_definitely_ responsible for the issue. Most importantly, check if you can reproduce the problem [in the latest version of bcc-sage](https://github.com/BCcampus/bcc-sage/releases/latest) running on the [latest version of WordPress](http://codex.wordpress.org/Upgrading_WordPress,) and verify if the problem happens with all other plugins deactived.
 
 A good bug report shouldn't leave others needing to chase you up for more
 information. Please try to be as detailed as possible in your report.
