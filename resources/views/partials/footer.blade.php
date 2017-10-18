@@ -27,7 +27,7 @@
           </small>
         </p>
         @if(has_nav_menu('footer_navigation_3'))
-          <nav class="footer-links menu widget">
+          <nav class="footer-links horizontal">
             {!! wp_nav_menu( ['theme_location' => 'footer_navigation_3', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '&nbsp;|&nbsp;', 'depth' => 0 ] ) !!}
           </nav>
         @endif

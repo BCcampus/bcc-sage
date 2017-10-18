@@ -50,18 +50,18 @@ footer {
     float: none;
     clear: both;
 
-    &.menu {
-      list-style-type: none;
-      margin-left: 0;
-      ul{
+    &.horizontal {
+      flex-direction: row;
+
+      ul {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
-        flex-direction: row;
-      }
-      li {
-        float: left;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
       }
     }
   }
