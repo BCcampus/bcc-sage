@@ -72,27 +72,6 @@ add_filter('comments_template', function ($comments_template) {
 });
 
 /**
- * The sage/display_sidebar filter can be used to define which conditions to enable the primary sidebar on.
- * https://github.com/roots/docs/blob/sage-9/sage/theme-sidebar.md#displaying-the-sidebar
- */
-add_filter( 'sage/display_sidebar', function ( $display ) {
-	static $display;
-
-	isset( $display ) || $display = in_array( true, [
-		// The sidebar will be displayed if any of the following return true
-		is_page(),
-		is_single(),
-        is_category(),
-        is_archive(),
-        is_search(),
-        is_404(),
-        is_home(),
-	] );
-
-	return $display;
-} );
-
-/**
  * allows oembed to occur from BCcampus' Kaltura instance
  */
 add_action( 'init', function () {

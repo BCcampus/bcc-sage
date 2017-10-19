@@ -14,6 +14,6 @@
   'item_spacing' => 'preserve',
   'walker'       => '',
   ] ); !!}
+@else
+  @php(dynamic_sidebar('sidebar-primary'))
 @endif
-
-@php(dynamic_sidebar('sidebar-primary'))

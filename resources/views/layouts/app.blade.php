@@ -11,11 +11,9 @@
             <main class="col-sm-8">
                 @yield('content')
             </main>
-            @if (App\display_sidebar())
                 <aside id="sidebar" class="col-sm-4">
                     @include('partials.sidebar')
                 </aside>
-            @endif
         </div>
     </div>
     @php(do_action('get_footer'))
