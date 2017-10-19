@@ -7,14 +7,13 @@
 
     li {
       font-size: 0.9rem;
-      padding-bottom: 0.6rem;
+      padding-bottom: 0.8rem;
       line-height: 1.3rem;
       &:last-child {
         padding-bottom: 0;
       }
     }
   }
-
 
   h4.widget-title {
     background-color: $color-grey-light;
