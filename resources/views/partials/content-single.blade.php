@@ -1,12 +1,12 @@
 <article itemscope itemtype="http://schema.org/Article" @php(post_class()) itemref="dateModified">
-    <meta itemprop="headline" content="{!! get_the_title() !!}">
-    <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+  <meta itemprop="headline" content="{!! get_the_title() !!}">
+  <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="BCCampus">
     <span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
       <meta itemprop="url" content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png">
     </span>
   </span>
-    <header class="entry-header">
+  <header class="entry-header">
         <h1 itemprop="name" class="entry-title">{!! get_the_title() !!}</h1>
     </header>
     @include('partials/entry-meta')
@@ -17,22 +17,17 @@
         <hr>
         <div class="upcoming-events" itemscope itemtype="http://schema.org/Event">
             <p>Join us at an upcoming event:</p>
-            <ul>
-                @foreach($get_upcoming_events as $upcoming_event )
-                    <li><a itemprop="url" href="{{$upcoming_event['link']}}"
-                           title="Permanent Link to {{$upcoming_event['title']}}"><span
-                                    itemprop="name">{{$upcoming_event['title']}}</span></a> — <span
-                                itemprop="startDate">{{$upcoming_event['start']}}</span></li>
-                @endforeach
-            </ul>
+          <ul>
+            @foreach($get_upcoming_events as $upcoming_event )
+              <li><a itemprop="url" href="{{$upcoming_event['link']}}" title="Permanent Link to {{$upcoming_event['title']}}"><span itemprop="name">{{$upcoming_event['title']}}</span></a> — <span itemprop="startDate">{{$upcoming_event['start']}}</span></li>
+          @endforeach
+          </ul>
         </div>
         <hr>
     @endif
     <p class="byline author vcard">
         {{ __('Posted by', 'bcc-sage') }} <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author"
-                                             class="fn"><span itemprop="author" itemscope
-                                                              itemtype="http://schema.org/Person"><span
-                        itemprop="name">{{ get_the_author() }}</span></span></a> &amp; filed
+                                             class="fn"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ get_the_author() }}</span></span></a> &amp; filed
         under <span itemprop="articleSection">{{ the_category( ', ' ) }}</span>.
     </p>
     <p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
@@ -55,7 +50,7 @@
         @endif
         @if($get_related_posts)
             @foreach($get_related_posts as $related_post )
-                <a itemprop="relatedLink" href="{{$related_post->guid}}" rel="bookmark"
+                <a href="{{$related_post->guid}}" rel="bookmark"
                    title="Permanent Link to {{$related_post->post_title}}">{{$related_post->post_title}}</a>
             @endforeach
         @endif
