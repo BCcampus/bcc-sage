@@ -16,8 +16,8 @@
       @php(dynamic_sidebar('footer-3'))
     </div>
   </div>
-  <div id="bottom-foot">
-    <div class="clearfix container-fluid row">
+  <div id="bottom-foot" class="clearfix container-fluid">
+    <div class="row">
       <div class="col-sm-4">
         <p class="copyright"><a itemprop="license" class="pull-left" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
             <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
