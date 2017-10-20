@@ -1,4 +1,4 @@
-@if(is_page())
+@if(is_page() && ! is_page(['calendar','contact-us']))
   {!! wp_list_pages( [
   'depth'        => 2,
   'show_date'    => '',
@@ -14,6 +14,7 @@
   'item_spacing' => 'preserve',
   'walker'       => '',
   ] ); !!}
+  @php(dynamic_sidebar('sidebar-primary'))
 @else
   @php(dynamic_sidebar('sidebar-primary'))
 @endif
