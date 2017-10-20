@@ -1,7 +1,8 @@
 @import "common/variables";
 
 /** Import everything from autoload */
-@import "./autoload/**/*";
+@import "~font-awesome/scss/font-awesome";
+@import "~bootstrap/scss/bootstrap";
 
 /**
  * Import npm dependencies
@@ -12,14 +13,19 @@
 // @import "~some-node-module";
 
 /** Import theme styles */
+@import "common/mixins";
 @import "common/global";
 @import "components/buttons";
+@import "components/blockquote";
 @import "components/comments";
 @import "components/forms";
+@import "components/lists";
+@import "components/nav";
+@import "components/uio";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
-@import "layouts/tinymce";
+@import "layouts/front-page";

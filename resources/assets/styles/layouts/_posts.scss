@@ -1,0 +1,35 @@
+header.entry-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid $color-grey-medium;
+}
+
+li.post-navigation {
+  list-style: none;
+  a {
+    color: $color-blue;
+  }
+}
+
+.post-footer {
+  background-color: $color-blue-info;
+  ul.clearfix {
+    padding-left: 0;
+  }
+}
+
+.upcoming-events {
+
+  p {
+    color: $color-grey-caption;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  li {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+  }
+}

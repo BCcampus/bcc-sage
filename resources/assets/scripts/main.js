@@ -1,8 +1,8 @@
 // import external dependencies
 import 'jquery';
+import 'bootstrap';
+import 'popper.js';
 
-// Import everything from autoload
-import "./autoload/**/*"
 
 // import local dependencies
 import Router from './util/Router';

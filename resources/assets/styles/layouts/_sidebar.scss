@@ -1,0 +1,50 @@
+#sidebar {
+
+  ul {
+    list-style: none;
+    padding-left: 1.8rem;
+    padding-right: 1rem;
+
+    li {
+      font-size: 0.9rem;
+      padding-bottom: 0.8rem;
+      line-height: 1.3rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  h4.widget-title {
+    background-color: $color-grey-light;
+    border: 1px solid $color-grey;
+    padding: 8px 1em;
+    font-size: 18px;
+  }
+
+  .widget {
+    margin-bottom: 18px;
+  }
+
+  li.pagenav {
+    list-style: none;
+
+    .page_item {
+
+      &.current_page_item > a {
+        color: $color-grey-darker;
+      }
+    }
+    ul {
+
+      li {
+
+        &:first-of-type {
+          padding-top: .8rem;
+        }
+
+      }
+    }
+  }
+
+}

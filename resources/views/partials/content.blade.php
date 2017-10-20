@@ -1,4 +1,4 @@
-<article @php(post_class())>
+<article @php(post_class()) itemscope itemtype="http://schema.org/Article">
   <header>
     <h2 class="entry-title"><a href="{{ get_permalink() }}">{{ get_the_title() }}</a></h2>
     @include('partials/entry-meta')
