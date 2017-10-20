@@ -9,13 +9,26 @@ footer {
     &:hover {
       color: $color-blue;
     }
+
+    &.related-links {
+      color: $color-blue;
+      &:after {
+        color: $color-black;
+        content: "|";
+        padding-left: 5px;
+      }
+
+      &:last-child:after {
+        content: "";
+      }
+    }
   }
 
   .container-fluid {
     max-width: 1440px;
   }
 
-  #top-foot{
+  #top-foot {
     padding: 1rem;
     background-color: $color-black;
   }
