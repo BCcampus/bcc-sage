@@ -5,8 +5,6 @@
 
 bcc-Sage is the theme for the BCcampus marketing site, based on [Sage](https://roots.io/sage/).
 
-**Sage 9 is in active development and is currently in beta. The `master` branch tracks Sage 9 development. If you want a stable version, use the [latest Sage 8 release](https://github.com/roots/sage/releases/latest).**
-
 ## Features
 
 * Sass for stylesheets
