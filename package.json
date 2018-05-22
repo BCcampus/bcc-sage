@@ -100,7 +100,7 @@
     "rimraf": "^2.6.2",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-webpack-plugin": "^0.10.1"
+    "stylelint-webpack-plugin": "^0.10.5"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
