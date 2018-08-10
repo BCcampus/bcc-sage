@@ -2,6 +2,8 @@
 
 bcc-Sage is the theme for the BCcampus marketing site, based on [Sage](https://roots.io/sage/).
 
+[![Build Status](https://travis-ci.com/BCcampus/bcc-sage.svg?branch=dev)](https://travis-ci.com/BCcampus/bcc-sage)
+
 ## Features
 
 * Sass for stylesheets
