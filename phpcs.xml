@@ -1,71 +1,49 @@
 <?xml version="1.0"?>
 <ruleset name="Roots">
-  <description>Roots Coding Standards</description>
-
   <!-- Scan these files -->
   <file>resources/functions.php</file>
   <file>resources/index.php</file>
   <file>app</file>
   <file>resources/views</file>
-
+  <!-- Scan only PHP files -->
+  <arg name="extensions" value="php"/>
   <!-- Show colors in console -->
   <arg value="-colors"/>
-
-  <!-- Show sniff codes in all reports -->
+  <!-- Show progress -->
+  <arg value="p"/>
+  <!-- Be quiet -->
+  <arg value="q"/>
+  <!-- Include source codes in the report -->
   <arg value="s"/>
-
-  <!-- Use PSR-2 as a base -->
-  <rule ref="PSR2"/>
-
-  <!-- Exclusions below are for resources/views/ folder -->
-
-  <!-- Allow php files without any PHP in them -->
+  <!-- Use HM Coding Standards -->
+  <rule ref="vendor/humanmade/coding-standards">
+    <!-- Disable rules we overrides -->
+    <exclude name="WordPress.CSRF.NonceVerification.NoNonceVerification"/>
+    <!-- Disable rules we disagree with: -->
+    <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.MemberNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar"/>
+    <exclude name="WordPress.VIP.SessionVariableUsage"/>
+    <exclude name="WordPress.VIP.SessionFunctionsUsage"/>
+    <exclude name="WordPress.PHP.DiscouragedPHPFunctions.system_calls_exec"/>
+    <exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_ini_set"/>
+    <exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv"/>
+    <exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error"/>
+    <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning"/>
+  </rule>
+  <!-- Re-enable PSR rules we agree with -->
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+  <rule ref="PSR1.Methods.CamelCapsMethodName"/>
+  <!-- Disable Side Effects rule for cron scripts -->
+  <rule ref="PSR1.Files.SideEffects">
+    <exclude-pattern>/bin/*</exclude-pattern>
+  </rule>
+  <!-- Disable Namespaced Functions for cron scripts -->
+  <rule ref="HM.Functions.NamespacedFunctions">
+    <exclude-pattern>/bin/*</exclude-pattern>
+  </rule>
   <rule ref="Internal.NoCodeFound">
-    <exclude-pattern>resources/views</exclude-pattern>
+    <exclude-pattern>/resources/views/</exclude-pattern>
   </rule>
 
-  <!-- Allow braces on same line for named functions -->
-  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Allow closing braces to be on the same line -->
-  <rule ref="Squiz.WhiteSpace.ScopeClosingBrace">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Disable newline after opening brace -->
-  <rule ref="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Allow multiple PHP statements in the same line -->
-  <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Disable PSR-2 indentation rules that are buggy with 2 spaces -->
-  <rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakIndent">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Don't require a blank line after the last `use` -->
-  <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Allow long lines -->
-  <rule ref="Generic.Files.LineLength.TooLong">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Ignore indentation rules -->
-  <rule ref="Generic.WhiteSpace.ScopeIndent">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
-
-  <!-- Allow PHP closing tags -->
-  <rule ref="PSR2.Files.ClosingTag.NotAllowed">
-    <exclude-pattern>resources/views</exclude-pattern>
-  </rule>
 </ruleset>

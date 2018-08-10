@@ -7,4 +7,5 @@ use Sober\Controller\Controller;
 class Singular extends Controller {
 
 
+
 }
