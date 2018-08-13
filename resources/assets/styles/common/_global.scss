@@ -6,6 +6,24 @@ body {
   padding-top: 0;
 }
 
+body.single #main {
+	h4,
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 6px;
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Headers
+|--------------------------------------------------------------------------
+|
+|
+|
+|
+*/
+
 h1 {
 	font-weight: lighter;
 	line-height: 1.4em;
@@ -29,6 +47,18 @@ h4 {
 h5 {
 	font-size: 1.1em;
 	line-height:1.0em;
+}
+
+
+h1 {
+	&.entry-title {
+		font-size: 3em;
+		margin-bottom: 0.625rem;
+	}
+}
+
+h4 small span.upper {
+	font-size: 11px;
 }
 
 figure {
@@ -57,13 +87,22 @@ p {
   margin: 0 0 16px;
 }
 
+/*
+|--------------------------------------------------------------------------
+| Links
+|--------------------------------------------------------------------------
+|
+|
+|
+|
+*/
 a {
-  color: $color-blue;
+  color: $color-blue-dark;
 
   &:hover,
   &:focus {
-    text-decoration-style: dotted;
-    color: $color-blue-darker;
+    text-decoration-style: solid;
+    color: $color-black;
   }
 
   &:hover img.grey-hover,
@@ -130,24 +169,6 @@ p.tags {
   text-transform: uppercase;
 }
 
-h1 {
-  &.entry-title {
-    margin-bottom: 0.625rem;
-  }
-}
-
-h4 small span.upper {
-  font-size: 11px;
-}
-
-body.single #main {
-  h4,
-  h3 {
-    margin-top: 20px;
-    margin-bottom: 6px;
-  }
-}
-
 .aqua {
   color: $color-green-elm;
 }
@@ -188,4 +209,14 @@ time.updated {
 
 .alert {
   border-radius: 0;
+}
+
+.purple-bkgd {
+	@include opaque-bkgd;
+	background-color: $color-purple;
+}
+
+.blue-bkgd{
+	@include opaque-bkgd;
+	background-color: $color-blue;
 }

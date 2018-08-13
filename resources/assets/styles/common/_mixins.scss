@@ -4,7 +4,6 @@
 
     li {
       border-bottom: 1px solid $color-grey;
-      //padding: 10px 0;
       &:last-child {
         border-bottom: none;
       }
@@ -84,4 +83,11 @@
   transition-duration: 0.5s;
   transition-timing-function: ease;
   border-top: 1px solid $color-blue;
+}
+ @mixin opaque-bkgd {
+	opacity: 0.75;
+	color: $color-white;
+	&:hover {
+		background-color: $color-black;
+	}
 }
