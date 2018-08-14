@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    @include('partials.latest-news')
+    @include('partials.news-latest')
   </div>
   <div class="col-xs-12 col-sm-4 col-md-5 clearfix diagonal height-7 no-gutters">
     <div class="barbs-special-sauce">
