@@ -1,12 +1,6 @@
-.button {
+.btn-primary {
 	background: $color-blue;
-	border-radius: 3px;
-	font-size: 0.9em;
-	font-weight: bold;
-	color: $color-white;
 	text-transform: uppercase;
-	padding: 0.5em 1.5em;
-
 	&.cta{
 		font-size: 1.1em;
 		padding: 0.7em 1.6em;
