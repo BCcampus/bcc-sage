@@ -53,7 +53,12 @@ h5 {
 h1 {
 	&.entry-title {
 		font-size: 3em;
-		margin-bottom: 0.625rem;
+		padding: 0.625rem 10rem 0 0.625rem;
+		margin: 0;
+		color: $color-white;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 }
 
