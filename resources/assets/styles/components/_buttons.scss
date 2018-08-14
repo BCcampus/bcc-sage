@@ -1,0 +1,18 @@
+.btn-primary {
+	background: $color-blue;
+	text-transform: uppercase;
+	&.cta{
+		font-size: 1.1em;
+		padding: 0.7em 1.6em;
+	}
+	&.reverse{
+		background: $color-white;
+		color: $color-black;
+	}
+	&:hover{
+		background: $color-black;
+		color: $color-white;
+	}
+}
+
+
