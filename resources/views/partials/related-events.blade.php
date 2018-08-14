@@ -1,17 +1,17 @@
-<div class="container-fluid">
+<article class="related-events">
 	<h4>Related Events</h4>
-	<div class="row">
-		<div class="col-sm">
+	<section class="row articles">
+		<article class="col-sm">
 			Placeholder
-		</div>
-		<div class="col-sm">
+		</article>
+		<article class="col-sm">
 			Placeholder
-		</div>
-		<div class="col-sm">
+		</article>
+		<article class="col-sm">
 			Placeholder
-		</div>
-		<div class="col-sm">
+		</article>
+		<article class="col-sm">
 			Placeholder
-		</div>
-	</div>
-</div>
+		</article>
+	</section>
+</article>

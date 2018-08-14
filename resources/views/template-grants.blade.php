@@ -1,5 +1,5 @@
 {{--
-  Template Name: About Us Landing Template
+  Template Name: Grants Landing Template
 --}}
 
 @extends('layouts.app')

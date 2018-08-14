@@ -1,5 +1,5 @@
-<article class="related-news">
-	<h4>Related News</h4>
+<article class="tag-open-ed">
+	<h4>Open Education</h4>
 	<section class="row articles">
 		<article class="col-sm">
 			Placeholder

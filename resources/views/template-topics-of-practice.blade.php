@@ -1,5 +1,5 @@
 {{--
-  Template Name: About Us Landing Template
+  Template Name: Topics of Practice Landing Template
 --}}
 
 @extends('layouts.app')
