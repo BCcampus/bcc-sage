@@ -24,4 +24,9 @@
 			</div>
 		</nav>
 	</div>
+	@if (is_front_page())
+		<div class="container-fluid slider">
+			{!! $get_slider_id !!}
+		</div>
+	@endif
 </header>

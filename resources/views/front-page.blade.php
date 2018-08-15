@@ -2,9 +2,6 @@
 
 @section('content')
 	<span itemscope itemtype="http://schema.org/ItemPage">
-	  <div class="container-fluid">
-		  {!! $get_slider_id !!}
-	  </div>
 		<div class="row">
 	  <div class="col-4">
 	  @include('partials.children-top')
