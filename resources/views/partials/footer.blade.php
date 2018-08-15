@@ -1,5 +1,5 @@
-<footer class="content-info">
-  <div id="top-foot" class="clearfix container-fluid">
+<footer class="content-info container-fluid">
+  <div id="top-foot" class="clearfix">
     <div id="widget-footer" class="clearfix row">
       @if(has_nav_menu('footer_navigation_1'))
         <nav class="widget col-sm-3">
