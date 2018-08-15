@@ -33,18 +33,23 @@ add_action(
  *  Adds a slider ID setting in the customizer "Homepage Settings" section
  */
 
-add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+add_action(
+	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_setting( 'slider_setting', [
-		'default'    => '0',
-		'capability' => 'edit_theme_options'
+		$wp_customize->add_setting(
+			'slider_setting', [
+				'default'    => '0',
+				'capability' => 'edit_theme_options',
 
-	] );
+			]
+		);
 
-	$wp_customize->add_control( 'slider_id', [
-		'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
-		'section'  => 'static_front_page',
-		'settings' => 'slider_setting'
-		] );
+		$wp_customize->add_control(
+			'slider_id', [
+				'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
+				'section'  => 'static_front_page',
+				'settings' => 'slider_setting',
+			]
+		);
 	}
 );
