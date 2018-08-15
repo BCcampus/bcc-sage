@@ -6,9 +6,15 @@
 
 @section('content')
 	@while(have_posts()) @php(the_post())
-	@include('partials.news-feature')
-	@include('partials.subscribe')
-	@include('partials.news-recent')
+	<div class="row">
+	<div class="col-sm-4">
+		@include('partials.news-feature')
+	</div>
+	<div class="col-sm-4">
+		@include('partials.subscribe')
+		@include('partials.news-recent')
+	</div>
+	</div>
 	@include('partials.tag-open-ed')
 	@include('partials.tag-open-textbooks')
 	@endwhile

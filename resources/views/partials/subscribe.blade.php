@@ -1,4 +1,4 @@
 <section class="col-sm">
-	<h4>Subscribe to BCcampus News</h4>
+	<h5>Subscribe to BCcampus News</h5>
 	<button class="btn btn-primary">Subscribe</button>
 </section>
