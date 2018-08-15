@@ -3,7 +3,7 @@
 @section('content')
 	<span itemscope itemtype="http://schema.org/ItemPage">
 	  <div class="container-fluid">
-		  {!! do_shortcode('[smartslider3 slider=4]') !!}
+		  {!! $get_slider_id !!}
 	  </div>
 		<div class="row">
 	  <div class="col-4">

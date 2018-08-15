@@ -30,17 +30,14 @@ add_action(
 );
 
 /**
- * Add customization settings for the theme
- *
- * @param \WP_Customize_Manager $wp_customize
+ *  Adds a slider ID setting in the customizer "Homepage Settings" section
  */
 
-function customizerAddSetting( \WP_Customize_Manager $wp_customize ) {
+add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_setting( 'slider_setting', [
-		'default'    => '',
-		'capability' => 'edit_theme_options',
-		'type'       => 'option'
+		'default'    => '0',
+		'capability' => 'edit_theme_options'
 
 	] );
 
@@ -48,7 +45,6 @@ function customizerAddSetting( \WP_Customize_Manager $wp_customize ) {
 		'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
 		'section'  => 'static_front_page',
 		'settings' => 'slider_setting'
-	] );
-}
-
-add_action( 'customize_register', __NAMESPACE__ . '\customizerAddSetting', 11 );
+		] );
+	}
+);
