@@ -1,9 +1,12 @@
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid $color-grey-medium;
+	background-image: url('../images/default-header.jpg');
+	background-size: cover;
+	width: 100%;
+	min-height: 281px;
+	resize: both;
+	position: relative;
 }
 
 main.col-sm-8 {
-  float: left;
+	float: left;
 }

@@ -28,3 +28,23 @@ add_action(
 		wp_enqueue_script( 'sage/customizer.js', asset_path( 'scripts/customizer.js' ), [ 'customize-preview' ], null, true );
 	}
 );
+
+/**
+ *  Adds a slider ID setting in the customizer "Homepage Settings" section
+ */
+
+add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting( 'slider_setting', [
+		'default'    => '0',
+		'capability' => 'edit_theme_options'
+
+	] );
+
+	$wp_customize->add_control( 'slider_id', [
+		'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
+		'section'  => 'static_front_page',
+		'settings' => 'slider_setting'
+		] );
+	}
+);

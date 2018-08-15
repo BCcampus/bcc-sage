@@ -19,4 +19,17 @@ class FrontPage extends Controller {
 
 		return $latest;
 	}
+
+	/**
+	 * Returns the short-code with the slider ID attribute the user set in the customizer menu
+	 * Works with Smart Slider 3 plugin
+	 * @return string
+	 */
+	public function getSliderId() {
+		$id = get_theme_mod( 'slider_setting', 0 );
+
+		$slider = do_shortcode( '[smartslider3 slider=' . $id . ']' );
+
+		return $slider;
+	}
 }
