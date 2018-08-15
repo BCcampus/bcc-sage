@@ -2,7 +2,7 @@
   Template Name: News Landing Template
 --}}
 
-@extends('layouts.app')
+@extends('layouts.full')
 
 @section('content')
 	@while(have_posts()) @php(the_post())
