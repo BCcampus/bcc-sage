@@ -122,23 +122,6 @@ class App extends Controller {
 		return $micro_mapping;
 	}
 
-	public function getChildrenOfPage( $id = '' ) {
-		global $post;
-		$id = (empty($id)) ? $post->ID : $id;
-		$args = [
-			'post_parent'    => intval( $id ),
-			'post_type'      => 'page',
-			'posts_per_page' => - 1,
-			'post_status'    => 'publish',
-			'order'          => 'DESC',
-		];
-
-		$children = get_children( $post->ID, $args );
-
-		return $children;
-
-	}
-
 	/**
 	 * Useful in `wp_list_pages` to switch context based on the existence of children
 	 *

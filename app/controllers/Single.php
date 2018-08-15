@@ -6,8 +6,10 @@ use Sober\Controller\Controller;
 
 class Single extends Controller {
 
-	/*
+	/**
 	 * Lists 5 post titles related to first tag on current post
+	 *
+	 * @return array
 	 */
 	public function getRelatedPosts() {
 		global $post;
@@ -30,6 +32,7 @@ class Single extends Controller {
 
 	/**
 	 * Cloodge of a function for poorly documented plugin
+	 *
 	 * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
 	 *
 	 * @return mixed

@@ -1,20 +1,14 @@
 <article class="current-projects">
 	<h4>Projects</h4>
 	@foreach($get_children_of_page as $child)
-		<article class="col-sm">
-			<p>{{$child->post_title}}</p>
+		<article class="col-sm project">
+			<div class="d-flex">
+				<a class="p-2" href="{{$child->guid}}"><?php echo get_the_post_thumbnail( $child->ID );?></a>
+				<div class="p-2">
+					<h5><a href="{{$child->guid}}">{{$child->post_title}}</a></h5>
+					<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$child->guid}'>&hellip;</a>" );?></p>
+				</div>
+			</div>
 		</article>
 	@endforeach
-	<article class="col-sm">
-		Placeholder
-	</article>
-	<article class="col-sm">
-		Placeholder
-	</article>
-	<article class="col-sm">
-		Placeholder
-	</article>
-	<article class="col-sm">
-		Placeholder
-	</article>
 </article>
