@@ -2,7 +2,10 @@
 
 @section('content')
 	<span itemscope itemtype="http://schema.org/ItemPage">
-	  <div class="row">
+	  <div class="container-fluid">
+		  {!! do_shortcode('[smartslider3 slider=4]') !!}
+	  </div>
+		<div class="row">
 	  <div class="col-4">
 	  @include('partials.children-top')
 		  @include('partials.children-projects')

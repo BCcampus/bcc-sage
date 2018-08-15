@@ -19,4 +19,9 @@ class FrontPage extends Controller {
 
 		return $latest;
 	}
+
+	public function getSliderId() {
+		$slider = get_theme_mod('slider_setting');
+		return $slider;
+	}
 }

@@ -28,3 +28,27 @@ add_action(
 		wp_enqueue_script( 'sage/customizer.js', asset_path( 'scripts/customizer.js' ), [ 'customize-preview' ], null, true );
 	}
 );
+
+/**
+ * Add customization settings for the theme
+ *
+ * @param \WP_Customize_Manager $wp_customize
+ */
+
+function customizerAddSetting( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting( 'slider_setting', [
+		'default'    => '',
+		'capability' => 'edit_theme_options',
+		'type'       => 'option'
+
+	] );
+
+	$wp_customize->add_control( 'slider_id', [
+		'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
+		'section'  => 'static_front_page',
+		'settings' => 'slider_setting'
+	] );
+}
+
+add_action( 'customize_register', __NAMESPACE__ . '\customizerAddSetting', 11 );
