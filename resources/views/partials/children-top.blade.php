@@ -1,5 +1,5 @@
 <section class="topics-of-practice">
-	<div class=" d-flex flex-row flex-wrap">
+	<div class="d-flex flex-row flex-wrap">
 		@foreach(\App\Page::getChildrenOfPage() as $child)
 			<?php
 			// not using $child->guid since guid does not

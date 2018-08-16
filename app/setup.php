@@ -34,6 +34,7 @@ add_action(
 	'after_setup_theme', function () {
 		/**
 		 * Enable features from Soil when plugin is activated
+		 *
 		 * @link https://roots.io/plugins/soil/
 		 */
 		add_theme_support( 'soil-clean-up' );
@@ -44,16 +45,19 @@ add_action(
 
 		/**
 		 * Enable plugins to manage the document title
+		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 		 */
 		add_theme_support( 'title-tag' );
 
 		/**
 		 * Register navigation menus
+		 *
 		 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 		 */
 		register_nav_menus(
 			[
+				'header_navigation'   => __( 'Header Navigation', 'bcc-sage' ),
 				'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
 				'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
 				'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
@@ -63,24 +67,36 @@ add_action(
 
 		/**
 		 * Enable post thumbnails
+		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
 
 		/**
 		 * Enable HTML5 markup support
+		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
 		 */
-		add_theme_support( 'html5', [ 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ] );
+		add_theme_support(
+			'html5', [
+				'caption',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'search-form',
+			]
+		);
 
 		/**
 		 * Enable selective refresh for widgets in customizer
+		 *
 		 * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Use main stylesheet for visual editor
+		 *
 		 * @see resources/assets/styles/layouts/_tinymce.scss
 		 */
 		add_editor_style( asset_path( 'styles/main.css' ) );
@@ -127,7 +143,8 @@ add_action(
 
 /**
  * Updates the `$post` variable on each iteration of the loop.
- * Note: updated value is only available for subsequently loaded views, such as partials
+ * Note: updated value is only available for subsequently loaded views, such as
+ * partials
  */
 add_action(
 	'the_post', function ( $post ) {
