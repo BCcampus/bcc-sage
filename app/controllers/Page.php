@@ -12,7 +12,7 @@ class Page extends Controller {
 	 *
 	 * @return array
 	 */
-	public function getChildrenOfPage( $id = '' ) {
+	public static function getChildrenOfPage( $id = '' ) {
 		global $post;
 		$id   = ( empty( $id ) ) ? $post->ID : $id;
 		$args = [

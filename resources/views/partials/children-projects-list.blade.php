@@ -1,8 +1,8 @@
-<section class="topics-of-practice">
-	<h4 class="text-capitalize">Topics of Practice</h4>
+<section class="current-projects">
+	<h4 class="text-capitalize">Projects</h4>
 	<ul>
 		<?php
-		$id = '698248';
+		$id = '12805';
 		?>
 		@foreach(\App\Page::getChildrenOfPage($id) as $child)
 			<?php
