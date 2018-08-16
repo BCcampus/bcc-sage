@@ -9,7 +9,6 @@
 			<article class="col-sm-6 t-o-p">
 				<div class="featured-image-box">
 					<a href="<?php echo $link; ?>"><?php echo get_the_post_thumbnail( $child->ID, [ 400 ] ); ?></a>
-					<p></p>
 				</div>
 				<h5 class="purple-bkgd"><a class="text-white" href="<?php echo $link; ?>">{{$child->post_title}}</a>
 				</h5>
