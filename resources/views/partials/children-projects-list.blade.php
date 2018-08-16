@@ -1,10 +1,7 @@
 <section class="current-projects">
 	<h4 class="text-capitalize">Projects</h4>
 	<ul>
-		<?php
-		$id = '12805';
-		?>
-		@foreach(\App\Page::getChildrenOfPage($id) as $child)
+		@foreach(\App\Page::getChildrenOfPage($get_projects_id) as $child)
 			<?php
 			// not using $child->guid since guid does not
 			// update to current domain when importing content
