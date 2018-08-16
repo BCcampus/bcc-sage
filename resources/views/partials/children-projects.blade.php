@@ -1,6 +1,5 @@
 <article class="current-projects">
 	<h4 class="text-capitalize">{{$post->post_name}}</h4>
-	@debug
 	@foreach(\App\Page::getChildrenOfPage() as $child)
 		<?php
 		// not using $child->guid since guid does not
