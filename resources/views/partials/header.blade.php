@@ -3,7 +3,7 @@
 		<div class="brand"><a class="navbar-brand" href="{{ home_url('/') }}"><img
 					src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"> </a></div>
 		{{--<div class="pull-right">{{get_search_form()}}</div>--}}
-		<nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation">
+		<nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation navbar-megamenu">
 			<button class="navbar-toggler navbar-toggler-right p-2" type="button" data-toggle="collapse"
 					data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
 					{!! wp_nav_menu([
                     'theme_location' => 'primary_navigation',
                     'menu' => 'Primary Navigation',
-                    'menu_class' => 'navbar-nav mr-auto',
+                    'menu_class' => 'nav navbar-nav mr-auto',
                     'depth' => 3,
                     'echo' => TRUE,
                     'fallback_cb' => '__return_empty_string',

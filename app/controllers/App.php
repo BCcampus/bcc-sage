@@ -2,7 +2,7 @@
 
 namespace App;
 
-use BCcampus\BootWalker;
+use BCcampus\MegaWalker;
 use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
@@ -36,10 +36,9 @@ class App extends Controller {
 	/**
 	 * get wp menu to act like bootstrap menu
 	 *
-	 * @return \BCcampus\BootWalker
 	 */
 	public function navWalker() {
-		return new BootWalker();
+		return new MegaWalker();
 	}
 
 	/**
