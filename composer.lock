@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a293983b128327cf0322326ea0a87eeb",
+    "content-hash": "85e49e5883a56e098e5cf7a5600b6078",
     "packages": [
         {
-            "name": "alex-418/wp-megawalker",
+            "name": "bccampus/wp-megawalker",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/alex-418/wp-megawalker.git",
-                "reference": "7c2cf4202c72c5421b2498871afe37fe912fa731"
+                "url": "https://github.com/BCcampus/wp-megawalker.git",
+                "reference": "d02fe58a89a35b3d890713081f061352601f739b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alex-418/wp-megawalker/zipball/7c2cf4202c72c5421b2498871afe37fe912fa731",
-                "reference": "7c2cf4202c72c5421b2498871afe37fe912fa731",
+                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/d02fe58a89a35b3d890713081f061352601f739b",
+                "reference": "d02fe58a89a35b3d890713081f061352601f739b",
                 "shasum": ""
             },
             "require-dev": {
@@ -49,15 +49,16 @@
             "keywords": [
                 "bootstrap",
                 "bootstrap 4",
+                "mega menu",
+                "megamenu",
                 "nav walker",
                 "submenu",
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/alex-418/wp-megawalker/tree/master",
-                "issues": "https://github.com/alex-418/wp-megawalker/issues"
+                "source": "https://github.com/BCcampus/wp-megawalker/tree/master"
             },
-            "time": "2018-08-17T06:32:11+00:00"
+            "time": "2018-08-17T19:45:34+00:00"
         },
         {
             "name": "brain/hierarchy",
@@ -3516,7 +3517,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "soberwp/controller": 10,
-        "alex-418/wp-megawalker": 20
+        "bccampus/wp-megawalker": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

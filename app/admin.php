@@ -61,7 +61,7 @@ add_action(
  * Save/Update fields
  * Update the Walker nav
  * @return array
- * todo: Do this only if the BcCampus/MegaWalkerEditor class exists
+ * todo: Do this only if the BCcampus/MegaWalkerEditor class exists
  */
 
 function fieldsList() {
