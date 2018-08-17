@@ -85,8 +85,9 @@ class App extends Controller {
 	 * for those that have neither (pages)
 	 *
 	 * @param $post
-	 * @param string $post_types
+	 * @param array $post_types
 	 * @param string $limit
+	 * @param string $tag
 	 *
 	 * @return array
 	 */
