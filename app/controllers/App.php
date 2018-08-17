@@ -90,7 +90,7 @@ class App extends Controller {
 	 *
 	 * @return array
 	 */
-	public static function getRelevant( $post, $post_types = '', $limit = '' ) {
+	public static function getRelevant( $post, $post_types = [], $limit = '' ) {
 		$tags         = wp_get_post_tags( $post->ID );
 		$cats         = wp_get_post_categories( $post->ID );
 		$first_cat    = $cats[0];
@@ -117,7 +117,7 @@ class App extends Controller {
 		if ( count( $related_posts ) >= $this_many ) {
 			return $related_posts;
 		} else {
-			$more = self::matchRelevant( $post );
+			$more = self::matchRelevant( $post, $post_types, $this_many );
 			if ( $more ) {
 				$slice        = array_slice( $more, 0, $this_many );
 				$only         = wp_list_pluck( $slice, 'ID' );
@@ -137,6 +137,29 @@ class App extends Controller {
 	}
 
 	/**
+	 *
+	 * @param $post_id
+	 * @param array $size
+	 *
+	 * @return string
+	 */
+	public static function getThumb( $post_id, $size = [] ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
+			$current_domain = site_url();
+		}
+
+		$dimensions = ( empty( $size ) ) ? [ 300 ] : $size;
+		$result     = get_the_post_thumbnail( $post_id, $dimensions );
+		if ( empty( $result ) ) {
+			$src    = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
+			$result = "<img src='{$src}'/>";
+		}
+
+		return $result;
+	}
+
+	/**
 	 * Uses string values in post_title, post_content to find matches in DB
 	 *
 	 * @param $post
@@ -145,7 +168,7 @@ class App extends Controller {
 	 *
 	 * @return array|null|object
 	 */
-	public static function matchRelevant( $post, $post_types = '', $limit = '' ) {
+	public static function matchRelevant( $post, $post_types = [], $limit = '' ) {
 		global $wpdb;
 
 		$results      = [];

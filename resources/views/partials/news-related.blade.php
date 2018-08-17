@@ -1,17 +1,6 @@
-<article class="related-news">
-	<h4>Related News</h4>
-	<section class="row articles">
-		<article class="col-sm">
-			Placeholder
-		</article>
-		<article class="col-sm">
-			Placeholder
-		</article>
-		<article class="col-sm">
-			Placeholder
-		</article>
-		<article class="col-sm">
-			Placeholder
-		</article>
-	</section>
-</article>
+<?php
+$post_types = ['post','page'];
+$limit = 3;
+;?>
+<h3>Related News</h3>
+@include('partials.content-related')
