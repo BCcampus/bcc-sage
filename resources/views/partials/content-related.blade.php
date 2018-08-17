@@ -1,5 +1,5 @@
 <section class="relevant d-flex flex-row flex-wrap">
-	@foreach(\App\App::getRelevant($post, $post_types, $limit) as $related_post )
+	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
 		<?php
 		// not using $child->guid since guid does not
 		// update to current domain when importing content

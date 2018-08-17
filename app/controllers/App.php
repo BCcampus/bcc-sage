@@ -90,11 +90,16 @@ class App extends Controller {
 	 *
 	 * @return array
 	 */
-	public static function getRelevant( $post, $post_types = [], $limit = '' ) {
+	public static function getRelevant( $post, $post_types = [], $limit = '', $tag = '' ) {
 		$tags         = wp_get_post_tags( $post->ID );
 		$cats         = wp_get_post_categories( $post->ID );
 		$first_cat    = $cats[0];
-		$first_tag    = $tags[0]->term_id;
+		if ( empty( $tag ) ) {
+			$first_tag = $tags[0]->term_id;
+		} else {
+			$term       = get_term_by( 'name', $tag, 'post_tag', ARRAY_A );
+			$first_tag = $term['term_id'];
+		}
 		$type         = ( empty( $post_types ) ) ? [
 			'post',
 			'page',
@@ -152,11 +157,11 @@ class App extends Controller {
 			$current_domain = site_url();
 		}
 
-		$dimensions = ( empty( $size ) ) ? [ 300 ] : $size;
+		$dimensions = ( empty( $size ) ) ? [ 175,175 ] : $size;
 		$result     = get_the_post_thumbnail( $post_id, $dimensions );
 		if ( empty( $result ) ) {
 			$src    = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-			$result = "<img src='{$src}'/>";
+			$result = "<img width='{$dimensions[0]}' height='{$dimensions[1]}' src='{$src}'/>";
 		}
 
 		return $result;
