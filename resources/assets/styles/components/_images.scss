@@ -1,0 +1,17 @@
+.t-o-p {
+	max-width: 400px;
+	.featured-image-box {
+		max-height: 150px;
+		overflow: hidden;
+	}
+	h5 {
+		padding: 1.5rem;
+		text-align: center;
+		position: relative;
+		bottom: 3em;
+		margin-bottom: -2em;
+	}
+	p {
+		text-align: center;
+	}
+}
