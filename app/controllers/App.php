@@ -14,7 +14,7 @@ class App extends Controller {
 
 	public static function title() {
 		if ( is_home() ) {
-			if ( $home = get_option( 'page_for_posts', true ) ) {
+			if ( $home = get_option( 'page_for_posts', TRUE ) ) {
 				return get_the_title( $home );
 			}
 
@@ -74,10 +74,104 @@ class App extends Controller {
 		$base_domain = $sld . '.' . $tld;
 
 		if ( in_array( $base_domain, $expected ) && 'helga.bccampus.ca' !== $host ) {
-			return true;
+			return TRUE;
 		}
 
-		return false;
+		return FALSE;
+	}
+
+	/**
+	 * Prefers to find posts in the same category or tag and accesses a back up
+	 * for those that have neither (pages)
+	 *
+	 * @param $post
+	 * @param string $post_types
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public static function getRelevant( $post, $post_types = '', $limit = '' ) {
+		$tags         = wp_get_post_tags( $post->ID );
+		$cats         = wp_get_post_categories( $post->ID );
+		$first_cat    = $cats[0];
+		$first_tag    = $tags[0]->term_id;
+		$type         = ( empty( $post_types ) ) ? [
+			'post',
+			'page',
+			'ai1ec',
+		] : $post_types;
+		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
+		$more_related = [];
+		$args         = [
+			'tag__in'             => [ $first_tag ],
+			'post__not_in'        => [ $post->ID ],
+			'posts_per_page'      => $this_many,
+			'ignore_sticky_posts' => 1,
+			'category__in'        => [ $first_cat ],
+			'post_type'           => $type,
+			'post_status'         => 'publish',
+		];
+
+		$related_posts = get_posts( $args );
+
+		if ( count( $related_posts ) >= $this_many ) {
+			return $related_posts;
+		} else {
+			$more = self::matchRelevant( $post );
+			if ( $more ) {
+				$slice        = array_slice( $more, 0, $this_many );
+				$only         = wp_list_pluck( $slice, 'ID' );
+				$more_related = get_posts( [
+					'include'             => $only,
+					'post__not_in'        => $post->ID,
+					'post_status'         => 'publish',
+					'post_type'           => $type,
+					'ignore_sticky_posts' => 1,
+				] );
+			}
+			$related = array_merge( $related_posts, $more_related );
+
+			return array_slice( $related, 0, $this_many );
+		}
+
+	}
+
+	/**
+	 * Uses string values in post_title, post_content to find matches in DB
+	 *
+	 * @param $post
+	 * @param string $post_types
+	 * @param string $limit
+	 *
+	 * @return array|null|object
+	 */
+	public static function matchRelevant( $post, $post_types = '', $limit = '' ) {
+		global $wpdb;
+
+		$results      = [];
+		$types        = ( empty( $post_types ) ) ? [
+			'post',
+			'page',
+			'ai1ec',
+		] : $post_types;
+		$limits       = ( empty( $limit ) ) ? '6' : $limit;
+		$now          = gmdate( 'Y-m-d H:i:s', ( time() + ( 3600 ) ) );
+		$match_fields = 'post_title,post_content';
+		$string       = $post->post_title . ' ' . $post->post_content;
+		$match        = $wpdb->prepare( ' AND MATCH (' . $match_fields . ") AGAINST ('%s') ", $string );
+		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < '%s' ", $now );
+		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= '%s' ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
+		$where        = " AND $wpdb->posts.post_status = 'publish' ";
+		$where        .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
+		$where        .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$limited      = $wpdb->prepare( ' LIMIT %d, %d ', 0, $limits );
+
+		$sql = "SELECT DISTINCT $wpdb->posts.ID FROM $wpdb->posts WHERE 1=1 $match $before $from $where $limited";
+
+		$results = $wpdb->get_results( $sql );
+
+		return $results;
+
 	}
 
 	/**
@@ -123,7 +217,8 @@ class App extends Controller {
 	}
 
 	/**
-	 * Useful in `wp_list_pages` to switch context based on the existence of children
+	 * Useful in `wp_list_pages` to switch context based on the existence of
+	 * children
 	 *
 	 * @param $id
 	 *
@@ -154,7 +249,7 @@ class App extends Controller {
 	 *
 	 * @param $id
 	 *
-	 * @return false|int|mixed|null|void
+	 * @return string
 	 */
 	public static function getListHeading( $id ) {
 		// check for children

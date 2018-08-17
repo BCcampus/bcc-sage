@@ -51,15 +51,16 @@
         @endif
       </ul>
     </nav>
-    @if( !is_singular( 'ai1ec_event' ) && $get_related_posts)
-      <div class="text-center">
-        <p>Related Articles</p>
-      <hr>
-      @foreach($get_related_posts as $related_post )
-        <a class="related-links" href="{{$related_post->guid}}" rel="bookmark" title="Permanent Link to {{$related_post->post_title}}">{{$related_post->post_title}}</a>
-      @endforeach
-      </div>
-    @endif
+	  @if( !is_singular( 'ai1ec_event' ) && \App\App::getRelevant($post, ['post','page'], 3))
+		  <div class="text-center">
+			  <p>Related Articles</p>
+			  <hr>
+			  @foreach(\App\App::getRelevant($post) as $related_post )
+				  <a class="related-links" href="{{$related_post->guid}}" rel="bookmark"
+					 title="Permanent Link to {{$related_post->post_title}}">{{$related_post->post_title}}</a>
+			  @endforeach
+		  </div>
+	  @endif
   </footer>
   @php(comments_template('/partials/comments.blade.php'))
 </article>

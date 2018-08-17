@@ -35,7 +35,7 @@ class Single extends Controller {
 	 *
 	 * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
 	 *
-	 * @return mixed
+	 * @return array|bool
 	 */
 	public function getUpcomingEvents() {
 		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
@@ -43,6 +43,7 @@ class Single extends Controller {
 		}
 
 		global $ai1ec_registry;
+		$results = [];
 
 		$t = $ai1ec_registry->get( 'date.system' );
 
