@@ -9,10 +9,10 @@
     <div class="wrap container-fluid" role="document">
 		@include('partials.page-header')
 		<div class="content row">
-            <main class="col-sm-8">
+            <main class="col-sm-9">
                 @yield('content')
             </main>
-                <aside id="sidebar" class="col-sm-4">
+                <aside id="sidebar" class="col-sm-3">
                     @include('partials.sidebar')
                 </aside>
         </div>

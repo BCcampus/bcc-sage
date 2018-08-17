@@ -4,12 +4,13 @@
 		// not using $child->guid since guid does not
 		// update to current domain when importing content
 		$link = site_url() . '/' . $related_post->post_name;
+		$date = date( 'M d, Y', strtotime($related_post->post_date) );
 		;?>
 		<article class="col-sm t-o-p">
 			<div class="featured-image-box">
 				<a href="<?php echo $link; ?>"><?php echo \App\App::getThumb( $related_post->ID, [ 300 ] ); ?></a>
 			</div>
-			<p class="text-left">{{$related_post->post_date}}</p>
+			<p class="text-left">{{$date}}</p>
 			<h4 class="text-left"><a class="purple" href="<?php echo $link; ?>">{{$related_post->post_title}}</a></h4>
 		</article>
 	@endforeach

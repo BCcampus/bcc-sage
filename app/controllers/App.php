@@ -139,6 +139,7 @@ class App extends Controller {
 	}
 
 	/**
+	 * Provides a mechanism to insert a default image if none exists
 	 *
 	 * @param $post_id
 	 * @param array $size
