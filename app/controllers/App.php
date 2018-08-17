@@ -14,7 +14,7 @@ class App extends Controller {
 
 	public static function title() {
 		if ( is_home() ) {
-			if ( $home = get_option( 'page_for_posts', TRUE ) ) {
+			if ( $home = get_option( 'page_for_posts', true ) ) {
 				return get_the_title( $home );
 			}
 
@@ -74,10 +74,10 @@ class App extends Controller {
 		$base_domain = $sld . '.' . $tld;
 
 		if ( in_array( $base_domain, $expected ) && 'helga.bccampus.ca' !== $host ) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	/**
@@ -121,13 +121,15 @@ class App extends Controller {
 			if ( $more ) {
 				$slice        = array_slice( $more, 0, $this_many );
 				$only         = wp_list_pluck( $slice, 'ID' );
-				$more_related = get_posts( [
-					'include'             => $only,
-					'post__not_in'        => $post->ID,
-					'post_status'         => 'publish',
-					'post_type'           => $type,
-					'ignore_sticky_posts' => 1,
-				] );
+				$more_related = get_posts(
+					[
+						'include'             => $only,
+						'post__not_in'        => $post->ID,
+						'post_status'         => 'publish',
+						'post_type'           => $type,
+						'ignore_sticky_posts' => 1,
+					]
+				);
 			}
 			$related = array_merge( $related_posts, $more_related );
 
