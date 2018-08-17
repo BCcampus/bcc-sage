@@ -3,11 +3,10 @@ footer {
 	font-size: 1em;
 
 	a {
-		color: $color-black;
 		text-decoration: none;
 
 		&:hover {
-			color: $color-blue;
+			color: $color-black;
 		}
 
 		&.related-links {

@@ -60,8 +60,7 @@ add_action(
 				'header_navigation'   => __( 'Header Navigation', 'bcc-sage' ),
 				'primary_navigation'  => __( 'Primary Navigation', 'bcc-sage' ),
 				'footer_navigation_1' => __( 'Footer Primary Navigation', 'bcc-sage' ),
-				'footer_navigation_2' => __( 'Footer Secondary Navigation', 'bcc-sage' ),
-				'footer_navigation_3' => __( 'Footer Horizontal Navigation', 'bcc-sage' ),
+				'footer_navigation_2' => __( 'Footer Horizontal Navigation', 'bcc-sage' ),
 			]
 		);
 

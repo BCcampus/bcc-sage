@@ -1,7 +1,7 @@
-<header class="banner">
+<header class="banner clearfix">
 	<div class="container-fluid">
 		<div class="navbar d-flex flex-row flex-nowrap">
-			<div class="p-2"><a class="navbar-brand" href="{{ home_url('/') }}">
+			<div class="p-2"><a class="navbar-brand" href="{{ site_url('/') }}">
 					<img src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"></a>
 			</div>
 			<div class="p-2 justify-content-end">
