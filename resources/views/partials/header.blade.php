@@ -1,4 +1,4 @@
-<header class="banner clearfix">
+<header class="banner">
 	<div class="container-fluid">
 		<div class="navbar d-flex flex-row flex-nowrap">
 			<div class="p-2"><a class="navbar-brand" href="{{ site_url('/') }}">
