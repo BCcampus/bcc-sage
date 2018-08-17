@@ -34,8 +34,8 @@
 		</div>
 	</div>
 	<div id="bottom-foot" class="clearfix container-fluid">
-		<div class="row">
-			<div class="col-sm-4">
+		<div class="d-flex flex-row flex-nowrap">
+			<div class="col-sm-8 p-2">
 				<p class="copyright"><a itemprop="license" class="pull-left" rel="license"
 										href="https://creativecommons.org/licenses/by/4.0/">
 						<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
@@ -45,20 +45,14 @@
 							Attribution 4.0 International License</a>.
 					</small>
 				</p>
-				@if(has_nav_menu('footer_navigation_3'))
+			</div>
+			<div class="col-sm-4 p-2">
+				@if(has_nav_menu('footer_navigation_2'))
 					<nav class="footer-links horizontal">
 						{!! wp_nav_menu( ['theme_location' => 'footer_navigation_2', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '&nbsp;|&nbsp;', 'depth' => 0 ] ) !!}
 					</nav>
 				@endif
 			</div>
-			<div class="col-sm-4">
-				<p class="attribution muted">&copy; {{bloginfo('name')}} {{date('Y')}}</p>
-			</div>
-			<div class="col-sm-4">
-				<img class="pull-right" width="131" height="49" alt="Logo for BCcampus"
-					 src="@asset('images/bccampus-logo-sm.png')">
-			</div>
-
 		</div>
 	</div>
 </footer>
