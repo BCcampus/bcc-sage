@@ -172,7 +172,7 @@ class App extends Controller {
 	 * Uses string values in post_title, post_content to find matches in DB
 	 *
 	 * @param $post
-	 * @param string $post_types
+	 * @param array $post_types
 	 * @param string $limit
 	 *
 	 * @return array|null|object
@@ -180,7 +180,6 @@ class App extends Controller {
 	public static function matchRelevant( $post, $post_types = [], $limit = '' ) {
 		global $wpdb;
 
-		$results      = [];
 		$types        = ( empty( $post_types ) ) ? [
 			'post',
 			'page',
