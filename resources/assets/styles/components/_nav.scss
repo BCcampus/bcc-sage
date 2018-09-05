@@ -12,6 +12,10 @@ nav {
 * MegaMenu styling
 */
 
+ul#menu-main.nav.navbar-nav.mr-auto li a {
+  color: $color-black;
+}
+
 .navbar-megamenu .navbar-nav > li.megamenu {
   position: static;
 }
