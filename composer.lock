@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85e49e5883a56e098e5cf7a5600b6078",
+    "content-hash": "45236a0b50db4a4738c5765731a23d5a",
     "packages": [
         {
             "name": "bccampus/wp-megawalker",

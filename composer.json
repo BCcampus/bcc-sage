@@ -59,8 +59,8 @@
     "roots/sage-lib": "~9.0.1",
     "soberwp/controller": "~9.0.0-beta.4",
     "inc2734/wp-breadcrumbs": "^0.3.1",
-    "bccampus/wp-megawalker": "dev-master",
-    "bt/rocketchat-php": "^1.1"
+    "bt/rocketchat-php": "^1.1",
+    "bccampus/wp-megawalker": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",

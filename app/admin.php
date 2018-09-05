@@ -61,8 +61,9 @@ add_action(
  * Save/Update fields
  * Update the Walker nav
  * @return array
- * todo: Do this only if the BCcampus/MegaWalkerEditor class exists
  */
+
+if (class_exists('\\BCcampus\MegaWalker')){
 
 function fieldsList() {
 	//note that menu-item- gets prepended to field names
@@ -141,4 +142,4 @@ function fieldsList() {
 
 		return $walker;
 	}, 99 );
-
+}

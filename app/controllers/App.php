@@ -37,8 +37,11 @@ class App extends Controller {
 	 * get wp menu to act like bootstrap menu
 	 *
 	 */
+
 	public function navWalker() {
-		return new MegaWalker();
+		if (class_exists('\\BCcampus\MegaWalker')) {
+			return new MegaWalker();
+		}
 	}
 
 	/**
