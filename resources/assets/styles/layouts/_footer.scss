@@ -38,7 +38,7 @@ footer {
 		color: $color-white;
 		a {
 			color: $color-white;
-			&:hover{
+			&:hover {
 				color: $color-blue;
 				text-decoration: none;
 			}
@@ -97,5 +97,21 @@ footer {
 
 	p.attribution {
 		text-align: center;
+	}
+
+	.social-media a {
+		display: inline-block;
+		background: #00a5e1;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		-webkit-transition: 0.5s ease;
+		transition: 0.5s ease;
+		padding: 0;
+		width: 40px;
+		height: 40px;
+		&:hover {
+			background: #000;
+		}
 	}
 }

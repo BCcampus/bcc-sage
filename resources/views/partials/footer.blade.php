@@ -2,21 +2,21 @@
 	<div id="top-foot" class="clearfix">
 		<div id="widget-footer" class="clearfix row">
 			<div class="widget col-sm-4">
-				<ul class="inline no-margin pad">
-					<li>
-						<a href="https://www.facebook.com/BCcampus"><i class="fa fa-facebook fa-2x"></i></a>
+				<ul class="inline no-margin">
+					<li class="social-media">
+						<a href="https://www.facebook.com/BCcampus"><img src="@asset('images/icon-facebook.svg')" alt="facebook icon"></a>
 					</li>
-					<li>
-						<a href="https://twitter.com/bccampus"><i class="fa fa-twitter fa-2x"></i></a>
+					<li class="social-media">
+						<a href="https://twitter.com/bccampus"><img src="@asset('images/icon-twitter.svg')" alt="twitter icon"></a>
 					</li>
-					<li>
-						<a href="https://www.flickr.com/photos/61642799@N03/"><i class="fa fa-flickr fa-2x"></i></a>
+					<li class="social-media">
+						<a href="https://www.flickr.com/photos/61642799@N03/"><img src="@asset('images/icon-flickr.svg')" alt="flickr icon"></a>
 					</li>
-					<li>
-						<a href="https://www.linkedin.com/company/bccampus"><i class="fa fa-linkedin fa-2x"></i></a>
+					<li class="social-media">
+						<a href="https://www.linkedin.com/company/bccampus"><img src="@asset('images/icon-linkedin.svg')" alt="linkedin icon"></a>
 					</li>
-					<li>
-						<a href="//bccampus.ca/feed/"><i class="fa fa-rss-square fa-2x"></i></a>
+					<li class="social-media">
+						<a href="https://video.bccampus.ca/"><img src="@asset('images/icon-kaltura.svg')" alt="kaltura icon"></a>
 					</li>
 				</ul>
 				<a class="brand" href="{{ site_url('/') }}">
