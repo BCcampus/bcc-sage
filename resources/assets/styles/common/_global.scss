@@ -225,3 +225,7 @@ time.updated {
 	@include opaque-bkgd;
 	background-color: $color-blue;
 }
+
+.shady-bkgd{
+	background-color: $color-grey-light;
+}
