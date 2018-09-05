@@ -1,17 +1,7 @@
-<article class="tag-open-ed">
-	<h4>Open Education</h4>
-	<section class="articles">
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-	</section>
-</article>
+<?php
+$post_types = [ 'post', 'page' ];
+$limit      = 4;
+$tag = 'open education'
+; ?>
+<h3>Open Education</h3>
+@include('partials.content-related')

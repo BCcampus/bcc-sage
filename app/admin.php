@@ -38,7 +38,7 @@ add_action(
 
 		$wp_customize->add_setting(
 			'slider_setting', [
-				'default'    => '0',
+				'default'    => '',
 				'capability' => 'edit_theme_options',
 
 			]
@@ -46,9 +46,57 @@ add_action(
 
 		$wp_customize->add_control(
 			'slider_id', [
-				'label'    => __( 'Enter the slider ID', __NAMESPACE__ ),
+				'label'    => __( 'Slider ID', __NAMESPACE__ ),
 				'section'  => 'static_front_page',
 				'settings' => 'slider_setting',
+			]
+		);
+	}
+);
+
+/**
+ * Stores Post ID of 'Topics of Practice' in Homepage Settings
+ */
+add_action(
+	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'topics_of_practice_setting', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'topics_of_practice_id', [
+				'label'    => __( 'Topics of Practice Post ID', __NAMESPACE__ ),
+				'section'  => 'static_front_page',
+				'settings' => 'topics_of_practice_setting',
+			]
+		);
+	}
+);
+
+/**
+ * Stores Post ID of 'Projects' in Homepage Settings
+ */
+add_action(
+	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'projects_setting', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'projects_id', [
+				'label'    => __( 'Projects Post ID', __NAMESPACE__ ),
+				'section'  => 'static_front_page',
+				'settings' => 'projects_setting',
 			]
 		);
 	}

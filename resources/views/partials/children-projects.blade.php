@@ -1,12 +1,21 @@
-<article class="current-projects">
-	<h4>Projects</h4>
-	@foreach($get_children_of_page as $child)
-		<article class="col-sm project d-flex">
-				<a class="p-2" href="{{$child->guid}}"><?php echo get_the_post_thumbnail( $child->ID ); ?></a>
-				<div class="p-2">
-					<h5><a href="{{$child->guid}}">{{$child->post_title}}</a></h5>
-					<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$child->guid}'>&hellip;</a>" ); ?></p>
-				</div>
+<section class="current-projects">
+	@foreach(\App\Page::getChildrenOfPage() as $child)
+		<?php
+		// not using $child->guid since guid does not
+		// update to current domain when importing content
+		$link = site_url() . '/' . $child->post_name;
+		;?>
+		<article class="projects d-flex flex-row">
+			<div class="featured-image-box side-img p-2">
+				<a href="<?php echo $link; ?>"><?php echo \App\App::getThumb( $child->ID, [
+						175,
+						175
+					] ); ?></a>
+			</div>
+			<div class="p-2">
+				<h5><a class="purple" href="<?php echo $link; ?>">{{$child->post_title}}</a></h5>
+				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ); ?></p>
+			</div>
 		</article>
 	@endforeach
-</article>
+</section>

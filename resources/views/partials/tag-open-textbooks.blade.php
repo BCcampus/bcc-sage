@@ -1,17 +1,8 @@
-<article class="tag-open-textbooks">
-	<h4>Open Textbooks</h4>
-	<section class="articles">
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-		<article class="col-sm">
-			<p>Placeholder</p>
-		</article>
-	</section>
-</article>
+<?php
+$post_types = [ 'post', 'page' ];
+$limit      = 4;
+$tag = 'open textbooks'
+; ?>
+<h3>Open Textbooks</h3>
+@include('partials.content-related')
+

@@ -174,8 +174,8 @@ p.tags {
   text-transform: uppercase;
 }
 
-.aqua {
-  color: $color-green-elm;
+.purple {
+  color: $color-purple;
 }
 
 .post-date {
@@ -224,4 +224,8 @@ time.updated {
 .blue-bkgd{
 	@include opaque-bkgd;
 	background-color: $color-blue;
+}
+
+.shady-bkgd{
+	background-color: $color-grey-light;
 }

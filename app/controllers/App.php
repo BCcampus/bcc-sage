@@ -83,6 +83,131 @@ class App extends Controller {
 	}
 
 	/**
+	 * Prefers to find posts in the same category or tag and accesses a back up
+	 * for those that have neither (pages)
+	 *
+	 * @param $post
+	 * @param array $post_types
+	 * @param string $limit
+	 * @param string $tag
+	 *
+	 * @return array
+	 */
+	public static function getRelevant( $post, $post_types = [], $limit = '', $tag = '' ) {
+		$tags         = wp_get_post_tags( $post->ID );
+		$cats         = wp_get_post_categories( $post->ID );
+		$first_cat    = $cats[0];
+		if ( empty( $tag ) ) {
+			$first_tag = $tags[0]->term_id;
+		} else {
+			$term       = get_term_by( 'name', $tag, 'post_tag', ARRAY_A );
+			$first_tag = $term['term_id'];
+		}
+		$type         = ( empty( $post_types ) ) ? [
+			'post',
+			'page',
+			'ai1ec',
+		] : $post_types;
+		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
+		$more_related = [];
+		$args         = [
+			'tag__in'             => [ $first_tag ],
+			'post__not_in'        => [ $post->ID ],
+			'posts_per_page'      => $this_many,
+			'ignore_sticky_posts' => 1,
+			'category__in'        => [ $first_cat ],
+			'post_type'           => $type,
+			'post_status'         => 'publish',
+		];
+
+		$related_posts = get_posts( $args );
+
+		if ( count( $related_posts ) >= $this_many ) {
+			return $related_posts;
+		} else {
+			$more = self::matchRelevant( $post, $post_types, $this_many );
+			if ( $more ) {
+				$slice        = array_slice( $more, 0, $this_many );
+				$only         = wp_list_pluck( $slice, 'ID' );
+				$more_related = get_posts(
+					[
+						'include'             => $only,
+						'post__not_in'        => $post->ID,
+						'post_status'         => 'publish',
+						'post_type'           => $type,
+						'ignore_sticky_posts' => 1,
+					]
+				);
+			}
+			$related = array_merge( $related_posts, $more_related );
+
+			return array_slice( $related, 0, $this_many );
+		}
+
+	}
+
+	/**
+	 * Provides a mechanism to insert a default image if none exists
+	 *
+	 * @param $post_id
+	 * @param array $size
+	 *
+	 * @return string
+	 */
+	public static function getThumb( $post_id, $size = [] ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
+			$current_domain = site_url();
+		}
+
+		$dimensions = ( empty( $size ) ) ? [ 175,175 ] : $size;
+		$result     = get_the_post_thumbnail( $post_id, $dimensions );
+		if ( empty( $result ) ) {
+			$src    = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
+			$result = "<img width='{$dimensions[0]}' height='{$dimensions[1]}' src='{$src}'/>";
+		}
+
+		return $result;
+	}
+
+	/**
+	 * Uses string values in post_title, post_content to find matches in DB
+	 *
+	 * @param $post
+	 * @param array $post_types
+	 * @param string $limit
+	 *
+	 * @return array|null|object
+	 */
+	public static function matchRelevant( $post, $post_types = [], $limit = '' ) {
+		global $wpdb;
+
+		$types        = ( empty( $post_types ) ) ? [
+			'post',
+			'page',
+			'ai1ec',
+		] : $post_types;
+		$limits       = ( empty( $limit ) ) ? '6' : $limit;
+		$now          = gmdate( 'Y-m-d H:i:s', ( time() + ( 3600 ) ) );
+		$match_fields = 'post_title,post_content';
+		$string       = $post->post_title . ' ' . $post->post_content;
+		$match        = $wpdb->prepare( ' AND MATCH (' . $match_fields . ") AGAINST ('%s') ", $string );
+		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < '%s' ", $now );
+		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= '%s' ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
+		$where        = " AND $wpdb->posts.post_status = 'publish' ";
+		$where        .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
+		$where        .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$limited      = $wpdb->prepare( ' LIMIT %d, %d ', 0, $limits );
+
+		$sql = "SELECT DISTINCT $wpdb->posts.ID FROM $wpdb->posts WHERE 1=1 $match $before $from $where $limited";
+
+		$results = $wpdb->get_results( $sql );
+
+		return $results;
+
+	}
+
+	/**
 	 * Schema.org microdata at WebPage level
 	 *
 	 * @return array
@@ -125,7 +250,8 @@ class App extends Controller {
 	}
 
 	/**
-	 * Useful in `wp_list_pages` to switch context based on the existence of children
+	 * Useful in `wp_list_pages` to switch context based on the existence of
+	 * children
 	 *
 	 * @param $id
 	 *
@@ -156,7 +282,7 @@ class App extends Controller {
 	 *
 	 * @param $id
 	 *
-	 * @return false|int|mixed|null|void
+	 * @return string
 	 */
 	public static function getListHeading( $id ) {
 		// check for children
