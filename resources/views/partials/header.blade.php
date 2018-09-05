@@ -3,7 +3,7 @@
 		<div class="brand"><a class="navbar-brand" href="{{ home_url('/') }}"><img
 					src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"> </a></div>
 		{{--<div class="pull-right">{{get_search_form()}}</div>--}}
-		<nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation navbar-megamenu">
+		<nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation navbar-megamenu float-right">
 			<button class="navbar-toggler navbar-toggler-right p-2" type="button" data-toggle="collapse"
 					data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false"
 					aria-label="Toggle navigation">
