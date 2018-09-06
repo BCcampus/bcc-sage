@@ -1,7 +1,4 @@
 <section class="container-fluid">
-	<h3>News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-		<small><a href="/bccampus-news">view all news</a></small>
-	</h3>
 	@foreach(\App\App::getLatestNews( 1 ) as $feature)
 		<?php
 		// not using $child->guid since guid does not
