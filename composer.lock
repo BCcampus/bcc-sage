@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45236a0b50db4a4738c5765731a23d5a",
+    "content-hash": "4adcfc50a0ceca94f65ae1265d74ebfe",
     "packages": [
         {
             "name": "bccampus/wp-megawalker",
-            "version": "dev-master",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BCcampus/wp-megawalker.git",
-                "reference": "d02fe58a89a35b3d890713081f061352601f739b"
+                "reference": "478460ccc77b17914cd2929e793ec7d718897198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/d02fe58a89a35b3d890713081f061352601f739b",
-                "reference": "d02fe58a89a35b3d890713081f061352601f739b",
+                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/478460ccc77b17914cd2929e793ec7d718897198",
+                "reference": "478460ccc77b17914cd2929e793ec7d718897198",
                 "shasum": ""
             },
             "require-dev": {
@@ -56,9 +56,9 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/BCcampus/wp-megawalker/tree/master"
+                "source": "https://github.com/BCcampus/wp-megawalker/tree/v0.0.1"
             },
-            "time": "2018-08-17T19:45:34+00:00"
+            "time": "2018-09-06T17:42:10+00:00"
         },
         {
             "name": "brain/hierarchy",
@@ -3516,8 +3516,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "soberwp/controller": 10,
-        "bccampus/wp-megawalker": 20
+        "soberwp/controller": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,

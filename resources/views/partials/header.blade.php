@@ -41,7 +41,7 @@
                         'theme_location' => 'primary_navigation',
                         'menu' => 'Primary Navigation',
                         'container_class' => 'navbar-collapse justify-content-end',
-                    'menu_class' => 'nav navbar-nav',
+                    	'menu_class' => 'nav navbar-nav',
                         'depth' => 3,
                         'echo' => TRUE,
                         'fallback_cb' => '__return_empty_string',
