@@ -14,7 +14,7 @@
 			$link = site_url() . '/' . $child->post_name;
 			;
 			?>
-			<li><a class="purple" href="<?php echo $link; ?>">{{$child->post_title}}</a></li>
+			<li><a class="purple" href="{{$link}}">{{$child->post_title}}</a></li>
 		@endforeach
 	</ul>
 </section>

@@ -8,10 +8,16 @@ use Sober\Controller\Controller;
 
 class App extends Controller {
 
+	/**
+	 * @return string|void
+	 */
 	public function siteName() {
 		return get_bloginfo( 'name' );
 	}
 
+	/**
+	 * @return bool|mixed|null|string|string[]|void
+	 */
 	public static function title() {
 		if ( is_home() ) {
 			if ( $home = get_option( 'page_for_posts', true ) ) {
@@ -37,7 +43,6 @@ class App extends Controller {
 	 * get wp menu to act like bootstrap menu
 	 *
 	 */
-
 	public function navWalker() {
 		if (class_exists('\\BCcampus\MegaWalker')) {
 			return new MegaWalker();
@@ -311,5 +316,19 @@ class App extends Controller {
 		$html = $maybe_parent_title;
 
 		return $html;
+	}
+
+	public static function getLatestNews( $num = 1, $skip_first = false ) {
+
+		$args   = [
+			'posts_per_page' => $num,
+			'category_name'  => 'Homepage',
+			'post_status'    => 'publish',
+			'order'          => 'DESC',
+			'post__in'       => get_option( 'sticky_posts' ),
+		];
+		$latest = get_posts( $args );
+
+		return $latest;
 	}
 }

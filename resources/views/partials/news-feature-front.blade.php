@@ -2,7 +2,7 @@
 	<h3>News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="/bccampus-news">view all news</a></small>
 	</h3>
-	@foreach(\App\App::getLatestNews( 1 ) as $feature)
+	@foreach($get_latest_news as $feature)
 		<?php
 		// not using $child->guid since guid does not
 		// update to current domain when importing content
@@ -12,15 +12,16 @@
 		if (has_post_thumbnail( $feature->ID ) ): ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $feature->ID ), 'single-post-thumbnail' ); ?>
 		<div class="row" style="background-image: url('{{$image[0]}}')">
-			<?php else: ?>
+			<?php else: ;?>
 			<div class="row">
 				<?php endif; ?>
-				<h4 class="up-and-over"><a class="text-inverse purple-bkgd" href="{{$link}}">{{$feature->post_title}}</a>
-				</h4>
+				<div class="col"></div>
+
+				<article class="col purple-bkgd">
+					<p class="upper">{{$date}}</p>
+					<h4><a class="text-inverse" href="{{$link}}">{{$feature->post_title}}</a>
+					</h4>
+				</article>
 			</div>
-			<article class="row">
-				<p class="upper">{{$date}}</p>
-				<p><?php echo wp_trim_words( $feature->post_content, '30', "<a href='{$link}'>&hellip;</a>" );?></p>
-			</article>
 	@endforeach
 </section>

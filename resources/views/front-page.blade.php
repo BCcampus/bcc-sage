@@ -8,7 +8,7 @@
 		  @include('partials.children-projects-list')
 	  </div>
 	  <div class="col-8">
-	  @include('partials.news-feature')
+	  @include('partials.news-feature-front')
 		  @include('partials.news-recent')
 		  @include('partials.events-feature')
 		  @include('partials.events-upcoming')

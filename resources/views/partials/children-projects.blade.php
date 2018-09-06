@@ -7,14 +7,14 @@
 		;?>
 		<article class="projects d-flex flex-row">
 			<div class="featured-image-box side-img p-2">
-				<a href="<?php echo $link; ?>"><?php echo \App\App::getThumb( $child->ID, [
+				<a href="{{$link}}">{{\App\App::getThumb( $child->ID, [
 						175,
 						175
-					] ); ?></a>
+					] )}}</a>
 			</div>
 			<div class="p-2">
-				<h5><a class="purple" href="<?php echo $link; ?>">{{$child->post_title}}</a></h5>
-				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ); ?></p>
+				<h5><a class="purple" href="{{$link}}">{{$child->post_title}}</a></h5>
+				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ) ;?></p>
 			</div>
 		</article>
 	@endforeach
