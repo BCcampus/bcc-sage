@@ -4,7 +4,7 @@ $limit = 3;
 ;?>
 <div class="shady-bkgd my-3 p-2">
 	<h3>Related News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-		<small><a href="/bccampus-news">view all news</a></small>
+		<small><a href="/news">view all news</a></small>
 	</h3>
 	<section class="relevant d-flex flex-row flex-wrap">
 		@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )

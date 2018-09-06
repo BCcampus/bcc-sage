@@ -1,6 +1,6 @@
 <section class="container-fluid">
 	<h3>News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-		<small><a href="{{get_site_url()}}/bccampus-news">view all news</a></small>
+		<small><a href="{{get_site_url()}}/news">view all news</a></small>
 	</h3>
 	@foreach($get_latest_news as $feature)
 		<?php
