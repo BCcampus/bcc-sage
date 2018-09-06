@@ -1,4 +1,4 @@
-<section class="featured-news container-fluid">
+<section class="container-fluid">
 	<h3>News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="/bccampus-news">view all news</a></small>
 	</h3>
@@ -11,11 +11,11 @@
 
 		if (has_post_thumbnail( $feature->ID ) ): ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $feature->ID ), 'single-post-thumbnail' ); ?>
-		<div class="row" style="background-image: url('{{$image[0]}}')">
+		<div class="featured-news row" style="background-image: url('{{$image[0]}}');">
 			<?php else: ?>
-			<div class="row">
+			<div class="row featured-news">
 				<?php endif; ?>
-				<h4 class="up-and-over"><a class="text-inverse purple-bkgd" href="{{$link}}">{{$feature->post_title}}</a>
+				<h4 class="purple-bkgd"><a class="text-inverse" href="{{$link}}">{{$feature->post_title}}</a>
 				</h4>
 			</div>
 			<article class="row">

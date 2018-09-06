@@ -167,8 +167,9 @@ ul.no-bullets {
 	border-bottom: 1px solid $color-grey-light;
 }
 
-.featured-news {
-	min-height: 200px;
+.featured-news-front {
+	min-height: 281px;
+	background-size: cover;
 	h4 {
 		font-weight: lighter;
 		margin: 1em 0 2em 0;

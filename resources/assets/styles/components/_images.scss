@@ -28,9 +28,18 @@
 }
 
 .featured-news {
-	h4.up-and-over {
-		padding: 1.2rem;
-		position: relative;
+	width: 100%;
+	resize: both;
+	position: relative;
+	min-height: 281px;
+	background-size: cover;
+	h4 {
+		padding: 2rem 10rem 2rem 0.625rem;
+		margin: 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 		font-weight: lighter;
+		color: $color-white;
 	}
 }
