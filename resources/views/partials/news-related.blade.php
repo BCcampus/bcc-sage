@@ -14,7 +14,7 @@ $limit = 3;
 			$link = site_url() . '/' . $related_post->post_name;
 			$date = date( 'M d, Y', strtotime( $related_post->post_date ) );
 			;?>
-			<article class="col-sm t-o-p">
+			<article class="col-sm feature-box-sm">
 				<div class="featured-image-box">
 					<a href="<?php echo $link; ?>"><?php echo \App\App::getThumb( $related_post->ID, [ 300 ] ); ?></a>
 				</div>

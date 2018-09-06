@@ -6,7 +6,7 @@
 			// update to current domain when importing content
 			$link = site_url() . '/' . $child->post_name;
 			;?>
-			<article class="col-sm-6 t-o-p">
+			<article class="col-sm-6 feature-box-sm">
 				<div class="featured-image-box">
 					<a href="<?php echo $link; ?>"><?php echo \App\App::getThumb( $child->ID, [ 300 ] ); ?></a>
 				</div>

@@ -1,4 +1,4 @@
-<section class="topics-of-practice t-o-p">
+<section class="topics-of-practice feature-box-sm">
 	<div class="featured-image-box">
 		<img src="@asset('images/placeholder-image-300x200.jpg')"/>
 	</div>
