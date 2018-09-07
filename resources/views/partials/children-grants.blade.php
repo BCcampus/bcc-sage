@@ -8,7 +8,7 @@
 			;?>
 			<article class="col-sm-6 feature-box-sm">
 				<div class="featured-image-box">
-					<a href="{{$link}}">{{\App\App::getThumb( $child->ID, [ 300 ] )}}</a>
+					<a href="{{$link}}"><?php echo \App\App::getThumb( $child->ID, [ 300 ] );?></a>
 				</div>
 				<h5 class="purple-bkgd"><a class="text-white" href="{{$link}}">{{$child->post_title}}</a>
 				</h5>

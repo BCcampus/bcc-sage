@@ -16,7 +16,7 @@ $limit = 3;
 			;?>
 			<article class="col-sm feature-box-sm">
 				<div class="featured-image-box">
-					<a href="{{$link}}">{{\App\App::getThumb( $related_post->ID, [ 300 ] )}}</a>
+					<a href="{{$link}}"><?php echo \App\App::getThumb( $related_post->ID, [ 300 ] );?></a>
 				</div>
 				<p class="text-left">{{$date}}</p>
 				<h4 class="text-left"><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
