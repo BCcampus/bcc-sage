@@ -35,7 +35,7 @@
 	</div>
 	<div id="bottom-foot" class="clearfix container-fluid">
 		<div class="d-flex flex-row flex-nowrap">
-			<div class="col-sm-8 p-2">
+			<div class="col-sm-6 p-2">
 				<p class="copyright"><a itemprop="license" class="pull-left" rel="license"
 										href="https://creativecommons.org/licenses/by/4.0/">
 						<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
@@ -46,7 +46,7 @@
 					</small>
 				</p>
 			</div>
-			<div class="col-sm-4 p-2">
+			<div class="col-sm-6 p-2">
 				@if(has_nav_menu('footer_navigation_2'))
 					<nav class="footer-links horizontal">
 						{!! wp_nav_menu( ['theme_location' => 'footer_navigation_2', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '&nbsp;|&nbsp;', 'depth' => 0 ] ) !!}
