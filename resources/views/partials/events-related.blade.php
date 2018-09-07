@@ -13,7 +13,7 @@ $limit = 4;
 		$link = site_url() . '/' . $related_post->post_name;
 		$date = date( 'M d, Y', strtotime( $related_post->post_date ) );
 		;?>
-		<article class="col-3 border py-2">
+		<article class="col border py-2 m-md-2">
 			<p class="text-left upper">{{$date}}</p>
 			<h4 class="text-left"><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a></h4>
 		</article>
