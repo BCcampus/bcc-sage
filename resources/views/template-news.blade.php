@@ -12,7 +12,7 @@
 	</div>
 	<div class="col-sm-6">
 		@include('partials.subscribe')
-		@include('partials.news-recent')
+		@include('partials.news-recent-list')
 	</div>
 	</div>
 	@include('partials.tag-open-ed')

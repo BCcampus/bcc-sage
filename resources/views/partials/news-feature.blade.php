@@ -1,5 +1,12 @@
+<?php
+$args = [
+	'posts_per_page' => 1,
+	'category_name'  => 'Homepage',
+	'post__in'       => get_option( 'sticky_posts' ),
+
+];?>
 <section class="container-fluid">
-	@foreach(\App\App::getLatestNews( 1 ) as $feature)
+	@foreach(\App\App::getLatestNews( $args ) as $feature)
 		<?php
 		// not using $child->guid since guid does not
 		// update to current domain when importing content

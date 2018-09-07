@@ -318,16 +318,22 @@ class App extends Controller {
 		return $html;
 	}
 
-	public static function getLatestNews( $num = 1, $skip_first = false ) {
-
-		$args   = [
-			'posts_per_page' => $num,
-			'category_name'  => 'Homepage',
+	/**
+	 * @param $args
+	 *
+	 * @return array
+	 */
+	public static function getLatestNews( $args = [] ) {
+		$defaults = [
+			'posts_per_page' => 1,
 			'post_status'    => 'publish',
 			'order'          => 'DESC',
-			'post__in'       => get_option( 'sticky_posts' ),
+			'exclude'        => [],
 		];
-		$latest = get_posts( $args );
+
+		$r = wp_parse_args( $args, $defaults );
+
+		$latest = get_posts( $r );
 
 		return $latest;
 	}

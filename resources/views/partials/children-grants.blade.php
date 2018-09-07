@@ -1,5 +1,4 @@
-<section class="grants">
-	<div class=" d-flex flex-row flex-wrap">
+<section class="grants d-flex flex-row flex-wrap">
 		@foreach(\App\Page::getChildrenOfPage() as $child)
 			<?php
 			// not using $child->guid since guid does not
@@ -15,5 +14,4 @@
 				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ) ;?></p>
 			</article>
 		@endforeach
-	</div>
 </section>
