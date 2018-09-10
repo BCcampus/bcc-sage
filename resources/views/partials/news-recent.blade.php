@@ -14,7 +14,7 @@ $args = [
 		if ( has_post_thumbnail( $recent->ID ) ) {
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent->ID ), 'single-post-thumbnail' );
 		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
+			$image[0] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
 		}
 		;?>
 		<article class="col-sm-4 feature-box-sm border">
