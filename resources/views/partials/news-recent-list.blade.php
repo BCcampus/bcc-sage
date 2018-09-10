@@ -12,10 +12,13 @@
 			$link = site_url() . '/' . $news->post_name;
 			$date = date( 'M d, Y', strtotime( $news->post_date ) );
 			;?>
-			<li class="border">
-				<p class="text-left upper">{{$date}}</p>
+			<li class="border-top">
+				<p class="upper">{{$date}}</p>
 				<p><a href="{{$link}}" rel="bookmark" title="{{$news->post_title}}">{{$news->post_title}}</a></p>
 			</li>
 		@endforeach
+		<li class="border-top">
+			<p><a href="<?php get_site_url(); ?>/bccampus-news">View all recent news</a></p>
+		</li>
 	</ul>
 </section>
