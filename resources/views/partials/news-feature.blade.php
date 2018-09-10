@@ -23,7 +23,7 @@ $args = [
 				</h4>
 			</div>
 			<article class="row">
-				<p class="upper">{{$date}}</p>
+				<p class="upper pad">{{$date}}</p>
 				<p><?php echo wp_trim_words( $feature->post_content, '30', "<a href='{$link}'>&hellip;</a>" );?></p>
 			</article>
 	@endforeach
