@@ -1,9 +1,8 @@
 <section class="projects feature-box-sm">
-	<div class="featured-image-box">
-		<img src="@asset('images/placeholder-image-300x200.jpg')"/>
+	<div class="featured-image-box" style="background-image: url('@asset('images/placeholder-image-300x200.jpg')');">
+		<h5 class="blue-bkgd">Projects</h5>
 	</div>
-	<h5 class="blue-bkgd">Projects</h5>
-	<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
 		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat.</p>
 	<ul>
@@ -14,7 +13,7 @@
 			$link = site_url() . '/' . $child->post_name;
 			;
 			?>
-			<li><a class="purple" href="{{$link}}">{{$child->post_title}}</a></li>
+			<li class="border"><a class="purple" href="{{$link}}">{{$child->post_title}}<i class="fa fa-angle-right pull-right"></i></a></li>
 		@endforeach
 	</ul>
 </section>

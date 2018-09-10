@@ -1,19 +1,25 @@
 .feature-box-sm {
-	max-width: 300px;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 	.featured-image-box {
-		max-height: 150px;
-		overflow: hidden;
+		min-height: 150px;
+		background-size: cover;
 	}
 	h5 {
 		padding: 1.15rem;
-		text-align: center;
-		position: relative;
-		bottom: 3em;
-		margin-bottom: -2em;
-		font-weight: lighter;
+		font-weight: normal;
 	}
-	p {
-		text-align: center;
+	h4, p {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	ul {
+		list-style: none;
+		padding-left: 0;
+		li {
+			padding: 1rem 2rem;
+		}
 	}
 }
 
@@ -34,7 +40,7 @@
 	min-height: 281px;
 	background-size: cover;
 	h4 {
-		padding: 2rem 10rem 2rem 0.625rem;
+		padding: 2rem 15rem 2rem 0.625rem;
 		margin: 0;
 		position: absolute;
 		bottom: 0;
