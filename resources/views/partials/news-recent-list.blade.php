@@ -1,9 +1,9 @@
-<div class="row-fluid">
+<section class="row-fluid recent-news">
 	<h4 class="pad">Recent News</h4>
 	<ul>
 		<?php
 		$args = [
-			'posts_per_page' => 5
+			'posts_per_page' => 3
 		];?>
 		@foreach(\App\App::getLatestNews( $args ) as $news)
 			<?php
@@ -12,10 +12,10 @@
 			$link = site_url() . '/' . $news->post_name;
 			$date = date( 'M d, Y', strtotime( $news->post_date ) );
 			;?>
-			<li>
+			<li class="border">
 				<p class="text-left upper">{{$date}}</p>
 				<p><a href="{{$link}}" rel="bookmark" title="{{$news->post_title}}">{{$news->post_title}}</a></p>
 			</li>
 		@endforeach
 	</ul>
-</div>
+</section>
