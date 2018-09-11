@@ -25,7 +25,7 @@ $args = [
 		</div>
 		<article class="row">
 			<p class="upper pad">{{$date}}</p>
-			<p><?php echo wp_trim_words( $feature->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right pull-right'></i><i class='fa fa-arrow-right'></i></a>" );?></p>
+			<p><?php echo wp_trim_words( $feature->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" );?></p>
 		</article>
 	@endforeach
 </section>
