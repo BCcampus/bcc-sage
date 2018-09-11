@@ -6,15 +6,10 @@
 		$link = site_url() . '/' . $related_post->post_name;
 		$cat = get_the_category( $related_post->ID );
 
-		if ( has_post_thumbnail( $related_post->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		}
 		;?>
 		<article class="col-sm feature-box-sm border" itemscope itemtype="http://schema.org/Article">
 			<a href="{{$link}}">
-				<div class="featured-image-box" style="background-image: url({{$image[0]}});">
+				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 
 				</div>
 			</a>

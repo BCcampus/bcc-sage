@@ -14,17 +14,10 @@ $i = 0;
 			// update to current domain when importing content
 			$link = site_url() . '/' . $related_post->post_name;
 
-
-			if ( has_post_thumbnail( $related_post->ID ) ) {
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID ), 'single-post-thumbnail' );
-			} else {
-				$image[0] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-			}
-
 			// make the first one bigger
 			if ( 0 === $i ): ;?>
 			<div class="col-6">
-				<div class="row featured-news-front" style="background-image: url('{{$image[0]}}');">
+				<div class="row featured-news-front" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 				<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
 					<p><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 					<h4><a class="text-inverse" href="{{$link}}">{{$related_post->post_title}}</a>
@@ -35,7 +28,7 @@ $i = 0;
 			</div>
 			<?php else: ;?>
 			<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
-				<div class="featured-image-box" style="background-image: url({{$image[0]}});">
+				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 					<a href="{{$link}}"></a>
 				</div>
 				<p class="upper pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>

@@ -176,6 +176,23 @@ class App extends Controller {
 	}
 
 	/**
+	 * Returns the url of the post thumbnail, or default img url
+	 *
+	 * @param $id
+	 *
+	 * @return mixed
+	 */
+	public static function getThumbUrl( $id ) {
+		if ( has_post_thumbnail( $id ) ) {
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
+		} else {
+			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
+		}
+
+		return $image[0];
+	}
+
+	/**
 	 * Uses string values in post_title, post_content to find matches in DB
 	 *
 	 * @param $post

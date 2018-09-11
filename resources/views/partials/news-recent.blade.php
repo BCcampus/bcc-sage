@@ -10,16 +10,10 @@ $args = [
 		// not using $child->guid since guid does not
 		// update to current domain when importing content
 		$link = site_url() . '/' . $recent->post_name;
-
-		if ( has_post_thumbnail( $recent->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		}
 		;?>
 			<article class="col-sm-4 feature-box-sm border" itemscope itemtype="http://schema.org/Article">
 				<a href="{{$link}}">
-					<div class="featured-image-box" style="background-image: url({{$image[0]}});">
+					<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 
 					</div>
 				</a>

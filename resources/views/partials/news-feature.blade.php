@@ -13,13 +13,8 @@ $args = [
 		$link = site_url() . '/' . $feature->post_name;
 		$cat = get_the_category( $feature->ID );
 
-		if ( has_post_thumbnail( $feature->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $feature->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[0] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		}
 		;?>
-		<div class="featured-news row" style="background-image: url('{{$image[0]}}');">
+		<div class="featured-news row" style="background-image: url({{\App\App::getThumbUrl($feature->ID)}});">
 			<h4 class="purple-bkgd text-inverse"><a href="{{$link}}">{{$feature->post_title}}</a>
 			</h4>
 		</div>
