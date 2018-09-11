@@ -1,6 +1,7 @@
 <?php
 $post_types = [ 'post', 'page' ];
 $limit = 3;
+$i = 0;
 ;?>
 <div class="shady-bkgd my-3 p-2">
 	<h3>Related News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
@@ -13,15 +14,36 @@ $limit = 3;
 			// update to current domain when importing content
 			$link = site_url() . '/' . $related_post->post_name;
 			$date = date( 'M d, Y', strtotime( $related_post->post_date ) );
-			;?>
-			<article class="col-sm feature-box-sm">
-				<div class="featured-image-box">
-					<a href="{{$link}}"><?php echo \App\App::getThumb( $related_post->ID, [ 300 ] );?></a>
+
+			if ( has_post_thumbnail( $related_post->ID ) ) {
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID ), 'single-post-thumbnail' );
+			} else {
+				$image[0] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
+			}
+
+			// make the first one bigger
+			if ( 0 === $i ): ;?>
+			<div class="col-6">
+				<div class="row featured-news-front" style="background-image: url('{{$image[0]}}');">
+				<article class="col feature-box-md purple-bkgd">
+					<p>{{$date}}</p>
+					<h4><a class="text-inverse" href="{{$link}}">{{$related_post->post_title}}</a>
+					</h4>
+				</article>
+				<div class="col"></div>
 				</div>
-				<p class="text-left">{{$date}}</p>
-				<h4 class="text-left"><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
+			</div>
+			<?php else: ;?>
+			<article class="col feature-box-sm">
+				<div class="featured-image-box" style="background-image: url({{$image[0]}});">
+					<a href="{{$link}}"></a>
+				</div>
+				<p class="upper pad">{{$date}}</p>
+				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 				</h4>
 			</article>
+			<?php endif;?>
+			<?php $i ++; unset($image); ?>
 		@endforeach
 	</section>
 </div>

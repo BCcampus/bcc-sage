@@ -13,7 +13,7 @@
 			$link = site_url() . '/' . $child->post_name;
 			;
 			?>
-			<li class="border"><a class="purple" href="{{$link}}">{{$child->post_title}}<i class="fa fa-angle-right pull-right"></i></a></li>
+			<li class="border"><a class="purple" href="{{$link}}">{{$child->post_title}}<i class="fa fa-arrow-right pull-right"></i></a></li>
 		@endforeach
 	</ul>
 </section>
