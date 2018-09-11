@@ -9,16 +9,17 @@ $args = [
 			'taxonomy' => 'events_categories',
 			'field'    => 'name',
 			'terms'    => 'featured',
-		]
-	]
-];; ?>
+		],
+	],
+];
+; ?>
 <div class="pad">
-    <h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-        <small><a href="/calendar">view all events</a></small>
-    </h3>
+	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
+		<small><a href="/calendar">view all events</a></small>
+	</h3>
 </div>
 <section class="featured-events-front d-flex flex-row flex-wrap">
-    @foreach(\App\App::getLatestNews( $args ) as $recent )
+	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<?php
 		$date = date( 'M d, Y', strtotime( $recent->post_date ) );
 		if ( has_post_thumbnail( $recent->ID ) ) {
@@ -27,13 +28,13 @@ $args = [
 			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
 		}
 		?>
-        <article class="events-box-md col d-flex">
-            <div class="featured-event col d-flex" style="background-image: url({{$image[0]}});">
-                <h4 class="purple-bkgd col mt-auto">
-                    <small>{{$date}}</small>
-                    <br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
-            </div>
-        </article>
-    @endforeach
+		<article class="events-box-md col d-flex">
+			<div class="featured-event col d-flex" style="background-image: url({{$image[0]}});">
+				<h4 class="purple-bkgd col mt-auto">
+					<small>{{$date}}</small>
+					<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
+			</div>
+		</article>
+	@endforeach
 </section>
 
