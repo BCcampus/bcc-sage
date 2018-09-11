@@ -327,7 +327,6 @@ class App extends Controller {
 		$defaults = [
 			'posts_per_page' => 1,
 			'post_status'    => 'publish',
-			'order'          => 'DESC',
 			'exclude'        => [],
 		];
 
