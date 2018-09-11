@@ -11,7 +11,7 @@ $args = [
 		// update to current domain when importing content
 		$link = site_url() . '/' . $recent->post_name;
 		;?>
-			<article class="col-sm-4 feature-box-sm border" itemscope itemtype="http://schema.org/Article">
+			<article class="col feature-box-sm border" itemscope itemtype="http://schema.org/Article">
 				<a href="{{$link}}">
 					<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 

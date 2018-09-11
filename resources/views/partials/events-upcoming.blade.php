@@ -12,26 +12,22 @@ $args = [
 	],
 ];
 ;?>
-<section class="pad d-flex flex-row flex-wrap">
+<section class="pad-top">
+	<header>
 	<h4>Upcoming</h4>
+	</header>
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<?php
 		// not using $child->guid since guid does not
 		// update to current domain when importing content
 		$link = site_url() . '/' . $recent->post_name;
-		$date = date( 'M d, Y', strtotime( $recent->post_date ) );
-		if ( has_post_thumbnail( $recent->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		};
 		?>
-		<article class="events-upcoming">
-			<div class="row border">
-				<div class="col-sm-2 events-image-box" style="background-image: url({{$image[0]}});">
+		<article class="events-upcoming my-1 border" itemscope itemtype="http://schema.org/Article">
+			<div class="row pad-left">
+				<div class="col-sm-2 events-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 				</div>
 				<div class="col-sm-10">
-					<p class="upper">{{$date}}</p>
+					<p class="upper"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time></p>
 					<h4><a class="purple" href="{{$link}}">{{$recent->post_title}}</a></h4>
 				</div>
 			</div>
