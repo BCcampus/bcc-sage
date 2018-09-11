@@ -13,7 +13,7 @@ $i = 0;
 			// not using $child->guid since guid does not
 			// update to current domain when importing content
 			$link = site_url() . '/' . $related_post->post_name;
-			$date = date( 'M d, Y', strtotime( $related_post->post_date ) );
+
 
 			if ( has_post_thumbnail( $related_post->ID ) ) {
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID ), 'single-post-thumbnail' );
@@ -25,8 +25,8 @@ $i = 0;
 			if ( 0 === $i ): ;?>
 			<div class="col-6">
 				<div class="row featured-news-front" style="background-image: url('{{$image[0]}}');">
-				<article class="col feature-box-md purple-bkgd">
-					<p>{{$date}}</p>
+				<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
+					<p><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 					<h4><a class="text-inverse" href="{{$link}}">{{$related_post->post_title}}</a>
 					</h4>
 				</article>
@@ -34,11 +34,11 @@ $i = 0;
 				</div>
 			</div>
 			<?php else: ;?>
-			<article class="col feature-box-sm">
+			<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
 				<div class="featured-image-box" style="background-image: url({{$image[0]}});">
 					<a href="{{$link}}"></a>
 				</div>
-				<p class="upper pad">{{$date}}</p>
+				<p class="upper pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 				</h4>
 			</article>

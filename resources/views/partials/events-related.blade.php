@@ -11,10 +11,10 @@ $limit = 4;
 		// not using $child->guid since guid does not
 		// update to current domain when importing content
 		$link = site_url() . '/' . $related_post->post_name;
-		$date = date( 'M d, Y', strtotime( $related_post->post_date ) );
+
 		;?>
-		<article class="col border py-2 m-md-2">
-			<p class="text-left upper">{{$date}}</p>
+		<article class="col border py-2 m-md-2" itemscope itemtype="http://schema.org/Article">
+			<p class="text-left upper"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 			<h4 class="text-left"><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a></h4>
 		</article>
 	@endforeach
