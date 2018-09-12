@@ -21,16 +21,11 @@ $args = [
 	</header>
 	<div class="d-flex flex-row flex-wrap mb-2 no-gutters">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $recent->post_name;
-		?>
 		<article class="col no-gutters px-md-1">
 			<div class="featured-event col d-flex" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 				<h4 class="purple-bkgd col mt-auto">
 					<time itemprop="datePublished" class="updated upper" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
-					<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
+					<br><a class="text-inverse" href="{{ $recent->guid }}">{{ $recent->post_title }}</a></h4>
 			</div>
 		</article>
 	@endforeach
