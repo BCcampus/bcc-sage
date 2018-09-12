@@ -115,10 +115,6 @@
   margin-bottom: 20px;
 }
 
-.pad {
-  padding-top: 15px;
-}
-
 .shadow-box {
   @include shadow-box;
   margin-bottom: 20px;
@@ -168,7 +164,6 @@ ul.no-bullets {
 }
 
 .featured-news-front {
-  min-height: 281px;
   background-size: cover;
   h4 {
     font-weight: normal;
@@ -184,9 +179,6 @@ ul.no-bullets {
     font-weight: lighter;
     margin: 1em 0;
   }
-  h3 {
-    margin-left: -15px;
-  }
 }
 
 .featured-event {
@@ -195,7 +187,7 @@ ul.no-bullets {
   padding: 0;
   h4 {
     margin-top: auto;
-    color: #fff;
+    color: $color-white;
     font-weight: normal;
     padding: 0.5rem;
     margin: 0;
@@ -205,23 +197,6 @@ ul.no-bullets {
         text-decoration: none;
       }
     }
-  }
-  p {
-    font-weight: lighter;
-    margin: 1em 0;
-  }
-  h3 {
-    margin-left: -15px;
-  }
-  .col {
-    padding-left: 10px;
-  }
-}
-
-.events-upcoming {
-  width: 100%;
-  .row {
-    margin: 0 0 10px;
   }
 }
 

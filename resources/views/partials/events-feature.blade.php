@@ -13,28 +13,27 @@ $args = [
 	],
 ];
 ; ?>
-<div class="pad">
+<section class="pad-top featured-news-front">
+	<header>
 	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-		<small><a href="/calendar">view all events</a></small>
+		<small><a href="{{site_url()}}/calendar">view all events</a></small>
 	</h3>
-</div>
-<section class="featured-events-front d-flex flex-row flex-wrap">
+	</header>
+	<div class="d-flex flex-row flex-wrap mb-2 no-gutters">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<?php
-		$date = date( 'M d, Y', strtotime( $recent->post_date ) );
-		if ( has_post_thumbnail( $recent->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		}
+		// not using $child->guid since guid does not
+		// update to current domain when importing content
+		$link = site_url() . '/' . $recent->post_name;
 		?>
-		<article class="events-box-md col d-flex">
-			<div class="featured-event col d-flex" style="background-image: url({{$image[0]}});">
+		<article class="col no-gutters px-md-1">
+			<div class="featured-event col d-flex" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 				<h4 class="purple-bkgd col mt-auto">
-					<small>{{$date}}</small>
+					<time itemprop="datePublished" class="updated upper" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 					<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
 			</div>
 		</article>
 	@endforeach
+	</div>
 </section>
 

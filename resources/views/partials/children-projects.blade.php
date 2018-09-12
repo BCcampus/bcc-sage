@@ -5,7 +5,7 @@
 		// update to current domain when importing content
 		$link = site_url() . '/' . $child->post_name;
 		;?>
-		<article class="projects d-flex flex-row">
+		<article class="projects d-flex flex-row" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-image-box side-img p-2">
 				<a href="{{$link}}"><?php echo \App\App::getThumb( $child->ID, [
 						175,
