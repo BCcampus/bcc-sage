@@ -19,7 +19,7 @@
 			</li>
 		@endforeach
 		<li class="border-top">
-			<p><a href="<?php get_site_url(); ?>/bccampus-news">View all recent news</a></p>
+			<p><a href="{{ site_url() }}/bccampus-news">View all recent news</a></p>
 		</li>
 	</ul>
 </section>
