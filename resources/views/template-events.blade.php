@@ -53,7 +53,7 @@
             @endforeach
         </ul>
         <h4>
-            <small><a href="{{ site_url() }}/events_categories/fol">FOL Archives</a></small>
+            <small><a href="{{ site_url() }}/events_categories/flo">FLO Archives</a></small>
         </h4>
     </section>
         </div>
