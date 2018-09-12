@@ -56,5 +56,19 @@
         </article>
     </section>
 
+    <section class="featured-events-front d-flex flex-row flex-wrap">
+        <div class="col-sm d-flex">
+            <h4>
+                <small><a href="/events_categories/edtech">EdTech Archives</a></small>
+            </h4>
+        </div>
+        <div class="col-sm d-flex">
+            <h4>
+                <small><a href="/events_categories/fol">FOL Archives</a></small>
+            </h4>
+        </div>
+    </section>
+
+
     @endwhile
 @endsection
