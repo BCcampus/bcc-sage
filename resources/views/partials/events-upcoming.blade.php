@@ -23,7 +23,7 @@ $args = [
 				</div>
 				<div class="col-sm-10">
 					<p class="upper"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time></p>
-					<h4><a class="purple" href="{{ $recent->guid }}">{{ $recent->post_title }}</a></h4>
+					<h4><a class="purple" href="@php echo esc_url( $recent->guid ); @endphp">{{ $recent->post_title }}</a></h4>
 				</div>
 			</div>
 		</article>
