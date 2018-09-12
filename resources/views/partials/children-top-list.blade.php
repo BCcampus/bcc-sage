@@ -2,9 +2,7 @@
 	<div class="featured-image-box" style="background-image: url('@asset('images/placeholder-image-300x200.jpg')');">
 		<h5 class="blue-bkgd">Topics of Practice</h5>
 	</div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.</p>
+	<p>At BCcampus, we support the adaptation and evolution of teaching and learning practices in post-secondary institutions across British Columbia through collaboration, communication, and innovation.</p>
 	<ul>
 		@foreach(\App\Page::getChildrenOfPage($get_topics_of_practice_id) as $child)
 			<?php
