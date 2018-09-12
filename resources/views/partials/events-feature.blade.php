@@ -1,4 +1,4 @@
-<?php
+@php(
 $args = [
 	'posts_per_page' => 2,
 	'post_type'      => 'ai1ec_event',
@@ -10,8 +10,7 @@ $args = [
 			'terms'    => 'featured',
 		],
 	],
-];
-; ?>
+])
 <section class="pad-top featured-news-front">
 	<header>
 @if(is_front_page())

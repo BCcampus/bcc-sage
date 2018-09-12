@@ -5,11 +5,8 @@
 	</h3>
 	</header>
 	@foreach($get_latest_news as $feature)
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $feature->post_name;
-		;?>
+		@php($link = site_url() . '/' . $feature->post_name)
+
 		<div class="row featured-news-front no-gutters" style="background-image: url({{\App\App::getThumbUrl($feature->ID)}});">
 			<div class="col px-md-1"></div>
 			<article class="col purple-bkgd" itemscope itemtype="http://schema.org/Article">

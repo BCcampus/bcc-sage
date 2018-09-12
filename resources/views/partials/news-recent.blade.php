@@ -1,16 +1,11 @@
-<?php
+@php(
 $args = [
 	'posts_per_page' => 3,
 	'category'       => 0,
-];
-;?>
+])
 <section class="recent-news pad-top d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $recent->post_name;
-		;?>
+		@php($link = site_url() . '/' . $recent->post_name)
 			<article class="col feature-box-sm border" itemscope itemtype="http://schema.org/Article">
 				<a href="{{$link}}">
 					<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
