@@ -1,7 +1,8 @@
-<?php
-$post_types = [ 'ai1ec_event' ];
-$limit = 4;
-; ?>
+@php
+	$post_types = [ 'ai1ec_event' ];
+	$limit = 4;
+@endphp
+
 <h3>Related Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
 	<small><a href="/calendar">view all events</a></small>
 </h3>

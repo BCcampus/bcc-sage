@@ -1,19 +1,15 @@
-<?php
+@php
 $args = [
 	'posts_per_page' => 1,
 	'category_name'  => 'Homepage',
 	'post__in'       => get_option( 'sticky_posts' ),
 
-];?>
+];
+@endphp
 <section class="container-fluid">
 	@foreach(\App\App::getLatestNews( $args ) as $feature)
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $feature->post_name;
-		$cat = get_the_category( $feature->ID );
-
-		;?>
+		@php($link = site_url() . '/' . $feature->post_name)
+		@php($cat = get_the_category( $feature->ID))
 		<div class="featured-news row" style="background-image: url({{\App\App::getThumbUrl($feature->ID)}});">
 			<h4 class="purple-bkgd text-inverse"><a href="{{$link}}">{{$feature->post_title}}</a>
 			</h4>
