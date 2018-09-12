@@ -1,4 +1,4 @@
-<?php
+@php
 $args = [
 	'posts_per_page' => 3,
 	'post_type'      => 'ai1ec_event',
@@ -11,7 +11,7 @@ $args = [
 		],
 	],
 ];
-;?>
+@endphp
 <section class="pad-top">
 	<header>
 	<h4>Upcoming</h4>

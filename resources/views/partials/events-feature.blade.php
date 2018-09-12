@@ -10,7 +10,8 @@ $args = [
 			'terms'    => 'featured',
 		],
 	],
-]; @endphp
+];
+@endphp
 <section class="pad-top featured-news-front">
 	<header>
 @if(is_front_page())

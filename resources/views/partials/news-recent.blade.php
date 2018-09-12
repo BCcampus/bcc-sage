@@ -1,8 +1,9 @@
-@php(
+@php
 $args = [
 	'posts_per_page' => 3,
 	'category'       => 0,
-])
+];
+@endphp
 <section class="recent-news pad-top d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		@php($link = site_url() . '/' . $recent->post_name)

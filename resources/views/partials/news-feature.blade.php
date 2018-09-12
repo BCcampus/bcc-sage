@@ -1,10 +1,11 @@
-@php(
+@php
 $args = [
 	'posts_per_page' => 1,
 	'category_name'  => 'Homepage',
 	'post__in'       => get_option( 'sticky_posts' ),
 
-])
+];
+@endphp
 <section class="container-fluid">
 	@foreach(\App\App::getLatestNews( $args ) as $feature)
 		@php($link = site_url() . '/' . $feature->post_name)

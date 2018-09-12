@@ -1,10 +1,11 @@
 <section class="row-fluid recent-news">
 	<h4 class="pad-top">Recent News</h4>
 	<ul>
-		@php(
+		@php
 		$args = [
 			'posts_per_page' => 3,
-		])
+		];
+		@endphp
 		@foreach(\App\App::getLatestNews( $args ) as $news)
 			@php($link = site_url() . '/' . $news->post_name)
 			@php($cat = get_the_category( $news->ID))
