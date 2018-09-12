@@ -25,7 +25,7 @@ $args = [
 			<div class="featured-event col d-flex" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 				<h4 class="purple-bkgd col mt-auto">
 					<time itemprop="datePublished" class="updated upper" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
-					<br><a class="text-inverse" href="{{ $recent->guid }}">{{ $recent->post_title }}</a></h4>
+					<br><a class="text-inverse" href="@php echo esc_url( $recent->guid ); @endphp">{{ $recent->post_title }}</a></h4>
 			</div>
 		</article>
 	@endforeach
