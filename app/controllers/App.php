@@ -336,4 +336,33 @@ class App extends Controller {
 
 		return $latest;
 	}
+
+	/**
+	 * Returns events in a specific event category
+	 *
+	 * @param array $args
+	 * @param $event_category
+	 *
+	 * @return array
+	 */
+	public static function getEvents( $event_category, $args = [] ) {
+		$defaults = [
+			'posts_per_page' => 1,
+			'post_status'    => 'publish',
+			'exclude'        => [],
+			'tax_query'      => [
+				[
+					'taxonomy' => 'events_categories',
+					'field'    => 'name',
+					'terms'    => $event_category,
+				],
+			],
+		];
+
+		$r = wp_parse_args( $args, $defaults );
+
+		$events = get_posts( $r );
+
+		return $events;
+	}
 }

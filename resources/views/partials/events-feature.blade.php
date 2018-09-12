@@ -1,5 +1,4 @@
 <?php
-$cat = get_the_category( $post->ID );
 $args = [
 	'posts_per_page' => 2,
 	'post_type'      => 'ai1ec_event',
@@ -13,11 +12,13 @@ $args = [
 	],
 ];
 ; ?>
+@if(is_front_page())
 <div class="pad">
 	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
-		<small><a href="/calendar">view all events</a></small>
+		<small><a href="/events">view all events</a></small>
 	</h3>
 </div>
+@endif
 <section class="featured-events-front d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<?php
@@ -28,13 +29,18 @@ $args = [
 			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
 		}
 		?>
-		<article class="events-box-md col d-flex">
-			<div class="featured-event col d-flex" style="background-image: url({{$image[0]}});">
-				<h4 class="purple-bkgd col mt-auto">
-					<small>{{$date}}</small>
-					<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
-			</div>
-		</article>
+			<article class="events-box-md col-sm d-flex">
+				<div class="featured-event col-sm d-flex" style="background-image: url({{$image[0]}});">
+					@if(is_page('events'))
+						<h4 class="purple-bkgd halfsies col-sm mt-auto">
+							@else
+								<h4 class="purple-bkgd col-sm mt-auto">
+									@endif
+								<small>{{$date}}</small>
+								<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
+						</h4>
+				</div>
+			</article>
 	@endforeach
 </section>
 
