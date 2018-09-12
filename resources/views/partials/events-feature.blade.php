@@ -12,35 +12,29 @@ $args = [
 	],
 ];
 ; ?>
+<section class="pad-top featured-news-front">
+	<header>
 @if(is_front_page())
-<div class="pad">
 	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="/events">view all events</a></small>
 	</h3>
-</div>
+	</header>
 @endif
-<section class="featured-events-front d-flex flex-row flex-wrap">
+	<div class="featured-events-front d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
-		<?php
-		$date = date( 'M d, Y', strtotime( $recent->post_date ) );
-		if ( has_post_thumbnail( $recent->ID ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent->ID ), 'single-post-thumbnail' );
-		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';
-		}
-		?>
-			<article class="events-box-md col-sm d-flex">
-				<div class="featured-event col-sm d-flex" style="background-image: url({{$image[0]}});">
-					@if(is_page('events'))
-						<h4 class="purple-bkgd halfsies col-sm mt-auto">
-							@else
-								<h4 class="purple-bkgd col-sm mt-auto">
-									@endif
-								<small>{{$date}}</small>
-								<br><a class="text-inverse" href="{{$link}}">{{$recent->post_title}}</a></h4>
-						</h4>
-				</div>
-			</article>
+		<article class="events-box-md col-sm d-flex no-gutters px-md-1">
+			<div class="featured-event col-sm d-flex" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
+				@if(is_page('events'))
+					<h4 class="purple-bkgd halfsies col-sm mt-auto">
+						@else
+							<h4 class="purple-bkgd col-sm mt-auto">
+								@endif
+					<time itemprop="datePublished" class="updated upper" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
+					<br><a class="text-inverse" href="{{ $recent->guid }}">{{ $recent->post_title }}</a></h4>
+					</h4>
+			</div>
+		</article>
 	@endforeach
+	</div>
 </section>
 
