@@ -182,7 +182,12 @@ class App extends Controller {
 	 *
 	 * @return mixed
 	 */
-	public static function getThumbUrl( $id ) {
+	public static function getThumbUrl( $id = 0 ) {
+		if ( 0 === $id ) {
+			$post = get_post( 0 );
+			$id   = $post->ID;
+		}
+
 		if ( has_post_thumbnail( $id ) ) {
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
 		} else {
