@@ -17,7 +17,7 @@
         <div class="row">
         <section class="featured-events-front d-flex flex-column col-sm">
             <div class="featured-event col-sm d-flex" style="background-image: url({{get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg'}});">
-                <h4 class="purple-bkgd col-sm mt-auto">Edtech Demos</h4>
+                <h4 class="purple-bkgd col-sm mt-auto">EdTech Demos</h4>
             </div>
 
             <ul class="events-list">
@@ -38,7 +38,7 @@
 
     <section class="featured-events-front d-flex flex-column col-sm">
         <div class="featured-event col-sm d-flex" style="background-image: url({{get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg'}});">
-            <h4 class="purple-bkgd col-sm mt-auto">FOL</h4>
+            <h4 class="purple-bkgd col-sm mt-auto">Facilitating Learning Online</h4>
         </div>
 
         <ul class="events-list">
