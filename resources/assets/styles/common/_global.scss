@@ -197,32 +197,10 @@ p.tags {
 }
 
 .post-date {
-	display: inline-block;
-	text-align: center;
-	background-color: $color-black;
-	color: $color-white;
-	height: 45px;
-	width: 35px;
+	display: block;
 	text-transform: uppercase;
 	line-height: 1;
-	margin-right: 10px;
-	vertical-align: middle;
 	font-size: 10px;
-	padding: 2px 12px !important;
-	margin-left: 25px;
-
-	span {
-		font-size: 22px;
-	}
-
-	a {
-		color: $color-white;
-		text-decoration: none;
-	}
-
-	&:hover {
-		background-color: $color-grey-darker;
-	}
 }
 
 time.updated {
