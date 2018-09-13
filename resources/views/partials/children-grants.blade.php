@@ -1,17 +1,12 @@
-<section class="grants d-flex flex-row flex-wrap">
-		@foreach(\App\Page::getChildrenOfPage() as $child)
-			<?php
-			// not using $child->guid since guid does not
-			// update to current domain when importing content
-			$link = site_url() . '/' . $child->post_name;
-			;?>
-			<article class="col-sm-6 feature-box-sm" itemscope itemtype="http://schema.org/Article">
-				<div class="featured-image-box">
-					<a href="{{$link}}"><?php echo \App\App::getThumb( $child->ID, [ 300 ] );?></a>
-				</div>
-				<h5 class="purple-bkgd"><a class="text-white" href="{{$link}}">{{$child->post_title}}</a>
-				</h5>
-				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ) ;?></p>
-			</article>
-		@endforeach
+<h4 class="pt-5">Grants Currently Offered:</h4>
+<section class="grants d-flex col-sm row">
+    @foreach(\App\Page::getChildrenOfPage( '698319' ) as $child)
+        @php($link = site_url() . '/' . $child->post_name)
+        <div class="featured-event d-flex col-sm-6"
+             style="background-image: url({{\App\App::getThumbUrl($child->ID)}});">
+            <h4 class="purple-bkgd col-sm mt-auto">
+                <a class="text-white" href="{{$link}}">{{$child->post_title}}</a>
+            </h4>
+        </div>
+    @endforeach
 </section>
