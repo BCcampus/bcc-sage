@@ -9,24 +9,30 @@
 	<header class="entry-header">
 		<h2 itemprop="name">{!! get_the_title() !!}</h2>
 	</header>
-	<p class="byline author vcard upper">
-		<small>
-			{{ __('By', 'bcc-sage') }}
-			<a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
+	@if ( !( $post->post_type === 'ai1ec_event' ) )
+		<p class="byline author vcard upper">
+			<small>
+				{{ __('By', 'bcc-sage') }}
+				<a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">{{ get_the_author() }}</span>
       </span>
-			</a>
-			&nbsp;<i class="fa fa-circle green small"></i>&nbsp;
-			@include('partials.entry-meta')
-			&nbsp<i class="fa fa-circle green small"></i>&nbsp;
-			<span itemprop="articleSection">{{ the_category( ', ' ) }}</span>
-		</small>
-	</p>
-	<div itemprop="articleBody" class="entry-content">
-		@php(the_content())
-	</div>
-	<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
+				</a>
+				&nbsp;<i class="fa fa-circle green small"></i>&nbsp;
+				@include('partials.entry-meta')
+				&nbsp<i class="fa fa-circle green small"></i>&nbsp;
+				<span itemprop="articleSection">{{ the_category( ', ' ) }}</span>
+			</small>
+		</p>
+	@endif
+	@if ( ( $post->post_type === 'ai1ec_event' ) )
+		<div itemprop="articleBody" class="entry-content ai1ec-single">
+			@else
+				<div itemprop="articleBody" class="entry-content">
+					@endif
+					@php(the_content())
+				</div>
+				<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
 @if($get_upcoming_events)
 		<hr>
 		<div class="upcoming-events" itemscope itemtype="http://schema.org/Event">
