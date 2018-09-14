@@ -1,19 +1,16 @@
-<section class="topics-of-practice">
-	<div class="d-flex flex-row flex-wrap">
-		@foreach(\App\Page::getChildrenOfPage() as $child)
-			<?php
-			// not using $child->guid since guid does not
-			// update to current domain when importing content
+<section class="d-flex flex-row flex-wrap">
+	@foreach(\App\Page::getChildrenOfPage() as $child)
+		@php
 			$link = site_url() . '/' . $child->post_name;
-			;?>
-			<article class="col-sm-6 feature-box-sm" itemscope itemtype="http://schema.org/Article">
-				<div class="featured-image-box">
-					<a href="{{$link}}"><?php echo \App\App::getThumb( $child->ID, [ 300 ] );?></a>
-				</div>
-				<h5 class="purple-bkgd"><a class="text-white" href="{{$link}}">{{$child->post_title}}</a>
-				</h5>
-				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ) ;?></p>
-			</article>
-		@endforeach
-	</div>
+		@endphp
+		<article class="topics-of-practice col-sm-6 no-gutters mb-2 px-2" itemscope itemtype="http://schema.org/Article">
+			<div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\App::getThumbUrl($child->ID)}});">
+				<h4 class="purple-bkgd text-inverse col-sm mt-auto"><a href="{{$link}}">{{$child->post_title}}</a>
+				</h4>
+			</div>
+			<div class="row-fluid border-left border-right border-bottom">
+				<p class="pad-top pad-left pad-right"><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" );?></p>
+			</div>
+		</article>
+	@endforeach
 </section>
