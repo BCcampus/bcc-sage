@@ -22,6 +22,7 @@
 
             <ul class="events-list">
                 @foreach(\App\App::getEvents( 'edtech', $args ) as $recent )
+                    @php($link = site_url() . '/' . $recent->post_name)
                     @php($date = date( 'M d, Y', strtotime( $recent->post_date ) ))
                     <li class="border">
                         <p class="upper">{{$date}}</p>
@@ -42,7 +43,8 @@
         </div>
 
         <ul class="events-list">
-            @foreach(\App\App::getEvents( 'edtech', $args ) as $recent )
+            @foreach(\App\App::getEvents( 'flo', $args ) as $recent )
+                @php($link = site_url() . '/' . $recent->post_name)
                 @php($date = date( 'M d, Y', strtotime( $recent->post_date ) ))
                 <li class="border">
                     <p class="upper">{{$date}}</p>
