@@ -32,11 +32,10 @@
 					@endif
 					@php(the_content())
 				</div>
-				<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
 @if($get_upcoming_events)
 		<hr>
 		<div class="upcoming-events" itemscope itemtype="http://schema.org/Event">
-			<p>Join us at an upcoming event:</p>
+			<h5>Join us at an upcoming event:</h5>
 			<ul>
 				@foreach($get_upcoming_events as $upcoming_event )
 					<li>
@@ -50,6 +49,7 @@
 		</div>
 		<hr>
 	@endif
+<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
 
 	<footer class="post-footer">
 		@if( !is_singular( 'ai1ec_event' ))
