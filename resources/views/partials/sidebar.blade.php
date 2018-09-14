@@ -19,4 +19,9 @@
     @endif
 @else
     @php(dynamic_sidebar('sidebar-primary'))
+	@if(is_singular('post'))
+		<div class="text-center">
+		@include( 'partials.subscribe')
+		</div>
+	@endif
 @endif
