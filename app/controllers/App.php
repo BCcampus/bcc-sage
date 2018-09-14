@@ -35,6 +35,9 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'bcc-sage' );
 		}
+		if ( is_single() ) {
+			return __( 'News', 'bcc-sage' );
+		}
 
 		return get_the_title();
 	}
