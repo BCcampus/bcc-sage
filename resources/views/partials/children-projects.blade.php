@@ -5,14 +5,10 @@
 		// update to current domain when importing content
 		$link = site_url() . '/' . $child->post_name;
 		;?>
-		<article class="projects d-flex flex-row" itemscope itemtype="http://schema.org/Article">
-			<div class="featured-image-box side-img p-2">
-				<a href="{{$link}}"><?php echo \App\App::getThumb( $child->ID, [
-						175,
-						175
-					] );?></a>
+		<article class="projects d-flex flex-row mb-4" itemscope itemtype="http://schema.org/Article">
+			<div class="col-md-3 events-image-box" style="background-image: url({{\App\App::getThumbUrl( $child->ID )}});">
 			</div>
-			<div class="p-2">
+			<div class="col-md-9">
 				<h5><a class="purple" href="{{$link}}">{{$child->post_title}}</a></h5>
 				<p><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;</a>" ) ;?></p>
 			</div>

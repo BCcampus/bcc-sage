@@ -2,3 +2,10 @@
 	background-color: $color-grey-light;
 	padding: 0.65em;
 }
+
+#sidebar{
+	.subscribe-box{
+		@include opaque-bkgd;
+		background-color: $color-purple;
+	}
+}
