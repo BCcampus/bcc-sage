@@ -27,7 +27,11 @@ class App extends Controller {
 			return __( 'Latest Posts', 'bcc-sage' );
 		}
 		if ( is_archive() ) {
-			return get_the_archive_title();
+			if ( is_category() ) {
+				return __( 'News', 'bcc-sage' );
+			} else {
+				return get_the_archive_title();
+			}
 		}
 		if ( is_search() ) {
 			return sprintf( __( 'Search Results for %s', 'bcc-sage' ), get_search_query() );
@@ -35,7 +39,7 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'bcc-sage' );
 		}
-		if ( is_singular('post') ) {
+		if ( is_singular( 'post' ) ) {
 			return __( 'News', 'bcc-sage' );
 		}
 
