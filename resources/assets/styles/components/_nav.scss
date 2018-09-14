@@ -105,3 +105,10 @@ nav {
 .navbar-megamenu .navbar-nav > li.megamenu > .dropdown-menu .megamenu-column a.dropdown-toggle.parent {
 	font-weight: bold;
 }
+
+.page-numbers{
+	padding: 0.5rem 1rem;
+	border: 1px solid $color-grey;
+	border-radius: 2px;
+	margin: 1rem 0 1rem;
+}

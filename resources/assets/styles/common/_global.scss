@@ -196,6 +196,10 @@ p.tags {
 	padding-top: 15px;
 }
 
+.pad-bottom {
+	padding-bottom: 15px;
+}
+
 .post-date {
 	display: block;
 	text-transform: uppercase;
@@ -226,8 +230,8 @@ time.updated {
 }
 
 .halfsies {
-  width: 60%;
-  position: absolute;
-  right: 0;
-  height: 100%;
+	width: 60%;
+	position: absolute;
+	right: 0;
+	height: 100%;
 }

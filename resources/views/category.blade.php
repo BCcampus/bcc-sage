@@ -6,5 +6,7 @@
     @include('partials.content')
   </span>
 	@endwhile
+	<div class="pad-top pad-bottom">
 	<?php echo paginate_links();?>
+	</div>
 @endsection
