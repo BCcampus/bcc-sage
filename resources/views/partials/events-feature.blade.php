@@ -12,7 +12,7 @@ $args = [
 	],
 ];
 @endphp
-<section class="pad-top featured-news-front">
+<section class="pad-top">
 	<header>
 @if(is_front_page())
 	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
@@ -20,7 +20,7 @@ $args = [
 	</h3>
 	</header>
 @endif
-	<div class="featured-events-front d-flex flex-row flex-wrap">
+	<div class="featured-events d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<article class="events-box-md col-sm d-flex no-gutters px-md-1">
 			<div class="featured-event col-sm d-flex" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">

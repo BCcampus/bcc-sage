@@ -11,9 +11,10 @@ li.post-navigation {
 }
 
 .post-footer {
-  ul.clearfix {
-    padding-left: 0;
-  }
+	ul.clearfix {
+		padding-left: 0;
+		background-color: $color-grey-light;
+	}
 }
 
 .upcoming-events {
