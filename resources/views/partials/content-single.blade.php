@@ -25,10 +25,14 @@
 			</small>
 		</p>
 	@endif
-	<div itemprop="articleBody" class="entry-content">
-		@php(the_content())
-	</div>
-	<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
+	@if ( ( $post->post_type === 'ai1ec_event' ) )
+		<div itemprop="articleBody" class="entry-content ai1ec-single">
+			@else
+				<div itemprop="articleBody" class="entry-content">
+					@endif
+					@php(the_content())
+				</div>
+				<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>
 @if($get_upcoming_events)
 		<hr>
 		<div class="upcoming-events" itemscope itemtype="http://schema.org/Event">
