@@ -18,6 +18,15 @@
 		}
 	}
 
+	ul.children {
+		padding-left: 20px;
+		li {
+			&:last-child {
+				border-bottom: 1px solid $color-grey;
+			}
+		}
+	}
+
 	h4.widget-title {
 		font-size: 18px;
 		border-bottom: 0.5rem;
