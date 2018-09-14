@@ -38,7 +38,7 @@
 						$post_types = [ 'post', 'page' ];
 						$limit = 3;
 						;?>
-						<h3>Related Stories <img src="@asset('images/green-dots.png')" alt="decorative green dots"></h3>
+						<h3 class="pt-3">Related Stories <img src="@asset('images/green-dots.png')" alt="decorative green dots"></h3>
 						@include('partials.content-related')
 					@endif
 					<br>
