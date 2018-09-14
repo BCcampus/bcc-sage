@@ -15,7 +15,6 @@ li.post-navigation {
 }
 
 .upcoming-events {
-	background-color: $color-grey-light;
 	ul {
 		list-style: none;
 		li {
@@ -26,4 +25,5 @@ li.post-navigation {
 }
 ul.clearfix {
 	padding-left: 0;
+	background-color: $color-grey-light;
 }
