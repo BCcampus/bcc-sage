@@ -102,6 +102,51 @@ add_action(
 	}
 );
 
+
+/**
+ * Grants landing page section and settings
+ */
+add_action(
+	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_section( 'grants_settings', array(
+		'title'       => __( 'Grant Page settings', 'starter' ),
+		'priority'    => 150,
+		'description' => 'Please enter the post ID of each parent page below. This populates the sections with the corresponding child pages.'
+	) );
+
+	$wp_customize->add_setting(
+		'grants_open_setting', [
+			'default'    => '',
+			'capability' => 'edit_theme_options',
+		]
+	);
+
+	$wp_customize->add_control(
+		'grants_open_setting', [
+			'label'    => __( 'Open Proposals post ID', __NAMESPACE__ ),
+			'section'  => 'grants_settings',
+			'settings' => 'grants_open_setting',
+		]
+	);
+
+	$wp_customize->add_setting(
+		'grants_closed_setting', [
+			'default'    => '',
+			'capability' => 'edit_theme_options',
+		]
+	);
+
+	$wp_customize->add_control(
+		'grants_closed_setting', [
+			'label'    => __( 'Closed Opportunities post ID', __NAMESPACE__ ),
+			'section'  => 'grants_settings',
+			'settings' => 'grants_closed_setting',
+		]
+	);
+
+} );
+
 /**
  * MegaWalker Nav Editor Fields
  * Create fields
