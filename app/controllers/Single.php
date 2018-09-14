@@ -49,7 +49,7 @@ class Single extends Controller {
 
 		// Get localized time
 		$time = $t->current_time();
-		$limit = 10;
+		$limit = 7;
 		// 416 is cert, 192 is prod
 		$filter = [
 			'cat_ids' => [ 416, 192 ],
