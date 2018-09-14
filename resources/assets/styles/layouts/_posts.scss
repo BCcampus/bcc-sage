@@ -11,13 +11,11 @@ li.post-navigation {
 }
 
 .post-footer {
-	ul.clearfix {
-		padding-left: 0;
-		background-color: $color-grey-light;
-	}
+
 }
 
 .upcoming-events {
+	background-color: $color-grey-light;
 	ul {
 		list-style: none;
 		li {
@@ -25,4 +23,8 @@ li.post-navigation {
 			margin-bottom: 10px;
 		}
 	}
+}
+ul.clearfix {
+	padding-left: 0;
+	background-color: $color-grey-light;
 }
