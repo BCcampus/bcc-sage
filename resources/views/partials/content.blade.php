@@ -4,10 +4,12 @@
 		</div>
 		<div class="col-md-9 entry-summary">
 			<header>
-				@include('partials/entry-meta')
-				@if(is_category())
-					<small class="upper">&nbsp;<i class="fa fa-circle green small"></i>&nbsp; @php(the_category('&nbsp;'))</small>
-				@endif
+				<small class="upper">
+					@include('partials/entry-meta')
+					@if(is_category())
+						&nbsp;<i class="fa fa-circle green small"></i>&nbsp; @php(the_category('&nbsp;'))
+					@endif
+				</small>
 				<h3 class="entry-title"><a class="purple" href="{{ get_permalink() }}">{{ get_the_title() }}</a></h3>
 			</header>
 			@php(the_excerpt())
