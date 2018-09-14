@@ -109,11 +109,11 @@ add_action(
 add_action(
 	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_section( 'grants_settings', array(
-		'title'       => __( 'Grant Page settings', 'starter' ),
+	$wp_customize->add_section( 'grants_settings', [
+		'title'       => __( 'Grant Page settings',  __NAMESPACE__ ),
 		'priority'    => 150,
 		'description' => 'Please enter the post ID of each parent page below. This populates the sections with the corresponding child pages.'
-	) );
+	] );
 
 	$wp_customize->add_setting(
 		'grants_open_setting', [
