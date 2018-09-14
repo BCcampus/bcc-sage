@@ -5,7 +5,7 @@
 		<div class="col-md-9 entry-summary">
 			<header>
 				@include('partials/entry-meta')
-				<h3 class="entry-title"><a href="{{ get_permalink() }}">{{ get_the_title() }}</a></h3>
+				<h3 class="entry-title"><a class="purple" href="{{ get_permalink() }}">{{ get_the_title() }}</a></h3>
 			</header>
 			@php(the_excerpt())
 		</div>
