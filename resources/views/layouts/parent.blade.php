@@ -19,8 +19,10 @@
 			@include('partials.sidebar')
 		</aside>
 	</div>
-	@include('partials.news-related')
-	@include('partials.events-related')
+	@if( ! is_page('subscribe'))
+		@include('partials.news-related')
+		@include('partials.events-related')
+	@endif
 </div>
 @php(do_action('get_footer'))
 @include('partials.footer')
