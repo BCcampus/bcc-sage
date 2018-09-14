@@ -7,7 +7,7 @@ $i = 0;
 	<h3>Related News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="{{get_site_url()}}/news">view all news</a></small>
 	</h3>
-	<section class="relevant d-flex flex-row flex-wrap">
+	<section class="relevant d-flex flex-row flex-wrap no-gutters">
 		@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
 			<?php
 			// not using $child->guid since guid does not
@@ -16,7 +16,7 @@ $i = 0;
 
 			// make the first one bigger
 			if ( 0 === $i ): ;?>
-			<div class="col-6">
+			<div class="col-6 px-2">
 				<div class="row featured-news-front" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 				<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
 					<p><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
@@ -27,7 +27,7 @@ $i = 0;
 				</div>
 			</div>
 			<?php else: ;?>
-			<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
+			<article class="col feature-box-sm px-1 border" itemscope itemtype="http://schema.org/Article">
 				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 					<a href="{{$link}}"></a>
 				</div>
