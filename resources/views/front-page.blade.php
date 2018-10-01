@@ -2,7 +2,7 @@
 
 @section('content')
 	<span itemscope itemtype="http://schema.org/ItemPage">
-		<div class="row">
+		<div class="row mt-sm-4">
 	  <div class="col-sm-4">
 	  @include('partials.children-top-list')
 		  @include('partials.children-projects-list')
