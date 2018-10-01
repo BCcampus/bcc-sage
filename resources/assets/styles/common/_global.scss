@@ -221,8 +221,11 @@ time.updated {
 }
 
 .blue-bkgd {
-	@include opaque-bkgd;
-	background-color: $color-blue;
+	color: $color-white;
+	&:hover {
+		background: rgba(0,0,0,0.75);
+	}
+	background: rgba(0,165,225,0.75);
 }
 
 .shady-bkgd {

@@ -156,6 +156,15 @@ ul.no-bullets {
 	border-bottom: 1px solid $color-grey-light;
 }
 
+ul {
+	li.border-last {
+		border-bottom: none;
+		&:last-child{
+			border-bottom: 1px solid $color-grey-light;
+		}
+	}
+}
+
 .featured-news-front {
 	min-height:281px;
 	background-size: cover;
