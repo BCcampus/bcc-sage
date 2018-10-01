@@ -112,3 +112,19 @@ nav {
 	border-radius: 2px;
 	margin: 1rem 0 1rem;
 }
+
+ul#menu-header {
+	li {
+		&:nth-child(1), &:nth-child(2) {
+			a.nav-link {
+				color: $color-blue;
+			}
+		}
+		a.nav-link {
+			color: $color-grey-nav;
+			font-size: 0.95rem;
+			font-weight: 500;
+		}
+	}
+}
+
