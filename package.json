@@ -92,7 +92,7 @@
     "browser-sync": "^2.24.7",
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^5.2.0",
-    "eslint": "^4.19.1",
+    "eslint": "^5.6.1",
     "eslint-config-humanmade": "^0.5.0",
     "babel-eslint": "^10.0.1",
     "eslint-config-react-app": "^2.1.0",
