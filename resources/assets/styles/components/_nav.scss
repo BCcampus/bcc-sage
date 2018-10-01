@@ -37,6 +37,7 @@ nav {
 	width: 100%;
 	border: none;
 	border-radius: 0;
+	margin-top: 0;
 }
 
 .navbar-megamenu .navbar-nav > li.megamenu > .dropdown-menu .megamenu-column {
@@ -123,6 +124,14 @@ ul#menu-header {
 		a.nav-link {
 			color: $color-grey-nav;
 			font-size: 0.95rem;
+			font-weight: 500;
+		}
+	}
+}
+
+ul#menu-main-menu{
+	li{
+		a.nav-link{
 			font-weight: 500;
 		}
 	}
