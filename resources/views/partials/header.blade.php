@@ -5,7 +5,7 @@
 					<img srcset="@asset('images/bccampus-logo-x2.png') 2x" src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"></a>
 			</div>
 			<div class="p-2 justify-content-end">
-			<nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation">
+			<nav class="navbar navbar-light bg-faded rounded navbar-expand-md header_navigation">
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
 						data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false"
 						aria-label="Toggle navigation">

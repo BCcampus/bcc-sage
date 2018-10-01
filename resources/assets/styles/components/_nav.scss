@@ -114,26 +114,31 @@ nav {
 	margin: 1rem 0 1rem;
 }
 
-ul#menu-header {
-	li {
-		&:nth-child(1), &:nth-child(2) {
-			a.nav-link {
-				color: $color-blue-dark;
+nav.header_navigation {
+	ul {
+		li {
+			&:nth-child(1), &:nth-child(2) {
+				a.nav-link {
+					color: $color-blue-dark;
+				}
 			}
-		}
-		a.nav-link {
-			color: $color-grey-nav;
-			font-size: 0.95rem;
-			font-weight: 500;
+			a.nav-link {
+				color: $color-grey-nav;
+				font-size: 0.95rem;
+				font-weight: 500;
+			}
 		}
 	}
 }
 
-ul#menu-main-menu{
-	li{
-		a.nav-link{
-			font-weight: 500;
+nav.navbar-megamenu {
+	ul {
+		li {
+			a.nav-link {
+				font-weight: 500;
+			}
 		}
 	}
+
 }
 
