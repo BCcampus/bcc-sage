@@ -243,3 +243,9 @@ time.updated {
 .full-width {
 	width: 100%;
 }
+
+.container-fluid {
+	max-width: 1280px;
+	padding-right: 0;
+	padding-left: 0;
+}

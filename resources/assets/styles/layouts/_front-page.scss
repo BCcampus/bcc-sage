@@ -1,6 +1,3 @@
-.diagonal {
-	@include strip-bkgd;
-}
 
 .height-2 {
 	min-height: $height-2;
@@ -105,10 +102,6 @@
 
 .prev-link, .next-link {
 	max-width: 45%;
-}
-
-.container-fluid {
-	max-width: 1280px;
 }
 
 .box {

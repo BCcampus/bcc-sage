@@ -31,15 +31,6 @@
   color: $color-black;
 }
 
-@mixin strip-bkgd {
-  background-color: transparent;
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, $color-grey-light 6px, $color-grey-light 14px);
-
-  /*  keeping this in until Chrome sorts out business with repeating-linear-gradient' */
-  background-image: url('../images/diagonal-bkgd.png');
-  background-repeat: no-repeat;
-  background-clip: border-box;
-}
 
 @mixin vertical-align {
   margin-top: 50%;
