@@ -11,7 +11,7 @@
 			@php($cat = get_the_category( $news->ID))
 			<li class="border-top">
 				<small><p class="text-uppercase"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $news->ID) }}">{{ get_the_date('',$news->ID) }}</time> &nbsp;<i class="fa fa-circle green small"></i>&nbsp; <a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ) ;?>">{{$cat[0]->name}}</a></p></small>
-				<h4><a href="{{$link}}" rel="bookmark" title="{{$news->post_title}}">{{$news->post_title}}</a></h4>
+				<h4><a href="{{$link}}" class="purple" rel="bookmark" title="{{$news->post_title}}">{{$news->post_title}}</a></h4>
 			</li>
 		@endforeach
 		<li class="border-top">
