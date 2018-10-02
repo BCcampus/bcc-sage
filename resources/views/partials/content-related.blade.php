@@ -5,18 +5,21 @@
 		// update to current domain when importing content
 		$link = site_url() . '/' . $related_post->post_name;
 		$cat = get_the_category( $related_post->ID );
-
 		;?>
-		<article class="col-sm feature-box-sm border" itemscope itemtype="http://schema.org/Article">
+		<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
 			<a href="{{$link}}">
 				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
-
 				</div>
 			</a>
-			<p class="text-uppercase pt-3"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
-			<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
-			</h4>
-			<p><a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ) ;?>">{{$cat[0]->name}}</a></p>
+			<div class="border min-height-md">
+				<p class="text-uppercase pt-2 px-3">
+					<time itemprop="datePublished" class="updated"
+						  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
+				</p>
+				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
+				</h4>
+				<p class="px-3"><a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) );?>">{{$cat[0]->name}}</a></p>
+			</div>
 		</article>
 	@endforeach
 </section>

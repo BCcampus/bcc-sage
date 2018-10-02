@@ -235,13 +235,6 @@ time.updated {
 	background-color: $color-grey-light;
 }
 
-.halfsies {
-	width: 60%;
-	position: absolute;
-	right: 0;
-	height: 100%;
-}
-
 .black-bkgd{
 	background-color: $color-black;
 }
@@ -258,4 +251,8 @@ time.updated {
 
 .min-height-sm {
 	min-height: 150px;
+}
+
+.min-height-md {
+	min-height: 200px;
 }
