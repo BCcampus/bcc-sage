@@ -8,11 +8,9 @@
     @include('partials.header')
     <div class="wrap container-fluid" role="document">
 		@include('partials.page-header')
-		<div class="content row">
-            <main class="col-sm-12">
+            <main class="main">
                 @yield('content')
             </main>
-        </div>
     </div>
     @php(do_action('get_footer'))
         @include('partials.footer')

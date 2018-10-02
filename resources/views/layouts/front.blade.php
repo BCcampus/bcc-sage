@@ -7,7 +7,7 @@
     @php(do_action('get_header'))
     @include('partials.header')
       <div class="container-fluid" role="document">
-        <main class="main col-sm-12">
+        <main class="main">
           @yield('content')
         </main>
       </div>
