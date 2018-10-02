@@ -10,7 +10,7 @@
 				</h4>
 			</div>
 			<div class="row-fluid border-left border-right border-bottom">
-				<p class="pad-top pad-left pad-right"><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" );?></p>
+				<p class="pt-3 pad-left pad-right"><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" );?></p>
 			</div>
 		</article>
 	@endforeach

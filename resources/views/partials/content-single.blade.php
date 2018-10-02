@@ -63,7 +63,7 @@
 					@endif
 					{!! wp_link_pages(['echo' => 1, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'bcc-sage'), 'after' => '</p></nav>']) !!}
 					<nav>
-						<ul class="clearfix pad-top pad-bottom">
+						<ul class="clearfix pt-3 pad-bottom">
 							@if( is_singular( 'ai1ec_event' ))
 								<li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Event<br>%link') !!} </li>
 								<li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Event &raquo;<br>%link ') !!} </li>
