@@ -13,7 +13,7 @@
 
 				</div>
 			</a>
-			<p class="upper pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
+			<p class="text-uppercase pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 			<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 			</h4>
 			<p><a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ) ;?>">{{$cat[0]->name}}</a></p>

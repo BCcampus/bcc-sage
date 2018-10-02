@@ -14,7 +14,7 @@ $args = [
 					</div>
 				</a>
 				<div class="border min-height-sm">
-					<p class="upper pt-2 px-3">
+					<p class="text-uppercase pt-2 px-3">
 						<time itemprop="datePublished" class="updated"
 							  datetime="{{ get_post_time('c', TRUE, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 					</p>

@@ -25,7 +25,7 @@
                     @php($link = site_url() . '/' . $recent->post_name)
                     @php($date = date( 'M d, Y', strtotime( $recent->post_date ) ))
                     <li class="border">
-                        <p class="upper">{{$date}}</p>
+                        <p class="text-uppercase">{{$date}}</p>
                         <p><a href="{{$link}}" rel="bookmark"
                               title="{{$recent->post_title}}">{{$recent->post_title}}</a>
                         </p>
@@ -47,7 +47,7 @@
                 @php($link = site_url() . '/' . $recent->post_name)
                 @php($date = date( 'M d, Y', strtotime( $recent->post_date ) ))
                 <li class="border">
-                    <p class="upper">{{$date}}</p>
+                    <p class="text-uppercase">{{$date}}</p>
                     <p><a href="{{$link}}" rel="bookmark"
                           title="{{$recent->post_title}}">{{$recent->post_title}}</a>
                     </p>

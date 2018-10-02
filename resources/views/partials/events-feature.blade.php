@@ -27,7 +27,7 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<div class="purple-bkgd col-sm mt-auto">
 						<h4 class="text-inverse">
-							<time itemprop="datePublished" class="upper"
+							<time itemprop="datePublished" class="text-uppercase"
 								  datetime="{{ get_post_time('c', TRUE, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 							<br><a href="@php echo esc_url( $recent->guid ); @endphp">{{ $recent->post_title }}</a>
 						</h4>

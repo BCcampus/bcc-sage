@@ -31,7 +31,7 @@ $i = 0;
 				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 					<a href="{{$link}}"></a>
 				</div>
-				<p class="upper pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
+				<p class="text-uppercase pad-top"><time itemprop="datePublished" class="updated" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 				</h4>
 			</article>

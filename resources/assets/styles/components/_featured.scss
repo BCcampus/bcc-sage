@@ -29,7 +29,6 @@
 	}
 }
 
-
 .featured-event, .featured-topic, .featured-grant {
 	min-height: 180px;
 	background-size: cover;
@@ -40,7 +39,7 @@
 		padding: 1.5rem;
 		margin: 0;
 		line-height: 1.3em;
-		time{
+		time {
 			font-size: 15px;
 			font-weight: 300;
 		}
@@ -77,3 +76,8 @@
 	min-height: 100px;
 }
 
+.events-upcoming {
+	time {
+		font-size: 0.95em;
+	}
+}

@@ -23,49 +23,6 @@
 	background-color: $color-black;
 }
 
-.bcc-otb-project {
-	position: relative;
-	z-index: 1;
-	@include text-shadow;
-
-	.bg {
-		position: absolute;
-		z-index: -1;
-		background-image: url('../images/ot-image.png');
-		background-repeat: no-repeat;
-		background-clip: border-box;
-		background-position: 85% 85%;
-		opacity: 0.9;
-		width: 100%;
-		height: 100%;
-	}
-
-	h3, p > a {
-		background-color: $color-white;
-	}
-
-	p > a {
-		font-size: medium;
-	}
-}
-
-.bcc-upcoming-events {
-	position: relative;
-	z-index: 1;
-	text-shadow: 1px 2px 2px $color-black;
-
-	.bg {
-		position: absolute;
-		z-index: -1;
-		background-image: url('../images/events-image.jpg');
-		background-repeat: no-repeat;
-		background-clip: border-box;
-		background-position: 0% 0%;
-		opacity: 0.9;
-		width: 100%;
-		height: 100%;
-	}
-}
 
 #content-special {
 	background-color: $color-grey-light;

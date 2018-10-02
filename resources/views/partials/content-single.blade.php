@@ -10,7 +10,7 @@
 		<h2 itemprop="name">{!! get_the_title() !!}</h2>
 	</header>
 	@if ( !( $post->post_type === 'ai1ec_event' ) )
-		<p class="byline author vcard upper">
+		<p class="byline author vcard text-uppercase">
 			<small>
 				{{ __('By', 'bcc-sage') }}
 				<a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">

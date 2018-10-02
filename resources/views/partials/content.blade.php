@@ -4,7 +4,7 @@
 		</div>
 		<div class="col-md-9 entry-summary">
 			<header>
-				<small class="upper">
+				<small class="text-uppercase">
 					@include('partials/entry-meta')
 					@if(is_category())
 						&nbsp;<i class="fa fa-circle green small"></i>&nbsp; @php(the_category('&nbsp;'))
