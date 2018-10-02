@@ -1,10 +1,10 @@
 <footer>
-	<section class="shady-bkgd full-width">
+	<section class="shady-bkgd full-width py-2">
 		<div class="container-fluid">
 			<div id="top-foot" class="clearfix">
 				<div id="widget-footer" class="clearfix row">
 					<div class="widget col-sm-4">
-						<ul class="inline no-margin">
+						<ul class="inline no-margin mb-5">
 							<li class="social-media">
 								<a href="https://www.facebook.com/BCcampus"><img
 										src="@asset('images/icon-facebook.svg')"
@@ -46,18 +46,16 @@
 	<section class="black-bkgd full-width">
 		<div id="bottom-foot" class="clearfix container-fluid">
 			<div class="d-flex flex-row flex-nowrap">
-				<div class="col-sm-6 p-2">
+				<div class="col-sm-8 p-2">
 					<p class="copyright"><a itemprop="license" class="pull-left" rel="license"
 											href="https://creativecommons.org/licenses/by/4.0/">
 							<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
-						<small>
 							Except where otherwise noted, content on this site is licensed under a
 							<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
 								Attribution 4.0 International License</a>.
-						</small>
 					</p>
 				</div>
-				<div class="col-sm-6 p-2">
+				<div class="col-sm-4 p-2 justify-content-end">
 					@if(has_nav_menu('footer_navigation_2'))
 						<nav class="footer-links horizontal">
 							{!! wp_nav_menu( ['theme_location' => 'footer_navigation_2', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '&nbsp;|&nbsp;', 'depth' => 0 ] ) !!}

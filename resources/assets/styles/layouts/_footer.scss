@@ -13,11 +13,10 @@ footer {
 			color: $color-blue;
 			&:after {
 				color: $color-black;
-				content: "|";
 				padding-left: 5px;
 			}
 
-			&:last-child:after {
+			&:last-child {
 				content: "";
 			}
 		}
@@ -30,8 +29,9 @@ footer {
 
 	#bottom-foot {
 		background-color: $color-black;
-		padding: 1rem;
+		padding: .75rem 0rem;
 		color: $color-white;
+		font-size: .8em;
 		a {
 			color: $color-white;
 			&:hover {
@@ -58,10 +58,21 @@ footer {
 			text-align: right;
 		}
 		ul {
-			list-style-type: none;
+			list-style-type: disc;
+			list-style: inside;
+			color: $color-blue-dark;
+
+			li {
+				line-height: 2;
+				a {
+					color: $color-black;
+				}
+			}
 		}
 	}
-
+	.subscribe-box {
+		padding: 0 0.65em;
+	}
 	.footer-links {
 		float: none;
 		clear: both;
@@ -95,19 +106,22 @@ footer {
 		text-align: center;
 	}
 
-	.social-media a {
-		display: inline-block;
-		background: #00a5e1;
-		-webkit-border-radius: 20px;
-		-moz-border-radius: 20px;
-		border-radius: 20px;
-		-webkit-transition: 0.5s ease;
-		transition: 0.5s ease;
-		padding: 0;
-		width: 40px;
-		height: 40px;
-		&:hover {
-			background: #000;
+	li.social-media {
+		padding: 0 2px;
+		a {
+			display: inline-block;
+			background: #00a5e1;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			-webkit-transition: 0.5s ease;
+			transition: 0.5s ease;
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			&:hover {
+				background: #000;
+			}
 		}
 	}
 }
