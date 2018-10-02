@@ -6,8 +6,8 @@
 @include('partials.uio')
 @php(do_action('get_header'))
 @include('partials.header')
+@include('partials.page-header')
 <div class="wrap container-fluid" role="document">
-	@include('partials.page-header')
 	<aside id="sidebar" class="col-sm-3">
 		@include('partials.sidebar-mobile')
 	</aside>
