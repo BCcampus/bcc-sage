@@ -1,9 +1,19 @@
-.recent-news{
+.recent-news {
 	ul {
 		list-style: none;
 		padding-left: 0;
 		li {
 			padding: 1rem 2rem;
 		}
+	}
+	article:first-of-type {
+		padding-left: 0;
+	}
+
+	article:last-of-type {
+		padding-right: 0;
+	}
+	time {
+		font-size: 0.95em;
 	}
 }
