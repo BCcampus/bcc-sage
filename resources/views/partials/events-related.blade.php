@@ -3,7 +3,7 @@
 	$limit = 4;
 @endphp
 
-<h3>Related Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
+<h3>Related Events <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 	<small><a href="/calendar">view all events</a></small>
 </h3>
 <section class="relevant d-flex flex-row flex-wrap">

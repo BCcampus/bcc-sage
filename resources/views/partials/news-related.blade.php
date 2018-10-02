@@ -4,7 +4,7 @@ $limit = 3;
 $i = 0;
 ;?>
 <div class="shady-bkgd my-3 p-2">
-	<h3>Related News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
+	<h3>Related News <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="{{get_site_url()}}/news">view all news</a></small>
 	</h3>
 	<section class="relevant d-flex flex-row flex-wrap no-gutters">

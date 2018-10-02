@@ -15,7 +15,7 @@ $args = [
 <section class="pad-top">
 	<header>
 @if(is_front_page())
-	<h3>Events <img src="@asset('images/green-dots.png')" alt="decorative green dots">
+	<h3>Events <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="{{site_url()}}/events">view all events</a></small>
 	</h3>
 	</header>

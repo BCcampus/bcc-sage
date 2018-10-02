@@ -1,6 +1,6 @@
 <section>
 	<header>
-	<h3>News <img src="@asset('images/green-dots.png')" alt="decorative green dots">
+	<h3>News <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 		<small><a href="{{get_site_url()}}/news">view all news</a></small>
 	</h3>
 	</header>
