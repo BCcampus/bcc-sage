@@ -17,9 +17,9 @@
 				</div>
 				@php($event_category='flo')
 				@include('partials.events-list')
-				<h4>
-					<small><a href="{{ site_url() }}/events_categories/edtech">EdTech Archives</a></small>
-				</h4>
+				<p>
+					<a href="{{ site_url() }}/events_categories/edtech">EdTech Archives</a>
+				</p>
 			</div>
 
 			<div class="col-md-6">
@@ -27,12 +27,11 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<h4 class="purple-bkgd col-sm mt-auto">Facilitating Learning Online</h4>
 				</div>
-
 				@php($event_category='edtech')
 				@include('partials.events-list')
-				<h4>
-					<small><a href="{{ site_url() }}/events_categories/flo">FLO Archives</a></small>
-				</h4>
+				<p>
+					<a href="{{ site_url() }}/events_categories/flo">FLO Archives</a>
+				</p>
 			</div>
 		</div>
 	</section>

@@ -3,62 +3,63 @@
 *****************************************/
 ul.inline,
 ol.inline {
-  margin-left: 0;
-  list-style: none;
+	margin-left: 0;
+	list-style: none;
 }
 
 ul.inline > li,
 ol.inline > li {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 ul.byline {
-  margin-left: 0;
-  list-style: none;
-  margin-top: -15px;
+	margin-left: 0;
+	list-style: none;
+	margin-top: -15px;
 
-  > li {
-    display: inline-block;
-    padding-left: 0;
-    padding-right: 5px;
-    color: gray;
-    font-style: italic;
-  }
+	> li {
+		display: inline-block;
+		padding-left: 0;
+		padding-right: 5px;
+		color: gray;
+		font-style: italic;
+	}
 }
 
 ul.no-margin {
-  margin-left: 0;
-  padding-left: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 section.row-fluid ul.inline > li {
-  line-height: 4em;
-  padding-left: 0;
-  padding-right: 0;
-  margin-right: 3%;
-  border-top: 1px solid $color-white;
+	line-height: 4em;
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: 3%;
+	border-top: 1px solid $color-white;
 
-  &:hover {
-    @include transition-border;
-  }
+	&:hover {
+		@include transition-border;
+	}
 
-  &:first-child {
-    margin-left: 0;
-  }
+	&:first-child {
+		margin-left: 0;
+	}
 
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.events-list {
-  li {
-    list-style:none;
-  }
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 ul.events-list {
-  padding:0;
+	padding: 0;
+	li {
+		list-style: none;
+	}
+	time{
+		font-weight: 300;
+		font-size: 0.95em;
+	}
 }
