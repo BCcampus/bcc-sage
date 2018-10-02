@@ -11,7 +11,7 @@
 			<div class="col px-md-1"></div>
 			<article class="col purple-bkgd" itemscope itemtype="http://schema.org/Article">
 				<p class="pad-right pad-left"><time itemprop="datePublished" class="updated upper" datetime="{{ get_post_time('c', true, $feature->ID) }}">{{ get_the_date('',$feature->ID) }}</time></p>
-				<h2 class="pad-right pad-left font-weight-light"><a class="text-inverse" href="{{$link}}">{{$feature->post_title}}</a>
+				<h2 class="pad-right pad-left font-weight-light text-inverse"><a href="{{$link}}">{{$feature->post_title}}</a>
 				</h2>
 			</article>
 		</div>

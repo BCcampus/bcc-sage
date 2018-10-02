@@ -165,22 +165,4 @@ ul {
 	}
 }
 
-.featured-news-front {
-	min-height:281px;
-	background-size: cover;
-	h4 {
-		font-weight: normal;
-		margin: 1em 0 2em 0;
-		a {
-			&:hover {
-				color: $color-grey-light;
-				text-decoration: none;
-			}
-		}
-	}
-	p {
-		font-weight: lighter;
-		margin: 1em 0;
-	}
-}
 
