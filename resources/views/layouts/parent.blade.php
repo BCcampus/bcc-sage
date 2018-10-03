@@ -12,10 +12,10 @@
 		@include('partials.sidebar-mobile')
 	</aside>
 	<div class="content row">
-		<main class="col-sm-9">
+		<main class="col-sm-8">
 			@yield('content')
 		</main>
-		<aside id="sidebar" class="col-sm-3">
+		<aside id="sidebar" class="col-sm-3 offset-sm-1">
 			@include('partials.sidebar')
 		</aside>
 	</div>

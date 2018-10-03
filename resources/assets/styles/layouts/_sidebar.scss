@@ -1,5 +1,4 @@
-#sidebar {
-
+aside#sidebar {
 	ul {
 		list-style: none;
 		padding-left: 0;
@@ -9,6 +8,8 @@
 			line-height: 1.3rem;
 			border-bottom: 1px solid $color-grey;
 			margin-bottom: 0.5rem;
+			font-weight: bold;
+
 			&:last-child {
 				border-bottom: 0;
 			}
@@ -37,8 +38,8 @@
 	}
 
 	h4.widget-title {
-		font-size: 18px;
-		border-bottom: 0.5rem;
+		font-weight: bold;
+		font-size: 1.3em;
 	}
 
 	.widget {
@@ -47,7 +48,8 @@
 
 	li.pagenav {
 		list-style: none;
-
+		font-weight: bold;
+		font-size: 1.3em;
 		.page_item {
 
 			&.current_page_item > a {
@@ -57,11 +59,12 @@
 		ul {
 
 			li {
-
 				&:first-of-type {
 					padding-top: .8rem;
 				}
-
+				&:last-of-type{
+					padding-bottom: 0;
+				}
 			}
 		}
 	}
