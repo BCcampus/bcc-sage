@@ -2,16 +2,8 @@ body {
 	@include awesome-font;
 
 	color: $color-black;
-	line-height: 22px;
 	padding-top: 0;
-}
-
-body.single #main {
-	h4,
-	h3 {
-		margin-top: 20px;
-		margin-bottom: 6px;
-	}
+	line-height: 1.5em;
 }
 
 /*
@@ -61,6 +53,21 @@ h1 {
 
 h4 small span.upper {
 	font-size: 11px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Text
+|--------------------------------------------------------------------------
+|
+| Other elements
+|
+|
+*/
+
+p {
+	font-size: 1.1rem;
+	line-height: 1.5em;
 }
 
 figure {
