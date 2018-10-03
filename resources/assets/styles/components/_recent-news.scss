@@ -17,3 +17,19 @@
 		font-size: 0.95em;
 	}
 }
+
+.related-news {
+	article:first-of-type {
+		padding-left: 15px;
+		padding-right: 0;
+	}
+	.shady-bkgd {
+		background-color: $color-grey-light;
+	}
+	article:last-of-type {
+		padding-right: 0;
+	}
+	p time {
+		font-size: 0.95em;
+	}
+}

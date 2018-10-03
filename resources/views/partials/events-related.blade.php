@@ -2,7 +2,7 @@
 	$post_types = [ 'ai1ec_event' ];
 	$limit = 4;
 @endphp
-
+<div class="container-fluid my-3">
 <h3>Related Events <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 	<small><a href="/calendar">view all events</a></small>
 </h3>
@@ -14,3 +14,4 @@
 		</article>
 	@endforeach
 </section>
+</div>

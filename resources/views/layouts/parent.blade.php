@@ -19,11 +19,11 @@
 			@include('partials.sidebar')
 		</aside>
 	</div>
+</div>
 	@if( ! is_page('subscribe'))
 		@include('partials.news-related')
 		@include('partials.events-related')
 	@endif
-</div>
 @php(do_action('get_footer'))
 @include('partials.footer')
 @php(wp_footer())
