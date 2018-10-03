@@ -1,4 +1,4 @@
-<section class="relevant d-flex flex-row flex-wrap">
+<section class="relevant d-flex flex-row flex-wrap my-3">
 	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
 		<?php
 		// not using $child->guid since guid does not
