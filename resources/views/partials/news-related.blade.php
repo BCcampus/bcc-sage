@@ -3,8 +3,8 @@ $post_types = [ 'post', 'page' ];
 $limit = 3;
 $i = 0;
 ;?>
-<div class="row shady-bkgd">
-	<div class="shady-bkgd my-3 p-2 container-fluid">
+<div class="flex-row shady-bkgd">
+	<div class="shady-bkgd my-3 py-2 container-fluid">
 		<h3>Related News <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 			<small><a href="{{get_site_url()}}/news">view all news</a></small>
 		</h3>
