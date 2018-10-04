@@ -22,7 +22,7 @@
 	@endif
 	<div class="featured-event d-flex flex-row flex-wrap">
 		@foreach(\App\App::getLatestNews( $args ) as $recent )
-			<article class="events-box-md col-sm-6 no-gutters px-md-1">
+			<article class="events-box-md col-sm-6">
 				<div class="featured-event row-fluid d-flex"
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<div class="purple-bkgd col-sm mt-auto">

@@ -13,13 +13,28 @@
 }
 
 .featured-event,
-.featured-topic,
-.featured-grant {
+.featured-topic {
 	min-height: 180px;
+	article:first-of-type {
+		padding-left: 0;
+	}
+
+	article:last-of-type {
+		padding-right: 0;
+	}
 }
 
-.featured-news {
+.featured-news,
+.featured-grant,
+.grants{
 	min-height: 281px;
+	article:first-of-type {
+		padding-left: 0;
+	}
+
+	article:last-of-type {
+		padding-right: 0;
+	}
 }
 
 .featured-event,
