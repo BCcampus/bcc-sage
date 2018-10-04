@@ -1,5 +1,5 @@
 <section class="row-fluid recent-news">
-	<h4 class="pt-3">Recent News</h4>
+	<h4 class="pt-3 text-uppercase">Recent News</h4>
 	<ul>
 		@php
 		$args = [

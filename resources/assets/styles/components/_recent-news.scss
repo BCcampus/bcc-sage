@@ -1,4 +1,6 @@
-.recent-news, .relevant, .related-events {
+.recent-news,
+.relevant,
+.related-events {
 	ul {
 		list-style: none;
 		padding-left: 0;
@@ -14,7 +16,17 @@
 		padding-right: 0;
 	}
 	h4 {
-		line-height: 1.2em;
+		line-height: 1.3em;
+	}
+
+}
+
+.events-upcoming,
+.recent-news,
+.relevant,
+.related-events {
+	p {
+		margin-bottom: .25em;
 	}
 }
 
@@ -30,7 +42,7 @@
 		padding-right: 0;
 	}
 	h4 {
-		line-height: 1.2em;
+		line-height: 1.3em;
 	}
 }
 

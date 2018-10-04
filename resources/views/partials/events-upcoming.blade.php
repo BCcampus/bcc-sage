@@ -14,7 +14,7 @@ $args = [
 @endphp
 <section class="py-3">
 	<header>
-	<h5 class="text-uppercase purple">Upcoming</h5>
+	<h5 class="text-uppercase">Upcoming</h5>
 	</header>
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		<article class="events-upcoming my-1 border" itemscope itemtype="http://schema.org/Article">
