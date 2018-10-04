@@ -2,7 +2,7 @@
 	<div class="row my-2 pad-left">
 		<div class="col-md-3 events-image-box" style="background-image: url({{\App\App::getThumbUrl()}});">
 		</div>
-		<div class="col-md-9 entry-summary">
+		<div class="col-md-9 entry-summary border">
 			<header>
 				<small class="text-uppercase">
 					@include('partials/entry-meta')

@@ -20,10 +20,10 @@
 		</aside>
 	</div>
 </div>
-	@if( ! is_page('subscribe'))
-		@include('partials.news-related')
-		@include('partials.events-related')
-	@endif
+@if( ! is_page('subscribe'))
+	@include('partials.news-related')
+	@include('partials.events-related')
+@endif
 @php(do_action('get_footer'))
 @include('partials.footer')
 @php(wp_footer())
