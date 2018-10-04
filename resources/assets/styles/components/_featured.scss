@@ -15,6 +15,7 @@
 .featured-event,
 .featured-topic {
 	min-height: 180px;
+
 	article:first-of-type {
 		padding-left: 0;
 	}
@@ -26,8 +27,9 @@
 
 .featured-news,
 .featured-grant,
-.grants{
+.grants {
 	min-height: 281px;
+
 	article:first-of-type {
 		padding-left: 0;
 	}
