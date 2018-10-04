@@ -208,6 +208,8 @@ p.tags {
 	display: block;
 	text-transform: uppercase;
 	line-height: 1;
+	margin-top: .5em;
+	font-size: 0.85em;
 }
 
 time.updated {
@@ -260,4 +262,8 @@ time.updated {
 
 .font-size-sm{
 	font-size: $font-size-sm;
+}
+
+.font-weight-500{
+	font-weight: 500;
 }
