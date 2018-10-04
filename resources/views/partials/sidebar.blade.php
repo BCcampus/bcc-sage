@@ -19,7 +19,7 @@
     @endif
 @else
     @php(dynamic_sidebar('sidebar-primary'))
-	@if(is_singular('post') || is_category())
+	@if(is_singular('post') || is_category() || is_tag())
 		<div class="text-center">
 		@include( 'partials.subscribe')
 		</div>
