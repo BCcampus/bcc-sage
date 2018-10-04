@@ -21,7 +21,7 @@ $i = 0;
 					<div class="row featured-news-front"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
-							<p class="px-3">
+							<p class="px-3 font-size-sm">
 								<time itemprop="datePublished" class="text-uppercase"
 									  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 							</p>
@@ -38,7 +38,7 @@ $i = 0;
 						<a href="{{$link}}"></a>
 					</div>
 					<div class="border min-height-sm bg-white">
-					<p class="text-uppercase pt-3 px-3">
+					<p class="text-uppercase pt-3 px-3 font-size-sm">
 						<time itemprop="datePublished"
 							  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 					</p>

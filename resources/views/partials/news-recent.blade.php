@@ -14,8 +14,8 @@ $args = [
 					</div>
 				</a>
 				<div class="border min-height-sm">
-					<p class="text-uppercase pt-2 px-3">
-						<time itemprop="datePublished" class="updated"
+					<p class="text-uppercase pt-2 px-3 font-size-sm">
+						<time itemprop="datePublished"
 							  datetime="{{ get_post_time('c', TRUE, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 					</p>
 					<h4><a class="purple" href="{{$link}}">{{$recent->post_title}}</a>

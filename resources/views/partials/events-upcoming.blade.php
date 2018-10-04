@@ -22,7 +22,7 @@ $args = [
 				<div class="col-sm-2 events-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 				</div>
 				<div class="col-sm-10">
-					<p class="text-uppercase pt-2"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time></p>
+					<p class="text-uppercase pt-2 font-size-sm"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time></p>
 					<h4><a class="purple" href="@php echo esc_url( $recent->guid ); @endphp">{{ $recent->post_title }}</a></h4>
 				</div>
 			</div>

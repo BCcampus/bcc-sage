@@ -1,25 +1,8 @@
-.featured-news {
-	resize: both;
-	position: relative;
-	min-height: 281px;
-	background-size: cover;
-	h4 {
-		padding: 2rem 15rem 2rem 0.625rem;
-		margin: 0;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		font-weight: lighter;
-		color: $color-white;
-	}
-}
-
 .featured-news-front {
 	min-height: 299px;
 	background-size: cover;
 
 	time {
-		font-size: 1.09em;
 		font-weight: 300;
 	}
 
@@ -31,16 +14,23 @@
 
 .featured-event, .featured-topic, .featured-grant {
 	min-height: 180px;
+}
+
+.featured-news {
+	min-height: 281px;
+}
+
+.featured-event, .featured-topic, .featured-grant, .featured-news {
 	background-size: cover;
 
 	h4 {
 		color: $color-white;
 		font-weight: normal;
-		padding: 1rem;
+		padding: 1.25rem;
 		margin: 0;
 		line-height: 1.3em;
+		font-size: 1.5em;
 		time {
-			font-size: 15px;
 			font-weight: 300;
 		}
 	}
@@ -76,8 +66,3 @@
 	min-height: 100px;
 }
 
-.events-upcoming {
-	time {
-		font-size: 0.85em;
-	}
-}
