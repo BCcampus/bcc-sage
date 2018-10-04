@@ -6,7 +6,7 @@ $args = [
 
 ];
 @endphp
-<section class="d-flex flex-row flex-wrap">
+<section class="d-flex flex-column flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $feature)
 		@php($link = site_url() . '/' . $feature->post_name)
 		@php($cat = get_the_category( $feature->ID))
