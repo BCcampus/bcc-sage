@@ -3,9 +3,14 @@
 	padding: 0.65em 1em;
 }
 
-#sidebar{
-	.subscribe-box{
-		@include opaque-bkgd;
-		background-color: $color-purple;
+#sidebar {
+	.subscribe-box {
+		padding: 1.25em .65em .65em .65em;
+		color: $color-white;
+		background-image: url('../images/newsletter-background.jpg');
+		background-size: cover;
+		p {
+			font-weight: 300;
+		}
 	}
 }
