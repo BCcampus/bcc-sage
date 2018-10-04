@@ -18,7 +18,7 @@
 				</p>
 				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 				</h4>
-				<p class="px-3"><a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) );?>">{{$cat[0]->name}}</a></p>
+				<p class="px-3 font-size-sm text-uppercase mb-1"><a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) );?>">{{$cat[0]->name}}</a></p>
 			</div>
 		</article>
 	@endforeach
