@@ -11,7 +11,7 @@ $ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 		</header>
 	@endif
 	<div class="featured-event d-flex flex-row flex-wrap">
-		@foreach(\App\App::getUpcomingEvents( $limit, $filter ) as $recent )
+		@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $recent )
 			<article class="events-box-md col-sm-6">
 				<div class="featured-event row-fluid d-flex"
 					 style="background-image: url({{\App\App::getThumbUrl($recent['post_id'])}});">
