@@ -400,6 +400,8 @@ class App extends Controller {
 	 *
 	 * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
 	 *
+	 * @param int $limit
+	 *
 	 * @return array|bool
 	 */
 	public static function getUpcomingEvents( $limit = 7 ) {
@@ -426,7 +428,7 @@ class App extends Controller {
 				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
 				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
 				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['weekday'] . ', ' . $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
-				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->post_id;
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
 
 			}
 			foreach ( $date['events']['notallday'] as $instance ) {
