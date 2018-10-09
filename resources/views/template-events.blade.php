@@ -15,7 +15,8 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<h4 class="purple-bkgd col-sm mt-auto">EdTech Demos</h4>
 				</div>
-				@php($event_category='edtech')
+				@php($filter=[794,18787])
+				@php($limit=5)
 				@include('partials.events-list')
 				<p>
 					<a href="{{ site_url() }}/events_categories/edtech">EdTech Archives</a>
@@ -27,7 +28,8 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<h4 class="purple-bkgd col-sm mt-auto">Facilitating Learning Online</h4>
 				</div>
-				@php($event_category='flo')
+				@php($filter=[793,17882])
+				@php($limit=5)
 				@include('partials.events-list')
 				<p>
 					<a href="{{ site_url() }}/events_categories/flo">FLO Archives</a>
