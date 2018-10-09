@@ -1,5 +1,5 @@
 <ul class="events-list">
-	@foreach(\App\App::getUpcomingEvents( $limit, $filter ) as $recent )
+	@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $recent )
 		<li class="border my-2 p-2">
 			<p class="text-uppercase font-size-sm">
 				<time>{{$recent['start']}}</time>

@@ -1,6 +1,6 @@
 @php
 $limit = 2;
-$filter = [792,22547]; // featured category is 792 on cert, 22547 on prod
+$ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 @endphp
 <section class="mt-3">
 	@if(is_front_page())

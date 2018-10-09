@@ -405,13 +405,14 @@ class App extends Controller {
 	 *
 	 * @return array|bool
 	 */
-	public static function getUpcomingEvents( $limit = 7, $filter = [] ) {
+	public static function getUpcomingEvents( $limit = 7, $ids = [] ) {
 		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
 			return false;
 		}
 
 		global $ai1ec_registry;
 		$results = [];
+		$filter = ( ! empty( $ids ) ) ? $filter['cat_ids'] = $ids : '';
 		$t = $ai1ec_registry->get( 'date.system' );
 		// Get localized time
 		$time = $t->current_time();

@@ -15,7 +15,7 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<h4 class="purple-bkgd col-sm mt-auto">EdTech Demos</h4>
 				</div>
-				@php($filter=[794,18787])
+				@php($ids=[794,18787])
 				@php($limit=5)
 				@include('partials.events-list')
 				<p>
@@ -28,7 +28,7 @@
 					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 					<h4 class="purple-bkgd col-sm mt-auto">Facilitating Learning Online</h4>
 				</div>
-				@php($filter=[793,17882])
+				@php($ids=[793,17882])
 				@php($limit=5)
 				@include('partials.events-list')
 				<p>
