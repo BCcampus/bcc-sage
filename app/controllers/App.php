@@ -394,4 +394,49 @@ class App extends Controller {
 
 		return $events;
 	}
+
+	/**
+	 * Cloodge of a function for poorly documented plugin
+	 *
+	 * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
+	 *
+	 * @return array|bool
+	 */
+	public static function getUpcomingEvents( $limit = 7 ) {
+		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
+			return false;
+		}
+
+		global $ai1ec_registry;
+		$results = [];
+
+		$t = $ai1ec_registry->get( 'date.system' );
+
+		// Get localized time
+		$time = $t->current_time();
+		// 416 is cert, 192 is prod
+//		$filter = [
+//			'cat_ids' => [ 416, 192 ],
+//		];
+		$event_results   = $ai1ec_registry->get( 'model.search' )->get_events_relative_to( $time, $limit, '' );
+		$dates           = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )->get_agenda_like_date_array( $event_results['events'] );
+
+		foreach ( $dates as $date ) {
+			foreach ( $date['events']['allday'] as $instance ) {
+				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
+				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
+				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['weekday'] . ', ' . $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->post_id;
+
+			}
+			foreach ( $date['events']['notallday'] as $instance ) {
+				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
+				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
+				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['weekday'] . ', ' . $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->post_id;
+			}
+		}
+
+		return $results;
+	}
 }

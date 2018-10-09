@@ -28,7 +28,7 @@
 					<div class="purple-bkgd col-sm mt-auto">
 						<h4 class="text-inverse">
 							<time itemprop="datePublished" class="text-uppercase font-size-sm"
-								  datetime="{{ get_post_time('c', TRUE, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
+								  datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 							<br><a href="@php echo esc_url( $recent->guid ); @endphp">{{ $recent->post_title }}</a>
 						</h4>
 					</div>
