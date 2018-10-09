@@ -401,7 +401,7 @@ class App extends Controller {
 	 * @see https://gist.github.com/lukaspawlik/045dbd5b517a9eb1cf95
 	 *
 	 * @param int $limit
-	 * @param array $filter
+	 * @param array $ids
 	 *
 	 * @return array|bool
 	 */
@@ -412,7 +412,7 @@ class App extends Controller {
 
 		global $ai1ec_registry;
 		$results = [];
-		$filter = ( ! empty( $ids ) ) ? $filter['cat_ids'] = $ids : '';
+		$filter['cat_ids'] = $ids;
 		$t = $ai1ec_registry->get( 'date.system' );
 		// Get localized time
 		$time = $t->current_time();
