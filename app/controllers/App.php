@@ -435,9 +435,6 @@ class App extends Controller {
 			}
 		}
 
-		unset($filter);
-		unset($limit);
-
 		return $results;
 	}
 }
