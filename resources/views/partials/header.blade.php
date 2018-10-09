@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="navbar d-flex flex-row flex-nowrap">
 			<div class="p-2"><a class="navbar-brand" href="{{ site_url('/') }}">
-					<img srcset="@asset('images/bccampus-logo-x2.png') 2x" src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"></a>
+					<img srcset="@asset('images/bccampus-logo-x2.png') 2x" src="@asset('images/bccampus-logo-tagline.png')" alt="Logo for BCcampus"></a>
 			</div>
 			<div class="p-2 justify-content-end">
 			<nav class="navbar navbar-light bg-faded rounded navbar-expand-md header_navigation">
