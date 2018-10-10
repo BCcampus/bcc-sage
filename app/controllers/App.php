@@ -424,14 +424,14 @@ class App extends Controller {
 				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
 				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
 				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
-				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->post_id;
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
 
 			}
 			foreach ( $date['events']['notallday'] as $instance ) {
 				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
 				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
 				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
-				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->post_id;
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
 			}
 		}
 
