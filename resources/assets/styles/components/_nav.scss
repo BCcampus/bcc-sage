@@ -87,7 +87,11 @@ nav.navbar-megamenu {
 						margin: 0;
 						list-style: none;
 						&.sub-menu.depth_1 {
-							font-weight: normal;
+							li {
+								a {
+									font-weight: normal;
+								}
+							}
 						}
 					}
 					.featured-image {
