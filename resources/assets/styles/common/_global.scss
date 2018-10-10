@@ -48,6 +48,7 @@ h1 {
 		margin: 0;
 		color: $color-white;
 		min-width: 50%;
+
 	}
 }
 
@@ -230,6 +231,11 @@ time.updated {
 
 .blue-bkgd {
 	color: $color-white;
+	&.entry-title{
+		&:hover{
+			background:rgba(0,165,225,0.75);
+		}
+	}
 	&:hover {
 		background: rgba(0,0,0,0.75);
 	}
