@@ -11,16 +11,19 @@
 	article:first-of-type {
 		padding-left: 0;
 	}
+	article:last-of-type {
+		padding-right: 0;
+	}
 
 	@include media-breakpoint-down(sm) {
 		article:first-of-type {
 			padding-left: 15px;
 		}
+		article:last-of-type {
+			padding-right: 15px;
+		}
 	}
 
-	article:last-of-type {
-		padding-right: 0;
-	}
 	h4 {
 		line-height: 1.3em;
 	}
@@ -41,17 +44,21 @@
 		padding-left: 15px;
 		padding-right: 0;
 	}
+	article:last-of-type {
+		padding-right: 0;
+	}
 	@include media-breakpoint-down(sm) {
 		article:first-of-type {
-			padding-left: 0px;
+			padding-right: 15px;
+		}
+		article:last-of-type {
+			padding-right: 15px;
 		}
 	}
 	.shady-bkgd {
 		background-color: $color-grey-light;
 	}
-	article:last-of-type {
-		padding-right: 0;
-	}
+
 	h4 {
 		line-height: 1.3em;
 	}

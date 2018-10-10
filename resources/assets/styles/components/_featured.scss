@@ -20,15 +20,19 @@
 		padding-left: 0;
 	}
 
+	article:last-of-type {
+		padding-right: 0;
+	}
+
 	@include media-breakpoint-down(sm) {
 		article:first-of-type {
 			padding-left: 15px;
 		}
+		article:last-of-type {
+			padding-right: 15px;
+		}
 	}
 
-	article:last-of-type {
-		padding-right: 0;
-	}
 }
 
 .featured-news,
@@ -40,15 +44,20 @@
 		padding-left: 0;
 	}
 
+	article:last-of-type {
+		padding-right: 0;
+	}
+
 	@include media-breakpoint-down(sm) {
 		article:first-of-type {
 			padding-left: 15px;
 		}
+		article:last-of-type {
+			padding-right: 15px;
+		}
 	}
 
-	article:last-of-type {
-		padding-right: 0;
-	}
+
 }
 
 .featured-event,
