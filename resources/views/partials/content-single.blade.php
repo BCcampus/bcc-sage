@@ -42,38 +42,6 @@
 															  alt="decorative green dots"></h3>
 						@include('partials.content-related')
 					@endif
-					{{--<br>--}}
-					{{--<p class="tags">{{ the_tags('', '&nbsp;', '') }}</p>--}}
-
-					@if($get_upcoming_events)
-						{{--<hr>--}}
-						{{--<div class="upcoming-events" itemscope itemtype="http://schema.org/Event">--}}
-						{{--<h5>Join us at an upcoming event:</h5>--}}
-						{{--<ul>--}}
-						{{--@foreach($get_upcoming_events as $upcoming_event )--}}
-						{{--<li>--}}
-						{{--<a itemprop="url" href="{{$upcoming_event['link']}}"--}}
-						{{--title="Permanent Link to {{$upcoming_event['title']}}">--}}
-						{{--<span itemprop="name">{{$upcoming_event['title']}}</span>--}}
-						{{--</a> — <span itemprop="startDate">{{$upcoming_event['start']}}</span>--}}
-						{{--</li>--}}
-						{{--@endforeach--}}
-						{{--</ul>--}}
-						{{--</div>--}}
-						{{--<hr>--}}
-					@endif
-					{{--{!! wp_link_pages(['echo' => 1, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'bcc-sage'), 'after' => '</p></nav>']) !!}--}}
-					{{--<nav>--}}
-					{{--<ul class="clearfix pt-3 pad-bottom">--}}
-					{{--@if( is_singular( 'ai1ec_event' ))--}}
-					{{--<li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Event<br>%link') !!} </li>--}}
-					{{--<li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Event &raquo;<br>%link ') !!} </li>--}}
-					{{--@else--}}
-					{{--<li class="post-navigation pull-left col-6">{!! previous_post_link('&laquo; Previous Article<br>%link') !!} </li>--}}
-					{{--<li class="post-navigation pull-right text-right col-6">{!! next_post_link('Next Article &raquo;<br>%link ') !!} </li>--}}
-					{{--@endif--}}
-					{{--</ul>--}}
-					{{--</nav>--}}
 				</footer>
 		@php(comments_template('/partials/comments.blade.php'))
 </article>

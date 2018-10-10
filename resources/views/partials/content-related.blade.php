@@ -14,7 +14,7 @@
 			<div class="border min-height-md">
 				<p class="text-uppercase pt-2 px-3 font-size-sm">
 					<time itemprop="datePublished"
-						  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
+						  datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 				</p>
 				<h4><a class="purple" href="{{$link}}">{{$related_post->post_title}}</a>
 				</h4>
