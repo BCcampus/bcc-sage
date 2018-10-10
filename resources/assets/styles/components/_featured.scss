@@ -1,7 +1,7 @@
 .featured-news-front {
 	min-height: 299px;
 	background-size: cover;
-
+	background-position: center center;
 	time {
 		font-weight: 300;
 	}
@@ -44,7 +44,7 @@
 .featured-grant,
 .featured-news {
 	background-size: cover;
-
+	background-position: center center;
 	h4 {
 		color: $color-white;
 		font-weight: normal;
@@ -64,6 +64,7 @@
 	.featured-image-box {
 		min-height: 150px;
 		background-size: cover;
+		background-position: center center;
 	}
 	h5 {
 		padding: 1.15rem;
@@ -86,5 +87,7 @@
 
 .events-image-box {
 	min-height: 100px;
+	background-size: cover;
+	background-position: center center;
 }
 

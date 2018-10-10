@@ -35,6 +35,11 @@
 		padding-left: 15px;
 		padding-right: 0;
 	}
+	@include media-breakpoint-down(sm) {
+		article:first-of-type {
+			padding-left: 0px;
+		}
+	}
 	.shady-bkgd {
 		background-color: $color-grey-light;
 	}

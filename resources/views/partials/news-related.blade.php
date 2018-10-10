@@ -4,7 +4,7 @@ $limit = 3;
 $i = 0;
 ;?>
 <div class="flex-row shady-bkgd">
-	<div class="shady-bkgd my-3 py-2 container-fluid">
+	<div class="shady-bkgd py-3 container-fluid">
 		<h3>Related News <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
 			<small><a href="{{get_site_url()}}/news">view all news</a></small>
 		</h3>
@@ -17,7 +17,7 @@ $i = 0;
 
 				// make the first one bigger
 				if ( 0 === $i ): ;?>
-				<div class="col-md-6 pb-md-2">
+				<div class="col-md-6 pb-sm-2">
 					<div class="row featured-news-front"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
@@ -25,7 +25,7 @@ $i = 0;
 								<time itemprop="datePublished" class="text-uppercase"
 									  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 							</p>
-							<h3 class="px-3"><a class="text-inverse" href="{{$link}}">{{$related_post->post_title}}</a>
+							<h3 class="px-3 text-inverse"><a href="{{$link}}">{{$related_post->post_title}}</a>
 							</h3>
 						</article>
 						<div class="col"></div>

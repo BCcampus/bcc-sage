@@ -7,7 +7,7 @@
 @php(do_action('get_header'))
 @include('partials.header')
 @include('partials.page-header')
-<div class="wrap container-fluid mb-3" role="document">
+<div class="container-fluid mb-3" role="document">
 	<aside id="sidebar" class="col-sm-3">
 		@include('partials.sidebar-mobile')
 	</aside>
