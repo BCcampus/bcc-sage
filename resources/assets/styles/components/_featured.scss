@@ -20,6 +20,12 @@
 		padding-left: 0;
 	}
 
+	@include media-breakpoint-down(sm) {
+		article:first-of-type {
+			padding-left: 0px;
+		}
+	}
+
 	article:last-of-type {
 		padding-right: 0;
 	}
@@ -32,6 +38,12 @@
 
 	article:first-of-type {
 		padding-left: 0;
+	}
+
+	@include media-breakpoint-down(sm) {
+		article:first-of-type {
+			padding-left: 0px;
+		}
 	}
 
 	article:last-of-type {

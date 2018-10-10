@@ -23,7 +23,7 @@ $i = 0;
 						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
 							<p class="px-3 font-size-sm">
 								<time itemprop="datePublished" class="text-uppercase"
-									  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
+									  datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 							</p>
 							<h3 class="px-3 text-inverse"><a href="{{$link}}">{{$related_post->post_title}}</a>
 							</h3>
