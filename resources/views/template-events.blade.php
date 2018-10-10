@@ -12,8 +12,8 @@
 		<div class="d-flex flex-row flex-wrap">
 			<div class="col-md-6">
 				<div class="featured-event row-fluid d-flex"
-					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
-					<h4 class="purple-bkgd col-sm mt-auto">EdTech Demos</h4>
+					 style="background-image: url({{\App\App::getThumbUrl(get_the_ID())}});">
+					<h4 class="purple-bkgd col-sm mt-auto text-inverse"><a href="{{ site_url() }}/events_categories/edtech">EdTech Demos</a></h4>
 				</div>
 				@php($ids=[794,18787])
 				@php($limit=5)
@@ -25,8 +25,8 @@
 
 			<div class="col-md-6">
 				<div class="featured-event row-fluid d-flex"
-					 style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
-					<h4 class="purple-bkgd col-sm mt-auto">Facilitating Learning Online</h4>
+					 style="background-image: url({{\App\App::getThumbUrl(get_the_ID())}});">
+					<h4 class="purple-bkgd col-sm mt-auto text-inverse"><a href="{{ site_url() }}/events_categories/flo">Facilitating Learning Online</a></h4>
 				</div>
 				@php($ids=[793,17882])
 				@php($limit=5)
