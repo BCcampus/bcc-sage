@@ -1,4 +1,5 @@
 <h4 class="pt-4 pb-2">Grants Currently Offered</h4>
+<p>We are looking for your input or participation in the following:</p>
 <section class="grants d-flex flex-row flex-wrap">
 	@foreach(\App\Page::getChildrenOfPage() as $child)
 		@php

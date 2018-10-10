@@ -25,7 +25,7 @@ class Page extends Controller {
 
 		$children = get_children( $id, $args );
 
-		return $children;
+		return array_reverse($children);
 
 	}
 

@@ -1,4 +1,5 @@
 <h4 class="pt-5">Currently Closed Opportunities</h4>
+<p>Some programs are made available on an as-needed basis, and may be open or closed at different points of the year. Please check back to see if a program you’re interested in is currently available.</p>
 <section class="grants d-flex flex-row flex-wrap">
 	@php
 		$parent = get_theme_mod('grants_closed_setting', '' );

@@ -1,4 +1,5 @@
 <h4 class="pt-5">Open Calls for Proposals</h4>
+<p>We are looking for applications for the following:</p>
 <section class="grants d-flex flex-row flex-wrap">
 	@php
 		$parent = get_theme_mod('grants_open_setting', '' );
