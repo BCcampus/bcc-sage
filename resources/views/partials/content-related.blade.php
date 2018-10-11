@@ -6,7 +6,7 @@
 		$link = site_url() . '/' . $related_post->post_name;
 		$cat = get_the_category( $related_post->ID );
 		;?>
-		<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
+		<article class="col feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
 			<a href="{{$link}}">
 				<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 				</div>
