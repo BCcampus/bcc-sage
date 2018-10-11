@@ -11,7 +11,7 @@
 			<div class="col px-md-1"></div>
 			<article class="col purple-bkgd" itemscope itemtype="http://schema.org/Article">
 				<p class="px-3 font-size-sm"><time itemprop="datePublished" class="text-uppercase" datetime="{{ get_post_time('c', true, $feature->ID) }}">{{ get_the_date('',$feature->ID) }}</time></p>
-				<h2 class="px-3 font-weight-light text-inverse"><a href="{{$link}}">{{$feature->post_title}}</a>
+				<h2 class="px-3 font-weight-light text-inverse"><a href="{{$link}}">{{wp_specialchars_decode($feature->post_title)}}</a>
 				</h2>
 			</article>
 		</div>

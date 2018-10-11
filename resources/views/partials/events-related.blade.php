@@ -11,7 +11,7 @@
 		<article class="col-md-3" itemscope itemtype="http://schema.org/Article">
 			<div class="border p-3 min-height-sm">
 			<p class="text-uppercase font-size-sm"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
-			<h4><a class="purple" href="@php echo esc_url( $related_post->guid ); @endphp">{{ $related_post->post_title }}</a></h4>
+			<h4><a class="purple" href="@php echo esc_url( $related_post->guid ); @endphp">{{ wp_specialchars_decode($related_post->post_title) }}</a></h4>
 			</div>
 		</article>
 	@endforeach

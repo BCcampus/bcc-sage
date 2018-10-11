@@ -16,7 +16,7 @@
 					<time itemprop="datePublished"
 						  datetime="{{ get_post_time('c', true, $recent->ID) }}">{{ get_the_date('',$recent->ID) }}</time>
 				</p>
-				<h4><a class="purple" href="{{$link}}">{{$recent->post_title}}</a>
+				<h4><a class="purple" href="{{$link}}">{{wp_specialchars_decode($recent->post_title)}}</a>
 				</h4>
 			</div>
 		</article>

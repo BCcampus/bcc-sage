@@ -10,7 +10,7 @@
 			// update to current domain when importing content
 			$link = site_url() . '/' . $child->post_name;
 			@endphp
-			<a class="list-group-item list-group-item-action purple font-weight-bold" href="{{$link}}">{{$child->post_title}}<i class="fa fa-arrow-right pull-right"></i></a>
+			<a class="list-group-item list-group-item-action purple font-weight-bold" href="{{$link}}">{{wp_specialchars_decode($child->post_title)}}<i class="fa fa-arrow-right pull-right"></i></a>
 		@endforeach
 	</div>
 </section>

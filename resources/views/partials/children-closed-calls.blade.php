@@ -14,7 +14,7 @@
 				<div class="featured-grant row-fluid d-flex"
 					 style="background-image: url({{\App\App::getThumbUrl($child->ID)}});">
 					<h4 class="text-center purple-bkgd text-inverse col-sm mt-auto"><a
-							href="{{$link}}">{{$child->post_title}}</a>
+							href="{{$link}}">{{wp_specialchars_decode($child->post_title)}}</a>
 					</h4>
 				</div>
 				<div class="row-fluid border min-height-md">
