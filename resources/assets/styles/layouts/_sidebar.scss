@@ -2,27 +2,73 @@ aside#sidebar {
 	ul {
 		list-style: none;
 		padding-left: 0;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		li {
+			position: relative;
+			display: block;
+			padding: 0.75rem 1.25rem;
+			margin-bottom: -1px;
+			background-color: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.125);
 			font-size: 1em;
-			padding-bottom: 0.8rem;
-			line-height: 1.3rem;
-			border-bottom: 1px solid $color-grey;
-			margin-bottom: 0.5rem;
 			font-weight: 500;
+			&first-child {
+				border-top-left-radius: 0.25rem;
+				border-top-right-radius: 0.25rem;
+			}
 			&:last-child {
-				border-bottom: 0;
+				margin-bottom: 0;
+				border-bottom-right-radius: 0.25rem;
+				border-bottom-left-radius: 0.25rem;
+			}
+			&:hover, &:focus {
+				background-color: $color-grey-bs4;
+			}
+			&.pagenav {
+				border: none;
+				padding-left: 0;
+				padding-right: 0;
+				font-size: 1.3rem;
+				font-weight: bold;
+				&:hover, &:focus {
+					background-color: $color-white;
+				}
+				li {
+					border: none;
+					padding: 0;
+					a {
+						position: relative;
+						display: block;
+						padding: 0.75rem 1.25rem;
+						margin-bottom: -1px;
+						background-color: #fff;
+						border: 1px solid rgba(0, 0, 0, 0.125);
+						font-size: 1rem;
+						&:hover, &:focus {
+							background-color: $color-grey-bs4;
+						}
+					}
+					ul.children {
+						a {
+							padding-left: 2.5rem;
+						}
+					}
+				}
 			}
 			a {
 				color: $color-purple;
-			}
-		}
-	}
-
-	ul.children {
-		padding-left: 20px;
-		li {
-			&:last-child {
-				border-bottom: 0;
+				&:hover, &:focus {
+					z-index: 1;
+					color: $color-blue-dark;
+				}
 			}
 		}
 	}
@@ -30,7 +76,7 @@ aside#sidebar {
 	.dropdown {
 		ul {
 			padding-left: 10px;
-			li{
+			li {
 				padding-top: 0.5rem;
 			}
 		}
@@ -43,30 +89,6 @@ aside#sidebar {
 
 	.widget {
 		margin-bottom: 18px;
-	}
-
-	li.pagenav {
-		list-style: none;
-		font-weight: bold;
-		font-size: 1.3em;
-		.page_item {
-
-			&.current_page_item > a {
-				color: $color-grey-darker;
-			}
-		}
-		ul {
-
-			li {
-				font-size: 16px;
-				&:first-of-type {
-					padding-top: .8rem;
-				}
-				&:last-of-type{
-					padding-bottom: 0;
-				}
-			}
-		}
 	}
 
 }
