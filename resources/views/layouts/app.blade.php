@@ -10,10 +10,10 @@
 <div class="wrap container-fluid" role="document">
 	@include('partials.sidebar-mobile')
 	<div class="content row">
-		<main class="col-sm-8">
+		<main class="col-lg-8">
 			@yield('content')
 		</main>
-		<aside id="sidebar" class="col-sm-3 offset-1">
+		<aside id="sidebar" class="col-lg-3 offset-lg-1 col-md-4">
 			@include('partials.sidebar')
 		</aside>
 	</div>
