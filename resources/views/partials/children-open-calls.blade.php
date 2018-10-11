@@ -9,7 +9,7 @@
 			@php
 				$link = site_url() . '/' . $child->post_name;
 			@endphp
-			<article class="grants-open col-md-6 mb-2 px-2" itemscope
+			<article class="grants-open col-md-6 my-2" itemscope
 					 itemtype="http://schema.org/Article">
 				<div class="featured-grant row-fluid d-flex"
 					 style="background-image: url({{\App\App::getThumbUrl($child->ID)}});">
