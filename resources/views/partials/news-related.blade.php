@@ -17,7 +17,7 @@ $i = 0;
 
 				// make the first one bigger
 				if ( 0 === $i ): ;?>
-				<div class="col-md-6 pb-sm-2">
+				<div class="col-md-6 py-2">
 					<div class="row featured-news-front"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
@@ -32,7 +32,7 @@ $i = 0;
 					</div>
 				</div>
 				<?php else: ;?>
-				<article class="col feature-box-sm shady-bkgd" itemscope itemtype="http://schema.org/Article">
+				<article class="col feature-box-sm shady-bkgd py-2" itemscope itemtype="http://schema.org/Article">
 					<div class="featured-image-box"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 						<a href="{{$link}}"></a>
