@@ -13,7 +13,7 @@
 		<main class="col-lg-8">
 			@yield('content')
 		</main>
-		<aside id="sidebar" class="col-lg-3 offset-lg-1 col-md-4">
+		<aside id="sidebar" class="col-lg-3 offset-lg-1">
 			@include('partials.sidebar')
 		</aside>
 	</div>
