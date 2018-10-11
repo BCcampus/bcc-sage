@@ -7,7 +7,7 @@
 <section class="recent-news pt-3 d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		@php($link = site_url() . '/' . $recent->post_name)
-		<article class="col feature-box-sm" itemscope itemtype="http://schema.org/Article">
+		<article class="col-md-4 feature-box-sm" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 
 			</div>
