@@ -32,7 +32,7 @@ $i = 0;
 					</div>
 				</div>
 				<?php else: ;?>
-				<article class="col feature-box-sm shady-bkgd py-2" itemscope itemtype="http://schema.org/Article">
+				<article class="col-md-3 feature-box-sm shady-bkgd py-2" itemscope itemtype="http://schema.org/Article">
 					<div class="featured-image-box"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 						<a href="{{$link}}"></a>

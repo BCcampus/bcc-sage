@@ -3,6 +3,6 @@
 	<p>Get the latest information on news and events at BCcampus.</p>
 	@php($link = site_url() . '/subscribe')
 	<form action="{{$link}}">
-	<button name="subscribe" type="submit" class="btn btn-primary" formtarget="_blank">Subscribe</button>
+	<button name="subscribe" type="submit" class="btn btn-primary">Subscribe</button>
 	</form>
 </section>
