@@ -10,9 +10,11 @@ class Page extends Controller {
 	 *
 	 * @param string $id
 	 *
+	 * @param array $exclude
+	 *
 	 * @return array
 	 */
-	public static function getChildrenOfPage( $id = '' ) {
+	public static function getChildrenOfPage( $id = '', $exclude = [] ) {
 		global $post;
 		$id   = ( empty( $id ) ) ? $post->ID : $id;
 		$args = [
@@ -25,7 +27,16 @@ class Page extends Controller {
 
 		$children = get_children( $id, $args );
 
-		return array_reverse($children);
+		// exclude ids
+		if ( ! empty( $exclude ) ) {
+			foreach ( $exclude as $key ) {
+				if ( array_key_exists( $key, $children ) ) {
+					unset( $children[ $key ] );
+				}
+			}
+		}
+
+		return array_reverse( $children );
 
 	}
 
