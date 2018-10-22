@@ -1,7 +1,7 @@
 <h4 class="pt-4 pb-2">Grants Currently Offered</h4>
 <p>We are looking for your input or participation in the following:</p>
 <section class="grants d-flex flex-row flex-wrap">
-	@foreach(\App\Page::getChildrenOfPage($post->ID, [69854,15972]) as $child)
+	@foreach(\App\Page::getChildrenOfPage($post->ID, [698541,15972]) as $child)
 		@php
 			$link = site_url() . '/' . $child->post_name;
 		@endphp
