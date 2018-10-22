@@ -51,7 +51,7 @@ class App extends Controller {
 	 *
 	 */
 	public function navWalker() {
-		if (class_exists('\\BCcampus\MegaWalker')) {
+		if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 			return new MegaWalker();
 		}
 	}
@@ -172,7 +172,7 @@ class App extends Controller {
 			$current_domain = site_url();
 		}
 
-		$dimensions = ( empty( $size ) ) ? [ 175,175 ] : $size;
+		$dimensions = ( empty( $size ) ) ? [ 175, 175 ] : $size;
 		$result     = get_the_post_thumbnail( $post_id, $dimensions );
 		if ( empty( $result ) ) {
 			$src    = get_stylesheet_directory_uri() . '/assets/images/placeholder-image-300x200.jpg';

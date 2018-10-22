@@ -70,7 +70,7 @@
   },
   "scripts": {
     "test": [
-      "vendor/bin/phpunit --configuration phpunit.xml"
+      "vendor/bin/phpunit --configuration=phpunit.xml"
     ],
     "standards":[
       "vendor/bin/phpcs --standard=phpcs.ruleset.xml"

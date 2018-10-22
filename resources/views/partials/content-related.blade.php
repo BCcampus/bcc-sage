@@ -18,7 +18,7 @@
 				<h4><a class="purple" href="{{$link}}">{{wp_specialchars_decode(wp_specialchars_decode($related_post->post_title))}}</a>
 				</h4>
 				<p class="px-3 font-size-sm text-uppercase mb-1 font-weight-500"><a
-						href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) );?>">{{wp_specialchars_decode($cat[0]->name)}}</a></p>
+						href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ); ?>">{{wp_specialchars_decode($cat[0]->name)}}</a></p>
 			</div>
 		</article>
 	@endforeach

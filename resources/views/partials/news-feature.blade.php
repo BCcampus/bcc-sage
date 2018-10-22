@@ -15,8 +15,8 @@ $args = [
 				</h4>
 		</div>
 		<article class="row-fluid border-left border-bottom border-right" itemscope itemtype="http://schema.org/Article">
-			<p class="text-uppercase pt-3 px-3 font-size-sm align-middle"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $feature->ID) }}">{{ get_the_date('',$feature->ID) }}</time> &nbsp;<i class="justify-content-center fa fa-circle green"></i>&nbsp; <a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ) ;?>">{{$cat[0]->name}}</a></p>
-			<p class="px-3"><?php echo wp_trim_words( $feature->post_content, '50', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" );?></p>
+			<p class="text-uppercase pt-3 px-3 font-size-sm align-middle"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $feature->ID) }}">{{ get_the_date('',$feature->ID) }}</time> &nbsp;<i class="justify-content-center fa fa-circle green"></i>&nbsp; <a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ); ?>">{{$cat[0]->name}}</a></p>
+			<p class="px-3"><?php echo wp_trim_words( $feature->post_content, '50', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
 		</article>
 	@endforeach
 </section>
