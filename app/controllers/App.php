@@ -425,6 +425,7 @@ class App extends Controller {
 				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
 				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
 				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+				$results[ $instance->get( 'instance_id' ) ]['post_content'] = $instance->get( 'post' )->post_content;
 
 			}
 			foreach ( $date['events']['notallday'] as $instance ) {
@@ -432,6 +433,7 @@ class App extends Controller {
 				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
 				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
 				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+				$results[ $instance->get( 'instance_id' ) ]['post_content'] = $instance->get( 'post' )->post_content;
 			}
 		}
 
