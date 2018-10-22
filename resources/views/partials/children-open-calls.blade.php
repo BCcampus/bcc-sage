@@ -2,10 +2,11 @@
 <p>We are looking for applications for the following:</p>
 <section class="grants d-flex flex-row flex-wrap">
 	@php
-		$ids= [155,761];
+		$ids= [155,451]; // open call for proposals is 451 on cert, 155 on prod
 		$limit = 4;
+		$last_day = 0;
 	@endphp
-	@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $open)
+	@foreach(\App\App::getUpcomingEvents( $limit, $ids, $last_day ) as $open)
 		<article class="grants-open col-md-6 my-2" itemscope
 				 itemtype="http://schema.org/Article">
 			<div class="featured-grant row-fluid d-flex"

@@ -402,22 +402,23 @@ class App extends Controller {
 	 *
 	 * @param int $limit
 	 * @param array $ids
+	 * @param string $last_day
 	 *
 	 * @return array|bool
 	 */
-	public static function getUpcomingEvents( $limit = 7, $ids = [] ) {
+	public static function getUpcomingEvents( $limit = 7, $ids = [], $last_day = false ) {
 		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
 			return false;
 		}
 
 		global $ai1ec_registry;
-		$results = [];
+		$results           = [];
 		$filter['cat_ids'] = $ids;
-		$t = $ai1ec_registry->get( 'date.system' );
+		$t                 = $ai1ec_registry->get( 'date.system' );
 		// Get localized time
-		$time = $t->current_time();
-		$event_results   = $ai1ec_registry->get( 'model.search' )->get_events_relative_to( $time, $limit, '', $filter );
-		$dates           = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )->get_agenda_like_date_array( $event_results['events'] );
+		$time          = $t->current_time();
+		$event_results = $ai1ec_registry->get( 'model.search' )->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
