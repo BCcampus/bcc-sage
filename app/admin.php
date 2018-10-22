@@ -116,21 +116,6 @@ add_action(
 	] );
 
 	$wp_customize->add_setting(
-		'grants_open_setting', [
-			'default'    => '',
-			'capability' => 'edit_theme_options',
-		]
-	);
-
-	$wp_customize->add_control(
-		'grants_open_setting', [
-			'label'    => __( 'Open Proposals post ID', __NAMESPACE__ ),
-			'section'  => 'grants_settings',
-			'settings' => 'grants_open_setting',
-		]
-	);
-
-	$wp_customize->add_setting(
 		'grants_closed_setting', [
 			'default'    => '',
 			'capability' => 'edit_theme_options',
