@@ -92,7 +92,7 @@
 			<input id="fielddklkq" class="form-control" name="cm-f-dklkq" type="text"/>
 		</p>
 		<p>
-			<button class="js-cm-submit-button btn btn-primary" type="submit">Subscribe</button>
+			<button class="js-cm-submit-button btn btn-primary btn btn-primary" type="submit">Subscribe</button>
 		</p>
 	</form>
 	<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>

@@ -14,7 +14,7 @@
 	<p>
 		<label for="fieldvkujtk">Primary Institution</label>
 		<br/>
-		<select id="fieldvkujtk" name="cm-fo-vkujtk">
+		<select id="fieldvkujtk" name="cm-fo-vkujtk" class="custom-select">
 			<option value="3901528">BCIT</option>
 			<option value="3901529">Camosun College</option>
 			<option value="3901530">Capilano University</option>
@@ -44,7 +44,7 @@
 		</select>
 	</p>
 	<p>
-		<button class="js-cm-submit-button" type="submit">Subscribe</button>
+		<button class="js-cm-submit-button btn btn-primary" type="submit">Subscribe</button>
 	</p>
 </form>
 <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
