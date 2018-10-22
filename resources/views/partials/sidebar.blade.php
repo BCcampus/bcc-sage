@@ -24,9 +24,9 @@
 		@include( 'partials.subscribe')
 		</div>
 	@endif
-	@if(is_page('3-3-educational-technology') || is_page('educational-technology'))
-		<div class="text-center">
-			@include( 'partials.subscribe-edtech')
-		</div>
-	@endif
+@endif
+@if(is_page('3-3-educational-technology') || is_page('educational-technology'))
+	<div class="text-center">
+		@include( 'partials.subscribe-edtech')
+	</div>
 @endif
