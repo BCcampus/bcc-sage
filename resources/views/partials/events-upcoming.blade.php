@@ -1,12 +1,13 @@
 @php
 	$limit = 3;
 	$ids=[];
+	$exclude_ids=\App\App::getIdsInCategory([792,22547]);
 @endphp
 <section class="py-3">
 	<header>
 		<h5 class="text-uppercase">Upcoming</h5>
 	</header>
-	@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $recent )
+	@foreach(\App\App::getUpcomingEvents( $limit, $ids, false, $exclude_ids ) as $recent )
 		<article class="events-upcoming my-2 border flex-row d-flex" itemscope itemtype="http://schema.org/Article">
 				<div class="col-md-3 events-image-box"
 					 style="background-image: url({{ \App\App::getThumbUrl($recent['post_id']) }});">

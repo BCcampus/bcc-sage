@@ -106,13 +106,13 @@ class App extends Controller {
 	 * @return array
 	 */
 	public static function getRelevant( $post, $post_types = [], $limit = '', $tag = '' ) {
-		$tags         = wp_get_post_tags( $post->ID );
-		$cats         = wp_get_post_categories( $post->ID );
-		$first_cat    = $cats[0];
+		$tags      = wp_get_post_tags( $post->ID );
+		$cats      = wp_get_post_categories( $post->ID );
+		$first_cat = $cats[0];
 		if ( empty( $tag ) ) {
 			$first_tag = $tags[0]->term_id;
 		} else {
-			$term       = get_term_by( 'name', $tag, 'post_tag', ARRAY_A );
+			$term      = get_term_by( 'name', $tag, 'post_tag', ARRAY_A );
 			$first_tag = $term['term_id'];
 		}
 		$type         = ( empty( $post_types ) ) ? [
@@ -167,8 +167,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = null;
-		if ( null === $current_domain ) {
+		static $current_domain = NULL;
+		if ( NULL === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -402,11 +402,12 @@ class App extends Controller {
 	 *
 	 * @param int $limit
 	 * @param array $ids
-	 * @param string $last_day
+	 * @param bool $last_day
+	 * @param $exclude_ids
 	 *
 	 * @return array|bool
 	 */
-	public static function getUpcomingEvents( $limit = 7, $ids = [], $last_day = false ) {
+	public static function getUpcomingEvents( $limit = 7, $ids = [], $last_day = false, $exclude_ids = [] ) {
 		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
 			return false;
 		}
@@ -417,27 +418,77 @@ class App extends Controller {
 		$t                 = $ai1ec_registry->get( 'date.system' );
 		// Get localized time
 		$time          = $t->current_time();
-		$event_results = $ai1ec_registry->get( 'model.search' )->get_events_relative_to( $time, $limit, '', $filter, $last_day );
-		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )->get_agenda_like_date_array( $event_results['events'] );
+		$event_results = $ai1ec_registry->get( 'model.search' )
+		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
+		                                ->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
-				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
-				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
-				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
-				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+				$results[ $instance->get( 'instance_id' ) ]['title']        = $instance->get( 'post' )->post_title;
+				$results[ $instance->get( 'instance_id' ) ]['link']         = $instance->get( 'post' )->guid;
+				$results[ $instance->get( 'instance_id' ) ]['start']        = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
+				$results[ $instance->get( 'instance_id' ) ]['post_id']      = $instance->get( 'post' )->ID;
 				$results[ $instance->get( 'instance_id' ) ]['post_content'] = $instance->get( 'post' )->post_content;
 
 			}
 			foreach ( $date['events']['notallday'] as $instance ) {
-				$results[ $instance->get( 'instance_id' ) ]['title'] = $instance->get( 'post' )->post_title;
-				$results[ $instance->get( 'instance_id' ) ]['link']  = $instance->get( 'post' )->guid;
-				$results[ $instance->get( 'instance_id' ) ]['start'] = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
-				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+				$results[ $instance->get( 'instance_id' ) ]['title']        = $instance->get( 'post' )->post_title;
+				$results[ $instance->get( 'instance_id' ) ]['link']         = $instance->get( 'post' )->guid;
+				$results[ $instance->get( 'instance_id' ) ]['start']        = $date['month'] . ' ' . $date['day'] . ', ' . $date['year'];
+				$results[ $instance->get( 'instance_id' ) ]['post_id']      = $instance->get( 'post' )->ID;
 				$results[ $instance->get( 'instance_id' ) ]['post_content'] = $instance->get( 'post' )->post_content;
+			}
+		}
+		if ( ! empty( $exclude_ids ) ) {
+			foreach ( $exclude_ids as $exclude ) {
+				if ( array_key_exists( $exclude, $results ) ) {
+					unset( $results[ $exclude ] );
+				}
 			}
 		}
 
 		return $results;
 	}
+
+	/**
+	 * @param int $limit
+	 * @param array $cat_ids
+	 *
+	 * @return array|bool
+	 */
+	public static function getIdsInCategory( $cat_ids = [] ) {
+		if ( ! class_exists( 'Ai1ec_Loader' ) ) {
+			return false;
+		}
+
+		global $ai1ec_registry;
+		$results           = [];
+		$filter['cat_ids'] = $cat_ids;
+		$t                 = $ai1ec_registry->get( 'date.system' );
+		$last_day          = false;
+		$limit             = 7;
+		// Get localized time
+		$time          = $t->current_time();
+		$event_results = $ai1ec_registry->get( 'model.search' )
+		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
+		                                ->get_agenda_like_date_array( $event_results['events'] );
+
+		foreach ( $dates as $date ) {
+			foreach ( $date['events']['allday'] as $instance ) {
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+			}
+			foreach ( $date['events']['notallday'] as $instance ) {
+				$results[ $instance->get( 'instance_id' ) ]['post_id'] = $instance->get( 'post' )->ID;
+			}
+		}
+
+		if ( ! empty( $results ) ) {
+			$results = array_keys( $results );
+		}
+
+		return $results;
+	}
 }
+
