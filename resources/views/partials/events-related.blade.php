@@ -4,7 +4,7 @@
 @endphp
 <div class="container-fluid my-3">
 <h3>Related Events <img class="mx-2 mb-1" src="@asset('images/green-dots.png')" alt="decorative green dots">
-	<small><a href="/events">view all events</a></small>
+	<small><a href="{{get_site_url()}}/events">view all events</a></small>
 </h3>
 <section class="related-events d-flex flex-row flex-wrap">
 	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
