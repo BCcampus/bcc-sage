@@ -440,6 +440,8 @@ class App extends Controller {
 				$results[ $instance->get( 'instance_id' ) ]['post_content'] = $instance->get( 'post' )->post_content;
 			}
 		}
+
+		// exclude certain ids
 		if ( ! empty( $exclude_ids ) ) {
 			foreach ( $exclude_ids as $exclude ) {
 				if ( array_key_exists( $exclude, $results ) ) {
@@ -452,7 +454,6 @@ class App extends Controller {
 	}
 
 	/**
-	 * @param int $limit
 	 * @param array $cat_ids
 	 *
 	 * @return array|bool
