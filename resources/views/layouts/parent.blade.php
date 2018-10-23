@@ -20,7 +20,7 @@
 		</aside>
 	</div>
 </div>
-@if( ! is_page('subscribe') || ! is_page('edtech-demo-subscribe'))
+@if( ! is_page_template('Subscribe Landing Template') || ! is_page_template('EdTech Subscribe Landing Template'))
 	@include('partials.news-related')
 	@include('partials.events-related')
 @endif
