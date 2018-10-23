@@ -30,4 +30,3 @@
 		{{--@include( 'partials.subscribe-edtech')--}}
 	{{--</div>--}}
 {{--@endif--}}
-<?php echo get_page_template_slug( $post->ID ); ?>
