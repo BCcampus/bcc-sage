@@ -177,3 +177,21 @@ add_filter(
 		return $content;
 	}
 );
+
+/**
+ * prevent breadcrumb titles from displaying entities
+ */
+add_filter(
+	'inc2734_wp_breadcrumbs', function ( $breadcrumbs ) {
+
+	if ( is_array( $breadcrumbs ) && ! empty( $breadcrumbs ) ) {
+		foreach ( $breadcrumbs as $k => $val ) {
+			if ( isset( $val['title'] ) ) {
+				$breadcrumbs[ $k ]['title'] = html_entity_decode( $val['title'] );
+			}
+		}
+	}
+
+	return $breadcrumbs;
+}
+);
