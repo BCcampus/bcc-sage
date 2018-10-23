@@ -20,7 +20,7 @@
 		</aside>
 	</div>
 </div>
-@if( ! is_page('subscribe'))
+@if( ! is_page('subscribe') || ! is_page('edtech-demo-subscribe'))
 	@include('partials.news-related')
 	@include('partials.events-related')
 @endif
