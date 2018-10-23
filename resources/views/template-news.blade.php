@@ -16,6 +16,6 @@
 	</div>
 	</div>
 	@include('partials.tag-open-ed')
-	@include('partials.tag-open-textbooks')
+	@include('partials.tag-learning-teaching')
 	@endwhile
 @endsection
