@@ -187,7 +187,7 @@ add_filter(
 	if ( is_array( $breadcrumbs ) && ! empty( $breadcrumbs ) ) {
 		foreach ( $breadcrumbs as $k => $val ) {
 			if ( isset( $val['title'] ) ) {
-				$breadcrumbs[ $k ]['title'] = html_entity_decode( $val['title'] );
+				$breadcrumbs[ $k ]['title'] = str_replace( '&', 'and', html_entity_decode( $val['title'] ) );
 			}
 		}
 	}
