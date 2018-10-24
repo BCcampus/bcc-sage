@@ -10,7 +10,7 @@
 						&nbsp;<i class="fa fa-circle green small"></i>&nbsp; @php(the_category('&nbsp;'))
 					@endif
 				</small>
-				<h3 class="entry-title"><a class="purple" href="{{ get_permalink() }}">{{ get_the_title() }}</a></h3>
+				<h3 class="entry-title"><a class="purple" href="{{ get_permalink() }}">{{ the_title_attribute() }}</a></h3>
 			</header>
 			@php(the_excerpt())
 		</div>
