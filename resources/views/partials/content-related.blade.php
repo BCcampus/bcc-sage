@@ -1,7 +1,7 @@
 <section class="relevant d-flex flex-row flex-wrap my-3">
 	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
 		@php
-		$link=\App\App::maybeGuid($child->ID, $child->post_name);
+		$link=\App\App::maybeGuid($related_post->ID, $related_post->post_name);
 		$cat = get_the_category( $related_post->ID );
 		@endphp
 		<article class="col-md-4 feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
