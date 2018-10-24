@@ -7,7 +7,7 @@
 		];
 		@endphp
 		@foreach(\App\App::getLatestNews( $args ) as $news)
-			@php($link = site_url() . '/' . $news->post_name)
+			@php($link=\App\App::maybeGuid($news->ID, $news->post_name))
 			@php($cat = get_the_category( $news->ID))
 			<li class="border-top">
 				<p class="text-uppercase font-size-sm"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $news->ID) }}">{{ get_the_date('',$news->ID) }}</time> &nbsp;<i class="fa fa-circle green small"></i>&nbsp; <a href="<?php echo esc_url( get_category_link( $cat[0]->term_id ) ); ?>">{{wp_specialchars_decode($cat[0]->name)}}</a></p>

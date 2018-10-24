@@ -1,10 +1,6 @@
 <section class="current-projects">
 	@foreach(\App\Page::getChildrenOfPage() as $child)
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $child->post_name;
-		;?>
+		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
 		<article class="projects flex-row d-flex flex-wrap my-2" itemscope itemtype="http://schema.org/Article">
 			<div class="col-md-3 events-image-box" style="background-image: url({{\App\App::getThumbUrl( $child->ID )}});">
 			</div>

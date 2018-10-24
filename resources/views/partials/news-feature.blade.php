@@ -8,7 +8,7 @@ $args = [
 @endphp
 <section class="d-flex flex-column flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $feature)
-		@php($link = site_url() . '/' . $feature->post_name)
+		@php($link=\App\App::maybeGuid($feature->ID, $feature->post_name))
 		@php($cat = get_the_category( $feature->ID))
 		<div class="featured-news col d-flex px-0" style="background-image: url({{\App\App::getThumbUrl($feature->ID)}});">
 				<h4 class="purple-bkgd text-inverse col-sm mt-auto"><a href="{{$link}}">{{wp_specialchars_decode($feature->post_title)}}</a>

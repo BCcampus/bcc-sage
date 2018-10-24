@@ -6,7 +6,7 @@
 @endphp
 <section class="recent-news pt-3 d-flex flex-row flex-wrap">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
-		@php($link = site_url() . '/' . $recent->post_name)
+		@php($link=\App\App::maybeGuid($recent->ID, $recent->post_name))
 		<article class="col-md-4 feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-image-box" style="background-image: url({{\App\App::getThumbUrl($recent->ID)}});">
 

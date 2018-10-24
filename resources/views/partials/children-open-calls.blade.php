@@ -7,7 +7,7 @@
 		$last_day = 0;
 	@endphp
 	@foreach(\App\App::getUpcomingEvents( $limit, $ids, $last_day ) as $open)
-		@php($link=esc_url(get_permalink($open['post_id'])))
+		@php($link=\App\App::maybeGuid($open['post_id'], $open['title']))
 		<article class="grants-open col-md-6 my-2" itemscope
 				 itemtype="http://schema.org/Article">
 			<div class="featured-grant row-fluid d-flex"

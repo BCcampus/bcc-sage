@@ -6,9 +6,7 @@
 	@endphp
 	@if ($parent !== '')
 		@foreach(\App\Page::getChildrenOfPage( $parent ) as $child)
-			@php
-				$link = site_url() . '/' . $child->post_name;
-			@endphp
+			@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
 			<article class="grants-closed col-md-6 my-2" itemscope
 					 itemtype="http://schema.org/Article">
 				<div class="featured-grant row-fluid d-flex"

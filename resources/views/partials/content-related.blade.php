@@ -1,11 +1,9 @@
 <section class="relevant d-flex flex-row flex-wrap my-3">
 	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
-		<?php
-		// not using $child->guid since guid does not
-		// update to current domain when importing content
-		$link = site_url() . '/' . $related_post->post_name;
+		@php
+		$link=\App\App::maybeGuid($child->ID, $child->post_name);
 		$cat = get_the_category( $related_post->ID );
-		;?>
+		@endphp
 		<article class="col-md-4 feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-image-box"
 				 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">

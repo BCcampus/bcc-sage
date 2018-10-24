@@ -167,8 +167,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = NULL;
-		if ( NULL === $current_domain ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -490,6 +490,32 @@ class App extends Controller {
 		}
 
 		return $results;
+	}
+
+	/**
+	 * Content imported from other sites will have a permalink that leads back to
+	 * the original site. This attempts to resolve that.
+	 *
+	 * @param int $id post_id
+	 * @param string $name post_name
+	 *
+	 * @return string
+	 */
+	public static function maybeGuid( $id, $name ) {
+		static $current_domain = NULL;
+		if ( NULL === $current_domain ) {
+			$current_domain = site_url();
+		}
+		$current = wp_parse_url( $current_domain, PHP_URL_HOST );
+
+		$url      = esc_url( get_permalink( $id ) );
+		$incoming = wp_parse_url( $url, PHP_URL_HOST );
+
+		if ( 0 !== strcmp( $current, $incoming ) ) {
+			$url = $current_domain . '/' . $name;
+		}
+
+		return $url;
 	}
 }
 

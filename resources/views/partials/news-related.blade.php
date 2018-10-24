@@ -11,9 +11,7 @@ $i = 0;
 		<section class="related-news d-flex flex-row flex-wrap">
 			@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
 				<?php
-				// not using $child->guid since guid does not
-				// update to current domain when importing content
-				$link = site_url() . '/' . $related_post->post_name;
+				$link=\App\App::maybeGuid($related_post->ID, $related_post->post_name);
 
 				// make the first one bigger
 				if ( 0 === $i ): ;?>

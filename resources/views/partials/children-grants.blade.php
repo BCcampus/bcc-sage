@@ -2,9 +2,7 @@
 <p>We are looking for your input or participation in the following:</p>
 <section class="grants d-flex flex-row flex-wrap">
 	@foreach(\App\Page::getChildrenOfPage($post->ID, [698541,15972]) as $child)
-		@php
-			$link = site_url() . '/' . $child->post_name;
-		@endphp
+		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
 		<article class="grants-current col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-grant row-fluid d-flex"
 				 style="background-image: url({{\App\App::getThumbUrl($child->ID)}});">
