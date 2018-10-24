@@ -4,7 +4,7 @@
 		$link=\App\App::maybeGuid($related_post->ID, $related_post->post_name);
 		$cat = get_the_category( $related_post->ID );
 		@endphp
-		<article class="col-md-4 feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
+		<article class="col feature-box-sm py-2" itemscope itemtype="http://schema.org/Article">
 			<div class="featured-image-box"
 				 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
 			</div>
