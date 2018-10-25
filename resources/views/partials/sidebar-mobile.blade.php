@@ -5,13 +5,13 @@
 	<!-- Prevent returning a menu of all pages when no children, display on child pages also -->
 	@if((($isChild || $hasChildren )))
 		<!-- Display the dropdown menu only on mobile -->
-		<div class="dropdown d-block d-md-none">
-			<div class="btn-group">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+		<aside class="dropdown d-block d-md-none" id="sidebar">
+			<div class="btn-group btn-block">
+				<button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown"
 						aria-haspopup="true"
 						aria-expanded="false">In this Section
 				</button>
-				<div class="dropdown-menu">
+				<div class="dropdown-menu btn-block">
 					<ul>
 						{!! wp_list_pages( [
                       'depth'        => 2,
@@ -23,6 +23,6 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</aside>
 	@endif
 @endif

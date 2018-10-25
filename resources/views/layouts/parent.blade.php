@@ -8,9 +8,7 @@
 @include('partials.header')
 @include('partials.page-header')
 <div class="container-fluid mb-3" role="document">
-	<aside id="sidebar" class="col-sm-3">
 		@include('partials.sidebar-mobile')
-	</aside>
 	<div class="content row">
 		<main class="col-lg-8 col-md-8">
 			@yield('content')
