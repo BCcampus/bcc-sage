@@ -78,10 +78,13 @@ nav.navbar-megamenu {
 				a.dropdown-toggle::after {
 					border: none;
 				}
-				.megamenu-column {
-					width: 280px;
+				li.megamenu-column {
+					&:first-child{
+						width: 280px;
+					}
+					width: 23%;
 					display: block;
-					float: left;
+					float:left;
 					@include media-breakpoint-down(md) {
 						width: auto;
 						float: none;
