@@ -12,9 +12,20 @@
 	}
 }
 
-.search-form .search-submit {
-  display: none;
-}
 .brand{
 	min-height: 106px;
+}
+
+@include media-breakpoint-down(sm) {
+	.shady-bkgd-md {
+		background-color: $color-grey-light;
+	}
+	.navbar{
+		padding: 0;
+		line-height: 1em;
+	}
+	nav.navbar-megamenu{
+		margin-bottom: 1em;
+		padding-bottom: 0.5em;
+	}
 }
