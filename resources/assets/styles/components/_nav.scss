@@ -97,6 +97,9 @@ nav.navbar-megamenu {
 					.featured-image {
 						a img {
 							padding: 5px 0;
+							@include media-breakpoint-down(md) {
+								display:none;
+							}
 						}
 					}
 					a {
