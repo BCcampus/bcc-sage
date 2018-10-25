@@ -82,11 +82,19 @@ nav.navbar-megamenu {
 					width: 280px;
 					display: block;
 					float: left;
+					@include media-breakpoint-down(md) {
+						width: auto;
+						float: none;
+						line-height: 1.5em;
+					}
 					ul {
 						padding: 0;
 						margin: 0;
 						list-style: none;
 						&.sub-menu.depth_1 {
+							@include media-breakpoint-down(md) {
+								padding-left: 2em;
+							}
 							li {
 								a {
 									font-weight: normal;
@@ -98,12 +106,12 @@ nav.navbar-megamenu {
 						a img {
 							padding: 5px 0;
 							@include media-breakpoint-down(md) {
-								display:none;
+								display: none;
 							}
 						}
 					}
 					a {
-						font-size: 1em;
+						font-size: 0.95rem;
 						padding: 3px 20px;
 						display: block;
 						font-weight: bold;
