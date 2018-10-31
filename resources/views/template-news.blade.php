@@ -15,7 +15,7 @@
 		@include('partials.news-recent-list')
 	</div>
 	</div>
-	@include('partials.tag-open-ed')
-	@include('partials.tag-learning-teaching')
+	@include('partials.category-open-ed')
+	@include('partials.category-learning-teaching')
 	@endwhile
 @endsection

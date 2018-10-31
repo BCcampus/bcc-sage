@@ -101,38 +101,42 @@ class App extends Controller {
 	 * @param $post
 	 * @param array $post_types
 	 * @param string $limit
-	 * @param string $tag
+	 * @param string $category_name
 	 *
 	 * @return array
 	 */
-	public static function getRelevant( $post, $post_types = [], $limit = '', $tag = '' ) {
-		$tags      = wp_get_post_tags( $post->ID );
-		$cats      = wp_get_post_categories( $post->ID );
-		$first_cat = $cats[0];
-		if ( empty( $tag ) ) {
+	public static function getRelevant( $post, $post_types = [], $limit = '', $category_name = '' ) {
+		$tags   = wp_get_post_tags( $post->ID );
+		$cats   = wp_get_post_categories( $post->ID );
+		$append = [];
+		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
 			$first_tag = $tags[0]->term_id;
-		} else {
-			$term      = get_term_by( 'name', $tag, 'post_tag', ARRAY_A );
-			$first_tag = $term['term_id'];
+			$append    = [ 'tag__in' => [ $first_tag ] ];
 		}
-		$type         = ( empty( $post_types ) ) ? [
+		if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+			$first_cat = $cats[0];
+			$append    = [ 'category__in' => [ $first_cat ] ];
+		}
+
+		$type = ( empty( $post_types ) ) ? [
 			'post',
 			'page',
 			'ai1ec',
 		] : $post_types;
+
 		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
 		$more_related = [];
 		$args         = [
-			'tag__in'             => [ $first_tag ],
 			'post__not_in'        => [ $post->ID ],
 			'posts_per_page'      => $this_many,
 			'ignore_sticky_posts' => 1,
-			'category__in'        => [ $first_cat ],
 			'post_type'           => $type,
 			'post_status'         => 'publish',
+			'category_name'       => $category_name,
 		];
 
-		$related_posts = get_posts( $args );
+		$maybe_more_args   = array_merge( $args, $append );
+		$related_posts = get_posts( $maybe_more_args );
 
 		if ( count( $related_posts ) >= $this_many ) {
 			return $related_posts;
@@ -167,8 +171,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = null;
-		if ( null === $current_domain ) {
+		static $current_domain = NULL;
+		if ( NULL === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -493,8 +497,8 @@ class App extends Controller {
 	}
 
 	/**
-	 * Content imported from other sites will have a permalink that leads back to
-	 * the original site. This attempts to resolve that.
+	 * Content imported from other sites will have a permalink that leads back
+	 * to the original site. This attempts to resolve that.
 	 *
 	 * @param int $id post_id
 	 * @param string $name post_name
