@@ -35,8 +35,8 @@ footer {
 		a {
 			color: $color-white;
 			&:hover {
-				color: $color-blue;
-				text-decoration: none;
+				color: $color-blue-dark;
+				text-decoration: underline;
 			}
 		}
 	}
@@ -65,7 +65,10 @@ footer {
 			li {
 				line-height: 2;
 				a {
-					color: $color-black;
+					color: $color-purple;
+					&:hover,&:focus{
+						color:$color-blue-dark;
+					}
 				}
 			}
 		}

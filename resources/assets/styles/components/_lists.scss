@@ -62,3 +62,10 @@ ul.events-list {
 		font-weight: 300;
 	}
 }
+
+.list-group-item-action{
+	&:hover,&:focus{
+		color:$color-blue-dark;
+		text-decoration: underline;
+	}
+}

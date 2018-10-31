@@ -181,6 +181,12 @@ p.tags {
 	color: $color-purple;
 }
 
+a.purple {
+	&:hover, &focus {
+		color: $color-blue-dark;
+	}
+}
+
 .green {
 	color: $color-green;
 }

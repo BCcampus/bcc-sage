@@ -35,8 +35,12 @@ nav {
 }
 
 .navbar-light .navbar-nav .nav-link {
-	color: $color-black;
+	color: $color-purple;
 	font-weight: 500;
+	&:hover,&:focus{
+		color: $color-blue-dark;
+		text-decoration: underline;
+	}
 }
 
 .menu-top-padding {
