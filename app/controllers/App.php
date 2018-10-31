@@ -126,9 +126,9 @@ class App extends Controller {
 
 		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
 		$more_related = [];
-		$args         = [
+		$args = [
 			'post__not_in'        => [ $post->ID ],
-			//			'posts_per_page'      => $this_many,
+			'posts_per_page'      => $this_many*3,
 			'ignore_sticky_posts' => 1,
 			'post_type'           => $type,
 			'post_status'         => 'publish',
