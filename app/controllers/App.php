@@ -135,16 +135,17 @@ class App extends Controller {
 			'category_name'       => $category_name,
 		];
 
-		$maybe_more_args   = array_merge( $args, $append );
-		$related_posts = get_posts( $maybe_more_args );
+		$maybe_more_args = array_merge( $args, $append );
+		$related_posts   = get_posts( $maybe_more_args );
+		$how_many        = count( $related_posts );
 
-		if ( count( $related_posts ) >= $this_many ) {
+		if ( $how_many >= $this_many ) {
 			return $related_posts;
 		} else {
-			$more = self::matchRelevant( $post, $post_types, $this_many );
+			$new_limit = intval( $this_many ) - intval( $how_many );
+			$more      = self::matchRelevant( $post, $post_types, $new_limit );
 			if ( $more ) {
-				$slice        = array_slice( $more, 0, $this_many );
-				$only         = wp_list_pluck( $slice, 'ID' );
+				$only         = wp_list_pluck( $more, 'ID' );
 				$more_related = get_posts(
 					[
 						'include'             => $only,
