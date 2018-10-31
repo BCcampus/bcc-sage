@@ -128,7 +128,7 @@ class App extends Controller {
 		$more_related = [];
 		$args         = [
 			'post__not_in'        => [ $post->ID ],
-			'posts_per_page'      => $this_many,
+			//			'posts_per_page'      => $this_many,
 			'ignore_sticky_posts' => 1,
 			'post_type'           => $type,
 			'post_status'         => 'publish',
@@ -140,7 +140,8 @@ class App extends Controller {
 		$how_many        = count( $related_posts );
 
 		if ( $how_many >= $this_many ) {
-			return $related_posts;
+			shuffle( $related_posts );
+			$slice = array_slice( $related_posts, 0, $this_many );
 		} else {
 			$new_limit = intval( $this_many ) - intval( $how_many );
 			$more      = self::matchRelevant( $post, $post_types, $new_limit );
@@ -156,10 +157,15 @@ class App extends Controller {
 					]
 				);
 			}
-			$related = array_merge( $related_posts, $more_related );
 
-			return array_slice( $related, 0, $this_many );
+			$related = array_merge( $related_posts, $more_related );
+			$slice   = array_slice( $related, 0, $this_many );
+
+			shuffle( $slice );
+
 		}
+
+		return $slice;
 
 	}
 
