@@ -35,7 +35,7 @@ add_filter(
  */
 add_filter(
 	'excerpt_more', function () {
-		return ' &hellip; <a href="' . get_permalink() . '">' . __( 'Continued', 'bcc-sage' ) . '</a>';
+		return '&hellip; <a href="' . get_permalink() . '">' . __( 'continued', 'bcc-sage' ) . '</a>';
 	}
 );
 
@@ -156,7 +156,7 @@ add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
  */
 add_filter(
 	'excerpt_length', function ( $length ) {
-		return 45;
+		return 25;
 	}, 999
 );
 

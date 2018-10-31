@@ -16,7 +16,7 @@
 					</h4>
 				</div>
 				<div class="row-fluid border min-height-md">
-					<p class="pt-3 px-2"><?php echo wp_trim_words( $child->post_content, '30', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
+					<p class="pt-3 px-2"><?php echo wp_trim_words( $child->post_content, '25', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
 				</div>
 			</article>
 		@endforeach
