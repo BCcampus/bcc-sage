@@ -156,7 +156,7 @@ add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
  */
 add_filter(
 	'excerpt_length', function ( $length ) {
-		return 25;
+		return 15;
 	}, 999
 );
 
