@@ -8,14 +8,14 @@
 	@endphp
 	@foreach(\App\App::getUpcomingEvents( $limit, $ids, $last_day ) as $open)
 		@php($link=\App\App::maybeGuid($open['post_id'], $open['title']))
-		<article class="grants-open col-md-6 my-2" itemscope
-				 itemtype="http://schema.org/Event">
+		<article class="grants-open col-md-6 my-2" itemscope itemtype="http://schema.org/Event">
+			<a href="{{$link}}" class="img-link">
 			<div class="featured-grant row-fluid d-flex"
 				 style="background-image: url({{\App\App::getThumbUrl($open['post_id'])}});">
-				<h4 class="text-center purple-bkgd text-inverse col-sm mt-auto"><a
-						href="{{$link}}">{{wp_specialchars_decode($open['title'])}}</a>
+				<h4 itemprop="name" class="text-center purple-bkgd text-inverse col-sm mt-auto">{{wp_specialchars_decode($open['title'])}}
 				</h4>
 			</div>
+			</a>
 			<div class="row-fluid border min-height-md">
 				<p class="pt-3 px-2"><?php echo wp_trim_words( $open['post_content'], '25', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
 			</div>

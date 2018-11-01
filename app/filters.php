@@ -35,7 +35,7 @@ add_filter(
  */
 add_filter(
 	'excerpt_more', function () {
-		return '&hellip; <a href="' . get_permalink() . '">' . __( 'continued', 'bcc-sage' ) . '</a>';
+		return '<a href="' . get_permalink() . '"> &hellip; <i class="fa fa-arrow-right"></i></a>';
 	}
 );
 
