@@ -12,7 +12,7 @@ $ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 	@endif
 	<div class="featured-event d-flex flex-row flex-wrap">
 		@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $recent )
-			<article class="events-box-md col-sm-6" itemscope itemtype="http://schema.org/Event">
+			<article class="events-box-md col-sm-6 my-2" itemscope itemtype="http://schema.org/Event">
 				<a href="@php echo esc_url( $recent['link'] ); @endphp" class="img-link">
 				<div class="featured-event row-fluid d-flex" style="background-image: url({{\App\App::getThumbUrl($recent['post_id'])}});">
 					<div class="purple-bkgd col-sm mt-auto">

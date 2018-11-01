@@ -16,11 +16,9 @@
 	}
 
 	@include media-breakpoint-down(sm) {
-		article:first-of-type {
-			padding-left: 15px;
-		}
-		article:last-of-type {
-			padding-right: 15px;
+		.col-md-3, .col-md-4{
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 
@@ -48,11 +46,9 @@
 		padding-right: 0;
 	}
 	@include media-breakpoint-down(sm) {
-		article:first-of-type {
-			padding-right: 15px;
-		}
-		article:last-of-type {
-			padding-right: 15px;
+		.col-md-3, .col-md-4, .col-sm-6{
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 	.shady-bkgd {
