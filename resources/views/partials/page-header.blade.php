@@ -10,8 +10,9 @@
 		<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 			@foreach ( $bread_crumbs as $key => $item )
 				@if ( empty( $item['link'] ) )
-					<span class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem"
-						  itemprop="itemListElement">{{ esc_html( $item['title'] ) }}</span>
+					<span class="breadcrumb-item" itemprop="itemListElement" itemscope
+						  itemtype="http://schema.org/ListItem">{{ esc_html( $item['title'] ) }}
+					</span>
 				@else
 					<a class="breadcrumb-item" itemprop="item"
 					   href="{{ esc_url( $item['link'] ) }}"><span

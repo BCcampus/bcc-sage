@@ -12,16 +12,17 @@ $ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 	@endif
 	<div class="featured-event d-flex flex-row flex-wrap">
 		@foreach(\App\App::getUpcomingEvents( $limit, $ids ) as $recent )
-			<article class="events-box-md col-sm-6">
-				<div class="featured-event row-fluid d-flex"
-					 style="background-image: url({{\App\App::getThumbUrl($recent['post_id'])}});">
+			<article class="events-box-md col-sm-6" itemscope itemtype="http://schema.org/Event">
+				<a href="@php echo esc_url( $recent['link'] ); @endphp" class="img-link">
+				<div class="featured-event row-fluid d-flex" style="background-image: url({{\App\App::getThumbUrl($recent['post_id'])}});">
 					<div class="purple-bkgd col-sm mt-auto">
-						<h4 class="text-inverse">
-							<time class="text-uppercase font-size-sm">{{ $recent['start']}}</time>
-							<br><a href="@php echo esc_url( $recent['link'] ); @endphp">{{ $recent['title'] }}</a>
+						<h4 class="text-inverse" itemprop="name">
+							<time itemprop="startDate" class="text-uppercase font-size-sm">{{ $recent['start']}}</time>
+							<br>{{ $recent['title'] }}
 						</h4>
 					</div>
 				</div>
+				</a>
 			</article>
 		@endforeach
 	</div>

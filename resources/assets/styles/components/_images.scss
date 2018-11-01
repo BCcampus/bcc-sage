@@ -8,3 +8,8 @@
 	}
 }
 
+a.img-link{
+	&:hover,&:focus{
+		text-decoration: none;
+	}
+}
