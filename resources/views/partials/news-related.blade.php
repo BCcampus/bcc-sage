@@ -16,33 +16,40 @@ $i = 0;
 				// make the first one bigger
 				if ( 0 === $i ): ;?>
 				<div class="col-md-6 py-2">
+					<a href="{{$link}}" class="img-link">
 					<div class="row featured-news-front"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
-						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Article">
+						<article class="col feature-box-md purple-bkgd" itemscope itemtype="http://schema.org/Blog">
 							<p class="px-3 font-size-sm">
 								<time itemprop="datePublished" class="text-uppercase"
 									  datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 							</p>
-							<h3 class="px-3 text-inverse"><a href="{{$link}}">{{wp_specialchars_decode($related_post->post_title)}}</a>
+							<h3 itemprop="name" class="px-3 text-inverse">{{wp_specialchars_decode($related_post->post_title)}}
 							</h3>
+							<meta itemprop="author" content="{{get_the_author_meta('display_name',$related_post->post_author)}}"/>
+							<meta itemprop="image" content="{{\App\App::getThumbUrl($related_post->ID)}}"/>
 						</article>
 						<div class="col"></div>
 					</div>
+					</a>
 				</div>
 				<?php else: ;?>
-				<article class="col-md-3 feature-box-sm shady-bkgd py-2" itemscope itemtype="http://schema.org/Article">
+				<article class="col-md-3 feature-box-sm shady-bkgd py-2" itemscope itemtype="http://schema.org/Blog">
+					<a href="{{$link}}">
 					<div class="featured-image-box"
 						 style="background-image: url({{\App\App::getThumbUrl($related_post->ID)}});">
-						<a href="{{$link}}"></a>
 					</div>
+					</a>
 					<div class="border min-height-sm bg-white">
 					<p class="text-uppercase pt-3 px-3 font-size-sm">
 						<time itemprop="datePublished"
 							  datetime="{{ get_post_time('c', TRUE, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time>
 					</p>
-					<h4><a class="purple" href="{{$link}}">{{wp_specialchars_decode($related_post->post_title)}}</a>
+					<h4><a class="purple" itemprop="name" href="{{$link}}">{{wp_specialchars_decode($related_post->post_title)}}</a>
 					</h4>
 					</div>
+					<meta itemprop="author" content="{{get_the_author_meta('display_name',$related_post->post_author)}}"/>
+					<meta itemprop="image" content="{{\App\App::getThumbUrl($related_post->ID)}}"/>
 				</article>
 				<?php endif;?>
 				<?php $i ++; unset( $image ); ?>

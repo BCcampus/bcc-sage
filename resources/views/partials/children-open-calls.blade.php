@@ -9,7 +9,7 @@
 	@foreach(\App\App::getUpcomingEvents( $limit, $ids, $last_day ) as $open)
 		@php($link=\App\App::maybeGuid($open['post_id'], $open['title']))
 		<article class="grants-open col-md-6 my-2" itemscope
-				 itemtype="http://schema.org/Article">
+				 itemtype="http://schema.org/Event">
 			<div class="featured-grant row-fluid d-flex"
 				 style="background-image: url({{\App\App::getThumbUrl($open['post_id'])}});">
 				<h4 class="text-center purple-bkgd text-inverse col-sm mt-auto"><a

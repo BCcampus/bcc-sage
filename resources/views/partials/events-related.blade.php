@@ -8,7 +8,7 @@
 </h3>
 <section class="related-events d-flex flex-row flex-wrap">
 	@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
-		<article class="col-md-3" itemscope itemtype="http://schema.org/Article">
+		<article class="col-md-3" itemscope itemtype="http://schema.org/Event">
 			<div class="border p-3 min-height-sm">
 			<p class="text-uppercase font-size-sm"><time itemprop="datePublished" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 			<h4><a class="purple" href="@php echo esc_url( $related_post->guid ); @endphp">{{ wp_specialchars_decode($related_post->post_title) }}</a></h4>
