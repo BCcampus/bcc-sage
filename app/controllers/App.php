@@ -106,27 +106,28 @@ class App extends Controller {
 	 * @return array
 	 */
 	public static function getRelevant( $post, $post_types = [], $limit = '', $category_name = '' ) {
-		$tags   = wp_get_post_tags( $post->ID );
-		$cats   = wp_get_post_categories( $post->ID );
-		$append = [];
-		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
-			$first_tag = $tags[0]->term_id;
-			$append    = [ 'tag__in' => [ $first_tag ] ];
-		}
-		if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-			$first_cat = $cats[0];
-			$append    = [ 'category__in' => [ $first_cat ] ];
-		}
-
-		$type = ( empty( $post_types ) ) ? [
+		$append_c     = [];
+		$append_t     = [];
+		$more_related = [];
+		$tags         = wp_get_post_tags( $post->ID );
+		$cats         = wp_get_post_categories( $post->ID );
+		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
+		$type         = ( empty( $post_types ) ) ? [
 			'post',
 			'page',
 			'ai1ec',
 		] : $post_types;
 
-		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
-		$more_related = [];
-		$args         = [
+		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
+			$first_tag = $tags[0]->term_id;
+			$append_t  = [ 'tag__in' => [ $first_tag ] ];
+		}
+		if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+			$first_cat = $cats[0];
+			$append_c  = [ 'category__in' => [ $first_cat ] ];
+		}
+
+		$args = [
 			'post__not_in'        => [ $post->ID ],
 			'posts_per_page'      => $this_many * 3,
 			'ignore_sticky_posts' => 1,
@@ -135,7 +136,8 @@ class App extends Controller {
 			'category_name'       => $category_name,
 		];
 
-		$maybe_more_args = array_merge( $args, $append );
+		$maybe_more_args = array_merge( $args, $append_t );
+		$maybe_more_args = array_merge( $maybe_more_args, $append_c );
 		$related_posts   = get_posts( $maybe_more_args );
 		$how_many        = count( $related_posts );
 
@@ -144,7 +146,7 @@ class App extends Controller {
 			$slice = array_slice( $related_posts, 0, $this_many );
 		} else {
 			$new_limit = intval( $this_many ) - intval( $how_many );
-			$more      = self::matchRelevant( $post, $post_types, $new_limit );
+			$more = self::matchRelevant( $post, $post_types, $this_many, $new_limit );
 			if ( $more ) {
 				$only         = wp_list_pluck( $more, 'ID' );
 				$more_related = get_posts(
@@ -178,8 +180,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = null;
-		if ( null === $current_domain ) {
+		static $current_domain = NULL;
+		if ( NULL === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -235,16 +237,17 @@ class App extends Controller {
 		$limits       = ( empty( $limit ) ) ? '6' : $limit;
 		$now          = gmdate( 'Y-m-d H:i:s', ( time() + ( 3600 ) ) );
 		$match_fields = 'post_title,post_content';
-		$string       = $post->post_title . ' ' . $post->post_content;
-		$match        = $wpdb->prepare( ' AND MATCH (%s) AGAINST (%s) ', $match_fields, $string );
+		$string       = $wpdb->prepare( '%s %s', $post->post_title, strip_tags( $post->post_content ) );
+		$match        = $wpdb->prepare( ' AND MATCH (%s) AGAINST (%s) AS relevance', $match_fields, $string );
 		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < %s ", $now );
 		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= %s ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
 		$where        = " AND $wpdb->posts.post_status = 'publish' ";
-		$where       .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
-		$where       .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$where        .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
+		$where        .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$orderby      = ' ORDER BY relevance DESC';
 		$limited      = $wpdb->prepare( ' LIMIT %d, %d ', 0, $limits );
 
-		$results = $wpdb->get_results( $wpdb->prepare( 'SELECT DISTINCT %s FROM %s WHERE 1 = 1 %s %s %s %s %s', $wpdb->posts.ID, $wpdb->posts, $match, $before, $from, $where, $limited ) );
+		$results = $wpdb->get_results( $wpdb->prepare( 'SELECT DISTINCT %s FROM %s WHERE 1 = 1 %s %s %s %s %s %s', $wpdb->posts . '.ID', $wpdb->posts, $match, $before, $from, $where, $limited, $orderby ) );
 
 		return $results;
 
@@ -428,9 +431,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-										->get_agenda_like_date_array( $event_results['events'] );
+		                                ->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -481,9 +484,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-										->get_agenda_like_date_array( $event_results['events'] );
+		                                ->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -511,8 +514,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function maybeGuid( $id, $name ) {
-		static $current_domain = null;
-		if ( null === $current_domain ) {
+		static $current_domain = NULL;
+		if ( NULL === $current_domain ) {
 			$current_domain = site_url();
 		}
 		$current = wp_parse_url( $current_domain, PHP_URL_HOST );
