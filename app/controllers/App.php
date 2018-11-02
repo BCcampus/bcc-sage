@@ -128,7 +128,7 @@ class App extends Controller {
 		$more_related = [];
 		$args = [
 			'post__not_in'        => [ $post->ID ],
-			'posts_per_page'      => $this_many*3,
+			'posts_per_page'      => $this_many * 3,
 			'ignore_sticky_posts' => 1,
 			'post_type'           => $type,
 			'post_status'         => 'publish',
@@ -178,8 +178,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = NULL;
-		if ( NULL === $current_domain ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -430,9 +430,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-		                                ->get_agenda_like_date_array( $event_results['events'] );
+										->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -483,9 +483,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-		                                ->get_agenda_like_date_array( $event_results['events'] );
+										->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -513,8 +513,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function maybeGuid( $id, $name ) {
-		static $current_domain = NULL;
-		if ( NULL === $current_domain ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
 			$current_domain = site_url();
 		}
 		$current = wp_parse_url( $current_domain, PHP_URL_HOST );
