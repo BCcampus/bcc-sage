@@ -170,9 +170,9 @@ add_action(
 		 */
 		sage()->singleton(
 			'sage.blade', function ( Container $app ) {
-				$cachePath = config( 'view.compiled' );
-				if ( ! file_exists( $cachePath ) ) {
-					wp_mkdir_p( $cachePath );
+				$cache_path = config( 'view.compiled' );
+				if ( ! file_exists( $cache_path ) ) {
+					wp_mkdir_p( $cache_path );
 				}
 				( new BladeProvider( $app ) )->register();
 

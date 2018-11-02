@@ -36,7 +36,7 @@
 					@if( !is_singular( 'ai1ec_event' ))
 						<?php
 						$post_types = [ 'post', 'page' ];
-						$limit = 3;
+						$limit      = 3;
 						;?>
 						<h3 class="pt-3">Related Stories <img class="mx-2 mb-1" src="@asset('images/green-dots.png')"
 															  alt="decorative green dots"></h3>

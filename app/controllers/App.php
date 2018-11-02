@@ -74,7 +74,7 @@ class App extends Controller {
 	 */
 	public static function isProduction() {
 		$url      = get_site_url( get_current_blog_id() );
-		$host     = parse_url( $url, PHP_URL_HOST );
+		$host     = wp_parse_url( $url, PHP_URL_HOST );
 		$expected = [
 			'bccampus.ca',
 			'etug.ca',
@@ -126,7 +126,7 @@ class App extends Controller {
 
 		$this_many    = ( empty( $limit ) ) ? 6 : $limit;
 		$more_related = [];
-		$args = [
+		$args         = [
 			'post__not_in'        => [ $post->ID ],
 			'posts_per_page'      => $this_many * 3,
 			'ignore_sticky_posts' => 1,
@@ -236,17 +236,15 @@ class App extends Controller {
 		$now          = gmdate( 'Y-m-d H:i:s', ( time() + ( 3600 ) ) );
 		$match_fields = 'post_title,post_content';
 		$string       = $post->post_title . ' ' . $post->post_content;
-		$match        = $wpdb->prepare( ' AND MATCH (' . $match_fields . ") AGAINST ('%s') ", $string );
-		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < '%s' ", $now );
-		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= '%s' ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
+		$match        = $wpdb->prepare( ' AND MATCH (%s) AGAINST (%s) ', $match_fields, $string );
+		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < %s ", $now );
+		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= %s ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
 		$where        = " AND $wpdb->posts.post_status = 'publish' ";
-		$where        .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
-		$where        .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$where       .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
+		$where       .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
 		$limited      = $wpdb->prepare( ' LIMIT %d, %d ', 0, $limits );
 
-		$sql = "SELECT DISTINCT $wpdb->posts.ID FROM $wpdb->posts WHERE 1=1 $match $before $from $where $limited";
-
-		$results = $wpdb->get_results( $sql );
+		$results = $wpdb->get_results( $wpdb->prepare( 'SELECT DISTINCT %s FROM %s WHERE 1 = 1 %s %s %s %s %s', $wpdb->posts.ID, $wpdb->posts, $match, $before, $from, $where, $limited ) );
 
 		return $results;
 
@@ -270,7 +268,7 @@ class App extends Controller {
 		if ( is_array( $meta['post_category'] ) && ! empty( $meta['post_category'] ) ) {
 			foreach ( $meta['post_category'] as $cat ) {
 				$result = get_category( $cat, ARRAY_A );
-				if ( 'Uncategorized' != $result['cat_name'] ) {
+				if ( 'Uncategorized' !== $result['cat_name'] ) {
 					$subject[] = $result['cat_name'];
 				}
 			}

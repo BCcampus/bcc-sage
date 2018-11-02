@@ -9,7 +9,7 @@ add_filter(
 	'body_class', function ( array $classes ) {
 		/** Add page slug if it doesn't exist */
 		if ( is_single() || is_page() && ! is_front_page() ) {
-			if ( ! in_array( basename( get_permalink() ), $classes ) ) {
+			if ( ! in_array( basename( get_permalink() ), $classes, true ) ) {
 				$classes[] = basename( get_permalink() );
 			}
 		}
@@ -133,7 +133,7 @@ function post_published_notification( $id, $post ) {
 	$to[]      = $env['rocket_chat']['EMAIL'];
 	$subject   = sprintf( 'Published: %s', $title );
 	$message   = sprintf( 'New content by %s modified by %s and titled “%s” has been published. ', $name, $modified, $title );
-	$message   .= sprintf( ' View: %s', $permalink );
+	$message  .= sprintf( ' View: %s', $permalink );
 	$headers[] = '';
 
 	// email notification
@@ -168,7 +168,7 @@ add_filter(
 		static $searches = [
 			'#<(?:img) .*?src=[\'"]\Khttp://[^\'"]+#i',
 		];
-		$content = preg_replace_callback(
+		$content         = preg_replace_callback(
 			$searches, function ( $matches ) {
 				return '' . substr( $matches[0], 5 );
 			}, $content

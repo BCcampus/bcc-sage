@@ -14,8 +14,8 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $sage_error = function ( $message, $subtitle = '', $title = '' ) {
-	$title = $title ?: __( 'Sage &rsaquo; Error', 'bcc-sage' );
-	$footer = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
+	$title   = $title ?: __( 'Sage &rsaquo; Error', 'bcc-sage' );
+	$footer  = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
 	$message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 	wp_die( $message, $title );
 };
