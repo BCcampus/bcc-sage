@@ -10,6 +10,7 @@
 
 a.img-link{
 	&:hover,&:focus{
-		text-decoration: none;
+		text-decoration: underline;
+		color: $color-white;
 	}
 }
