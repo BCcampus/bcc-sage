@@ -1,50 +1,94 @@
-#sidebar {
+aside#sidebar {
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		li {
+			position: relative;
+			display: block;
+			padding: 0.75rem 1.25rem;
+			margin-bottom: -1px;
+			background-color: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.125);
+			font-size: 1em;
+			font-weight: 500;
+			&first-child {
+				border-top-left-radius: 0.25rem;
+				border-top-right-radius: 0.25rem;
+			}
+			&:last-child {
+				margin-bottom: 0;
+				border-bottom-right-radius: 0.25rem;
+				border-bottom-left-radius: 0.25rem;
+			}
+			&:hover, &:focus {
+				background-color: $color-grey-bs4;
+			}
+			&.pagenav {
+				border: none;
+				padding-left: 0;
+				padding-right: 0;
+				font-size: 1.3rem;
+				font-weight: bold;
+				&:hover, &:focus {
+					background-color: $color-white;
+				}
+				li {
+					border: none;
+					padding: 0;
+					a {
+						position: relative;
+						display: block;
+						padding: 0.75rem 1.25rem;
+						margin-bottom: -1px;
+						background-color: #fff;
+						border: 1px solid rgba(0, 0, 0, 0.125);
+						font-size: 1rem;
+						&:hover, &:focus {
+							background-color: $color-grey-bs4;
+						}
+					}
+					ul.children {
+						a {
+							padding-left: 2.5rem;
+						}
+					}
+				}
+			}
+			a {
+				color: $color-purple;
+				&:hover, &:focus {
+					z-index: 1;
+					color: $color-blue-dark;
+				}
+			}
+		}
+	}
 
-  ul {
-    list-style: none;
-    padding-left: 1.8rem;
-    padding-right: 1rem;
+	.dropdown {
+		ul {
+			padding-left: 10px;
+			li {
+				padding-top: 0.5rem;
+			}
+		}
+	}
 
-    li {
-      font-size: 0.9rem;
-      padding-bottom: 0.8rem;
-      line-height: 1.3rem;
-      &:last-child {
-        padding-bottom: 0;
-      }
-    }
-  }
+	h4.widget-title {
+		font-weight: bold;
+		font-size: 1.3em;
+	}
 
-  h4.widget-title {
-    background-color: $color-grey-light;
-    border: 1px solid $color-grey;
-    padding: 8px 1em;
-    font-size: 18px;
-  }
-
-  .widget {
-    margin-bottom: 18px;
-  }
-
-  li.pagenav {
-    list-style: none;
-
-    .page_item {
-
-      &.current_page_item > a {
-        color: $color-grey-darker;
-      }
-    }
-    ul {
-
-      li {
-
-        &:first-of-type {
-          padding-top: .8rem;
-        }
-
-      }
-    }
-  }
+	.widget {
+		margin-bottom: 18px;
+	}
 
 }

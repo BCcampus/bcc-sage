@@ -1,10 +1,152 @@
-nav{
-  .submenu{
-    background-color: $color-grey-light;
-    padding-left: 1.70rem;
-    a{
-      font-size: smaller;
-    }
-  }
+nav {
+	.submenu {
+		background-color: $color-grey-light;
+		padding-left: 1.70rem;
+		a {
+			font-size: smaller;
+		}
+	}
+	&.breadcrumb {
+		background-color: $color-white;
+		padding: 0.75em 0;
+		margin-bottom: 0;
+	}
+	&.header_navigation {
+		ul {
+			li {
+				&:nth-child(1), &:nth-child(2) {
+					a.nav-link {
+						color: $color-blue-dark;
+					}
+				}
+				a.nav-link {
+					color: $color-grey-nav;
+					font-size: 0.95rem;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+// rm carets
+#menu-main .dropdown-toggle::after {
+	display: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: $color-purple;
+	font-weight: 500;
+	&:hover,&:focus{
+		color: $color-blue-dark;
+		text-decoration: underline;
+	}
+}
+
+.menu-top-padding {
+	padding-top: 10px;
+}
+
+.page-numbers {
+	padding: 0.5rem 1rem;
+	border: 1px solid $color-grey;
+	border-radius: 2px;
+	margin: 1rem 0 1rem;
+}
+
+/**
+* MegaMenu styling
+*/
+
+.navbar-megamenu .navbar-nav > li.megamenu > .dropdown-menu .megamenu-column:not(:first-child):after {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 1px;
+	background-color: $color-grey-light;
+	height: 100%;
+	top: 0;
+}
+
+nav.navbar-megamenu {
+	font-size: 0.95rem;
+	.navbar-nav {
+		li.megamenu {
+			position: static;
+			.dropdown-menu {
+				background-color: $color-grey-light;
+				width: 100%;
+				border: none;
+				border-radius: 0;
+				margin-top: 0;
+				a.dropdown-toggle::after {
+					border: none;
+				}
+				li.megamenu-column {
+					&:first-child{
+						width: 280px;
+					}
+					width: 23%;
+					display: block;
+					float:left;
+					@include media-breakpoint-down(md) {
+						width: auto;
+						float: none;
+						line-height: 1.5em;
+					}
+					ul {
+						padding: 0;
+						margin: 0;
+						list-style: none;
+						&.sub-menu.depth_1 {
+							@include media-breakpoint-down(md) {
+								padding-left: 2em;
+							}
+							li {
+								a {
+									font-weight: normal;
+								}
+							}
+						}
+					}
+					.featured-image {
+						a img {
+							padding: 5px 0;
+							@include media-breakpoint-down(md) {
+								display: none;
+							}
+						}
+					}
+					a {
+						font-size: 0.95rem;
+						padding: 3px 20px;
+						display: block;
+						font-weight: bold;
+						&.nav-link {
+							color: $color-blue-dark;
+							&:hover,
+							&:focus {
+								text-decoration: underline;
+								text-decoration-style: solid;
+								color: $color-black;
+							}
+
+						}
+					}
+					.description {
+						padding: 3px 0;
+						a {
+							display: none;
+						}
+					}
+					.divider {
+						margin: 16px 20px 10px;
+						max-width: 60px;
+					}
+				}
+			}
+		}
+	}
+
 }
 

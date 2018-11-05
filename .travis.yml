@@ -1,40 +1,61 @@
 language: php
-sudo: false
-dist: trusty
+sudo: required
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+branches:
+  only:
+  - dev
+  - "/^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-(0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(\\.(0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(\\+[0-9a-zA-Z-]+(\\.[0-9a-zA-Z-]+)*)?$/"
 php:
-  - 7.1
-  - 7.0
-  - nightly
-
+- 7.1.3
+- 7.2
 env:
-  - TRAVIS_NODE_VERSION="6"
-  - TRAVIS_NODE_VERSION="7"
-
+- WP_VERSION=latest WP_MULTISITE=1 TRAVIS_NODE_VERSION="8"
 matrix:
   fast_finish: true
   allow_failures:
-    - php: nightly
-
+  - php: nightly
 cache:
   apt: true
   directories:
-    - $HOME/.composer/cache
-    - $HOME/.yarn-cache
-    - vendor
-
+  - "$HOME/.composer/cache"
+  - "$HOME/.yarn-cache"
+  - node_modules
+  - vendor
 before_install:
-  - composer self-update
-  - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
-  - export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
-
+- composer self-update
+- source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
+- export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
 install:
-  - node -v && yarn -V
-  - travis_retry yarn
-  - composer install -o --prefer-dist --no-interaction
-
+- node -v && yarn -V
+- travis_retry yarn
+- composer install -o --prefer-dist --no-interaction
+before_script:
+- if [[ ${TRAVIS_PHP_VERSION:0:3} != "7.1" ]] && php -v | grep -q 'Xdebug'; then phpenv
+  config-rm xdebug.ini; fi
+- bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
 script:
-  - yarn run test
-  - yarn run build
-  - yarn run rmdist
-  - yarn run "build:production"
-  - composer test
+- yarn run build
+- yarn run rmdist
+before_deploy:
+- export TRAVIS_PROJECT_SLUG="$(basename $TRAVIS_BUILD_DIR)"
+- curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+- chmod +x wp-cli.phar
+- sudo mv wp-cli.phar /usr/local/bin/wp
+- wp package install wp-cli/dist-archive-command
+- yarn run build:production
+- composer install --no-dev --optimize-autoloader
+- cd ../
+- wp dist-archive $TRAVIS_PROJECT_SLUG $TRAVIS_BUILD_DIR/$TRAVIS_PROJECT_SLUG-$TRAVIS_TAG.zip
+- cd $TRAVIS_BUILD_DIR
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: XoUcWtO5Pno6+cZILhM+8RJD+19RjNjyB7nQrgAYZcrESJtII41WQTMAMCmHs+Agik/J9+91VYWAn2VNpzBkndxWmpfZFcG6/RGyI27zxNkKTCfHawdGg99ph+I0sOhDG3uLm/8KwsEvlys0IX7np6HH6BhZZJGAODb6PqoX+H8GRyP3qogl09TPaIIAqY/XIcTm7GDyl4gcGZLR0/4mGVAV1JzX+t3Y4IOVVq42K/rK4u0RQUA9AH758ayWtkCFXcZJ1gGdh99v4w0LXF4SpLCD8Uquw6R9rGA57bHDbA6CTtV+Y6wgw0DcoyzWZVgntMWF2WTqo3sRP0V2xCbR+uJJVvhoDp0TG6+XKyGD48esuIT9+bpImg69+oYXZJsCqXnCOBnLe+kur7TEN19/Xc4iYkQEhsbi7FZplyiktsvnAgAqJ2wx9MTYtJSyw+GpoOeFwYQHr4VvjNVMC/b4z1paki3vCgvlZj1SQUlRluAMwrMf8bGb0gC50dvh3HS403WUeV1P43ggZeE5DUep04Mx/BqdLKwXFierwmufs3MVJvXq3RUz7IGbFMeHQPBdwlPRZu+6fxfxHSFzj+unUYjCEoI3wyu0ItHrOgWFkvLZA/EJl2XTPssJBQd3rp8C2DvhKR/Foo1IEc+oW+xnow9kGiuLZ9VTy9FPvnnvXA8=
+  file: bcc-sage-$TRAVIS_TAG.zip
+  on:
+    tags: true
+    repo: BCcampus/bcc-sage

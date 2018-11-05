@@ -1,0 +1,16 @@
+.side-img {
+	max-width: 175px;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	.featured-image-box {
+		max-height: 175px;
+		overflow: hidden;
+	}
+}
+
+a.img-link{
+	&:hover,&:focus{
+		text-decoration: underline;
+		color: $color-white;
+	}
+}
