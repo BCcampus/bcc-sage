@@ -2,6 +2,7 @@
   "name": "bccampus/bcc-sage",
   "type": "wordpress-theme",
   "license": "MIT",
+  "version": "9.1.2",
   "description": "WordPress starter theme with a modern development workflow",
   "homepage": "https://github.com/bccampus/bcc-sage",
   "authors": [

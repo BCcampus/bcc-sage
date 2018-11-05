@@ -13,6 +13,7 @@
 			<p class="text-uppercase font-size-sm"><time itemprop="startDate" datetime="{{ get_post_time('c', true, $related_post->ID) }}">{{ get_the_date('',$related_post->ID) }}</time></p>
 			<h4><a class="purple" itemprop="name" href="@php echo esc_url( $related_post->guid ); @endphp">{!! wp_trim_words( $related_post->post_title, 7 ) !!}</a></h4>
 			</div>
+			<meta itemprop="location" content="{!! $related_post->location !!}"/>
 		</article>
 	@endforeach
 </section>

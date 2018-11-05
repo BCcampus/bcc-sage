@@ -23,6 +23,7 @@ $ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 					</div>
 				</div>
 				</a>
+				<meta itemprop="location" content="{!! $recent['location'] !!}"/>
 			</article>
 		@endforeach
 	</div>

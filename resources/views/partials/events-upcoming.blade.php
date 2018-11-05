@@ -19,6 +19,7 @@
 					<h4><a class="purple" itemprop="name" href="@php echo esc_url( $recent['link'] ); @endphp">{{ $recent['title']}}</a>
 					</h4>
 				</div>
+			<meta itemprop="location" content="{!! $recent['location'] !!}"/>
 		</article>
 	@endforeach
 </section>
