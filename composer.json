@@ -74,7 +74,7 @@
       "vendor/bin/phpunit --configuration=phpunit.xml"
     ],
     "standards":[
-      "vendor/bin/phpcs --standard=phpcs.ruleset.xml"
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml ."
     ],
     "post-create-project-cmd": [
       "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"

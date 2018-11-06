@@ -146,7 +146,7 @@ class App extends Controller {
 			$slice = array_slice( $related_posts, 0, $this_many );
 		} else {
 			$new_limit = intval( $this_many ) - intval( $how_many );
-			$more = self::matchRelevant( $post, $post_types, $this_many, $new_limit );
+			$more      = self::matchRelevant( $post, $post_types, $this_many, $new_limit );
 			if ( $more ) {
 				$only         = wp_list_pluck( $more, 'ID' );
 				$more_related = get_posts(
@@ -180,8 +180,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function getThumb( $post_id, $size = [] ) {
-		static $current_domain = NULL;
-		if ( NULL === $current_domain ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
 			$current_domain = site_url();
 		}
 
@@ -242,8 +242,8 @@ class App extends Controller {
 		$before       = $wpdb->prepare( " AND $wpdb->posts.post_date < %s ", $now );
 		$from         = $wpdb->prepare( " AND $wpdb->posts.post_date >= %s ", gmdate( 'Y-m-d H:i:s', ( time() - ( YEAR_IN_SECONDS * 3 ) ) ) );
 		$where        = " AND $wpdb->posts.post_status = 'publish' ";
-		$where        .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
-		$where        .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
+		$where       .= " AND $wpdb->posts.post_type IN ('" . join( "', '", $types ) . "') ";
+		$where       .= " AND $wpdb->posts.ID NOT IN ({$post->ID}) ";
 		$orderby      = ' ORDER BY relevance DESC';
 		$limited      = $wpdb->prepare( ' LIMIT %d, %d ', 0, $limits );
 
@@ -431,9 +431,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-		                                ->get_agenda_like_date_array( $event_results['events'] );
+										->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -486,9 +486,9 @@ class App extends Controller {
 		// Get localized time
 		$time          = $t->current_time();
 		$event_results = $ai1ec_registry->get( 'model.search' )
-		                                ->get_events_relative_to( $time, $limit, '', $filter, $last_day );
+										->get_events_relative_to( $time, $limit, '', $filter, $last_day );
 		$dates         = $ai1ec_registry->get( 'view.calendar.view.agenda', $ai1ec_registry->get( 'http.request.parser' ) )
-		                                ->get_agenda_like_date_array( $event_results['events'] );
+										->get_agenda_like_date_array( $event_results['events'] );
 
 		foreach ( $dates as $date ) {
 			foreach ( $date['events']['allday'] as $instance ) {
@@ -516,8 +516,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function maybeGuid( $id, $name ) {
-		static $current_domain = NULL;
-		if ( NULL === $current_domain ) {
+		static $current_domain = null;
+		if ( null === $current_domain ) {
 			$current_domain = site_url();
 		}
 		$current = wp_parse_url( $current_domain, PHP_URL_HOST );
