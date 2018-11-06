@@ -365,10 +365,13 @@ class App extends Controller {
 	 * @return array
 	 */
 	public static function getLatestNews( $args = [] ) {
+		$sticky = get_option('sticky_posts');
+		$posts_to_exclude = ( ! empty( $sticky ) ) ? array_values( $sticky ) : [];
+
 		$defaults = [
 			'posts_per_page' => 1,
 			'post_status'    => 'publish',
-			'exclude'        => [],
+			'exclude'        => $posts_to_exclude,
 		];
 
 		$r = wp_parse_args( $args, $defaults );
