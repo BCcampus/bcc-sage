@@ -20,7 +20,7 @@
 				<p class="pt-3 px-2"><?php echo wp_trim_words( $open['post_content'], '25', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
 			</div>
 			<span itemprop="location" itemscope itemtype="http://schema.org/Place">
-			<meta itemprop="location" content="{!! $open['location'] !!}"/>
+			<meta itemprop="address" content="{!! $open['location'] !!}"/>
 			</span>
 		</article>
 	@endforeach
