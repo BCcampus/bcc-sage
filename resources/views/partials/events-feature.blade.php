@@ -23,7 +23,9 @@ $ids = [792,22547]; // featured category is 792 on cert, 22547 on prod
 					</div>
 				</div>
 				</a>
-				<meta itemprop="location" content="{!! $recent['location'] !!}"/>
+				<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+				<meta itemprop="address" content="{!! $recent['location'] !!}"/>
+				</span>
 			</article>
 		@endforeach
 	</div>

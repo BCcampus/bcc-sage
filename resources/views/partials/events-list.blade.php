@@ -8,7 +8,9 @@
 			<p class="font-weight-bold"><a class="purple" itemprop="name" href="{{$link}}" rel="bookmark"
 										   title="{{$recent['title']}}">{{$recent['title']}}</a>
 			</p>
-			<meta itemprop="location" content="{!! $recent['location'] !!}"/>
+			<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+			<meta itemprop="address" content="{!! $recent['location'] !!}"/>
+			</span>
 		</li>
 	@endforeach
 </ul>

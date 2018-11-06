@@ -19,7 +19,9 @@
 					<h4><a class="purple" itemprop="name" href="@php echo esc_url( $recent['link'] ); @endphp">{{ $recent['title']}}</a>
 					</h4>
 				</div>
-			<meta itemprop="location" content="{!! $recent['location'] !!}"/>
+			<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+			<meta itemprop="address" content="{!! $recent['location'] !!}"/>
+			</span>
 		</article>
 	@endforeach
 </section>
