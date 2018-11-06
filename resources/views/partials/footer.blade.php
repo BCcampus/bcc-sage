@@ -58,7 +58,7 @@
 				<div class="col-md-4 d-flex justify-content-end">
 					@if(has_nav_menu('footer_navigation_2'))
 						<nav class="footer-links horizontal">
-							{!! wp_nav_menu( ['theme_location' => 'footer_navigation_2', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '', 'depth' => 0 ] ) !!}
+							{!! wp_nav_menu( ['theme_location' => 'footer_navigation_2', 'menu' => 'Footer Horizontal Navigation', 'menu_class' => 'menu', 'link_after' => '&nbsp;&nbsp;', 'depth' => 0 ] ) !!}
 						</nav>
 					@endif
 				</div>
