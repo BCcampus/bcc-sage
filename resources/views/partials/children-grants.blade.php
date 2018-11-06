@@ -1,6 +1,6 @@
 <h4 class="pt-4 pb-2">Grants Currently Offered</h4>
 <p>We are looking for your input or participation in the following:</p>
-<section class="grants d-flex flex-row flex-wrap">
+<section class="grants d-flex flex-row flex-wrap no-gutters">
 	@foreach(\App\Page::getChildrenOfPage($post->ID, [698541,15972]) as $child)
 		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
 		<article class="grants-current col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
