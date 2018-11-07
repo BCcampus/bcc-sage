@@ -2,6 +2,8 @@
 
 namespace App;
 
+use RocketChatPhp;
+
 /**
  * Add <body> classes
  */
@@ -123,7 +125,7 @@ function post_published_notification( $id, $post ) {
 		return;
 	}
 
-	$env = include( get_theme_file_path() . '/.env.php' );
+	$env = include( get_template_directory() . '/config/.env.php' );
 
 	$author    = $post->post_author;
 	$name      = get_the_author_meta( 'display_name', $author );

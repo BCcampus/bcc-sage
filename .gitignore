@@ -1,5 +1,5 @@
 .cache-loader
-.env.php
+config/.env.php
 .idea
 dist
 node_modules
