@@ -27,8 +27,6 @@
 																		  alt="kaltura icon"></a>
 							</li>
 						</ul>
-						<a class="brand" href="{{ site_url('/') }}">
-							<img src="@asset('images/bccampus-logo.png')" alt="Logo for BCcampus"/></a>
 					</div>
 					@if(has_nav_menu('footer_navigation_1'))
 						<nav class="widget col-md-4 py-2">
