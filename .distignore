@@ -9,6 +9,7 @@ tests
 .gitattributes
 .gitignore
 .travis.yml
+.eslintrc.js
 codecov.yml
 coverage.xml
 phpcs.ruleset.xml
