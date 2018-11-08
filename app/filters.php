@@ -122,22 +122,15 @@ function post_published_notification( $id, $post ) {
 	if ( App::isProduction() === false ) {
 		return;
 	}
-
-	$env = include( get_template_directory() . '/config/.env.php' );
+	$env = include( dirname( dirname( __FILE__ ) ). '/config/.env.php' );
 
 	$author    = $post->post_author;
 	$name      = get_the_author_meta( 'display_name', $author );
 	$modified  = get_the_modified_author();
 	$title     = $post->post_title;
 	$permalink = get_permalink( $id );
-	$to[]      = $env['rocket_chat']['EMAIL'];
-	$subject   = sprintf( 'Published: %s', $title );
 	$message   = sprintf( 'New content by %s modified by %s and titled “%s” has been published. ', $name, $modified, $title );
 	$message  .= sprintf( ' View: %s', $permalink );
-	$headers[] = '';
-
-	// email notification
-	wp_mail( $to, $subject, $message, $headers );
 
 	// rocket chat notification
 	$client = new \RocketChatPhp\Client( $env['rocket_chat']['URL'], $env['rocket_chat']['KEY'] );
@@ -148,8 +141,8 @@ function post_published_notification( $id, $post ) {
 	);
 }
 
-//add_action( 'publish_post', 'App\post_published_notification', 10, 2 );
-//add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
+add_action( 'publish_post', 'App\post_published_notification', 10, 2 );
+add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
 
 /**
  * default is 55 words
