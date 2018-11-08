@@ -148,8 +148,8 @@ function post_published_notification( $id, $post ) {
 	);
 }
 
-add_action( 'publish_post', 'App\post_published_notification', 10, 2 );
-add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
+//add_action( 'publish_post', 'App\post_published_notification', 10, 2 );
+//add_action( 'publish_page', 'App\post_published_notification', 10, 2 );
 
 /**
  * default is 55 words
