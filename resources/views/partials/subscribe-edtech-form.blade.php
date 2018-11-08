@@ -8,16 +8,18 @@
 	<p>
 		<label for="fieldEmail">Email</label>
 		<br/>
-		<input id="fieldEmail" name="cm-sjtuki-sjtuki" class="js-cm-email-input"
-			   required type="email"/>
+		<input id="fieldEmail" name="cm-sjtuki-sjtuki" type="email" class="js-cm-email-input"
+			   required/>
 	</p>
 	<p>
 		<label for="fieldvkujtk">Primary Institution</label>
 		<br/>
-		<select id="fieldvkujtk" name="cm-fo-vkujtk" class="custom-select">
+		<select id="fieldvkujtk" name="cm-fo-vkujtk">
+			<option value="3911775">BCcampus</option>
 			<option value="3901528">BCIT</option>
 			<option value="3901529">Camosun College</option>
 			<option value="3901530">Capilano University</option>
+			<option value="3901541">Coast Mountain College</option>
 			<option value="3901531">College of New Calendonia</option>
 			<option value="3901532">College of the Rockies</option>
 			<option value="3901533">Douglas College</option>
@@ -28,23 +30,24 @@
 			<option value="3901539">Nicola Valley Institute of Technology</option>
 			<option value="3901540">North Island College</option>
 			<option value="3901534">Northern Lights College</option>
-			<option value="3901541">Northwest College</option>
 			<option value="3901542">Okanagan College</option>
 			<option value="3901543">RRU</option>
 			<option value="3901544">Selkirk College</option>
 			<option value="3901545">SFU</option>
 			<option value="3901546">TRU</option>
 			<option value="3901548">UBC</option>
+			<option value="3911776">UBC Okanagan</option>
 			<option value="3901549">UFV</option>
 			<option value="3901550">UNBC</option>
 			<option value="3901551">UVic</option>
 			<option value="3901552">Vancouver Community College</option>
 			<option value="3901553">VIU</option>
+			<option value="3911777">Yukon College</option>
 			<option value="3901554">Other</option>
 		</select>
 	</p>
 	<p>
-		<button class="js-cm-submit-button btn btn-primary" type="submit">Subscribe</button>
+		<button class="js-cm-submit-button" type="submit">Subscribe</button>
 	</p>
 </form>
 <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
