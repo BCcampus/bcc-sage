@@ -18,9 +18,6 @@
 				@php($ids=[794,18787])
 				@php($limit=5)
 				@include('partials.events-list')
-				<p>
-					<a href="{{ site_url() }}/events_categories/edtech">EdTech Archives</a>
-				</p>
 			</div>
 
 			<div class="col-md-6">
@@ -31,9 +28,6 @@
 				@php($ids=[793,17882])
 				@php($limit=5)
 				@include('partials.events-list')
-				<p>
-					<a href="{{ site_url() }}/events_categories/flo">FLO Archives</a>
-				</p>
 			</div>
 		</div>
 	</section>
