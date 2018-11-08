@@ -2,8 +2,6 @@
 
 namespace App;
 
-use RocketChatPhp;
-
 /**
  * Add <body> classes
  */
@@ -142,7 +140,7 @@ function post_published_notification( $id, $post ) {
 	wp_mail( $to, $subject, $message, $headers );
 
 	// rocket chat notification
-	$client = new RocketchatPhp\Client( $env['rocket_chat']['URL'], $env['rocket_chat']['KEY'] );
+	$client = new \RocketChatPhp\Client( $env['rocket_chat']['URL'], $env['rocket_chat']['KEY'] );
 	$client->payload(
 		[
 			'text' => $message,

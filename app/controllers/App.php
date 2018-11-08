@@ -365,7 +365,7 @@ class App extends Controller {
 	 * @return array
 	 */
 	public static function getLatestNews( $args = [] ) {
-		$sticky = get_option('sticky_posts');
+		$sticky           = get_option( 'sticky_posts' );
 		$posts_to_exclude = ( ! empty( $sticky ) ) ? array_values( $sticky ) : [];
 
 		$defaults = [

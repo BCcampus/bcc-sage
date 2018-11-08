@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14f8e8356f8d07135694788a5112d036",
+    "content-hash": "b23799dc421e1817d24c54d0fe4575e3",
     "packages": [
         {
             "name": "bccampus/wp-megawalker",
-            "version": "0.0.1",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BCcampus/wp-megawalker.git",
-                "reference": "478460ccc77b17914cd2929e793ec7d718897198"
+                "reference": "50886ee64b4dab1fcf10116e545b82fb09538fcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/478460ccc77b17914cd2929e793ec7d718897198",
-                "reference": "478460ccc77b17914cd2929e793ec7d718897198",
+                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/50886ee64b4dab1fcf10116e545b82fb09538fcb",
+                "reference": "50886ee64b4dab1fcf10116e545b82fb09538fcb",
                 "shasum": ""
             },
             "require-dev": {
@@ -34,7 +34,7 @@
                     "@standards"
                 ],
                 "standards": [
-                    "vendor/bin/phpcs --standard=phpcs.ruleset.xml inc"
+                    "vendor/bin/phpcs --standard=vendor/humanmade/coding-standards ."
                 ]
             },
             "license": [
@@ -56,9 +56,9 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/BCcampus/wp-megawalker/tree/v0.0.1"
+                "source": "https://github.com/BCcampus/wp-megawalker/tree/0.0.3"
             },
-            "time": "2018-09-06T17:42:10+00:00"
+            "time": "2018-11-07T23:53:18+00:00"
         },
         {
             "name": "brain/hierarchy",

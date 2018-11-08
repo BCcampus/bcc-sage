@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Roots">
+<ruleset name="BCcampus">
 	<!-- Scan these files -->
 	<file>resources/functions.php</file>
 	<file>resources/index.php</file>
@@ -52,5 +52,4 @@
 	<rule ref="Internal.NoCodeFound">
 		<exclude-pattern>/resources/views/</exclude-pattern>
 	</rule>
-
 </ruleset>
