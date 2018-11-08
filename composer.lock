@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c4232563c8faae02c182feea4664ba1",
+    "content-hash": "f5741fddc5f6e6527ec6230d896abdd8",
     "packages": [
         {
             "name": "bccampus/wp-megawalker",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BCcampus/wp-megawalker.git",
-                "reference": "cc4e77bcc2b7422f6982a1eb6f9003dcec196cd7"
+                "reference": "d29735de1d9d8b75d273867ab2b63f956ed5ac1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/cc4e77bcc2b7422f6982a1eb6f9003dcec196cd7",
-                "reference": "cc4e77bcc2b7422f6982a1eb6f9003dcec196cd7",
+                "url": "https://api.github.com/repos/BCcampus/wp-megawalker/zipball/d29735de1d9d8b75d273867ab2b63f956ed5ac1a",
+                "reference": "d29735de1d9d8b75d273867ab2b63f956ed5ac1a",
                 "shasum": ""
             },
             "require-dev": {
@@ -56,9 +56,9 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/BCcampus/wp-megawalker/tree/0.0.4"
+                "source": "https://github.com/BCcampus/wp-megawalker/tree/0.0.5"
             },
-            "time": "2018-11-08T01:41:20+00:00"
+            "time": "2018-11-08T21:46:13+00:00"
         },
         {
             "name": "brain/hierarchy",
@@ -916,25 +916,31 @@
         },
         {
             "name": "inc2734/wp-breadcrumbs",
-            "version": "0.3.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inc2734/wp-breadcrumbs.git",
-                "reference": "b031005001a45b24cdc4110d492cd54c051544d1"
+                "reference": "8e9c67f6ce3c950c8545830db5f5b41820b6baeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/b031005001a45b24cdc4110d492cd54c051544d1",
-                "reference": "b031005001a45b24cdc4110d492cd54c051544d1",
+                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/8e9c67f6ce3c950c8545830db5f5b41820b6baeb",
+                "reference": "8e9c67f6ce3c950c8545830db5f5b41820b6baeb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
             },
             "require-dev": {
+                "doctrine/instantiator": "1.0.4",
+                "myclabs/deep-copy": "1.7.0",
+                "pdepend/pdepend": "2.5.0",
+                "phpdocumentor/reflection-docblock": "3.2.2",
                 "phpmd/phpmd": "2.*",
+                "phpunit/php-token-stream": "1.4.11",
                 "phpunit/phpunit": "^5.7",
                 "squizlabs/php_codesniffer": "*",
+                "symfony/yaml": "3.4.1",
                 "wp-coding-standards/wpcs": "*"
             },
             "type": "library",
@@ -945,7 +951,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -954,20 +960,20 @@
                 }
             ],
             "description": "A library for WordPress breadcrumbs.",
-            "time": "2017-09-29T02:11:13+00:00"
+            "time": "2018-07-27T12:57:18+00:00"
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.0",
+            "version": "1.34.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33"
+                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
-                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
+                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1015,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-09-20T19:36:25+00:00"
+            "time": "2018-11-08T13:33:47+00:00"
         },
         {
             "name": "psr/container",
