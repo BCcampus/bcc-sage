@@ -1,9 +1,9 @@
 <article itemscope itemtype="http://schema.org/Article" @php(post_class()) itemref="dateModified">
-	<meta itemprop="headline" content="{!! get_the_title() !!}">
+	<meta itemprop="headline" content="{!! get_the_title() !!}"/>
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-	<meta itemprop="name" content="BCCampus">
+	<meta itemprop="name" content="BCCampus"/>
 	<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-	  <meta itemprop="url" content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png">
+	  <meta itemprop="url" content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png"/>
 	</span>
   </span>
 	<header class="entry-header">
@@ -14,9 +14,9 @@
 			<small>
 				{{ __('By', 'bcc-sage') }}
 				<a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
-	  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-		<span itemprop="name">{{ get_the_author() }}</span>
-	  </span>
+				  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+					<span itemprop="name">{{ get_the_author() }}</span>
+				  </span>
 				</a>
 				&nbsp;<i class="fa fa-circle green"></i>&nbsp;
 				@include('partials.entry-meta')

@@ -1,9 +1,9 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   @foreach($get_micro_data as $itemprop => $content)
-    <meta itemprop="{{$itemprop}}" content="{{$content}}" id="{{$itemprop}}">
+    <meta itemprop="{{$itemprop}}" content="{{$content}}" id="{{$itemprop}}"/>
   @endforeach
   @php(wp_head())
 </head>
