@@ -1,6 +1,6 @@
 <h4 class="pt-5">Open Calls for Proposals</h4>
 <p>We are looking for applications for the following:</p>
-<section class="grants d-flex flex-row flex-wrap">
+<section class="grants d-flex flex-row flex-wrap no-gutters">
 	@php
 		$ids= [155,451]; // open call for proposals is 451 on cert, 155 on prod
 		$limit = 4;
