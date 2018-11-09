@@ -395,7 +395,7 @@ class App extends Controller {
 			'posts_per_page' => 1,
 			'post_status'    => 'publish',
 			'exclude'        => [],
-			'tax_query'      => [
+			'tax_query'      => [ //@codingStandardsIgnoreLine
 				[
 					'taxonomy' => 'events_categories',
 					'field'    => 'name',

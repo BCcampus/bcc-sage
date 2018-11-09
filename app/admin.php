@@ -46,7 +46,7 @@ add_action(
 
 		$wp_customize->add_control(
 			'slider_id', [
-				'label'    => __( 'Slider ID', 'bcc-sage'),
+				'label'    => __( 'Slider ID', 'bcc-sage' ),
 				'section'  => 'static_front_page',
 				'settings' => 'slider_setting',
 			]
@@ -169,7 +169,7 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 				<label for="<?php echo esc_attr( $id ); ?>"><input
 						type="checkbox" id="<?php echo esc_attr( $id ); ?>"
 						name="<?php echo esc_attr( $name ); ?>"
-						value="1" <?php echo ( $value == 1 ) ? 'checked="checked"' : ''; ?> /><?php echo esc_attr( $label ); ?>
+						value="1" <?php echo ( $value == 1 ) ? 'checked="checked"' : ''; //@codingStandardsIgnoreLine ?> /><?php echo esc_attr( $label ); ?>
 				</label>
 			</p>
 				<?php
