@@ -50,11 +50,11 @@
 
 .grants,
 .topics-of-practice {
-	article:nth-of-type(2) {
+	article:nth-of-type(2n) {
 		padding-left: .5rem;
 	}
 	@include media-breakpoint-down(sm) {
-		article:nth-of-type(2) {
+		article:nth-of-type(2n) {
 			padding-left: 0;
 		}
 	}
