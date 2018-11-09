@@ -35,7 +35,8 @@
 
 .featured-news,
 .featured-grant,
-.grants {
+.grants,
+.topics-of-practice {
 	min-height: 281px;
 
 	@include media-breakpoint-down(sm) {
@@ -47,7 +48,8 @@
 
 }
 
-.grants {
+.grants,
+.topics-of-practice {
 	article:nth-of-type(2) {
 		padding-left: .5rem;
 	}
