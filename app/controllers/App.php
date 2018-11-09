@@ -20,7 +20,8 @@ class App extends Controller {
 	 */
 	public static function title() {
 		if ( is_home() ) {
-			if ( $home = get_option( 'page_for_posts', true ) ) {
+			$home = get_option( 'page_for_posts', true );
+			if ( $home ) {
 				return get_the_title( $home );
 			}
 
@@ -533,6 +534,22 @@ class App extends Controller {
 		}
 
 		return $url;
+	}
+
+	/**
+	 * Smooths out the uncertainty of whether or not there is an excerpt
+	 *
+	 * @param $post
+	 * @param $link
+	 * @param int $length
+	 *
+	 * @return string
+	 */
+	public static function maybeExcerpt( $post, $link, $length = 15 ) {
+
+		$excerpt = ( empty( get_the_excerpt( $post->ID ) ) ) ? wp_trim_words( $post->post_content, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ) : wp_trim_words( get_the_excerpt( $post->ID ), $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" );
+
+		return $excerpt;
 	}
 }
 

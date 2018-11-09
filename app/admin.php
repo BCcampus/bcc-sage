@@ -232,3 +232,8 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 		}, 99
 	);
 }
+
+/**
+ * we need pages to have excerpts
+ */
+add_post_type_support( 'page', 'excerpt' );
