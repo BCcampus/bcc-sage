@@ -122,7 +122,7 @@ function post_published_notification( $id, $post ) {
 	if ( App::isProduction() === false ) {
 		return;
 	}
-	$env = include( dirname( dirname( __FILE__ ) ). '/config/.env.php' );
+	$env = include( dirname( dirname( __FILE__ ) ) . '/config/.env.php' );
 
 	$author    = $post->post_author;
 	$name      = get_the_author_meta( 'display_name', $author );

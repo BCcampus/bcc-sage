@@ -30,12 +30,14 @@
 	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 	<rule ref="PSR1.Methods.CamelCapsMethodName"/>
 	<!-- Disable Side Effects rule for cron scripts -->
-	<rule ref="PSR1.Files.SideEffects">
+	<rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
 		<exclude-pattern>/bin/*</exclude-pattern>
+		<exclude-pattern>/tests/</exclude-pattern>
 	</rule>
 	<!-- Disable Namespaced Functions for cron scripts -->
-	<rule ref="HM.Functions.NamespacedFunctions">
+	<rule ref="HM.Functions.NamespacedFunctions.MissingNamespace">
 		<exclude-pattern>/bin/*</exclude-pattern>
+		<exclude-pattern>/tests/</exclude-pattern>
 	</rule>
 	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
 		<exclude-pattern>/app/controllers/*</exclude-pattern>
