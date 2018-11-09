@@ -25,6 +25,7 @@
 		<exclude name="HM.Files.NamespaceDirectoryName.NoIncDirectory"/>
 		<exclude name="HM.Files.FunctionFileName.WrongFile"/>
 		<exclude name="Squiz.PHP.DisallowMultipleAssignments.Found"/>
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
 	</rule>
 
 	<!-- Re-enable PSR rules we agree with -->

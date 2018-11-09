@@ -11,7 +11,7 @@ add_action(
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->selective_refresh->add_partial(
 			'blogname', [
-				'selector' => '.brand',
+				'selector'        => '.brand',
 				'render_callback' => function () {
 					bloginfo( 'name' );
 				},
@@ -46,7 +46,7 @@ add_action(
 
 		$wp_customize->add_control(
 			'slider_id', [
-				'label'    => __( 'Slider ID', __NAMESPACE__ ),
+				'label'    => __( 'Slider ID', 'bcc-sage'),
 				'section'  => 'static_front_page',
 				'settings' => 'slider_setting',
 			]
@@ -70,7 +70,7 @@ add_action(
 
 		$wp_customize->add_control(
 			'topics_of_practice_id', [
-				'label'    => __( 'Topics of Practice Post ID', __NAMESPACE__ ),
+				'label'    => __( 'Topics of Practice Post ID', 'bcc-sage' ),
 				'section'  => 'static_front_page',
 				'settings' => 'topics_of_practice_setting',
 			]
@@ -94,7 +94,7 @@ add_action(
 
 		$wp_customize->add_control(
 			'projects_id', [
-				'label'    => __( 'Projects Post ID', __NAMESPACE__ ),
+				'label'    => __( 'Projects Post ID', 'bcc-sage' ),
 				'section'  => 'static_front_page',
 				'settings' => 'projects_setting',
 			]
@@ -111,7 +111,7 @@ add_action(
 
 		$wp_customize->add_section(
 			'grants_settings', [
-				'title'       => __( 'Grant Page settings', __NAMESPACE__ ),
+				'title'       => __( 'Grant Page settings', 'bcc-sage' ),
 				'priority'    => 150,
 				'description' => 'Please enter the post ID of each parent page below. This populates the sections with the corresponding child pages.',
 			]
@@ -126,7 +126,7 @@ add_action(
 
 		$wp_customize->add_control(
 			'grants_closed_setting', [
-				'label'    => __( 'Closed Opportunities post ID', __NAMESPACE__ ),
+				'label'    => __( 'Closed Opportunities post ID', 'bcc-sage' ),
 				'section'  => 'grants_settings',
 				'settings' => 'grants_closed_setting',
 			]
@@ -141,28 +141,22 @@ add_action(
  * Show columns
  * Save/Update fields
  * Update the Walker nav
+ *
  * @return array
  */
 
 if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 
-	function fields_list() {
-		//note that menu-item- gets prepended to field names
-		//i.e.: field-01 becomes menu-item-field-01
-		//i.e.: icon-url becomes menu-item-icon-url
-		return [
-			'mm-megamenu'       => 'Activate MegaMenu',
-			'mm-column-divider' => 'Column Divider',
-			'mm-divider'        => 'Inline Divider',
-			'mm-featured-image' => 'Featured Image',
-			'mm-description'    => 'Description',
-		];
-	}
-
 	// Setup fields
 	add_action(
 		'wp_nav_menu_item_custom_fields', function ( $id, $item, $depth, $args ) {
-			$fields = fields_list();
+			$fields = [
+				'mm-megamenu'       => 'Activate MegaMenu',
+				'mm-column-divider' => 'Column Divider',
+				'mm-divider'        => 'Inline Divider',
+				'mm-featured-image' => 'Featured Image',
+				'mm-description'    => 'Description',
+			];
 
 			foreach ( $fields as $_key => $label ) :
 				$key   = sprintf( 'menu-item-%s', $_key );
@@ -172,7 +166,11 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 				$class = sprintf( 'field-%s', $_key );
 				?>
 			<p class="description description-wide <?php echo esc_attr( $class ) ?>">
-				<label for="<?php echo esc_attr( $id ); ?>"><input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="1" <?php echo ( $value === 1 ) ? 'checked="checked"' : ''; ?> /><?php echo esc_attr( $label ); ?></label>
+				<label for="<?php echo esc_attr( $id ); ?>"><input
+						type="checkbox" id="<?php echo esc_attr( $id ); ?>"
+						name="<?php echo esc_attr( $name ); ?>"
+						value="1" <?php echo ( $value === 1 ) ? 'checked="checked"' : ''; ?> /><?php echo esc_attr( $label ); ?>
+				</label>
 			</p>
 				<?php
 		endforeach;
@@ -183,7 +181,13 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 	// Create Columns
 	add_filter(
 		'manage_nav-menus_columns', function ( $columns ) {
-			$fields = fields_list();
+			$fields = [
+				'mm-megamenu'       => 'Activate MegaMenu',
+				'mm-column-divider' => 'Column Divider',
+				'mm-divider'        => 'Inline Divider',
+				'mm-featured-image' => 'Featured Image',
+				'mm-description'    => 'Description',
+			];
 
 			$columns = array_merge( $columns, $fields );
 
@@ -200,7 +204,13 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 
 			check_admin_referer( 'update-nav_menu', 'update-nav-menu-nonce' );
 
-			$fields = fields_list();
+			$fields = [
+				'mm-megamenu'       => 'Activate MegaMenu',
+				'mm-column-divider' => 'Column Divider',
+				'mm-divider'        => 'Inline Divider',
+				'mm-featured-image' => 'Featured Image',
+				'mm-description'    => 'Description',
+			];
 
 			foreach ( $fields as $_key => $label ) {
 				$key = sprintf( 'menu-item-%s', $_key );
