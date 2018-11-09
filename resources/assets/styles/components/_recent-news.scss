@@ -28,6 +28,19 @@
 
 }
 
+.recent-news {
+	article:nth-of-type(2) {
+		padding-left: .5rem;
+		padding-right: .5rem;
+	}
+	@include media-breakpoint-down(sm) {
+		article:nth-of-type(2) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
 .events-upcoming,
 .recent-news,
 .relevant,

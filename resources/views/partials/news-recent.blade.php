@@ -4,7 +4,7 @@
         'category'       => 0,
     ];
 @endphp
-<section class="recent-news pt-3 d-flex flex-row flex-wrap">
+<section class="recent-news pt-3 d-flex flex-row flex-wrap no-gutters">
 	@foreach(\App\App::getLatestNews( $args ) as $recent )
 		@php($link=\App\App::maybeGuid($recent->ID, $recent->post_name))
 		<article class="col-md-4 feature-box-sm py-2" itemscope itemtype="http://schema.org/Blog">

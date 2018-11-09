@@ -18,9 +18,9 @@
 					<span itemprop="name">{{ get_the_author() }}</span>
 				  </span>
 				</a>
-				&nbsp;<i class="fa fa-circle green"></i>&nbsp;
+				&nbsp;<span class="fa fa-circle green"></span>&nbsp;
 				@include('partials.entry-meta')
-				&nbsp<i class="fa fa-circle green"></i>&nbsp;
+				&nbsp<span class="fa fa-circle green"></span>&nbsp;
 				<span itemprop="articleSection">{{ the_category( ', ' ) }}</span>
 			</small>
 		</p>

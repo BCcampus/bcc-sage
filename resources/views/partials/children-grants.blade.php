@@ -12,7 +12,7 @@
 			</div>
 			</a>
 			<div class="row-fluid border min-height-md">
-				<p class="pt-3 px-3"><?php echo wp_trim_words( $child->post_content, '25', "<a href='{$link}'>&hellip;<i class='fa fa-arrow-right'></i></a>" ); ?></p>
+				<p class="pt-3 px-3"><?php echo wp_trim_words( $child->post_content, '25', "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ); ?></p>
 			</div>
 			<meta itemprop="author" content="{{get_the_author_meta('display_name',$child->post_author)}}"/>
 			<meta itemprop="image" content="{{\App\App::getThumbUrl($child->ID)}}"/>

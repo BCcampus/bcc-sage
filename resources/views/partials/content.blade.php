@@ -7,7 +7,7 @@
 				<small class="text-uppercase">
 					@include('partials/entry-meta')
 					@if(is_category())
-						&nbsp;<i class="fa fa-circle green small"></i>&nbsp; @php(the_category('&nbsp; | &nbsp;'))
+						&nbsp;<span class="fa fa-circle green small"></span>&nbsp; @php(the_category('&nbsp; | &nbsp;'))
 					@endif
 				</small>
 				<h3 class="entry-title"><a class="purple" itemprop="name" href="{{ get_permalink() }}">{{ the_title_attribute() }}</a></h3>
