@@ -9,7 +9,7 @@
 			</div>
 			</a>
 			<div class="row-fluid border-left border-right border-bottom  min-height-md">
-				<p class="pt-3 pad-left pad-right">{!! \App\App::maybeExcerpt($child,$link,25) !!}</p>
+				<p class="pt-3 pad-left pad-right">{!! \App\App::maybeExcerpt($child->ID,$child->post_content,$link,25) !!}</p>
 			</div>
 			<meta itemprop="author" content="{{get_the_author_meta('display_name',$child->post_author)}}"/>
 			<meta itemprop="image" content="{{\App\App::getThumbUrl($child->ID)}}"/>

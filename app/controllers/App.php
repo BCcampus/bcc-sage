@@ -539,15 +539,16 @@ class App extends Controller {
 	/**
 	 * Smooths out the uncertainty of whether or not there is an excerpt
 	 *
-	 * @param $post
+	 * @param $id
+	 * @param $content
 	 * @param $link
 	 * @param int $length
 	 *
 	 * @return string
 	 */
-	public static function maybeExcerpt( $post, $link, $length = 15 ) {
+	public static function maybeExcerpt( $id, $content, $link, $length = 15 ) {
 
-		$excerpt = ( empty( get_the_excerpt( $post->ID ) ) ) ? wp_trim_words( $post->post_content, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ) : wp_trim_words( get_the_excerpt( $post->ID ), $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" );
+		$excerpt = ( empty( get_the_excerpt( $id ) ) ) ? wp_trim_words( $content, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ) : wp_trim_words( get_the_excerpt( $id ), $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" );
 
 		return $excerpt;
 	}

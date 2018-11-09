@@ -17,7 +17,7 @@
 			</div>
 			</a>
 			<div class="row-fluid border min-height-md">
-				<p class="pt-3 px-2">{!! \App\App::maybeExcerpt($open,$link,25) !!}</p>
+				<p class="pt-3 px-2">{!! \App\App::maybeExcerpt($open['post_id'],$open['post_content'],$link,25) !!}</p>
 			</div>
 			<span itemprop="location" itemscope itemtype="http://schema.org/Place">
 			<meta itemprop="address" content="{!! $open['location'] !!}"/>

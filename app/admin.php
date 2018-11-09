@@ -146,7 +146,7 @@ add_action(
 
 if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 
-	function fieldsList() {
+	function fields_list() {
 		//note that menu-item- gets prepended to field names
 		//i.e.: field-01 becomes menu-item-field-01
 		//i.e.: icon-url becomes menu-item-icon-url
@@ -162,7 +162,7 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 	// Setup fields
 	add_action(
 		'wp_nav_menu_item_custom_fields', function ( $id, $item, $depth, $args ) {
-			$fields = fieldsList();
+			$fields = fields_list();
 
 			foreach ( $fields as $_key => $label ) :
 				$key   = sprintf( 'menu-item-%s', $_key );
@@ -172,7 +172,7 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 				$class = sprintf( 'field-%s', $_key );
 				?>
 			<p class="description description-wide <?php echo esc_attr( $class ) ?>">
-				<label for="<?php echo esc_attr( $id ); ?>"><input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="1" <?php echo ( $value == 1 ) ? 'checked="checked"' : ''; ?> /><?php echo esc_attr( $label ); ?></label>
+				<label for="<?php echo esc_attr( $id ); ?>"><input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="1" <?php echo ( $value === 1 ) ? 'checked="checked"' : ''; ?> /><?php echo esc_attr( $label ); ?></label>
 			</p>
 				<?php
 		endforeach;
@@ -183,7 +183,7 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 	// Create Columns
 	add_filter(
 		'manage_nav-menus_columns', function ( $columns ) {
-			$fields = fieldsList();
+			$fields = fields_list();
 
 			$columns = array_merge( $columns, $fields );
 
@@ -200,7 +200,7 @@ if ( class_exists( '\\BCcampus\MegaWalker' ) ) {
 
 			check_admin_referer( 'update-nav_menu', 'update-nav-menu-nonce' );
 
-			$fields = fieldsList();
+			$fields = fields_list();
 
 			foreach ( $fields as $_key => $label ) {
 				$key = sprintf( 'menu-item-%s', $_key );

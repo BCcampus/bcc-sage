@@ -17,7 +17,7 @@
 				</div>
 				</a>
 				<div class="row-fluid border min-height-md">
-					<p class="pt-3 px-2">{!! \App\App::maybeExcerpt($child,$link,25) !!}</p>
+					<p class="pt-3 px-2">{!! \App\App::maybeExcerpt($child->ID,$child->post_content,$link,25) !!}</p>
 				</div>
 				<meta itemprop="datePublished" content="{{ get_post_time('c', true, $child->ID) }}"/>
 				<meta itemprop="headline" content="{!! $child->post_title !!}"/>
