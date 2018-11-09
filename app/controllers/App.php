@@ -547,8 +547,8 @@ class App extends Controller {
 	 * @return string
 	 */
 	public static function maybeExcerpt( $id, $content, $link, $length = 15 ) {
-
-		$excerpt = ( empty( get_the_excerpt( $id ) ) ) ? wp_trim_words( $content, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ) : wp_trim_words( get_the_excerpt( $id ), $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" );
+		$maybe_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $id ) );
+		$excerpt       = ( empty( $maybe_excerpt ) ) ? wp_trim_words( $content, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" ) : wp_trim_words( $maybe_excerpt, $length, "<a href='{$link}'>&hellip;<span class='fa fa-arrow-right'></span></a>" );
 
 		return $excerpt;
 	}
