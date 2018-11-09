@@ -13,6 +13,14 @@
 			</div>
 			<meta itemprop="author" content="{{get_the_author_meta('display_name',$child->post_author)}}"/>
 			<meta itemprop="image" content="{{\App\App::getThumbUrl($child->ID)}}"/>
+			<meta itemprop="datePublished" content="{{ get_post_time('c', true, $child->ID) }}"/>
+			<meta itemprop="headline" content="{!! $child->post_title !!}"/>
+			<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+				<meta itemprop="name" content="BCCampus"/>
+				<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+					<meta itemprop="url" content="https://bccampus.ca/wp-content/themes/bcc-sage/dist/images/bccampus-logo.png"/>
+				</span>
+			</span>
 		</article>
 	@endforeach
 </section>
