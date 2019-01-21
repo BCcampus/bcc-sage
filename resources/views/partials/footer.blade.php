@@ -50,7 +50,7 @@
 							<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
 							Except where otherwise noted, content on this site is licensed under a
 							<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
-								Attribution 4.0 International License</a>.
+								Attribution 4.0 International Licence</a>.
 					</p>
 				</div>
 				<div class="col-md-4 d-flex justify-content-end">
