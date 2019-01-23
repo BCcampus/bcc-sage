@@ -190,3 +190,11 @@ add_action(
 		);
 	}
 );
+
+/**
+ * tabby tab integration
+ */
+if ( function_exists( 'cc_tabby_css' ) ) {
+	remove_action( 'wp_print_styles', 'cc_tabby_css', 30 );
+	add_action( 'wp_enqueue_scripts', 'cc_tabby_css', 30 );
+}
