@@ -267,6 +267,7 @@ class App extends Controller {
 		$keywords    = ( ! is_array( $meta['tags_input'] ) ) ? 'connect,collaborate,innovate' : implode( ',', $meta['tags_input'] );
 		$excerpt     = ( is_front_page() ) ? get_bloginfo( 'description', 'display' ) : get_the_excerpt();
 		$categories  = '';
+		$subject     = [];
 
 		// about
 		if ( is_array( $meta['post_category'] ) && ! empty( $meta['post_category'] ) ) {
