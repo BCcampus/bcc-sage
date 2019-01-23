@@ -2,6 +2,7 @@
 $post_types = [ 'post', 'page' ];
 $limit = 3;
 $i = 0;
+$category_name = '';
 @endphp
 <div class="flex-row shady-bkgd">
 	<div class="shady-bkgd py-3 container-fluid">
@@ -9,7 +10,7 @@ $i = 0;
 			<small><a href="{{get_site_url()}}/news">view all news</a></small>
 		</h3>
 		<section class="related-news d-flex flex-row flex-wrap">
-			@foreach(\App\App::getRelevant($post, $post_types, $limit, $tag) as $related_post )
+			@foreach(\App\App::getRelevant($post, $post_types, $limit, $category_name) as $related_post )
 				@php
 				$link = \App\App::maybeGuid( $related_post->ID, $related_post->post_name );
 

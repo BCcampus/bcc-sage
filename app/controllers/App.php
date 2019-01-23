@@ -135,6 +135,8 @@ class App extends Controller {
 			'post_type'           => $type,
 			'post_status'         => 'publish',
 			'category_name'       => $category_name,
+			'orderby'             => 'date',
+			'order'               => 'DESC',
 		];
 
 		$maybe_more_args = array_merge( $args, $append_t );
