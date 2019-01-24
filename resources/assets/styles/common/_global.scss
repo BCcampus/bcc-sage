@@ -260,8 +260,13 @@ time.updated {
 	width: 100%;
 }
 
-.container-fluid{
+.container-fluid {
 	max-width: 1280px;
+
+	.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .min-height-sm {
