@@ -18,7 +18,6 @@
 	<!-- Use HM Coding Standards -->
 	<rule ref="vendor/humanmade/coding-standards">
 		<!-- Disable rules we disagree with: -->
-		<exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found"/>
 		<exclude name="HM.Files.NamespaceDirectoryName.NoIncDirectory"/>
 		<exclude name="HM.Files.FunctionFileName.WrongFile"/>
 		<exclude name="Squiz.PHP.DisallowMultipleAssignments.Found"/>
