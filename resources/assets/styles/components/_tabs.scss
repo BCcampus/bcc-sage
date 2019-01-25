@@ -1,0 +1,17 @@
+.responsive-tabs {
+  .responsive-tabs__list__item--active {
+    color: $color-black !important;
+    background: transparent !important;
+    border-bottom: none !important;
+  }
+
+  .responsive-tabs__list__item {
+    color: $color-purple !important;
+    background: $color-grey-bs4 !important;
+
+    &:hover {
+      color: $color-blue-dark !important;
+    }
+  }
+}
+

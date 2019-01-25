@@ -23,7 +23,7 @@ mix.setResourceRoot('../');
 // BrowserSync
 mix.browserSync({
   host: 'localhost',
-  proxy: 'http://dev.test-wp.ca/wp/bcc',
+  proxy: 'https://bcc.test/',
   port: 3000,
   files: [
     `${app}/**/*.php`,
