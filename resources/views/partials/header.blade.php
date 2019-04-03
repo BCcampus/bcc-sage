@@ -46,6 +46,9 @@
 				</div>
 			</nav>
 	</div>
+	<div class="alert" style=color:#004085;background-color:#cce5ff;border-color:#b8daff;padding:10px;border-radius:3px;>
+		<b>Alert:</b> Please note this site will be down for maintenance on April 9, 2019, from 9am-12pm (Pacific).
+	</div>
 	@if (is_front_page())
 		<div class="container-fluid slider">
 			{!! $get_slider_id !!}
