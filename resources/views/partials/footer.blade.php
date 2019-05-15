@@ -45,8 +45,9 @@
 		<div id="bottom-foot" class="clearfix container-fluid">
 			<div class="d-flex flex-row flex-nowrap">
 				<div class="col-md-8">
+					<p class="copyright">
 					<p>BCcampus acknowledges the Coast Salish People, Lkwungen, and W̱SÁNEĆ peoples, on whose traditional territories we are privileged to live, work, and play.</p>
-					<p class="copyright"><a itemprop="license" class="pull-left" rel="license"
+					<a itemprop="license" class="pull-left" rel="license"
 											href="https://creativecommons.org/licenses/by/4.0/">
 							<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
 							Except where otherwise noted, content on this site is licensed under a
