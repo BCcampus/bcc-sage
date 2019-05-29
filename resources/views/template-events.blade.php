@@ -1,8 +1,8 @@
 {{--
   Template Name: Events Landing Template
 --}}
-@php($args = ['posts_per_page'=> 3,'post_type'=>'ai1ec_event',])
-@extends('layouts.full')
+@php($args = ['posts_per_page'=> 4,'post_type'=>'ai1ec_event',])
+@extends('layouts.parent')
 
 @section('content')
 	@while(have_posts()) @php(the_post())
