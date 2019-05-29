@@ -6,8 +6,8 @@
 
 @section('content')
 	@while(have_posts()) @php(the_post())
-	@include('partials.events-feature')
 	@include('partials.content-page')
+	@include('partials.events-hosted')
 	<section class="mt-3">
 		<div class="d-flex flex-row flex-wrap">
 			<div class="col-md-6">
