@@ -1,8 +1,3 @@
-@php
-  global $query_string;
-  query_posts( $query_string . '&order=DESC' )
-@endphp
-
 @extends('layouts.app')
 
 @section('content')
