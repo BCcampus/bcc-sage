@@ -18,7 +18,7 @@
 		</aside>
 	</div>
 </div>
-@if( ! is_page_template(['views/template-subscribe.blade.php','views/template-subscribe-edtech.blade.php']))
+@if( ! is_page_template(['views/template-subscribe.blade.php','views/template-subscribe-edtech.blade.php', 'views/template-events.blade.php']))
 	@include('partials.news-related')
 	@include('partials.events-related')
 @endif

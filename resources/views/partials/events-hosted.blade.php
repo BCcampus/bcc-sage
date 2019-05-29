@@ -1,5 +1,5 @@
 @php
-$limit = 2;
+$limit = 4;
 $ids = [192]; // BCcampus hosted category on prod is 192
 @endphp
 <section class="mt-3">
