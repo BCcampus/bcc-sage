@@ -1,7 +1,7 @@
 <h4 class="pt-5">Call for Proposals</h4>
 <p>We are looking for applications for the following:</p>
 <section class="grants d-flex flex-row flex-wrap no-gutters">
-	@foreach(\App\Page::getChildrenOfPage($post->ID, [150]) as $child)
+	@foreach(\App\Page::getChildrenOfPage($post->ID, [15836]) as $child)
 		@php($status = get_post_meta($child->ID,'status',true))
 			@if( ($status === 'open') )
 		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))

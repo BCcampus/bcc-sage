@@ -1,7 +1,7 @@
 <h4 class="pt-4 pb-2">Grants Currently Offered</h4>
 <p>We are looking for your input or participation in the following:</p>
 <section class="grants d-flex flex-row flex-wrap no-gutters">
-	@foreach(\App\Page::getChildrenOfPage($post->ID, [150]) as $child)
+	@foreach(\App\Page::getChildrenOfPage($post->ID, [15836]) as $child)
 		@php($status = get_post_meta($child->ID,'status',true))
 		<!-- If there's no status value, treat it as a grant -->
 		@if( empty($status) )
