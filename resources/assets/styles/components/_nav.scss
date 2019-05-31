@@ -35,7 +35,7 @@ nav {
 }
 
 .navbar-light .navbar-nav .nav-link {
-	color: $color-purple;
+	color: $color-black;
 	font-weight: 500;
 	&:hover,&:focus{
 		color: $color-blue-dark;
@@ -150,3 +150,8 @@ nav.navbar-megamenu {
 
 }
 
+@media only screen and (min-width : 992px) {
+	ul#menu-primary-menu.nav.navbar-nav {
+		margin-top:-32px;
+	}
+}
