@@ -1,5 +1,6 @@
 <section class="topics-of-practice d-flex flex-row flex-wrap no-gutters">
 	@foreach(\App\Page::getChildrenOfPage() as $child)
+		@if( $child->post_type != 'attachment')
 		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
 		<article class="topics-of-practice-item col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
 			<a href="{{$link}}" class="img-link">
@@ -22,5 +23,6 @@
 				</span>
 			</span>
 		</article>
+			@endif
 	@endforeach
 </section>
