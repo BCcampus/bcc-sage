@@ -1,10 +1,15 @@
-<div class="page-header d-flex flex-column-reverse" style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
-	<div class="container-fluid">
-		<div class="d-flex">
-			<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
-		</div>
-	</div>
-</div>
+@if( is_page_template(['views/template-about.blade.php','views/template-projects.blade.php','views/template-topics-of-practice.blade.php','views/template-research.blade.php','views/template-grants.blade.php','views/template-events.blade.php','views/template-news.blade.php' ]))
+	<div class="page-header d-flex flex-column-reverse"
+		 style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
+		@else
+			<div class="page-header d-flex flex-column-reverse">
+				@endif
+				<div class="container-fluid">
+					<div class="d-flex">
+						<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
+					</div>
+				</div>
+			</div>
 @if( ! is_front_page() )
 	<div class="container-fluid">
 		<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
