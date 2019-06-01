@@ -2,7 +2,8 @@
 <p>We are looking for your input or participation in the following:</p>
 <section class="grants d-flex flex-row flex-wrap no-gutters">
 	@foreach(\App\Page::getChildrenOfPage($post->ID, [15836]) as $child)
-		@php($status = get_post_meta($child->ID,'status',true))
+		@if( $child->post_type != 'attachment')
+			@php($status = get_post_meta($child->ID,'status',true))
 		<!-- If there's no status value, treat it as a grant -->
 		@if( empty($status) )
 		@php($link=\App\App::maybeGuid($child->ID, $child->post_name))
@@ -29,5 +30,6 @@
 			</span>
 		</article>
 		@endif
+			@endif
 	@endforeach
 </section>
