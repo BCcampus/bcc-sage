@@ -214,7 +214,7 @@ class App extends Controller {
 		if ( has_post_thumbnail( $id ) ) {
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
 		} else {
-			$image[] = get_stylesheet_directory_uri() . '/assets/images/default-banner-image.gif';
+			$image[] = get_stylesheet_directory_uri() . '/assets/images/default-banner-image.jpg';
 		}
 
 		return $image[0];

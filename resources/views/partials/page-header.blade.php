@@ -1,5 +1,8 @@
-	<div class="page-header d-flex flex-column-reverse"
-		 style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
+@if(is_page())
+<div class="page-header d-flex flex-column-reverse" style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
+		@else
+		<div class="page-header d-flex flex-column-reverse">
+			 @endif
 				<div class="container-fluid">
 					<div class="d-flex">
 						<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
