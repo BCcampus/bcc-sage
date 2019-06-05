@@ -1,14 +1,18 @@
 @if(is_page())
 <div class="page-header d-flex flex-column-reverse" style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
+	<div class="container-fluid">
+		<div class="d-flex">
+			<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
+		</div>
+	</div>
+</div>
 		@else
-		<div class="page-header d-flex flex-column-reverse">
-			 @endif
-				<div class="container-fluid">
-					<div class="d-flex">
-						<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
-					</div>
-				</div>
+		<div class="d-flex flex-column-reverse">
+		<div class="container-fluid">
+				<h1 itemprop="name" class="d-flex entry-title blue-bkgd">{!! App::title() !!}</h1>
 			</div>
+		</div>
+			 @endif
 @if( ! is_front_page() )
 	<div class="container-fluid">
 		<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
