@@ -27,6 +27,7 @@
 																		  alt="kaltura icon"></a>
 							</li>
 						</ul>
+						<p class="acknowledgement">For thousands of years the Coast Salish, Lkwungen, and W̱SÁNEĆ Peoples have walked gently on the unceded territories where we now live, work, and play. We are committed to building relationships with the first peoples here, one based in honour and respect, and we thank them for their hospitality.</p>
 					</div>
 					@if(has_nav_menu('footer_navigation_1'))
 						<nav class="widget col-md-4 py-2">
@@ -46,7 +47,6 @@
 			<div class="d-flex flex-row flex-nowrap">
 				<div class="col-md-8">
 					<p class="copyright">
-					<p>BCcampus acknowledges the Coast Salish People, Lkwungen, and W̱SÁNEĆ peoples, on whose traditional territories we are privileged to live, work, and play.</p>
 					<a itemprop="license" class="pull-left" rel="license"
 											href="https://creativecommons.org/licenses/by/4.0/">
 							<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
