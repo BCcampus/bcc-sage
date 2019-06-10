@@ -4,6 +4,7 @@
 			<div id="top-foot" class="clearfix">
 				<div id="widget-footer" class="clearfix row">
 					<div class="widget col-md-4 py-2">
+						<h4>Connect With Us</h4>
 						<ul class="inline no-margin mb-5">
 							<li class="social-media">
 								<a href="https://www.facebook.com/BCcampus"><img
@@ -27,7 +28,7 @@
 																		  alt="kaltura icon"></a>
 							</li>
 						</ul>
-						<p class="acknowledgement">For thousands of years the Coast Salish, Lkwungen, and W̱SÁNEĆ Peoples have walked gently on the unceded territories where we now live, work, and play. We are committed to building relationships with the first peoples here, one based in honour and respect, and we thank them for their hospitality.</p>
+						@include('partials.subscribe')
 					</div>
 					@if(has_nav_menu('footer_navigation_1'))
 						<nav class="widget col-md-4 py-2">
@@ -36,7 +37,8 @@
 						</nav>
 					@endif
 					<div class="col-md-4 py-2">
-						@include('partials.subscribe')
+						<h4>Acknowledgement</h4>
+						<p class="acknowledgement">For thousands of years the Coast Salish, Lkwungen, and W̱SÁNEĆ Peoples have walked gently on the unceded territories where we now live, work, and play. We are committed to building relationships with the first peoples here, one based in honour and respect, and we thank them for their hospitality.</p>
 					</div>
 				</div>
 			</div>

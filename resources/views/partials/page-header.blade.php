@@ -1,4 +1,4 @@
-@if(is_page())
+@if(is_page() || is_singular( 'ai1ec_event' ))
 <div class="page-header d-flex flex-column-reverse" style="background-image: url({{\App\App::getThumbUrl($post->ID)}});">
 	<div class="container-fluid">
 		<div class="d-flex">
