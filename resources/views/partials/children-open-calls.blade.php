@@ -1,4 +1,4 @@
-<h4 class="pt-5">Call for Proposals</h4>
+<h4 class="pt-5">Calls to Proposals</h4>
 <p>We are looking for applications for the following:</p>
 <section class="grants d-flex flex-row flex-wrap no-gutters">
 	@foreach(\App\Page::getChildrenOfPage($post->ID, [15836]) as $child)
