@@ -38,7 +38,7 @@
 					@endif
 					<div class="col-md-4 py-2">
 						<h4>Acknowledgement</h4>
-						<p class="acknowledgement">For thousands of years the Coast Salish, Lkwungen, and W̱SÁNEĆ Peoples have walked gently on the unceded territories where we now live, work, and play. We are committed to building relationships with the first peoples here, one based in honour and respect, and we thank them for their hospitality.</p>
+						<p class="acknowledgement">For thousands of years the səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), Skwxwú7mesh-ulh Temíx̱w (Squamish), W̱SÁNEĆ, and the Songhees Nation of the Lək̓ʷəŋən (Lekwungen) Peoples have walked gently on the unceded territories where we now live, work, and play. We are committed to building relationships with the first peoples here, one based in honour and respect, and we thank them for their hospitality.</p>
 					</div>
 				</div>
 			</div>
