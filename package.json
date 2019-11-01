@@ -57,7 +57,7 @@
     "eslint-plugin-react": "^7.12.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "laravel-mix": "^4.0.12",
-    "rimraf": "^2.6.2",
+    "rimraf": "^3.0.0",
     "sass": "^1.16.1",
     "sass-loader": "7.*",
     "stylelint": "^9.9.0",
