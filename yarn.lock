@@ -2837,10 +2837,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-humanmade@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-humanmade/-/eslint-config-humanmade-0.5.0.tgz#8df1897b6a790f414b795cc13fc1ed2a43b6d0de"
-  integrity sha1-jfGJe2p5D0FLeVzBP8HtKkO20N4=
+eslint-config-humanmade@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-humanmade/-/eslint-config-humanmade-0.8.0.tgz#82965393c8e1701b4bca1b242b070370f849b64b"
+  integrity sha512-BxEXVuZm4+P+/KRqrF8cUCOaqvA0XkEQMOugIe0GBolsvesmtRoChw43r5TsDSlEwRb9SHwLOrn7auSt8H265Q==
 
 eslint-config-react-app@^3.0.6:
   version "3.0.6"
