@@ -54,7 +54,7 @@
     "eslint-plugin-flowtype": "3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "^7.12.0",
+    "eslint-plugin-react": "^7.20.5",
     "extract-text-webpack-plugin": "^3.0.2",
     "laravel-mix": "^4.0.12",
     "rimraf": "^2.6.2",
